@@ -1203,6 +1203,166 @@
         11. NAVBAR
     ============================================================================= */
 
+    
+
+.menu-icon {
+  height: 30px;
+  width: 30px;
+  position: fixed;
+  z-index: 2;
+  left: 50px;
+  top: 30px;
+  cursor: pointer;
+}
+.menu-icon__line {
+  height: 2px;
+  width: 30px;
+  display: block;
+  background-color: #ffffff;
+  margin-bottom: 4px;
+  -webkit-transition: background-color .5s ease, -webkit-transform .2s ease;
+  transition: background-color .5s ease, -webkit-transform .2s ease;
+  transition: transform .2s ease, background-color .5s ease;
+  transition: transform .2s ease, background-color .5s ease, -webkit-transform .2s ease;
+}
+.menu-icon__line-left {
+  width: 15px;
+}
+.menu-icon__line-right {
+  width: 15px;
+  float: right;
+}
+
+.nav {
+  position: fixed;
+  z-index: 1;
+}
+.nav:before, .nav:after {
+  content: "";
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(234, 234, 234, 0.2);
+  z-index: -1;
+  -webkit-transition: -webkit-transform cubic-bezier(0.77, 0, 0.175, 1) 0.8s;
+  transition: -webkit-transform cubic-bezier(0.77, 0, 0.175, 1) 0.8s;
+  transition: transform cubic-bezier(0.77, 0, 0.175, 1) 0.8s;
+  transition: transform cubic-bezier(0.77, 0, 0.175, 1) 0.8s, -webkit-transform cubic-bezier(0.77, 0, 0.175, 1) 0.8s;
+  -webkit-transform: translateX(0%) translateY(-100%);
+          transform: translateX(0%) translateY(-100%);
+}
+.nav:after {
+  background: white;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+.nav:before {
+  -webkit-transition-delay: .1s;
+          transition-delay: .1s;
+}
+.nav__content {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+  width: 100%;
+  text-align: center;
+  font-size: calc(2vw + 10px);
+  font-weight: 200;
+  cursor: pointer;
+}
+.nav__list-item {
+  position: relative;
+  display: inline-block;
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
+  opacity: 0;
+  -webkit-transform: translate(0%, 100%);
+          transform: translate(0%, 100%);
+  -webkit-transition: opacity .2s ease, -webkit-transform .3s ease;
+  transition: opacity .2s ease, -webkit-transform .3s ease;
+  transition: opacity .2s ease, transform .3s ease;
+  transition: opacity .2s ease, transform .3s ease, -webkit-transform .3s ease;
+  margin-right: 25px;
+}
+.nav__list-item:before {
+  content: "";
+  position: absolute;
+  background: #000000;
+  width: 20px;
+  height: 1px;
+  top: 100%;
+  -webkit-transform: translate(0%, 0%);
+          transform: translate(0%, 0%);
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  z-index: -1;
+}
+.nav__list-item:hover:before {
+  width: 100%;
+}
+
+body.nav-active .menu-icon__line {
+  background-color: #000;
+  -webkit-transform: translateX(0px) rotate(-45deg);
+          transform: translateX(0px) rotate(-45deg);
+}
+body.nav-active .menu-icon__line-left {
+  -webkit-transform: translateX(1px) rotate(45deg);
+          transform: translateX(1px) rotate(45deg);
+}
+body.nav-active .menu-icon__line-right {
+  -webkit-transform: translateX(-2px) rotate(45deg);
+          transform: translateX(-2px) rotate(45deg);
+}
+body.nav-active .nav {
+  visibility: visible;
+}
+body.nav-active .nav:before, body.nav-active .nav:after {
+  -webkit-transform: translateX(0%) translateY(0%);
+          transform: translateX(0%) translateY(0%);
+}
+body.nav-active .nav:after {
+  -webkit-transition-delay: .1s;
+          transition-delay: .1s;
+}
+body.nav-active .nav:before {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+body.nav-active .nav__list-item {
+  opacity: 1;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-transition: opacity .3s ease, color .3s ease, -webkit-transform .3s ease;
+  transition: opacity .3s ease, color .3s ease, -webkit-transform .3s ease;
+  transition: opacity .3s ease, transform .3s ease, color .3s ease;
+  transition: opacity .3s ease, transform .3s ease, color .3s ease, -webkit-transform .3s ease;
+}
+body.nav-active .nav__list-item:nth-child(0) {
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+body.nav-active .nav__list-item:nth-child(1) {
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+}
+body.nav-active .nav__list-item:nth-child(2) {
+  -webkit-transition-delay: 0.7s;
+          transition-delay: 0.7s;
+}
+body.nav-active .nav__list-item:nth-child(3) {
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
+}
+body.nav-active .nav__list-item:nth-child(4) {
+  -webkit-transition-delay: 0.9s;
+          transition-delay: 0.9s;
+}
+
+
+    
+
     /* ==========================================================================
         11. FONDOHEAD
     ============================================================================= */
@@ -2093,3 +2253,270 @@ img {
     text-align: right;
   }
   
+
+    /* ==========================================================================
+   10. FOOTER
+========================================================================= */
+
+.footer1 {
+    background: #fff url("../images/footer/footer-bg.png") repeat scroll left top;
+    padding-top: 40px;
+    padding-right: 0;
+    padding-bottom: 20px;
+    padding-left: 0;/*  border-top-width: 4px;
+    border-top-style: solid;
+    border-top-color: #003;*/
+}
+
+
+
+.title-widget {
+    color: #898989;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1;
+    position: relative;
+    text-transform: uppercase;
+    font-family: 'Montez', cursive;
+    text-transform: none;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 25px;
+    margin-left: 0;
+    padding-left: 28px;
+}
+
+.title-widget::before {
+    background-color: #b48c80;
+    content: "";
+    height: 22px;
+    left: 0px;
+    position: absolute;
+    top: -2px;
+    width: 5px;
+}
+
+
+
+.widget_nav_menu ul {
+    list-style: outside none none;
+    padding-left: 0;
+}
+
+.widget_archive ul li {
+    background-color: rgba(0, 0, 0, 0.3);
+    content: "";
+    height: 3px;
+    left: 0;
+    position: absolute;
+    top: 7px;
+    width: 3px;
+}
+
+
+.widget_nav_menu ul li {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 20px;
+    position: relative;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 7px;
+    padding-bottom: 7px;
+    width:95%;
+}
+
+
+
+.title-median {
+    color: #636363;
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0 0 15px;
+    text-transform: uppercase;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.footerp p {font-family: 'Gudea', sans-serif; }
+
+
+#social:hover {
+                -webkit-transform:scale(1.1); 
+-moz-transform:scale(1.1); 
+-o-transform:scale(1.1); 
+            }
+            #social {
+                -webkit-transform:scale(0.8);
+                /* Browser Variations: */
+-moz-transform:scale(0.8);
+-o-transform:scale(0.8); 
+-webkit-transition-duration: 0.5s; 
+-moz-transition-duration: 0.5s;
+-o-transition-duration: 0.5s;
+            }           
+/* 
+    Only Needed in Multi-Coloured Variation 
+                                               */
+            .social-fb:hover {
+                color: #3B5998;
+            }
+            .social-tw:hover {
+                color: #4099FF;
+            }
+            .social-gp:hover {
+                color: #d34836;
+            }
+            .social-em:hover {
+                color: #f39c12;
+            }
+            .nomargin { margin:0px; padding:0px;}
+
+
+
+
+
+.footer-bottom {
+    background-color: #15224f;
+    min-height: 30px;
+    width: 100%;
+}
+.copyright {
+    color: #fff;
+    line-height: 30px;
+    min-height: 30px;
+    padding: 7px 0;
+}
+.design {
+    color: #fff;
+    line-height: 30px;
+    min-height: 30px;
+    padding: 7px 0;
+    text-align: right;
+}
+.design a {
+    color: #fff;
+}
+
+    /* ==========================================================================
+   10. EVENTO
+========================================================================= */
+
+[class^="swiper-button-"] {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.swiper-slide {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper-container {
+  width: 80%;
+  height: 100vh;
+  float: left;
+  -webkit-transition: opacity .6s ease, -webkit-transform .3s ease;
+  transition: opacity .6s ease, -webkit-transform .3s ease;
+  transition: opacity .6s ease, transform .3s ease;
+  transition: opacity .6s ease, transform .3s ease, -webkit-transform .3s ease;
+}
+.swiper-container.nav-slider {
+  width: 20%;
+  padding-left: 5px;
+}
+.swiper-container.nav-slider .swiper-slide {
+  cursor: pointer;
+  opacity: .4;
+  -webkit-transition: opacity .3s ease;
+  transition: opacity .3s ease;
+}
+.swiper-container.nav-slider .swiper-slide.swiper-slide-active {
+  opacity: 1;
+}
+.swiper-container.nav-slider .swiper-slide .content {
+  width: 100%;
+}
+.swiper-container.nav-slider .swiper-slide .content .title {
+  font-size: 20px;
+}
+.swiper-container:hover .swiper-button-prev,
+.swiper-container:hover .swiper-button-next {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+.swiper-container.loading {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.swiper-slide {
+  overflow: hidden;
+}
+.swiper-slide .slide-bgimg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.swiper-slide .entity-img {
+  display: none;
+}
+.swiper-slide .content {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 50%;
+  padding-left: 5%;
+  color: #fff;
+}
+.swiper-slide .content .title {
+  font-size: 2.6em;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.swiper-slide .content .caption {
+  display: block;
+  font-size: 13px;
+  line-height: 1.4;
+  -webkit-transform: translateX(50px);
+          transform: translateX(50px);
+  opacity: 0;
+  -webkit-transition: opacity .3s ease, -webkit-transform .7s ease;
+  transition: opacity .3s ease, -webkit-transform .7s ease;
+  transition: opacity .3s ease, transform .7s ease;
+  transition: opacity .3s ease, transform .7s ease, -webkit-transform .7s ease;
+}
+.swiper-slide .content .caption.show {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+}
+
+[class^="swiper-button-"] {
+  width: 44px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.swiper-button-prev {
+  -webkit-transform: translateX(50px);
+          transform: translateX(50px);
+}
+
+.swiper-button-next {
+  -webkit-transform: translateX(-50px);
+          transform: translateX(-50px);
+}
+
