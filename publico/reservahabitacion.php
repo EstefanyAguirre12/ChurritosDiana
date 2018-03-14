@@ -28,6 +28,9 @@
 
     <body>
 
+    <header>       
+            <?php include("components/menu.php") ?>
+        </header>
         <div class="font-cover" id="headparallax">
 
             <div class="page-content custom-img-background dark custom-col-padding mb-100">
@@ -174,7 +177,9 @@
         </div>
 
 
-
+        <footer class="footer1">
+                <?php include("components/footer.php") ?>
+                </footer>
 
 
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

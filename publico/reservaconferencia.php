@@ -28,6 +28,9 @@
 
     <body>
 
+    <header>       
+            <?php include("components/menu.php") ?>
+        </header>
         <div class="font-cover" id="headparallax">
             <div class="page-content custom-img-background dark custom-col-padding mb-100">
                 <!-- .row start -->
@@ -217,6 +220,10 @@
                 </div>
             </div>
         </section>
+
+        <footer class="footer1">
+            <?php include("components/footer.php") ?>
+        </footer>
 
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
