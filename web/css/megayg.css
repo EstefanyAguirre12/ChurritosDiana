@@ -72,6 +72,13 @@ section .w800 {
   max-width: 800px;
   width: 100%;
 }
+
+
+.centrar {
+  align-self: flex-start;
+  max-width: 416px;
+  width: 100%;
+}
 .flex {
   display: flex;
 }
