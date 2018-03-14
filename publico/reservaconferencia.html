@@ -6,7 +6,9 @@
   <title>BAROLO</title>
   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
 
+ 
   <link rel='stylesheet prefetch' href='../web/css/megayg.css'>
       <link rel="stylesheet" href="../web/css/reset.min.css"/><!-- bootstrap grid -->
       <link rel="stylesheet" href="../web/css/color-default.css"/><!-- default template color styles -->   
@@ -50,6 +52,39 @@
 
 </div>
 
+
+<section id="section-main" class="section-reservation">
+    <div class="w800">
+        <div class="custom-heading style-1 altura">
+            <h3>Reserva</h3>
+        </div><!-- .custom-heading.style-2 end -->
+    
+     
+<form class="buttons">
+    <label>
+    <input type="checkbox" name="check">
+      <h3 class="label-text">Item One
+      </h3>
+    </input>
+  </label>
+    <br />
+    <label>
+      <input type="checkbox" name="check">  <h3 class="label-text">Item One
+        </h3>
+  </input>
+  </label>
+    <br />
+    <label>
+      <input type="checkbox" name="check" >  <h3 class="label-text">Item One
+        </h3>
+  </input>
+  </label>
+  </form>
+  
+    </div>
+  </section>
+
+
 <section id="section-main" class="section-reservation">
   <div class="w800">
       <div class="custom-heading style-1 altura">
@@ -70,82 +105,127 @@
 </section>
 
 
+
 <section id="section-main" class="section-reservation">
     <div class="w800">
         <div class="custom-heading style-1 altura">
             <h3><span>Fecha</span></h3>
             <h3>Reserva</h3>
         </div><!-- .custom-heading.style-2 end -->
-        <div class="col-md-12">
-
-        <div class="time-picker hours-state">
-            <div class="digital-upper">
-              <span class="hours">3</span>:<span class="minutes">15</span><span class="period smaller">AM</span>
+   
+        <div id="time-range">
+            <p><span class="slider-time">9:00 AM</span> - <span class="slider-time2">5:00 PM</span>
+        
+            </p>
+            <div class="sliders_step1">
+                <div id="slider-range"></div>
             </div>
-            <div class="digital">
-              <div class="digital--inner">
-                <span class="digital--clock">
-                  <span class="hours">3</span>:<span class="minutes">15</span>
-                </span>
-                <div class="control-block">
-                  <span class="digital--period light">am</span>
-                  <span class="digital--period ultra-light">pm</span>
-                </div>
-              </div>
-            </div>
-            <div class="analog">
-              <div class="analog--inner">
-                <div class="analog--hours">
-                  <div class="analog--face">
-                    <span class="analog--center"></span>
-                    <span class="analog--hand">
-                      <span class="analog--ball"></span>
-                    </span>
-                    <span data-deg="deg-360" class="analog--hour deg-360">12</span>
-                    <span data-deg="deg-30" class="analog--hour deg-30">1</span>
-                    <span data-deg="deg-60" class="analog--hour deg-60">2</span>
-                    <span data-deg="deg-90" class="analog--hour deg-90">3</span>
-                    <span data-deg="deg-120" class="analog--hour deg-120">4</span>
-                    <span data-deg="deg-150" class="analog--hour deg-150">5</span>
-                    <span data-deg="deg-180" class="analog--hour deg-180">6</span>
-                    <span data-deg="deg-210" class="analog--hour deg-210">7</span>
-                    <span data-deg="deg-240" class="analog--hour deg-240">8</span>
-                    <span data-deg="deg-270" class="analog--hour deg-270">9</span>
-                    <span data-deg="deg-300" class="analog--hour deg-300">10</span>
-                    <span data-deg="deg-330" class="analog--hour deg-330">11</span>
-                  </div>
-                </div>
-                <div class="analog--minutes">
-                  <div class="analog--face">
-                    <span class="analog--center"></span>
-                    <span class="analog--hand">
-                      <span class="analog--ball"></span>
-                    </span>
-                    <span data-deg="deg-360" class="analog--minute deg-360">00</span>
-                    <span data-deg="deg-30" class="analog--minute deg-30">05</span>
-                    <span data-deg="deg-60" class="analog--minute deg-60">10</span>
-                    <span data-deg="deg-90" class="analog--minute deg-90">15</span>
-                    <span data-deg="deg-120" class="analog--minute deg-120">20</span>
-                    <span data-deg="deg-150" class="analog--minute deg-150">25</span>
-                    <span data-deg="deg-180" class="analog--minute deg-180">30</span>
-                    <span data-deg="deg-210" class="analog--minute deg-210">35</span>
-                    <span data-deg="deg-240" class="analog--minute deg-240">40</span>
-                    <span data-deg="deg-270" class="analog--minute deg-270">45</span>
-                    <span data-deg="deg-300" class="analog--minute deg-300">50</span>
-                    <span data-deg="deg-330" class="analog--minute deg-330">55</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-           
-          </div>
-            </div>
-          <!--hola-->
+        </div>
+  
   
     </div>
   </section>
 
+  
+  
 
+  <section id="section-main" class="section-reservation altura">
+      <div class="w800">
+           <div class="custom-heading style-1 altura">
+            <h3>Reserva</h3>
+        </div><!-- .custom-heading.style-2 end -->
+   
+    <div class="col-md-12 centered ">
+
+        <div class="row">
+            <!--Grid column-->
+              <div class="col-md-6">
+                  <div class="custom-heading style-1 altura">
+                      <h3><span>Fecha</span></h3>
+                    </div><!-- .custom-heading.style-2 end -->
+                  <div class="plusminus horiz ">
+                    
+                      <button></button>
+                      <input type="number" name="productQty" value="1" min="1" max="100">
+                      <button></button> 
+                    </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="custom-heading style-1 altura">
+                      <h3><span>Fecha</span></h3>
+                    </div><!-- .custom-heading.style-2 end -->
+                  <div class="plusminus horiz ">
+                    
+                      <button></button>
+                      <input type="number" name="productQty" value="1" min="1" max="100">
+                      <button></button> 
+                    </div>
+              </div>
+            
+        	
+    
+    </div>	
+   
+    </div>
+      </div>
+    </section>
+
+    
+
+  <section id="section-main" class="section-reservation altura">
+      <div class="w800">
+           <div class="custom-heading style-1 altura">
+            <h3>Reserva</h3>
+        </div><!-- .custom-heading.style-2 end -->
+   
+    <div class="col-md-12 centered ">
+
+        <div class="row">
+            <!--Grid column-->
+             
+            
+            <div class="col-md-6">
+             <div class="md-form">
+                <label>
+                    <span>Nombres</span>
+                    <input type="text" />
+                  </label>
+      </div>
+    </div>
+    <div class="col-md-6">
+             <div class="md-form">
+                <label>
+                    <span>Apellidos</span>
+                    <input type="text" />
+                  </label>
+      </div>
+      
+    </div>	
+    <div class="col-md-6">
+        <div class="md-form">
+           <label>
+               <span>Telfono</span>
+               <input type="text" />
+             </label>
+ </div>
+ 
+</div>	    
+<div class="col-md-6">
+    <div class="md-form">
+       <label>
+           <span>Documento de indentidad</span>
+           <input type="text" />
+         </label>
+</div>
+
+</div>	
+    
+    </div>	
+   
+    <a class="discover_more has_transition_400 altura" href="#">DISCOVER MORE</a>
+    </div>
+      </div>
+    </section>
 
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
@@ -154,7 +234,7 @@
 <script src='https://www.jqueryscript.net/demo/jQuery-Plugin-For-Date-Range-Selector-Range-Calendar/js/jquery.rangecalendar.js'></script>
 <script  src="../web/js/calendario.js"></script>
 <script  src="../web/js/timepicker.js"></script>
-<script  src="../web/js/index.js"></script>
+<script  src="../web/js/numberpicker.js"></script>
 
 
 

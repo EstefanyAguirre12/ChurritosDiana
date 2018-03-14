@@ -1,111 +1,59 @@
+$("#slider-range").slider({
+    range: true,
+    min: 0,
+    max: 1440,
+    step: 15,
+    values: [540, 1020],
+    slide: function (e, ui) {
+        var hours1 = Math.floor(ui.values[0] / 60);
+        var minutes1 = ui.values[0] - (hours1 * 60);
 
-window.onload = function() {
+        if (hours1.length == 1) hours1 = '0' + hours1;
+        if (minutes1.length == 1) minutes1 = '0' + minutes1;
+        if (minutes1 == 0) minutes1 = '00';
+        if (hours1 >= 12) {
+            if (hours1 == 12) {
+                hours1 = hours1;
+                minutes1 = minutes1 + " PM";
+            } else {
+                hours1 = hours1 - 12;
+                minutes1 = minutes1 + " PM";
+            }
+        } else {
+            hours1 = hours1;
+            minutes1 = minutes1 + " AM";
+        }
+        if (hours1 == 0) {
+            hours1 = 12;
+            minutes1 = minutes1;
+        }
 
-	function timePicker() {}
 
-	timePicker.prototype = {
 
-		bindEvent: function(el, callback, eventName) {
-			for (var i = 0; i < el.length; i++) {
-				el[i].addEventListener(eventName, callback, false);
-			}
-		},
+        $('.slider-time').html(hours1 + ':' + minutes1);
 
-		setupTime: function() {
-			var hours = document.querySelectorAll('.analog--hour');
-			var minutes = document.querySelectorAll('.analog--minute');
-			
-			var updateHours = function(evt) {
-				var hours = evt.target.innerHTML;
-				var superHour = document.querySelector('.hours');
-				var mainHour = document.querySelectorAll('.hours')[1];
-				superHour.innerHTML = hours;
-				mainHour.innerHTML = hours;
-				active(evt.target);
-			};
+        var hours2 = Math.floor(ui.values[1] / 60);
+        var minutes2 = ui.values[1] - (hours2 * 60);
 
-			var updateMinutes = function(evt) {
-				var minutes = evt.target.innerHTML;
-				var superMinutes = document.querySelector('.minutes');
-				var mainMinutes = document.querySelectorAll('.minutes')[1];
-				superMinutes.innerHTML = minutes;
-				mainMinutes.innerHTML = minutes;
-				active(evt.target);
-			};
+        if (hours2.length == 1) hours2 = '0' + hours2;
+        if (minutes2.length == 1) minutes2 = '0' + minutes2;
+        if (minutes2 == 0) minutes2 = '00';
+        if (hours2 >= 12) {
+            if (hours2 == 12) {
+                hours2 = hours2;
+                minutes2 = minutes2 + " PM";
+            } else if (hours2 == 24) {
+                hours2 = 11;
+                minutes2 = "59 PM";
+            } else {
+                hours2 = hours2 - 12;
+                minutes2 = minutes2 + " PM";
+            }
+        } else {
+            hours2 = hours2;
+            minutes2 = minutes2 + " AM";
+        }
 
-			var active = function(el) {
-				console.log(el);
-			};
-
-			this.bindEvent(minutes, updateMinutes, 'click');
-			this.bindEvent(hours, updateHours, 'click');
-		},
-
-		setupPeriod: function() {
-			var period = document.querySelectorAll('.digital--period');
-			var am = document.querySelectorAll('.digital--period')[0];
-			var pm = document.querySelectorAll('.digital--period')[1];
-
-			var updatePeriod = function(evt) {
-				var period = evt.target.innerHTML;
-
-				if (period === 'am') {
-					am.className = 'digital--period light';
-					pm.className = 'digital--period ultra-light';
-				} else {
-					am.className = 'digital--period ultra-light';
-					pm.className = 'digital--period light';
-				}
-
-				document.querySelector('.period').innerHTML = period;
-			};
-
-			this.bindEvent(period, updatePeriod, 'click');
-		},
-
-		handleFormState: function() {
-			var number = document.querySelectorAll('.analog--hours');
-
-			var setActive = function(evt) {
-				var number = evt.target;
-				var timePicker = document.querySelector('.time-picker');
-				timePicker.className = 'time-picker minutes-state';
-			};
-
-			this.bindEvent(number, setActive, 'click');
-		},
-
-		handleTimeState: function() {
-			var number = document.querySelectorAll('span[data-deg]');
-			hand = document.querySelectorAll('.analog--hand');
-
-			var setHourState = function(evt) {
-				var el = evt.target;
-				var deg = el.dataset.deg;
-				var elClass = el.className;
-				hand[0].className = 'analog--hand ' + deg;
-			};
-
-			var setMintueState = function(evt) {
-				var el = evt.target;
-				var deg = el.dataset.deg;
-				var elClass = el.className;
-				hand[1].className = 'analog--hand ' + deg;
-			};
-
-			this.bindEvent(number, setHourState, 'mouseenter');
-			this.bindEvent(number, setMintueState, 'mouseenter');
-		},
-
-		init: function() {
-			this.setupTime();
-			this.setupPeriod();
-			this.handleFormState();
-			this.handleTimeState();
-		}
-	}
-
-	var timePicker = new timePicker();
-	timePicker.init();
-
-}
+        $('.slider-time2').html(hours2 + ':' + minutes2);
+    }
+});
