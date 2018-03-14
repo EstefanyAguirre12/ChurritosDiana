@@ -1,0 +1,25 @@
+
+/* MAPA PARA UBICACION MEGA SATELITALOCHI */
+
+.mapache{
+    width: 90%;
+    margin: 0 auto;
+    margin-top:50px;
+  }
+  
+  #map_container{
+    position: relative;
+  }
+  #map{
+      height: 0;
+      overflow: hidden;
+      padding-bottom: 22.25%;
+      padding-top: 30px;
+      position: relative;
+  }
+
+  .textinho{
+      text-align: center
+  }
+  
+  
