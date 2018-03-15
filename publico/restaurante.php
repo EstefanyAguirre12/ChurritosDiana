@@ -276,7 +276,7 @@
 
         <!-- .page-content start -->
     
-    <div class="font-cover" id="headparallax">
+    <div class="font-cover" id="headparallax5">
 
         <div class="page-content custom-img-background dark custom-col-padding mb-100">
                 
@@ -317,9 +317,6 @@
     
             <div class="grid">
               <div class="image">
-                <div class="image__details">
-                  jelly-o brownie sweet
-                </div>
               </div>
               <div class="image image--large">
                 <div class="image__details">
