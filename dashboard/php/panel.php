@@ -2,7 +2,7 @@
           <div class="left_col scroll-view">
 
             <div class="navbar nav_title">
-              <a href="index.html" class="site_title"><i class="material-icons">business </i></i><span>Churchill</span></a>
+              <a href="index.php" class="site_title"><i class="material-icons">business </i></i><span>Barolo</span></a>
             </div>
             <div class="clearfix"></div>
             <br />
@@ -30,9 +30,14 @@
                   </li>
                   <li><a><i class="material-icons">store</i> Habitaciones<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="general_elements.html">habitaciones disponibles</a></li>
+                      <li><a href="mts_habitacion.php">habitaciones disponibles</a></li>
                       <li><a href="media_gallery.html">habitaciciones reservadas</a></li>
                       <li><a href="typography.html">habitaciciones ocupadas</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="material-icons">store</i> Registros<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="mts_habitacion.php">habitaciones</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -58,6 +63,12 @@
                       <li><a href="media_gallery.html">lista de ordenes</a></li>
                     </ul>
                   </li>
+                  <li><a><i class="material-icons">rate_review</i> Registros <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="mts_platos.php">Platos</a></li>
+                      <li><a href="mts_bebidas">Bebidas</a></li>
+                    </ul>
+                  </li>
                 </ul>
               </div>
               <div class="menu_section">
@@ -81,27 +92,29 @@
                       <li><a href="calendar.html">Calendar</a></li>
                     </ul>
                   </li>
+                  <li><a><i class="material-icons">store</i> Registros<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="general_elements.html">habitaciones disponibles</a></li>
+                      <li><a href="media_gallery.html">habitaciciones reservadas</a></li>
+                      <li><a href="typography.html">habitaciciones ocupadas</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu_section">
+                <h3>Registros</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="material-icons">store</i> Registros<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="mts_usuarios.php">Usuarios</a></li>
+                      <li><a href="mts_empleados.php">Empleados</a></li>
+                      <li><a href="mts_cargos.php">Cargos</a></li>
+                    </ul>
+                  </li>
                 </ul>
               </div>
             </div>
             <!-- /sidebar menu -->
-
-            <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <i class="fa fa-home"></i>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                  <i class="fa fa-home"></i>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <i class="fa fa-home"></i>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
-                 <i class="fa fa-home"></i>
-              </a>
-            </div>
-            <!-- /menu footer buttons -->
           </div>
 </div>
         <!-- top navigation -->
@@ -119,7 +132,7 @@
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
                     <li><a href=""><i class="fab fa-staylinked pull-right"></i> Tema</a></li>
                     <li><a href=""><i class="fa fa-user pull-right"></i> Mi perfil</a></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Cerrar sesion</a></li>
+                    <li><a href="login.php"><i class="fa fa-sign-out pull-right"></i> Cerrar sesion</a></li>
                   </ul>
                 </li>
                 <li class="">

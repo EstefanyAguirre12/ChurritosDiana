@@ -9,18 +9,9 @@
 	<link rel="icon" href="images/favicon.ico" type="image/ico" />
 
     <title>Inicio</title>
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="fonts/css/fontawesome-all.min.css" rel="stylesheet"> 
-    <link href="font/css/font-awesome.min.css" rel="stylesheet">
-    <!-- bootstrap-daterangepicker -->
-    <link href="css/daterangepicker.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-    <!-- Custom Theme Style -->
-    <link href="css/custom.css" rel="stylesheet">
-    
+    <?php 
+    require_once("php/estilos.php");
+   ?>
   </head>
 
   <body class="nav-md">
@@ -143,17 +134,9 @@
         <!-- /footer content -->
       </div>
     </div>
-    <!-- jQuery -->
-    <script src="js/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="js/bootstrap.js"></script>>
-    <!-- bootstrap-progressbar -->
-    <script src="js/bootstrap-progressbar.min.js"></script>
-    <!-- bootstrap-daterangepicker -->
-    <script src="js/moment.min.js"></script>
-    <script src="js/daterangepicker.js"></script>
-    <!-- Custom Theme Scripts -->
-    <script src="js/custom.js"></script>
+    <?php 
+    require_once("php/scrips.php");
+   ?>
 	
   </body>
 </html>

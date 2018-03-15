@@ -15,6 +15,10 @@ html , body{
  height:100%;
  }
 
+ .fondo{
+     background-image: url("../img/fondo1.jpg");
+ }
+
 .daterangepicker .ranges li {
     color: #73879C
 }
@@ -144,7 +148,7 @@ html , body{
     padding: 0 0 4px 0
 }
 .left_col {
-    background: #372817;
+    background: #cecece81;
 }
 .nav-sm .container.body .col-md-3.left_col {
     min-height: 100%;
@@ -243,14 +247,14 @@ html , body{
 }
 .menu_section h3 {
     padding-left: 15px;
-    color: #fff;
+    color: #705d48;
     text-transform: uppercase;
     letter-spacing: .5px;
     font-weight: bold;
     font-size: 11px;
     margin-bottom: 0;
     margin-top: 0;
-    text-shadow: 1px 1px #000
+    text-shadow: 1px 1px rgb(207, 207, 207)
 }
 .menu_section>ul {
     margin-top: 10px
@@ -307,7 +311,7 @@ html , body{
     margin-top: 5px;
     font-size: 10px;
     min-width: inherit;
-    color: #C4CFDA
+    color: #705d48;
 }
 .active a span.fa {
     text-align: right !important;
@@ -504,7 +508,7 @@ body .container.body .right_col {
 }
 body {
     color: #1e1a1b;
-    background: #372817;
+    background: #c9c9c9;
     font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
     font-size: 13px;
     font-weight: 400;
@@ -740,12 +744,12 @@ a:focus {
     margin-bottom: 6px
 }
 .nav.side-menu>li>a:hover {
-    color: #F2F5F7 !important
+    color: rgb(78, 47, 15) !important
 }
 .nav.side-menu>li>a:hover,
 .nav>li>a:focus {
     text-decoration: none;
-    background: transparent
+    background:rgba(161, 161, 161, 0.521) !important
 }
 .nav.child_menu {
     display: none
@@ -759,7 +763,7 @@ a:focus {
 }
 .nav.side-menu>li>a,
 .nav.child_menu>li>a {
-    color: #E7E7E7;
+    color:  #705d48;
     font-weight: 500
 }
 .nav.child_menu li li:hover,
@@ -786,12 +790,10 @@ a:focus {
     background: none
 }
 .nav li li.current-page a {
-    color: #fff
+    color: #7c5d3c;
 }
 .nav.side-menu>li.active>a {
-    text-shadow: rgba(0, 0, 0, 0.25) 0 -1px 0;
-    background: linear-gradient(#503b22, #503b22), #503b22;
-    box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0
+    background:  #8f8f8f8f;
 }
 .navbar-brand,
 .navbar-nav>li>a {
@@ -868,7 +870,7 @@ a:focus {
     font-size: 26px
 }
 .nav.child_menu>li>a {
-    color: rgba(255, 255, 255, 0.75);
+    color: #705d48;
     font-size: 12px;
     padding: 9px
 }
@@ -3387,7 +3389,10 @@ ul.project_files li a i {
     font-size: 35px
 }
 .login {
-    background: #F7F7F7
+    background-image: url("../img/fondo1.jpg")
+}
+.login_panel{
+    background-color: rgba(0, 0, 0, 0.527)
 }
 .login .fa-paw {
     font-size: 26px
@@ -3471,7 +3476,7 @@ form:after {
     padding: 25px 0 0;
     position: relative;
     text-align: center;
-    text-shadow: 0 1px 0 #fff;
+    text-shadow: 0 1px 0 rgb(248, 248, 248);
     min-width: 280px
 }
 .login_content a,
@@ -3485,7 +3490,8 @@ form:after {
     font: normal 25px Helvetica, Arial, sans-serif;
     letter-spacing: -0.05em;
     line-height: 20px;
-    margin: 10px 0 30px
+    margin: 10px 0 30px;
+    color: rgba(248, 248, 248, 0.253);
 }
 .login_content h1:before,
 .login_content h1:after {

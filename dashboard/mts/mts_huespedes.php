@@ -9,10 +9,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-  <title>Reservas online</title>
-  <?php 
-  require_once("php/estilos.php");
- ?>
+  <title>Listado reservaciones</title>
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="fonts\css\fontawesome-all.min.css" rel="stylesheet">
+  <link href="font\css\font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Custom Theme Style -->
+  <link href="css/custom.css" rel="stylesheet">
+
 </head>
 
 <body class="nav-md">
@@ -36,7 +42,7 @@
           <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="x_panel">
                       <div class="x_title">
-                        <h2>Lista de reservas en linea</h2>
+                        <h2>Lista de reservas</h2>
                         <div class="clearfix"></div>
                       </div>
                       <div class="x_content">
@@ -195,9 +201,14 @@
       <!-- /footer content -->
     </div>
   </div>
-  <?php 
-  require_once("php/scrips.php");
- ?>
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+  <!-- Bootstrap -->
+  <script src="js/bootstrap.js"></script>>
+  <!-- bootstrap-progressbar -->
+  <script src="js/bootstrap-progressbar.js"></script>
+  <!-- Custom Theme Scripts -->
+  <script src="js/custom.js"></script>
 
 </body>
 
