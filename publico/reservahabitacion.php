@@ -31,7 +31,7 @@
     <header>       
             <?php include("components/menu.php") ?>
         </header>
-        <div class="font-cover" id="headparallax">
+        <div class="font-cover" id="headparallax2">
 
             <div class="page-content custom-img-background dark custom-col-padding mb-100">
 
@@ -134,7 +134,7 @@
 
         <div class="card-column">
             <article class="cardh">
-                <a href="#" class="cardh-image" style=" background-image: url(https://static.pexels.com/photos/7075/people-office-group-team-medium.jpg);"></a>
+                <a href="#" class="cardh-image" style=" background-image: url(https://www.flemings-hotels.com/img/flemings-selection-hotel-frankfurt-city-komfort-zimmer.jpg);"></a>
                 <section class="cardh-content">
                     <header class="cardh-header">
                         <div class="col-md-12 centered">
@@ -154,7 +154,7 @@
             </article>
 
             <article class="cardh">
-                <a href="#" class="cardh-image" style=" background-image: url(https://static.pexels.com/photos/7075/people-office-group-team-medium.jpg);"></a>
+                <a href="#" class="cardh-image" style=" background-image: url(http://2q3xk01vwwv9vh0d04dce42y.wpengine.netdna-cdn.com/wp-content/uploads/2018/01/1.jpg);"></a>
                 <section class="cardh-content">
                     <header class="cardh-header">
                         <div class="col-md-12 centered">

@@ -31,7 +31,7 @@
     <header>       
             <?php include("components/menu.php") ?>
         </header>
-        <div class="font-cover" id="headparallax">
+        <div class="font-cover" id="headparallax1">
             <div class="page-content custom-img-background dark custom-col-padding mb-100">
                 <!-- .row start -->
                 <div class="row">
