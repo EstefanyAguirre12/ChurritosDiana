@@ -33,15 +33,15 @@
       <?php include("components/menu.php") ?>
     </header>
 
-    <div class="font-cover" id="headparallax">
+    <div class="font-cover" id="headparallax6">
       <div class="page-content custom-img-background dark custom-col-padding mb-100">       
         <!-- .row start -->
         <div class="row">
             <!-- .col-md-12 start -->
             <div class="col-md-12 centered">
                 <div class="custom-heading style-1" >
-                    <h2><span>Exquisite cuisine</span></h2>
-                    <h2>A FEAST FOR YOUR SENSES</h2>
+                    <h2><span>Barolo Hotel</span></h2>
+                    <h2>REUNIONES Y CONFERENCIAS</h2>
                     <!-- .divider.style-2 start -->
                     <div class="divider style-2 center">
                         <span class="hr-double left"></span>
@@ -86,33 +86,23 @@
         <section class="section">
           <div class="col-md-12 centered">
             <div class="custom-heading style-1" >    
-              <h1><span>NOM NOM gallery</span></h1>
+              <h1><span>Galeria</span></h1>
             </div>
             <div class="grid">
               <div class="image">
-                <div class="image__details">
-                  jelly-o brownie sweet
-                </div>
+               
               </div>
               <div class="image image--large">
-                <div class="image__details">
-                  Muffin jelly gingerbread 
-                </div>
+                
               </div>
               <div class="image image--medium">
-                <div class="image__details">
-                  sesame snaps chocolate
-                </div>
+                
               </div>
               <div class="image image--large">
-                <div class="image__details">
-                  Oat cake
-                </div>
+               
               </div>
               <div class="image image--medium">
-                <div class="image__details">
-                  Dragée pudding brownie
-                </div>
+               
               </div>
             </div>
           </div>

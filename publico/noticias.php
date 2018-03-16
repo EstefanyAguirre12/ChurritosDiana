@@ -26,7 +26,7 @@
             <?php include("components/menu.php") ?>
         </header>
      
-        <div class="font-cover" id="headparallax">
+        <div class="font-cover" id="headparallax7">
 
             <div class="page-content custom-img-background dark custom-col-padding mb-100">
 
@@ -99,7 +99,7 @@
                 </div>
 
 
-                <div class="font-cover" id="headparallax">
+                <div class="font-cover" id="headparallax7">
 
                     <div class="page-content custom-img-background dark custom-col-padding mb-100">
 
@@ -109,9 +109,9 @@
                             <div class="col-md-12 centered">
                                 <div class="custom-heading style-1">
                                     <h2>
-                                        <span>Exquisite cuisine</span>
+                                        <span>Barolo Hotel</span>
                                     </h2>
-                                    <h2>A FEAST FOR YOUR SENSES</h2>
+                                    <h2>Disfruta de nuestras promociones</h2>
 
                                     <!-- .divider.style-2 start -->
                                     <div class="divider style-2 center">
