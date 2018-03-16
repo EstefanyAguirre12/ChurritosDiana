@@ -8,9 +8,9 @@
                         <h1 class="title-widget">Servicios</h1>
                         
                         <ul>
-                            <li><a  href="../reservahabitacion.php"><i class="fa fa-angle-double-right"></i> Reserva habitaciones</a></li>
-                            <li><a  href="../reservaconferencia.php"><i class="fa fa-angle-double-right"></i> Visita nuestro restaurante</a></li>
-                            <li><a  href="../noticias.php"><i class="fa fa-angle-double-right"></i> Consulta Promociones y eventos</a></li>
+                            <li><a  href="reservahabitacion.php"><i class="fa fa-angle-double-right"></i> Reserva habitaciones</a></li>
+                            <li><a  href="reservaconferencia.php"><i class="fa fa-angle-double-right"></i> Visita nuestro restaurante</a></li>
+                            <li><a  href="noticias.php"><i class="fa fa-angle-double-right"></i> Consulta Promociones y eventos</a></li>
                         </ul>
             
                     </li>
