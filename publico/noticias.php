@@ -130,57 +130,18 @@
                             <div class="">
                                 <div class="col-md-12 centered">
                                     <div class="custom-heading style-1">
-                                        <h2>Promociones</h2>
+                                        <h2>Descuento</h2>
 
                                     </div>
-                                    <p>ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                                        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
-                                        vitae dicta sunt explicabo.</p>
+                                    <p>Disfruta de un descuento en la reserva de una habitacion los primeros 3 meses del hotel. la reserva incluye 2 desayunos gratis y todos los beneficios dela habitacion ven y disfruta</p>
 
-                                    <a class="discover_more has_transition_400" href="#">DISCOVER MORE</a>
+                                    <a class="discover_more has_transition_400" href="#">Descubre mas</a>
 
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li class="cards__item">
-                        <div class="card">
-                            <div class="card__image card__image--river"></div>
-                            <div class="">
-                                <div class="col-md-12 centered">
-                                    <div class="custom-heading style-1">
-                                        <h2>Promociones</h2>
-
-                                    </div>
-                                    <p>ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                                        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
-                                        vitae dicta sunt explicabo.</p>
-
-                                    <a class="discover_more has_transition_400" href="#">DISCOVER MORE</a>
-
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="cards__item">
-                        <div class="card">
-                            <div class="card__image card__image--record"></div>
-                            <div class="">
-                                <div class="col-md-12 centered">
-                                    <div class="custom-heading style-1">
-                                        <h2>Promociones</h2>
-
-                                    </div>
-                                    <p>ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                                        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
-                                        vitae dicta sunt explicabo.</p>
-
-                                    <a class="discover_more has_transition_400" href="#">DISCOVER MORE</a>
-
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+                   
                 </ul>
                 <!--- Tarjetas salas-->
 
