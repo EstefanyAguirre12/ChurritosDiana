@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <title>BAROLO</title>
         <script src="https://maps.googleapis.com/maps/api/js"></script>
-<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
-            <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Stylesheets -->
         <link rel="stylesheet" href="../web/css/bootstrap.min.css" />
@@ -25,7 +24,7 @@
 
         <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'>
 
-       <link rel="stylesheet" href="../web/css/principal.css">
+        <link rel="stylesheet" href="../web/css/principal.css">
         <!-- css del  mapa-->
 
         <!-- Google Web fonts -->
@@ -42,37 +41,34 @@
         </header>
         
         <div class="font-cover" id="headparallax1">
-        <div class="page-content custom-img-background dark custom-col-padding mb-100">
-            <!-- .row start -->
-            <div class="row">
-                <!-- .col-md-12 start -->
-                <div class="col-md-12 centered">
-                    <div class="custom-heading style-1">
-                        <h2>
-                            <span>Hotel Barolo</span>
-                        </h2>
-                        <h2>RESERVA DE CONFERENCIA</h2>
-                        <!-- .divider.style-2 start -->
-                        <div class="divider style-2 center">
-                            <span class="hr-double left"></span>
+            <div class="page-content custom-img-background dark custom-col-padding mb-100">
+                <!-- .row start -->
+                <div class="row">
+                    <!-- .col-md-12 start -->
+                    <div class="col-md-12 centered">
+                        <div class="custom-heading style-1">
+                            <h2>
+                                <span>Hotel Barolo</span>
+                            </h2>
+                            <h2>RESERVA DE CONFERENCIA</h2>
+                            <!-- .divider.style-2 start -->
+                            <div class="divider style-2 center">
+                                <span class="hr-double left"></span>
 
-                            <span class="hr-double right"></span>
+                                <span class="hr-double right"></span>
+                            </div>
                         </div>
+                        <!-- .custom-heading.style-1 end -->
                     </div>
-                    <!-- .custom-heading.style-1 end -->
+                    <!-- .col-md-12 end -->
                 </div>
-                <!-- .col-md-12 end -->
+                <!-- .row end -->
             </div>
-            <!-- .row end -->
+            <!-- .page-content end -->
         </div>
-        <!-- .page-content end -->
-    </div>
-
-       
 
         <!-- .page-content start -->
- <!-- .page-content start -->
- <div class="page-content altura">
+        <div class="page-content altura">
             <div class="container">
                 <!-- .row start -->
                 <div class="row">
@@ -140,46 +136,30 @@
         </div>
         <!-- .page-content end -->
 
-
-
-        <!-- Barolochi roland's code-->
-
-
-
-
-
         <div class="font-cover" id="headparallax">
+            <div class="page-content custom-img-background dark custom-col-padding mb-100">
+                <!-- .row start -->
+                <div class="row">
+                    <!-- .col-md-12 start -->
+                    <div class="col-md-12 centered">
+                        <div class="custom-heading style-1" >
+                            <h2><span>Barolo</span></h2>
+                            <h2>PALADINO DELL'OSPITALITA</h2>
 
-        <div class="page-content custom-img-background dark custom-col-padding mb-100">
-                
-              <!-- .row start -->
-              <div class="row">
-                  <!-- .col-md-12 start -->
-                  <div class="col-md-12 centered">
-                      <div class="custom-heading style-1" >
-                          <h2><span>Barolo</span></h2>
-                          <h2>PALADINO DELL'OSPITALITA</h2>
-
-                          <!-- .divider.style-2 start -->
-                          <div class="divider style-2 center">
-                              <span class="hr-double left"></span>
-                              
-                              <span class="hr-double right"></span>
-                          </div>
-                      </div><!-- .custom-heading.style-1 end -->
-                  </div><!-- .col-md-12 end -->
-              </div><!-- .row end -->
-        </div><!-- .page-content end -->
-
-
-    </div>
+                            <!-- .divider.style-2 start -->
+                            <div class="divider style-2 center">
+                                <span class="hr-double left"></span>                     
+                                <span class="hr-double right"></span>
+                            </div>
+                        </div><!-- .custom-heading.style-1 end -->
+                    </div><!-- .col-md-12 end -->
+                </div><!-- .row end -->
+            </div><!-- .page-content end -->
+        </div>
         
-
-    
-        <!--- Tarjetas salas-->
+        <!--- Tarjetas -->
         <ul class="cards">
             <div class="col-md-12 centered">
-
                 <div class="custom-heading style-1 altura">
                     <h1>
                         <span>Nuestros servicios</span>
@@ -194,10 +174,8 @@
                             <div class="custom-heading style-1">
                                 <h2>Habitaciones</h2>
                             </div>
-                            <p>ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                                totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                                dicta sunt explicabo.</p>
-                            <a class="discover_more has_transition_400" href="#">DISCOVER MORE</a>
+                            <p>Servicio de Hospedaje, en habitaciones sencillas y dobles, con ambiente acogedor, para el turista de negocios.</p>
+                            <a class="discover_more has_transition_400" href="#">VER MAS</a>
                         </div>
                     </div>
                 </div>
@@ -210,10 +188,8 @@
                             <div class="custom-heading style-1">
                                 <h2>Salas de conferencia</h2>
                             </div>
-                            <p>ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                                totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                                dicta sunt explicabo.</p>
-                            <a class="discover_more has_transition_400" href="#">DISCOVER MORE</a>
+                            <p>Tres salones, para el desarrollo de eventos sociales y corporativos. Con capacidad total para 150 personas.</p>
+                            <a class="discover_more has_transition_400" href="#">VER MAS</a>
                         </div>
                     </div>
                 </div>
@@ -226,47 +202,35 @@
                             <div class="custom-heading style-1">
                                 <h2>Restaurante</h2>
                             </div>
-                            <p>ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                                totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                                dicta sunt explicabo.</p>
-                            <a class="discover_more has_transition_400" href="#">DISCOVER MORE</a>
+                            <p>Servicio a la carta de comida Italiana. Deliciosas elecciones para que disfrutes no solo de tu estadia sino de la comida.</p>
+                            <a class="discover_more has_transition_400" href="#">VER MAS</a>
                         </div>
                     </div>
                 </div>
             </li>
         </ul>
-        <!--- Tarjetas salas-->
+        <!--- Tarjetas -->
 
-
-       
-
+        <div class="map">
+            <div id="map"></div>
+            <div class="map-c">
+                <h1>BAROLO HOTEL</h1>
+                <p>Somos un hotel con un concepto integrado de Restaurante, Spazio Gourmet y Salones para eventos.</p>
+                <div class="det"><i class="fa fa-map-marker"></i> Colonia Escalon 81 Avenida Norte, 11 calle poninete 730</div>
+                <div class="det"><i class="fa fa-phone"></i> 001 2045 509</div>
+                <div class="det"><i class="fa fa-globe"></i> www.barolo.com</div>
     
-  <div class="map">
-  <div id="map"></div>
-  <div class="map-c">
-    <h1>BAROLO HOTEL</h1>
-    <p>Somos un hotel con un concepto integrado de Restaurante, Spazio Gourmet y Salones para eventos.</p>
-    <div class="det"><i class="fa fa-map-marker"></i> Colonia Escalon 81 Avenida Norte, 11 calle poninete 730</div>
-    <div class="det"><i class="fa fa-phone"></i> 001 2045 509</div>
-    <div class="det"><i class="fa fa-globe"></i> www.barolo.com</div>
-    
-  </div>
-</div>
+            </div>
+        </div>
+
         <footer class="footer1">
             <?php include("components/footer.php") ?>
         </footer>
 
-
         <!--Mis scripts-->
-
-  
         <script src="../web/js/map.js"></script>
         <!--Scrip del mapa-->
         <script  src="../web/js/menu.js"></script>
-
-
-
-
+ 
     </body>
-
 </html>
