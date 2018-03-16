@@ -4,6 +4,8 @@
     <head>
         <meta charset="UTF-8">
         <title>BAROLO</title>
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Stylesheets -->
@@ -20,12 +22,8 @@
         <link rel="stylesheet" href="../web/css/responsive.css" />
         <!-- responsive styles -->
 
+        <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'>
 
-        <link href='https://fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic' rel='stylesheet'
-            type='text/css'>
-        <!--fuentes mapa google-->
-        <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700' rel='stylesheet' type='text/css'>
-        <!--mapa google-->
         <link rel="stylesheet" href="../web/css/principal.css">
         <!-- css del  mapa-->
 
@@ -42,110 +40,39 @@
             <?php include("components/menu.php") ?>
         </header>
         
-        <video id="video-background" poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/fashion.jpg" playsinline autoplay
-            muted loop>
-            <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/fashion.webm" type="video/webm">
-            <source src="http://thenewcode.com/assets/videos/fashion.mp4" type="video/mp4">
-        </video>
+        <div class="font-cover" id="headparallax1">
+        <div class="page-content custom-img-background dark custom-col-padding mb-100">
+            <!-- .row start -->
+            <div class="row">
+                <!-- .col-md-12 start -->
+                <div class="col-md-12 centered">
+                    <div class="custom-heading style-1">
+                        <h2>
+                            <span>Hotel Barolo</span>
+                        </h2>
+                        <h2>RESERVA DE CONFERENCIA</h2>
+                        <!-- .divider.style-2 start -->
+                        <div class="divider style-2 center">
+                            <span class="hr-double left"></span>
 
-        <!-- .page-content start -->
-        <div class="page-content">
-            <div class="container">
-                <!-- .row start -->
-                <div class="row">
-                    <!-- .col-md-12 start -->
-                    <div class="col-md-12">
-                        <div class="item">
-                            <!-- .event-item-container start -->
-                            <ul class="event-item-container">
-
-                                <!-- .event-item-list.event-item-content start -->
-                                <li class="event-item-list event-item-content centered">
-                                    <div class="custom-heading style-1">
-                                        <h3>
-                                            <span>Lorem</span>
-                                        </h3>
-                                        <h3>Lorem ipsum</h3>
-
-                                        <!-- .divider.style-1 start -->
-                                        <div class="divider style-1 center">
-                                            <span class="hr-simple left"></span>
-
-                                            <span class="hr-simple right"></span>
-                                        </div>
-                                    </div>
-                                    <!-- .custom-heading.style-2 end -->
-                                    <ul class="article-meta">
-                                        <li>Lorem</li>
-                                        <li>Ipsum</li>
-                                        <li>Dolor </li>
-                                    </ul>
-                                    <!-- .article-meta end -->
-                                    <p>ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                                        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
-                                        vitae dicta sunt explicabo.</p>
-                                    <a class="discover_more has_transition_400" href="reservhabitacion.html">DISCOVER MORE</a>
-                                </li>
-                                <!-- .event-item-list.event-item-content end -->
-                            </ul>
-                            <!-- .event-item-container end -->
-                        </div>
-
-                        <div class="item">
-                            <!-- .event-item-container start -->
-                            <ul class="event-item-container">
-
-                                <!-- .event-item-list.event-item-content start -->
-                                <li class="event-item-list event-item-content centered">
-                                    <div class="custom-heading style-1">
-                                        <h3>
-                                            <span>Lorem</span>
-                                        </h3>
-                                        <h3>Lorem ipsum</h3>
-
-                                        <!-- .divider.style-1 start -->
-                                        <div class="divider style-1 center">
-                                            <span class="hr-simple left"></span>
-
-                                            <span class="hr-simple right"></span>
-                                        </div>
-                                    </div>
-                                    <!-- .custom-heading.style-2 end -->
-                                    <ul class="article-meta">
-                                        <li>Lorem</li>
-                                        <li>Ipsum</li>
-                                        <li>Dolor </li>
-                                    </ul>
-                                    <!-- .article-meta end -->
-                                    <p>ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                                        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
-                                        vitae dicta sunt explicabo.</p>
-                                    <a class="discover_more has_transition_400" href="reservhabitacion.html">DISCOVER MORE</a>
-                                </li>
-                                <!-- .event-item-list.event-item-content end -->
-                            </ul>
-                            <!-- .event-item-container end -->
+                            <span class="hr-double right"></span>
                         </div>
                     </div>
-                    <!-- .col-md-12 end -->
+                    <!-- .custom-heading.style-1 end -->
                 </div>
-                <!-- .row end -->
+                <!-- .col-md-12 end -->
             </div>
-            <!-- .container end -->
+            <!-- .row end -->
         </div>
         <!-- .page-content end -->
+    </div>
 
+       
 
         <!-- .page-content start -->
 
         <!-- Barolochi roland's code-->
 
-        <!-- Google map-->
-        <div class="container mapache">
-            <h1 class="textinho">Nuestra Ubicacion</h1>
-            <div id="map_container"></div>
-            <div id="map"></div>
-        </div>
 
 
 
@@ -210,51 +137,123 @@
             </li>
         </ul>
         <!--- Tarjetas salas-->
+        <div class="font-cover" id="headparallax">
+
+        <div class="page-content custom-img-background dark custom-col-padding mb-100">
+                
+              <!-- .row start -->
+              <div class="row">
+                  <!-- .col-md-12 start -->
+                  <div class="col-md-12 centered">
+                      <div class="custom-heading style-1" >
+                          <h2><span>Barolo</span></h2>
+                          <h2>PALADINO DELL'OSPITALITA</h2>
+
+                          <!-- .divider.style-2 start -->
+                          <div class="divider style-2 center">
+                              <span class="hr-double left"></span>
+                              
+                              <span class="hr-double right"></span>
+                          </div>
+                      </div><!-- .custom-heading.style-1 end -->
+                  </div><!-- .col-md-12 end -->
+              </div><!-- .row end -->
+        </div><!-- .page-content end -->
 
 
+    </div>
+        
 
+ <!-- .page-content start -->
+ <div class="page-content altura">
+            <div class="container">
+                <!-- .row start -->
+                <div class="row">
+                    <!-- .col-md-12 start -->
+                    <div class="col-md-12">
+                        <div class="item">
+                            <!-- .event-item-container start -->
+                            <ul class="event-item-container">
 
-        <div class="cont">
-            <div class="form sign-in">
-                <h2> Nuestra mision</h2>
-                <label>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-                        ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
-                        fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
-                        justo. Nullam dictum felis eu pede mollis pretium.</p>
-                </label>
-            </div>
-            <div class="sub-cont">
-                <div class="img">
-                    <!--panel-->
-                    <div class="img__text m--up">
-                        <h2>New here?</h2>
-                        <p>Sign up and discover great amount of new opportunities!</p>
+                                <!-- .event-item-list.event-item-content start -->
+                                <li class="event-item-list event-item-content centered">
+                                    <div class="custom-heading style-1">
+                                        <h3>
+                                            <span>Barolo</span>
+                                        </h3>
+                                        <h3>Mision</h3>
+
+                                        <!-- .divider.style-1 start -->
+                                        <div class="divider style-1 center">
+                                            <span class="hr-simple left"></span>
+
+                                            <span class="hr-simple right"></span>
+                                        </div>
+                                    </div>
+                                    <p>ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                                        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+                                        vitae dicta sunt explicabo.</p>
+                                    <a class="discover_more has_transition_400" href="reservhabitacion.html">DISCOVER MORE</a>
+                                </li>
+                                <!-- .event-item-list.event-item-content end -->
+                            </ul>
+                            <!-- .event-item-container end -->
+                        </div>
+
+                        <div class="item">
+                            <!-- .event-item-container start -->
+                            <ul class="event-item-container">
+
+                                <!-- .event-item-list.event-item-content start -->
+                                <li class="event-item-list event-item-content centered">
+                                    <div class="custom-heading style-1">
+                                        <h3>
+                                            <span>Barolo</span>
+                                        </h3>
+                                        <h3>Vision</h3>
+
+                                        <!-- .divider.style-1 start -->
+                                        <div class="divider style-1 center">
+                                            <span class="hr-simple left"></span>
+
+                                            <span class="hr-simple right"></span>
+                                        </div>
+                                    </div>
+                                    <!-- .custom-heading.style-2 end -->
+                                    <!-- .article-meta end -->
+                                    <p>ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                                        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+                                        vitae dicta sunt explicabo.</p>
+                                    <a class="discover_more has_transition_400" href="reservhabitacion.html">DISCOVER MORE</a>
+                                </li>
+                                <!-- .event-item-list.event-item-content end -->
+                            </ul>
+                            <!-- .event-item-container end -->
+                        </div>
                     </div>
-                    <!--panel-->
-                    <div class="img__text m--in">
-                        <h2>One of us?</h2>
-                        <p>If you already has an account, just sign in. We've missed you!</p>
-                    </div>
-                    <!--panel-->
-                    <div class="img__btn">
-                        <span class="m--up">vision</span>
-                        <span class="m--in">mision</span>
-                    </div>
+                    <!-- .col-md-12 end -->
                 </div>
-                <div class="form sign-up">
-                    <h2>Nuestra vision</h2>
-                    <label>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam
-                            felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
-                            pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet
-                            a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
-                    </label>
-                </div>
+                <!-- .row end -->
             </div>
+            <!-- .container end -->
         </div>
+        <!-- .page-content end -->
+
+
+
+       
+
+  <div class="map">
+  <div id="map"></div>
+  <div class="map-c">
+    <h1>ABC Stores</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium id cumque est dolores voluptatibus.</p>
+    <div class="det"><i class="fa fa-map-marker"></i> 102 New Road, New City</div>
+    <div class="det"><i class="fa fa-phone"></i> 001 2045 509</div>
+    <div class="det"><i class="fa fa-globe"></i> www.abcstores.com</div>
+    
+  </div>
+</div>
 
         <footer class="footer1">
             <?php include("components/footer.php") ?>
@@ -263,11 +262,6 @@
 
         <!--Mis scripts-->
         <script src="../web/js/jquery.min.js"></script>
-        <!--Librerias de ajax-->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByIz1CN1nmKAnxuAdYyzHXesX3aX7fGYQ&callback=initMap" async
-            defer></script>
-        <!--MY API PASSWORD-->
-        <script src='../web/js/jquery.noisy.min.js'></script>
         <script src="../web/js/map.js"></script>
         <!--Scrip del mapa-->
         <script src="../web/js/index.js"></script>

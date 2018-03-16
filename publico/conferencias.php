@@ -16,7 +16,8 @@
       <link rel="stylesheet" href="../web/css/style.css"/><!-- template styles -->
       <link rel="stylesheet" href="../web/css/color-default.css"/><!-- default template color styles -->   
       <link rel="stylesheet" href="../web/css/responsive.css"/><!-- responsive styles -->
-
+      <link rel="stylesheet" href="../web/css/animate.css"/><!-- animation for content -->
+      
 
 
       <!-- Google Web fonts -->
@@ -53,62 +54,32 @@
           </div><!-- .page-content end -->
       </div>
 
-      <!--- Tarjetas salas--> 
-      <ul class="cards">
-        <div class="col-md-12 centered">
-          <div class="custom-heading style-1 altura" >    
-            <h1><span>Salas de conferencia</span></h1>
-          </div>     
-        </div>
-        <li class="cards__item">
-          <div class="card">
-            <div class="card__image card__image--fence"></div>
-            <div class="">
-              <div class="col-md-12 centered">
-                <div class="custom-heading style-1" >
-                  <h2>Habitacion 200</h2>             
-                </div>
-                <p>ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                <a class="discover_more has_transition_400" href="#">DISCOVER MORE</a>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="cards__item">
-          <div class="card">
-            <div class="card__image card__image--river"></div>
-            <div class="">
-              <div class="col-md-12 centered">
-                <div class="custom-heading style-1" >
-                  <h2>Habitacion 200</h2>            
-                </div>
-                <p>ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                <a class="discover_more has_transition_400" href="#">DISCOVER MORE</a>              
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="cards__item">
-          <div class="card">
-            <div class="card__image card__image--record"></div>
-            <div class="">
-              <div class="col-md-12 centered">
-                <div class="custom-heading style-1" >
-                  <h2>Habitacion 200</h2>         
-                </div>
-                <p>ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                  totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-  
-                <a class="discover_more has_transition_400" href="#">DISCOVER MORE</a>
-            
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
-      <!--- Tarjetas salas-->
+       <!-- .page-content start -->
+       <div class="page-content">
+       <div class="container">
+           <!-- .row start -->
+           <div class="row">
+                <div class="col-md-12 centered">
+                   <div class="custom-heading style-1 altura" >
+                           <h2><span>Reserva ahora</span></h2>
+                           <h2>Realiza tus conferencias con nosotros</h2>
+
+                           <!-- .divider.style-2 start -->
+                           <div class="divider style-2 center">
+                               <span class="hr-double left"></span>
+                               
+                               <span class="hr-double right"></span>
+                           </div>
+                       </div><!-- .custom-heading.style-1 end -->
+
+                       <p>Te ofrecemos una serie de opciones de distintas salas con capacidad de 150 personas cada una, tu nos dices lo que quieres y nosotros lo cumplimos.</p>
+   
+                       <a class="discover_more has_transition_400" href="reservaconferencia.php">RESERVAR AHORA</a>
+                           
+               </div>
+           </div><!-- .row end -->
+       </div><!-- .container end -->
+   </div><!-- .page-content end -->
 
       <!-- .row start -->
       <div class="row">

@@ -5,19 +5,15 @@
         <meta charset="UTF-8">
         <title>BAROLO</title>
 
-
+        <!-- Stylesheets -->
         <link rel='stylesheet prefetch' href='../web/css/megayg.css'>
-        <link rel="stylesheet" href="../web/css/reset.min.css" />
-        <!-- bootstrap grid -->
-        <link rel="stylesheet" href="../web/css/color-default.css" />
-        <!-- default template color styles -->
-        <link rel="stylesheet" href="../web/css/responsive.css" />
-        <!-- responsive styles -->
+        <link rel="stylesheet" href="../web/css/reset.min.css"/><!-- bootstrap grid -->
+        <link rel="stylesheet" href="../web/css/color-default.css"/><!-- default template color styles -->   
+        <link rel="stylesheet" href="../web/css/responsive.css"/><!-- responsive styles -->
         <link rel="stylesheet" href="../web/css/calendario.css" />
-        <!-- responsive styles -->
-        <link rel="stylesheet" href="../web/css/style.css" />
-        <!-- responsive styles -->
+        <link rel="stylesheet" href="../web/css/style.css"/><!-- template styles -->
 
+    
         <!-- Google Web fonts -->
         <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Suranna' rel='stylesheet' type='text/css'>
@@ -31,6 +27,7 @@
     <header>       
             <?php include("components/menu.php") ?>
         </header>
+
         <div class="font-cover" id="headparallax1">
             <div class="page-content custom-img-background dark custom-col-padding mb-100">
                 <!-- .row start -->
@@ -224,8 +221,10 @@
         <footer class="footer1">
             <?php include("components/footer.php") ?>
         </footer>
+        <script src="../web/js/menu.js"></script>
 
-        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src="../web/js/jquery.min.js"></script><!-- jQuery library -->
+
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js'></script>
