@@ -7,19 +7,15 @@
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <!-- Stylesheets -->
-        <link rel="stylesheet" href="../web/css/bootstrap.min.css" />
-        <!-- bootstrap grid -->
-        <link rel="stylesheet" href="../web/css/bootstrap-theme.min.css" />
-        <!-- bootstrap theme -->
-        <link rel="stylesheet" href="../web/css/reset.min.css" />
-        <!-- bootstrap grid -->
-        <link rel="stylesheet" href="../web/css/style.css" />
-        <!-- template styles -->
-        <link rel="stylesheet" href="../web/css/color-default.css" />
-        <!-- default template color styles -->
-        <link rel="stylesheet" href="../web/css/responsive.css" />
+        <link rel="stylesheet" href="../web/css/bootstrap.min.css"/><!-- bootstrap grid -->
+        <link rel="stylesheet" href="../web/css/bootstrap-theme.min.css"/><!-- bootstrap theme -->
+        <link rel="stylesheet" href="../web/css/reset.min.css"/><!-- bootstrap grid -->
+        <link rel="stylesheet" href="../web/css/style.css"/><!-- template styles -->
+        <link rel="stylesheet" href="../web/css/color-default.css"/><!-- default template color styles -->   
+        <link rel="stylesheet" href="../web/css/responsive.css"/><!-- responsive styles -->
+        
+ 
         <!-- responsive styles -->
 
         <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'>
@@ -157,18 +153,19 @@
             </div><!-- .page-content end -->
         </div>
         
-        <!--- Tarjetas -->
-        <ul class="cards">
-            <div class="col-md-12 centered">
-                <div class="custom-heading style-1 altura">
+                <div class="custom-heading style-1 altura centered">
                     <h1>
                         <span>Nuestros servicios</span>
                     </h1>
                 </div>
+        <!--- Tarjetas -->
+        <ul class="cards">
+            <div class="col-md-12 centered">
+                
             </div>
             <li class="cards__item">
                 <div class="card">
-                    <div class="card__image card__image--fence"></div>
+                    <div class="card__image card__image--flowers"></div>
                     <div class="">
                         <div class="col-md-12 centered">
                             <div class="custom-heading style-1">
@@ -194,6 +191,7 @@
                     </div>
                 </div>
             </li>
+            
             <li class="cards__item">
                 <div class="card">
                     <div class="card__image card__image--record"></div>
@@ -219,18 +217,19 @@
                 <div class="det"><i class="fa fa-map-marker"></i> Colonia Escalon 81 Avenida Norte, 11 calle poninete 730</div>
                 <div class="det"><i class="fa fa-phone"></i> 001 2045 509</div>
                 <div class="det"><i class="fa fa-globe"></i> www.barolo.com</div>
-    
             </div>
         </div>
 
         <footer class="footer1">
             <?php include("components/footer.php") ?>
         </footer>
+        <script  src="../web/js/menu.js"></script>
 
         <!--Mis scripts-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByIz1CN1nmKAnxuAdYyzHXesX3aX7fGYQ&callback=initMap"
+        async defer></script><!--MY API PASSWORD--> 
         <script src="../web/js/map.js"></script>
         <!--Scrip del mapa-->
-        <script  src="../web/js/menu.js"></script>
  
     </body>
 </html>

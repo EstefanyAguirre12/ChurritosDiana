@@ -1,117 +1,19 @@
-console.clear();
-
-var app = function () {
-	var body = void 0;
-	var menu = void 0;
-	var menuItems = void 0;
-
-	var init = function init() {
-		body = document.querySelector('body');
-		menu = document.querySelector('.menu-icon');
-		menuItems = document.querySelectorAll('.nav__list-item');
-
-		applyListeners();
-	};
-
-	var applyListeners = function applyListeners() {
-		menu.addEventListener('click', function () {
-			return toggleClass(body, 'nav-active');
-		});
-	};
-
-	var toggleClass = function toggleClass(element, stringClass) {
-		if (element.classList.contains(stringClass)) element.classList.remove(stringClass);else element.classList.add(stringClass);
-	};
-
-	init();
-}();
-
-
-// Params
-let mainSliderSelector = '.main-slider',
-    navSliderSelector = '.nav-slider',
-    interleaveOffset = 0.5;
-
-// Main Slider
-let mainSliderOptions = {
-      loop: true,
-      speed:1000,
-      autoplay:{
-        delay:3000
-      },
-      loopAdditionalSlides: 10,
-      grabCursor: true,
-      watchSlidesProgress: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      on: {
-        init: function(){
-          this.autoplay.stop();
-        },
-        imagesReady: function(){
-          this.el.classList.remove('loading');
-          this.autoplay.start();
-        },
-        slideChangeTransitionEnd: function(){
-          let swiper = this,
-              captions = swiper.el.querySelectorAll('.caption');
-          for (let i = 0; i < captions.length; ++i) {
-            captions[i].classList.remove('show');
-          }
-          swiper.slides[swiper.activeIndex].querySelector('.caption').classList.add('show');
-        },
-        progress: function(){
-          let swiper = this;
-          for (let i = 0; i < swiper.slides.length; i++) {
-            let slideProgress = swiper.slides[i].progress,
-                innerOffset = swiper.width * interleaveOffset,
-                innerTranslate = slideProgress * innerOffset;
-            swiper.slides[i].querySelector(".slide-bgimg").style.transform =
-              "translate3d(" + innerTranslate + "px, 0, 0)";
-          }
-        },
-        touchStart: function() {
-          let swiper = this;
-          for (let i = 0; i < swiper.slides.length; i++) {
-            swiper.slides[i].style.transition = "";
-          }
-        },
-        setTransition: function(speed) {
-          let swiper = this;
-          for (let i = 0; i < swiper.slides.length; i++) {
-            swiper.slides[i].style.transition = speed + "ms";
-            swiper.slides[i].querySelector(".slide-bgimg").style.transition =
-              speed + "ms";
-          }
-        }
-      }
-    };
-let mainSlider = new Swiper(mainSliderSelector, mainSliderOptions);
-
-// Navigation Slider
-let navSliderOptions = {
-      loop: true,
-      loopAdditionalSlides: 10,
-      speed:1000,
-      spaceBetween: 5,
-      slidesPerView: 5,
-      centeredSlides : true,
-      touchRatio: 0.2,
-      slideToClickedSlide: true,
-      direction: 'vertical',
-      on: {
-        imagesReady: function(){
-          this.el.classList.remove('loading');
-        },
-        click: function(){
-          mainSlider.autoplay.stop();
-        }
-      }
-    };
-let navSlider = new Swiper(navSliderSelector, navSliderOptions);
-
-// Matching sliders
-mainSlider.controller.control = navSlider;
-navSlider.controller.control = mainSlider;
+$(document).ready(function() {
+	var n = '#nav', no = 'nav-open';
+	$('.nav-menu').click(function() {
+		if ($(n).hasClass(no)) {
+			//$(n).removeClass(no);
+			$(n).animate({height:0},300);
+			setTimeout(function(){
+				$(n).removeClass(no).removeAttr('style');
+			},320);
+		}
+		else {
+			var newH = $(n).css('height','auto').height();
+			$(n).height(0).animate({height:newH},300);
+			setTimeout(function(){
+				$(n).addClass(no).removeAttr('style');
+			},320);	
+		}
+	});
+});

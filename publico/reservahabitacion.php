@@ -188,8 +188,7 @@
         <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js'></script>
         <script src='https://www.jqueryscript.net/demo/jQuery-Plugin-For-Date-Range-Selector-Range-Calendar/js/jquery.rangecalendar.js'></script>
         <script src="../web/js/calendario.js"></script>
-
-        <script src="../web/js/index.js"></script>
+        <script src="../web/js/menu.js"></script>
 
 
 

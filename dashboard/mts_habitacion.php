@@ -308,7 +308,13 @@
                 <div class="x_content">
                 <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
                   <div class="form-group">
-                    <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Nombre bebidad*:</label>
+                    <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Nnumero Habitacione*:</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Capacidad*:</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                       <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
                     </div>
@@ -319,32 +325,25 @@
                       <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
                     </div>
                   </div>
-                  <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">Descripcion: <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <textarea id="textarea" required="required" name="textarea" class="form-control  col-md-7 col-xs-12" ></textarea>
-                        </div>
-                  </div>
                   <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Tipo:*</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
                         <select class="form-control">
-                          <option>Eliga un genero</option>
-                          <option>Desayuno</option>
-                          <option>Almuerzo</option>
-                          <option>Cena</option>
+                          <option>Eliga tipo</option>
+                          <option>Economica</option>
+                          <option>Regular</option>
+                          <option>Premiun</option>
                         </select>
                         </div>
                   </div>
                   <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Tamaño:*</label>
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Estado:*</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
                         <select class="form-control">
-                          <option>Eliga un genero</option>
-                          <option>Grande</option>
-                          <option>Mediano</option>
-                          <option>pequeño</option>
+                          <option>Eliga un estado</option>
+                          <option>Libre</option>
+                          <option>Limpieza</option>
+                          <option>Ocupada</option>
                         </select>
                         </div>
                   </div>

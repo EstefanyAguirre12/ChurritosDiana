@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-  <title>Registros de platos</title>
+  <title>Registros muebles</title>
   <?php 
         require_once("php/estilos.php");
        ?>
@@ -28,7 +28,7 @@
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>Mantenimiento de platos</h3>
+              <h3>Mantenimiento de muebles</h3>
             </div>
           </div>
           <div class="clearfix"></div>
@@ -36,7 +36,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2>Registros de platos</h2>
+                  <h2>Registros de muebles</h2>
                     <ul class="nav navbar-right panel_toolbox">
                         <li>
                           <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -72,19 +72,21 @@
                           <thead>
                             <tr role="row">
                               <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending"
-                                aria-label="Name: activate to sort column descending">Nombre plato</th>
+                                aria-label="Name: activate to sort column descending">Nombres sala</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Descripcion</th>
-                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Precio</th>
-                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">tipo</th>
+                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Capacidad</th>
+                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">costo</th>
+                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Estado</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Editar</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Eliminar</th>
                           </thead>
                           <tbody>
                             <tr role="row" class="odd">
-                              <td >Plato 1</td>
-                              <td >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus, ipsam!</td>
-                              <td >$2.25</td>
-                              <td >Desayuno</td>
+                              <td >Nombres e</td>
+                              <td >Lorem ipsum dolor sit amet consectetur.</td>
+                              <td >300</td>
+                              <td >$300</td>
+                              <td >libre</td>
                               <td>
                                 <button type="button" class="btn btn-round btn-info">
                                   <i class="far fa-edit"></i>
@@ -97,10 +99,11 @@
                               </td>
                             </tr>
                             <tr role="row" class="odd">
-                              <td >Plato 1</td>
-                              <td >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus, ipsam!</td>
-                              <td >$2.25</td>
-                              <td >Desayuno</td>
+                              <td >Nombres e</td>
+                              <td >Lorem ipsum dolor sit amet consectetur.</td>
+                              <td >300</td>
+                              <td >$300</td>
+                              <td >libre</td>
                               <td>
                                 <button type="button" class="btn btn-round btn-info">
                                   <i class="far fa-edit"></i>
@@ -113,138 +116,11 @@
                               </td>
                             </tr>
                             <tr role="row" class="odd">
-                              <td >Plato 1</td>
-                              <td >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus, ipsam!</td>
-                              <td >$2.25</td>
-                              <td >Desayuno</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td >Plato 1</td>
-                              <td >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus, ipsam!</td>
-                              <td >$2.25</td>
-                              <td >Desayuno</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td >Plato 1</td>
-                              <td >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus, ipsam!</td>
-                              <td >$2.25</td>
-                              <td >Desayuno</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td >Plato 1</td>
-                              <td >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus, ipsam!</td>
-                              <td >$2.25</td>
-                              <td >Desayuno</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td >Plato 1</td>
-                              <td >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus, ipsam!</td>
-                              <td >$2.25</td>
-                              <td >Desayuno</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td >Plato 1</td>
-                              <td >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus, ipsam!</td>
-                              <td >$2.25</td>
-                              <td >Desayuno</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td >Plato 1</td>
-                              <td >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus, ipsam!</td>
-                              <td >$2.25</td>
-                              <td >Desayuno</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td >Plato 1</td>
-                              <td >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus, ipsam!</td>
-                              <td >$2.25</td>
-                              <td >Desayuno</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td >Plato 1</td>
-                              <td >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus, ipsam!</td>
-                              <td >$2.25</td>
-                              <td >Desayuno</td>
+                              <td >Nombres e</td>
+                              <td >Lorem ipsum dolor sit amet consectetur.</td>
+                              <td >300</td>
+                              <td >$300</td>
+                              <td >libre</td>
                               <td>
                                 <button type="button" class="btn btn-round btn-info">
                                   <i class="far fa-edit"></i>
@@ -302,7 +178,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2>Agregar nuevo plato</h2>
+                  <h2>Agregar nuevo muebles</h2>
                     <ul class="nav navbar-right panel_toolbox">
                         <li>
                           <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -313,32 +189,25 @@
                 <div class="x_content">
                 <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
                   <div class="form-group">
-                    <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Nombre plato*:</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Precio*:</label>
+                    <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Nombre mueble*:</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                       <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
                     </div>
                   </div>
                   <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">Descripcion: <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">Descrpcion: <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <textarea id="textarea" required="required" name="textarea" class="form-control  col-md-7 col-xs-12" ></textarea>
                         </div>
                   </div>
                   <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Tipo:*</label>
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Estado:*</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
                         <select class="form-control">
-                          <option>Eliga un genero</option>
-                          <option>Desayuno</option>
-                          <option>Almuerzo</option>
-                          <option>Cena</option>
+                          <option>Eliga un estado</option>
+                          <option>libre </option>
+                          <option>ocupado</option>
                         </select>
                         </div>
                   </div>
