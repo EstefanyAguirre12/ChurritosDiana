@@ -25,7 +25,7 @@
        ?>
 
       <!-- page content -->
-      <div class="right_col" role="main" style="min-height: 806px;">
+      <div class="right_col" role="main" class="estilo_righ">
         <div class="">
           <div class="page-title">
             <div class="title_left">
@@ -38,11 +38,13 @@
               <div class="x_panel">
                 <div class="x_title">
                   <h2>Registros de cargos de empleados</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                        <li>
-                          <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                        </li>
-                    </ul>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                      <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                      </a>
+                    </li>
+                  </ul>
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
@@ -72,8 +74,7 @@
                         <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                           <thead>
                             <tr role="row">
-                              <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending"
-                                aria-label="Name: activate to sort column descending">Nombre cargo</th>
+                              <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nombre cargo</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Descripcion</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Editar</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Eliminar</th>
@@ -81,7 +82,8 @@
                           <tbody>
                             <tr role="row" class="odd">
                               <td class="sorting_1">Meseros</td>
-                              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vel eos adipisci esse, aliquam animi.</td>
+                              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vel eos adipisci esse,
+                                aliquam animi.</td>
                               <td>
                                 <button type="button" class="btn btn-round btn-info">
                                   <i class="far fa-edit"></i>
@@ -95,7 +97,8 @@
                             </tr>
                             <tr role="row" class="odd">
                               <td class="sorting_1">Meseros</td>
-                              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vel eos adipisci esse, aliquam animi.</td>
+                              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vel eos adipisci esse,
+                                aliquam animi.</td>
                               <td>
                                 <button type="button" class="btn btn-round btn-info">
                                   <i class="far fa-edit"></i>
@@ -109,7 +112,8 @@
                             </tr>
                             <tr role="row" class="odd">
                               <td class="sorting_1">Meseros</td>
-                              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vel eos adipisci esse, aliquam animi.</td>
+                              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vel eos adipisci esse,
+                                aliquam animi.</td>
                               <td>
                                 <button type="button" class="btn btn-round btn-info">
                                   <i class="far fa-edit"></i>
@@ -123,7 +127,8 @@
                             </tr>
                             <tr role="row" class="odd">
                               <td class="sorting_1">Meseros</td>
-                              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vel eos adipisci esse, aliquam animi.</td>
+                              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vel eos adipisci esse,
+                                aliquam animi.</td>
                               <td>
                                 <button type="button" class="btn btn-round btn-info">
                                   <i class="far fa-edit"></i>
@@ -137,7 +142,8 @@
                             </tr>
                             <tr role="row" class="odd">
                               <td class="sorting_1">Meseros</td>
-                              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vel eos adipisci esse, aliquam animi.</td>
+                              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vel eos adipisci esse,
+                                aliquam animi.</td>
 
                               <td>
                                 <button type="button" class="btn btn-round btn-info">
@@ -152,7 +158,8 @@
                             </tr>
                             <tr role="row" class="odd">
                               <td class="sorting_1">Meseros</td>
-                              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vel eos adipisci esse, aliquam animi.</td>
+                              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vel eos adipisci esse,
+                                aliquam animi.</td>
 
                               <td>
                                 <button type="button" class="btn btn-round btn-info">
@@ -167,7 +174,8 @@
                             </tr>
                             <tr role="row" class="odd">
                               <td class="sorting_1">Meseros</td>
-                              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vel eos adipisci esse, aliquam animi.</td>
+                              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vel eos adipisci esse,
+                                aliquam animi.</td>
                               <td>
                                 <button type="button" class="btn btn-round btn-info">
                                   <i class="far fa-edit"></i>
@@ -181,7 +189,8 @@
                             </tr>
                             <tr role="row" class="odd">
                               <td class="sorting_1">Meseros</td>
-                              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vel eos adipisci esse, aliquam animi.</td>
+                              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vel eos adipisci esse,
+                                aliquam animi.</td>
 
                               <td>
                                 <button type="button" class="btn btn-round btn-info">
@@ -196,7 +205,8 @@
                             </tr>
                             <tr role="row" class="odd">
                               <td class="sorting_1">Meseros</td>
-                              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vel eos adipisci esse, aliquam animi.</td>
+                              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vel eos adipisci esse,
+                                aliquam animi.</td>
 
                               <td>
                                 <button type="button" class="btn btn-round btn-info">
@@ -211,7 +221,8 @@
                             </tr>
                             <tr role="row" class="odd">
                               <td class="sorting_1">Meseros</td>
-                              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vel eos adipisci esse, aliquam animi.</td>
+                              <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vel eos adipisci esse,
+                                aliquam animi.</td>
                               <td>
                                 <button type="button" class="btn btn-round btn-info">
                                   <i class="far fa-edit"></i>
@@ -270,36 +281,39 @@
               <div class="x_panel">
                 <div class="x_title">
                   <h2>Agregar nuevo cargo</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                        <li>
-                          <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                        </li>
-                    </ul>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                      <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                      </a>
+                    </li>
+                  </ul>
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
-                  <div class="form-group">
-                    <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Nombre cargo*:</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
+                  <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+                    <div class="form-group">
+                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Nombre cargo*:</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
+                      </div>
                     </div>
-                  </div>
-                  <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">Descripcion:* <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <textarea id="textarea" required="required" name="textarea" class="form-control  col-md-7 col-xs-12" ></textarea>
-                        </div>
-                  </div>
-                  <div class="ln_solid"></div>
-                  <div class="form-group">
-                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                      <button class="btn btn-primary" type="button">Cancel</button>
-                      <button type="submit" class="btn btn-success">Guardar</button>
+                    <div class="item form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">Descripcion:*
+                        <span class="required">*</span>
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <textarea id="textarea" required="required" name="textarea" class="form-control  col-md-7 col-xs-12"></textarea>
+                      </div>
                     </div>
-                  </div>
-                </form>
+                    <div class="ln_solid"></div>
+                    <div class="form-group">
+                      <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                        <button class="btn btn-primary" type="button">Cancel</button>
+                        <button type="submit" class="btn btn-success">Guardar</button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -322,7 +336,7 @@
   <?php 
   require_once("php/scrips.php");
  ?>
-	
+
 
 </body>
 

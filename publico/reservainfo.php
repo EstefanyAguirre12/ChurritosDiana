@@ -42,9 +42,9 @@
                     <div class="col-md-12 centered">
                         <div class="custom-heading style-1">
                             <h2>
-                                <span>Exquisite cuisine</span>
+                                <span>Barolo Hotel</span>
                             </h2>
-                            <h2>A FEAST FOR YOUR SENSES</h2>
+                            <h2>RESERVA HABITACION</h2>
 
                             <!-- .divider.style-2 start -->
                             <div class="divider style-2 center">
@@ -64,40 +64,21 @@
 
         </div>
 
-        <!-- .page-content start -->
-        <div class="page-content">
-            <div class="">
-                <!-- .row start -->
-                <div class="row">
-                    <div class="col-md-12 centered">
-                        <div class="custom-heading style-1">
-                            <h2>
-                                <span>Habitaciones disponibles</span>
-                            </h2>
-
-                        </div>
-
-                    </div>
-                </div>
-                <!-- .row end -->
-            </div>
-            <!-- .container end -->
-        </div>
-        <!-- .page-content end -->
+     
 
 
 
         <div class="cont">
-            <div class="">
-                <h2>Welcome back,</h2>
+            <div class="altura">
+                <h2>Informacion personal</h2>
                 <div class="col-md-12 centered">
                     <div class="row">
                         <!--Grid column-->
                         <div class="col-md-6">
                             <div class="md-form">
                                 <label>
-                                    <span>Email</span>
-                                    <input type="email" />
+                                    <span>Nombre</span>
+                                    <input type="text" />
                                 </label>
                             </div>
                         </div>
@@ -105,8 +86,8 @@
                         <div class="col-md-6">
                             <div class="md-form">
                                 <label>
-                                    <span>Password</span>
-                                    <input type="password" />
+                                    <span>Apellido</span>
+                                    <input type="text" />
                                 </label>
                             </div>
                         </div>
@@ -114,8 +95,8 @@
                         <div class="col-md-6">
                             <div class="md-form">
                                 <label>
-                                    <span>Email</span>
-                                    <input type="email" />
+                                    <span>DUI</span>
+                                    <input type="text" />
                                 </label>
                             </div>
                         </div>
@@ -147,7 +128,7 @@
 
                     </div>
 
-                    <a class="discover_more has_transition_400 altura" href="#">DISCOVER MORE</a>
+                    <a class="discover_more has_transition_400 altura" href="#">RESERVAR</a>
                 </div>
 
             </div>

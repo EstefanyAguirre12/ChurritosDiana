@@ -24,7 +24,7 @@
        ?>
 
       <!-- page content -->
-      <div class="right_col" role="main" style="min-height: 806px;">
+      <div class="right_col" role="main" class="estilo_righ">
         <div class="">
           <div class="page-title">
             <div class="title_left">
@@ -49,45 +49,48 @@
                         <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                           <thead>
                             <tr role="row">
-                              <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending"
-                                aria-label="Name: activate to sort column descending">Combo</th>
+                              <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">Combo</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Productos</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Precio</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Añadir</th>
                           </thead>
                           <tbody>
                             <tr role="row" class="odd">
-                              <td >combo 1</td>
-                              <td >
+                              <td>combo 1</td>
+                              <td>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/plato1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>PLato de pollo</strong></p>
+                                      <p>
+                                        <strong>PLato de pollo</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/bebida1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>Jugo de fresa</strong></p>
+                                      <p>
+                                        <strong>Jugo de fresa</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                               </td>
-                              <td >$3.25</td>
+                              <td>$3.25</td>
                               <td>
                                 <button type="button" class="btn btn-round btn-info">
                                   <i class="fas fa-plus"></i>
                                 </button>
                               </td>
                             </tr>
-                            
+
 
                           </tbody>
                         </table>
@@ -103,45 +106,48 @@
                         <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                           <thead>
                             <tr role="row">
-                              <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending"
-                                aria-label="Name: activate to sort column descending">Combo</th>
+                              <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">Combo</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Productos</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Precio</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Añadir</th>
                           </thead>
                           <tbody>
                             <tr role="row" class="odd">
-                              <td >combo 1</td>
-                              <td >
+                              <td>combo 1</td>
+                              <td>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/plato1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>PLato de pollo</strong></p>
+                                      <p>
+                                        <strong>PLato de pollo</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/bebida1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>Jugo de fresa</strong></p>
+                                      <p>
+                                        <strong>Jugo de fresa</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                               </td>
-                              <td >$3.25</td>
+                              <td>$3.25</td>
                               <td>
                                 <button type="button" class="btn btn-round btn-info">
                                   <i class="fas fa-plus"></i>
                                 </button>
                               </td>
                             </tr>
-                            
+
 
                           </tbody>
                         </table>
@@ -157,45 +163,48 @@
                         <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                           <thead>
                             <tr role="row">
-                              <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending"
-                                aria-label="Name: activate to sort column descending">Combo</th>
+                              <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">Combo</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Productos</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Precio</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Añadir</th>
                           </thead>
                           <tbody>
                             <tr role="row" class="odd">
-                              <td >combo 1</td>
-                              <td >
+                              <td>combo 1</td>
+                              <td>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/plato1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>PLato de pollo</strong></p>
+                                      <p>
+                                        <strong>PLato de pollo</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/bebida1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>Jugo de fresa</strong></p>
+                                      <p>
+                                        <strong>Jugo de fresa</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                               </td>
-                              <td >$3.25</td>
+                              <td>$3.25</td>
                               <td>
                                 <button type="button" class="btn btn-round btn-info">
                                   <i class="fas fa-plus"></i>
                                 </button>
                               </td>
                             </tr>
-                            
+
 
                           </tbody>
                         </table>

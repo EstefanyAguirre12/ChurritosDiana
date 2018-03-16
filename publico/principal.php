@@ -172,7 +172,7 @@
                                 <h2>Habitaciones</h2>
                             </div>
                             <p>Servicio de Hospedaje, en habitaciones sencillas y dobles, con ambiente acogedor, para el turista de negocios.</p>
-                            <a class="discover_more has_transition_400" href="#">VER MAS</a>
+                            <a class="discover_more has_transition_400" href="reservahabitacion.php">VER MAS</a>
                         </div>
                     </div>
                 </div>
@@ -186,7 +186,7 @@
                                 <h2>Salas de conferencia</h2>
                             </div>
                             <p>Tres salones, para el desarrollo de eventos sociales y corporativos. Con capacidad total para 150 personas.</p>
-                            <a class="discover_more has_transition_400" href="#">VER MAS</a>
+                            <a class="discover_more has_transition_400" href="conferencias.php">VER MAS</a>
                         </div>
                     </div>
                 </div>
@@ -201,7 +201,7 @@
                                 <h2>Restaurante</h2>
                             </div>
                             <p>Servicio a la carta de comida Italiana. Deliciosas elecciones para que disfrutes no solo de tu estadia sino de la comida.</p>
-                            <a class="discover_more has_transition_400" href="#">VER MAS</a>
+                            <a class="discover_more has_transition_400" href="restaurante.php">VER MAS</a>
                         </div>
                     </div>
                 </div>

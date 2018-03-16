@@ -24,7 +24,7 @@
        ?>
 
       <!-- page content -->
-      <div class="right_col" role="main" style="min-height: 806px;">
+      <div class="right_col" role="main" class="estilo_righ">
         <div class="">
           <div class="page-title">
             <div class="title_left">
@@ -37,11 +37,13 @@
               <div class="x_panel">
                 <div class="x_title">
                   <h2>Listado ordenes</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                        <li>
-                          <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                        </li>
-                    </ul>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                      <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                      </a>
+                    </li>
+                  </ul>
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
@@ -79,256 +81,292 @@
                           </thead>
                           <tbody>
                             <tr role="row" class="odd">
-                              <td >Nombres e</td>
-                              <td >mesa 1</td>
-                              <td >                                
+                              <td>Nombres e</td>
+                              <td>mesa 1</td>
+                              <td>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/plato1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>PLato de pollo</strong></p>
+                                      <p>
+                                        <strong>PLato de pollo</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/bebida1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>Jugo de fresa</strong></p>
+                                      <p>
+                                        <strong>Jugo de fresa</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                               </td>
-                              <td >$10.25</td>
-                              <td >25/03/2018</td>
+                              <td>$10.25</td>
+                              <td>25/03/2018</td>
                             </tr>
                             <tr role="row" class="odd">
-                              <td >Nombres e</td>
-                              <td >mesa 1</td>
-                              <td >                                
+                              <td>Nombres e</td>
+                              <td>mesa 1</td>
+                              <td>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/plato1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>PLato de pollo</strong></p>
+                                      <p>
+                                        <strong>PLato de pollo</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/bebida1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>Jugo de fresa</strong></p>
+                                      <p>
+                                        <strong>Jugo de fresa</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                               </td>
-                              <td >$10.25</td>
-                              <td >25/03/2018</td>
+                              <td>$10.25</td>
+                              <td>25/03/2018</td>
                             </tr>
                             <tr role="row" class="odd">
-                              <td >Nombres e</td>
-                              <td >mesa 1</td>
-                              <td >                                
+                              <td>Nombres e</td>
+                              <td>mesa 1</td>
+                              <td>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/plato1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>PLato de pollo</strong></p>
+                                      <p>
+                                        <strong>PLato de pollo</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/bebida1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>Jugo de fresa</strong></p>
+                                      <p>
+                                        <strong>Jugo de fresa</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                               </td>
-                              <td >$10.25</td>
-                              <td >25/03/2018</td>
+                              <td>$10.25</td>
+                              <td>25/03/2018</td>
                             </tr>
                             <tr role="row" class="odd">
-                              <td >Nombres e</td>
-                              <td >mesa 1</td>
-                              <td >                                
+                              <td>Nombres e</td>
+                              <td>mesa 1</td>
+                              <td>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/plato1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>PLato de pollo</strong></p>
+                                      <p>
+                                        <strong>PLato de pollo</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/bebida1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>Jugo de fresa</strong></p>
+                                      <p>
+                                        <strong>Jugo de fresa</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                               </td>
-                              <td >$10.25</td>
-                              <td >25/03/2018</td>
+                              <td>$10.25</td>
+                              <td>25/03/2018</td>
                             </tr>
                             <tr role="row" class="odd">
-                              <td >Nombres e</td>
-                              <td >mesa 1</td>
-                              <td >                                
+                              <td>Nombres e</td>
+                              <td>mesa 1</td>
+                              <td>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/plato1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>PLato de pollo</strong></p>
+                                      <p>
+                                        <strong>PLato de pollo</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/bebida1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>Jugo de fresa</strong></p>
+                                      <p>
+                                        <strong>Jugo de fresa</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                               </td>
-                              <td >$10.25</td>
-                              <td >25/03/2018</td>
+                              <td>$10.25</td>
+                              <td>25/03/2018</td>
                             </tr>
                             <tr role="row" class="odd">
-                              <td >Nombres e</td>
-                              <td >mesa 1</td>
-                              <td >                                
+                              <td>Nombres e</td>
+                              <td>mesa 1</td>
+                              <td>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/plato1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>PLato de pollo</strong></p>
+                                      <p>
+                                        <strong>PLato de pollo</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/bebida1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>Jugo de fresa</strong></p>
+                                      <p>
+                                        <strong>Jugo de fresa</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                               </td>
-                              <td >$10.25</td>
-                              <td >25/03/2018</td>
+                              <td>$10.25</td>
+                              <td>25/03/2018</td>
                             </tr>
                             <tr role="row" class="odd">
-                              <td >Nombres e</td>
-                              <td >mesa 1</td>
-                              <td >                                
+                              <td>Nombres e</td>
+                              <td>mesa 1</td>
+                              <td>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/plato1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>PLato de pollo</strong></p>
+                                      <p>
+                                        <strong>PLato de pollo</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/bebida1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>Jugo de fresa</strong></p>
+                                      <p>
+                                        <strong>Jugo de fresa</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                               </td>
-                              <td >$10.25</td>
-                              <td >25/03/2018</td>
+                              <td>$10.25</td>
+                              <td>25/03/2018</td>
                             </tr>
                             <tr role="row" class="odd">
-                              <td >Nombres e</td>
-                              <td >mesa 1</td>
-                              <td >                                
+                              <td>Nombres e</td>
+                              <td>mesa 1</td>
+                              <td>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/plato1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>PLato de pollo</strong></p>
+                                      <p>
+                                        <strong>PLato de pollo</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/bebida1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>Jugo de fresa</strong></p>
+                                      <p>
+                                        <strong>Jugo de fresa</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                               </td>
-                              <td >$10.25</td>
-                              <td >25/03/2018</td>
+                              <td>$10.25</td>
+                              <td>25/03/2018</td>
                             </tr>
                             <tr role="row" class="odd">
-                              <td >Nombres e</td>
-                              <td >mesa 1</td>
-                              <td >                                
+                              <td>Nombres e</td>
+                              <td>mesa 1</td>
+                              <td>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/plato1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>PLato de pollo</strong></p>
+                                      <p>
+                                        <strong>PLato de pollo</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="col-md-55">
                                   <div class="thumbnail">
                                     <div class="image view view-first">
-                                      <img style="width: 100%; display: block;" src="img/bebida1.jpg" alt="image">
+                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
                                     </div>
                                     <div class="caption">
-                                      <p><strong>Jugo de fresa</strong></p>
+                                      <p>
+                                        <strong>Jugo de fresa</strong>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
                               </td>
-                              <td >$10.25</td>
-                              <td >25/03/2018</td>
+                              <td>$10.25</td>
+                              <td>25/03/2018</td>
                             </tr>
 
                           </tbody>

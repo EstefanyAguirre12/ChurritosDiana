@@ -24,7 +24,7 @@
        ?>
 
       <!-- page content -->
-      <div class="right_col" role="main" style="min-height: 806px;">
+      <div class="right_col" role="main" class="estilo_righ">
         <div class="">
           <div class="page-title">
             <div class="title_left">
@@ -33,13 +33,13 @@
           </div>
           <div class="clearfix"></div>
           <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="x_panel">
-                      <div class="x_title">
-                        <h2>Lista de reservas de salones</h2>
-                        <div class="clearfix"></div>
-                      </div>
-                      <div class="x_content">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Lista de reservas de salones</h2>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
                   <div id="datatable-checkbox_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                     <div class="row">
                       <div class="col-sm-6">
@@ -66,8 +66,7 @@
                         <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                           <thead>
                             <tr role="row">
-                              <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending"
-                                aria-label="Name: activate to sort column descending">Nombres sala</th>
+                              <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nombres sala</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Descripcion</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Capacidad</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">costo</th>
@@ -77,11 +76,11 @@
                           </thead>
                           <tbody>
                             <tr role="row" class="odd">
-                              <td >Nombres e</td>
-                              <td >Lorem ipsum dolor sit amet consectetur.</td>
-                              <td >300</td>
-                              <td >$300</td>
-                              <td >libre</td>
+                              <td>Nombres e</td>
+                              <td>Lorem ipsum dolor sit amet consectetur.</td>
+                              <td>300</td>
+                              <td>$300</td>
+                              <td>libre</td>
                               <td>
                                 <button type="button" class="btn btn-round btn-info">
                                   <i class="far fa-edit"></i>
@@ -94,11 +93,11 @@
                               </td>
                             </tr>
                             <tr role="row" class="odd">
-                              <td >Nombres e</td>
-                              <td >Lorem ipsum dolor sit amet consectetur.</td>
-                              <td >300</td>
-                              <td >$300</td>
-                              <td >libre</td>
+                              <td>Nombres e</td>
+                              <td>Lorem ipsum dolor sit amet consectetur.</td>
+                              <td>300</td>
+                              <td>$300</td>
+                              <td>libre</td>
                               <td>
                                 <button type="button" class="btn btn-round btn-info">
                                   <i class="far fa-edit"></i>
@@ -111,11 +110,11 @@
                               </td>
                             </tr>
                             <tr role="row" class="odd">
-                              <td >Nombres e</td>
-                              <td >Lorem ipsum dolor sit amet consectetur.</td>
-                              <td >300</td>
-                              <td >$300</td>
-                              <td >libre</td>
+                              <td>Nombres e</td>
+                              <td>Lorem ipsum dolor sit amet consectetur.</td>
+                              <td>300</td>
+                              <td>$300</td>
+                              <td>libre</td>
                               <td>
                                 <button type="button" class="btn btn-round btn-info">
                                   <i class="far fa-edit"></i>
@@ -168,10 +167,10 @@
                     </div>
                   </div>
                 </div>
-                    </div>
               </div>
             </div>
           </div>
+        </div>
       </div>
       <!-- /page content -->
 
