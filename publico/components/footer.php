@@ -5,18 +5,12 @@
                 <ul class="list-unstyled clear-margins"><!-- widgets -->            
                     <li class="widget-container widget_nav_menu"><!-- widgets list -->
             
-                        <h1 class="title-widget">Useful links</h1>
+                        <h1 class="title-widget">Servicios</h1>
                         
                         <ul>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i> About Us</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i> Success Stories</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i> PG Courses</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i> Achiever's Batch</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>  Regular Batch</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>  Test & Discussion</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>  Fast Track T & D</a></li>
-
+                            <li><a  href="../reservahabitacion.php"><i class="fa fa-angle-double-right"></i> Reserva habitaciones</a></li>
+                            <li><a  href="../reservaconferencia.php"><i class="fa fa-angle-double-right"></i> Visita nuestro restaurante</a></li>
+                            <li><a  href="../noticias.php"><i class="fa fa-angle-double-right"></i> Consulta Promociones y eventos</a></li>
                         </ul>
             
                     </li>
@@ -33,17 +27,16 @@
                         
                     <li class="widget-container widget_nav_menu"><!-- widgets list -->
                     
-                        <h1 class="title-widget">Useful links</h1>
+                        <h1 class="title-widget">Barolo es</h1>
                                 
                         <ul>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>  Test Series Schedule</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>  Postal Coaching</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>  PG Dr. Bhatia Books</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>  UG Courses</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>  Satellite Education</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>  Study Centres</a></li>
-                            <li><a  href="#"><i class="fa fa-angle-double-right"></i>  State P.G. Mocks</a></li>
-                            <li><a  href="#" target="_blank"><i class="fa fa-angle-double-right"></i> Results</a></li>
+                            <li><a><i class="fa fa-angle-double-right"></i>  Seguro</a></li>
+                            <li><a><i class="fa fa-angle-double-right"></i>  Confiable</a></li>
+                            <li><a><i class="fa fa-angle-double-right"></i>  Elegante</a></li>
+                            <li><a><i class="fa fa-angle-double-right"></i>  Hospitalario</a></li>
+                            <li><a><i class="fa fa-angle-double-right"></i>  Acogedor</a></li>
+                            <li><a><i class="fa fa-angle-double-right"></i>  Hermoso</a></li>
+                            
                             
                         </ul>
                     
@@ -59,17 +52,17 @@
                         
                     <li class="widget-container widget_nav_menu"><!-- widgets list -->
                     
-                        <h1 class="title-widget">Useful links</h1>
+                        <h1 class="title-widget">Socios</h1>
                                 
                         <ul>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i> Enquiry Form</a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i> Online Test Series</a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i> Grand Tests Series</a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i> Subject Wise Test Series</a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i> Smart Book</a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i> Test Centres</a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i>  Admission Form</a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i>  Computer Live Test</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i> Torre Futura</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i> Cosenza Importacions</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i> Smartmatic</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i> TSE</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i> Teleton</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i> Venga la Alegria</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i>  Domingo para Todos</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i>  MTV</a></li>
 
                         </ul>
                     
@@ -91,10 +84,10 @@
                             
                             <ul class="nomargin">
                                 
-                                <a href="https://www.facebook.com/bootsnipp"><i class="fa fa-facebook-square fa-3x social-fb" id="social"></i></a>
-                                <a href="https://twitter.com/bootsnipp"><i class="fa fa-twitter-square fa-3x social-tw" id="social"></i></a>
-                                <a href="https://plus.google.com/+Bootsnipp-page"><i class="fa fa-google-plus-square fa-3x social-gp" id="social"></i></a>
-                                <a href="mailto:bootsnipp@gmail.com"><i class="fa fa-envelope-square fa-3x social-em" id="social"></i></a>
+                                <a href="https://www.facebook.com"><i class="fa fa-facebook-square fa-3x social-fb" id="social"></i></a>
+                                <a href="https://twitter.com"><i class="fa fa-twitter-square fa-3x social-tw" id="social"></i></a>
+                                <a href="https://plus.google.com"><i class="fa fa-google-plus-square fa-3x social-gp" id="social"></i></a>
+                               
                                                     
                             </ul>
                         </div>
