@@ -156,9 +156,8 @@
                                                 <li>olor</li>
                                                 <li>gusto </li>
                                             </ul><!-- .article-meta end -->
-                                            <p>ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                                                totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                                            <a class="more-details">Lores Ipsum</a>
+                                            <p>Deleitate con nuestras exquisitas opciones en platos fuertes, entradas y postres y escoge lo que quieras y disfruta de la mejor comida</p>
+                                            <a class="more-details" href="menu.php">Menu</a>
                                         </li><!-- .event-item-list.event-item-content end -->
                                     </ul><!-- .event-item-container end -->
                                 </div>
@@ -185,9 +184,10 @@
                                                     <li>elegantes</li>
                                                     <li>Barolo </li>
                                                 </ul><!-- .article-meta end -->
-                                                <p>ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                                                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                                                <a class="more-details">Lores Ipsum</a>
+                                                <p>Degusta las mejores bebidas, y escoge entre nuestra extensa gama de vinos el que me se ajuste a ti,
+                                                    contamos con jugos naturales y sodas, asi como bebidas alcoholicas.
+                                                </p>
+                                                <a class="more-details" href="menu.php">Menu</a>
                                             </li><!-- .event-item-list.event-item-content end -->
                                         </ul><!-- .event-item-container end -->
                                     </div>
@@ -301,27 +301,27 @@
               </div>
               <div class="image image--large">
                 <div class="image__details">
-                  Muffin jelly gingerbread 
+                  
                 </div>
               </div>
               <div class="image image--medium">
                 <div class="image__details">
-                  sesame snaps chocolate
+                  
                 </div>
               </div>
               <div class="image image--large">
                 <div class="image__details">
-                  Oat cake
+                  
                 </div>
               </div>
               <div class="image image--full">
                 <div class="image__details">
-                   jujubes cheesecake
+                   
                 </div>
               </div>
               <div class="image image--medium">
                 <div class="image__details">
-                  Dragée pudding brownie
+                
                 </div>
               </div>
               
