@@ -1,4 +1,4 @@
-<div id="menu">
+<div id="menu" class="navbar">
 			<nav id="navigation" class="nav" role="navigation" onclick="">
 				<ul>
 					

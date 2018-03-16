@@ -538,9 +538,7 @@
         from { margin-top: 50px;}
         to { margin-top: 12px; }
     }
-    .resize-header .navbar {
-        margin-bottom: 0;
-    }
+
     .header-inner .row,
     .main-nav .row {
         margin-bottom: 0;
@@ -548,57 +546,7 @@
     .logo {
         margin: 30px 0;
     }
-    #header .nav-left .navbar-header {
-        float: left;
-    }
-    #header .nav-left .pi-nav {
-        float: left;
-        margin-top: 50px;
-    }
-    #header .navbar-default .navbar-collapse,
-    #header .navbar-default .navbar-form {
-        border: 0px solid transparent;
-    }
-    #header .navbar-default .navbar-nav > .open > a,
-    #header .navbar-default .navbar-nav > .open > a:hover,
-    #header .navbar-default .navbar-nav > .open > a:focus {
-        background-color: transparent;
-    }
-    #header .navbar-collapse {
-        padding: 0;
-        float: right;
-    }
-    #header .navbar-default{
-        background: none;
-        border: 0px solid transparent;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-    }
-    #header .navbar-nav.pi-nav > li > a {
-        line-height: 25px;
-    }
-    #header .navbar-default .navbar-nav > li > a {
-        border: none;
-        font-family: 'Montserrat', Arial, sans-serif;
-        font-size: 15px;
-        text-transform: uppercase;
-        color: #fff;
-        margin: 0 4px;
-    }
-    #header .navbar-default .navbar-nav > .current-menu-item > a:before,
-    #header .navbar-default .navbar-nav > li>a:hover:before {
-        position: absolute;
-        font-family: 'FontAwesome';
-        font-size: 6px;
-        content: "\f111";
-        display: block;
-        top: 16px;
-        left: 0px;
-    }
-    #header .navbar-default .navbar-nav > li>a:hover:before {
-        -webkit-animation: navItemMove 0.1s forwards;
-        animation: navItemMove 0.1s forwards;
-    }
+   
     @keyframes navItemMove {
         from { opacity: 0; transform: translateX(20px); }
         to { opacity: 1; transform: translateX(0px); }
@@ -1141,6 +1089,14 @@
         11. NAVBAR
     ============================================================================= */
     /* Navigation style */
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+      }
+      
+     
 .nav ul {
     margin: 0;
     padding: 0;
@@ -1179,22 +1135,7 @@
   .nav a:hover {
       background-color: #ea5745;
   color: white;
-  
-  -webkit-transition: background 0.2s ease-in-out;
-          -moz-transition: background 0.2s ease-in-out;
-          -ms-transition: background 0.2s ease-in-out;
-          -o-transition: background 0.2s ease-in-out;
-          transition: background 0.2s ease-in-out;
-  
-  
-  .nav a:active{
-  background: black;
-  color:white;
-  -webkit-transition: background 0.2s ease-in-out;
-          -moz-transition: background 0.2s ease-in-out;
-          -ms-transition: background 0.2s ease-in-out;
-          -o-transition: background 0.2s ease-in-out;
-          transition: background 0.2s ease-in-out;
+ 
   
   }
   
@@ -1210,7 +1151,7 @@
   }
   
   
-  }
+  
   /* Styling the toggle menu link and hiding it */
   .nav .navtoogle {
     display: none;

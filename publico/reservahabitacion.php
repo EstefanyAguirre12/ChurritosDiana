@@ -181,9 +181,10 @@
                 <?php include("components/footer.php") ?>
                 </footer>
 
+        <script src="../web/js/jquery.min.js"></script><!-- jQuery library -->
+        <script src="../web/js/jquery-ui.min.js"></script><!-- jQuery library -->
+        <script src="../web/js/jquery-ui.min.js"></script><!-- jQuery library -->
 
-        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-        <script src='http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js'></script>
         <script src='https://www.jqueryscript.net/demo/jQuery-Plugin-For-Date-Range-Selector-Range-Calendar/js/jquery.rangecalendar.js'></script>
