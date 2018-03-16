@@ -9,8 +9,13 @@
                         
                         <ul>
                             <li><a  href="reservahabitacion.php"><i class="fa fa-angle-double-right"></i> Reserva habitaciones</a></li>
+<<<<<<< HEAD
                             <li><a  href="restaurante.php"><i class="fa fa-angle-double-right"></i> Visita nuestro restaurante</a></li>
                             <li><a  href="conferencias.php"><i class="fa fa-angle-double-right"></i>Reserva tu sala</a></li>
+=======
+                            <li><a  href="reservaconferencia.php"><i class="fa fa-angle-double-right"></i> Visita nuestro restaurante</a></li>
+                            
+>>>>>>> 33162429363267cad7fc35d5667e49fbf749dc50
                         </ul>
             
                     </li>
