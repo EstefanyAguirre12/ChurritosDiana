@@ -132,7 +132,7 @@
         </div>
         <!-- .page-content end -->
 
-        <div class="font-cover" id="headparallax">
+        <div class="font-cover" id="headparallax9">
             <div class="page-content custom-img-background dark custom-col-padding mb-100">
                 <!-- .row start -->
                 <div class="row">
@@ -165,7 +165,7 @@
             </div>
             <li class="cards__item">
                 <div class="card">
-                    <div class="card__image card__image--flowers"></div>
+                    <div class="card__image card__image--cuarto"></div>
                     <div class="">
                         <div class="col-md-12 centered">
                             <div class="custom-heading style-1">
@@ -179,7 +179,7 @@
             </li>
             <li class="cards__item">
                 <div class="card">
-                    <div class="card__image card__image--river"></div>
+                    <div class="card__image card__image--conferencia"></div>
                     <div class="">
                         <div class="col-md-12 centered">
                             <div class="custom-heading style-1">
@@ -194,7 +194,7 @@
             
             <li class="cards__item">
                 <div class="card">
-                    <div class="card__image card__image--record"></div>
+                    <div class="card__image card__image--restaurante"></div>
                     <div class="">
                         <div class="col-md-12 centered">
                             <div class="custom-heading style-1">

@@ -1319,7 +1319,11 @@
         }
 
 
-     #headparallax9{
+     #headparallax8{
+            background-image: url(../img/pics/bkg-img8.jpg);
+        }
+
+        #headparallax9{
             background-image: url(../img/pics/bkg-img9.jpg);
         }
 
@@ -1843,6 +1847,18 @@ img {
 .card__image--fence {
   background-image: url(https://unsplash.it/800/600?image=59);
 }
+
+.card__image--cuarto {
+    background-image: url(../img/pics/room1.jpg);
+  }
+
+  .card__image--restaurante {
+    background-image: url(../img/pics/bkg-img4.jpg);
+  }
+
+  .card__image--conferencia {
+    background-image: url(../img/pics/bkg-img6.jpg);
+  }
 .card__title {
   color: #696969;
   font-size: 1.25rem;
