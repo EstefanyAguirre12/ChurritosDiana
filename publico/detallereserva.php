@@ -18,7 +18,7 @@
                             <tr>
                                 <td align="center" style="padding: 20px 0 0 0;">
                                     <a href="#" target="blank">
-                                        <img src="http://www.placehold.it/275x100&text=hotel+logo" width="275" height="100" border="0" alt="EDIT" class="img-max"
+                                        <img src="https://lh5.googleusercontent.com/p/AF1QipOqp0Dagp54LPLC8512_Q_A4fd9_J4kkHhzVRtD=w155-h168-p-k-no" width="275" height="100" border="0" alt="EDIT" class="img-max"
                                             style="display: block; padding: 0; font-family: Helvetica, Arial, sans-serif; color: #666666; width: 275px; height: 100px;">
                                     </a>
                                 </td>
