@@ -7,10 +7,11 @@
 <div class="nav">
     <div class="nav__content">
         <ul class="nav__list">
-            <li class="nav__list-item">Inicio</li>
-            <li class="nav__list-item">Reserva</li>
-            <li class="nav__list-item">Conferencias</li>
-            <li class="nav__list-item">Contact</li>
+            <li class="nav__list-item" href="../principal.php" >Inicio</li>
+            <li class="nav__list-item" href="../reservahabitacion.php">Reserva</li>
+            <li class="nav__list-item" href="../reservaconferencia.php">Conferencias</li>
+            <li class="nav__list-item" href="../restaurante.php">Restaurante</li>
+            <li class="nav__list-item" href="../noticias.php">Noticias</li>
         </ul>
     </div>
 </div>
