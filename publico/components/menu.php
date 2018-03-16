@@ -7,9 +7,9 @@
 <div class="nav">
     <div class="nav__content">
         <ul class="nav__list">
-            <li class="nav__list-item">Home</li>
-            <li class="nav__list-item">About</li>
-            <li class="nav__list-item">Projects</li>
+            <li class="nav__list-item">Inicio</li>
+            <li class="nav__list-item">Reserva</li>
+            <li class="nav__list-item">Conferencias</li>
             <li class="nav__list-item">Contact</li>
         </ul>
     </div>

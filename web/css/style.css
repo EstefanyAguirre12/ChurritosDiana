@@ -1156,7 +1156,7 @@
   height: 2px;
   width: 30px;
   display: block;
-  background-color: #ffffff;
+  background-color: #362715;
   margin-bottom: 4px;
   -webkit-transition: background-color .5s ease, -webkit-transform .2s ease;
   transition: background-color .5s ease, -webkit-transform .2s ease;
@@ -1226,7 +1226,7 @@
 .nav__list-item:before {
   content: "";
   position: absolute;
-  background: #000000;
+  background: #362715;
   width: 20px;
   height: 1px;
   top: 100%;
@@ -1241,7 +1241,7 @@
 }
 
 body.nav-active .menu-icon__line {
-  background-color: #000;
+  background-color: #362715;
   -webkit-transform: translateX(0px) rotate(-45deg);
           transform: translateX(0px) rotate(-45deg);
 }
