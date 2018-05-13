@@ -146,7 +146,7 @@
                                 totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
                                 dicta sunt explicabo.</p>
 
-                            <a class="discover_more has_transition_400" href="reservainfo.html">MAS INFORMACION</a>
+                            <a class="discover_more has_transition_400" href="reservainfo.php">MAS INFORMACION</a>
                         </div>
                     </header>
 
@@ -166,7 +166,7 @@
                                 totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
                                 dicta sunt explicabo.</p>
 
-                            <a class="discover_more has_transition_400" href="reservainfo.html">MAS INFORMACION</a>
+                            <a class="discover_more has_transition_400" href="reservainfo.php">MAS INFORMACION</a>
 
                         </div>
                     </header>
@@ -178,16 +178,13 @@
 
 
         <footer class="footer1">
-                <?php include("components/footer.php") ?>
-                </footer>
+            <?php include("components/footer.php") ?>
+        </footer>
 
         <script src="../web/js/jquery.min.js"></script><!-- jQuery library -->
         <script src="../web/js/jquery-ui.min.js"></script><!-- jQuery library -->
-        <script src="../web/js/jquery-ui.min.js"></script><!-- jQuery library -->
-
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js'></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js'></script>
-        <script src='https://www.jqueryscript.net/demo/jQuery-Plugin-For-Date-Range-Selector-Range-Calendar/js/jquery.rangecalendar.js'></script>
+        <script src="../web/js/moment.min.js"></script><!-- jQuery library -->
+        <script src="../web/js/jquery.rangecalendar.js"></script><!-- jQuery library -->
         <script src="../web/js/calendario.js"></script>
         <script src="../web/js/menu.js"></script>
 

@@ -9,8 +9,13 @@
                         
                         <ul>
                             <li><a  href="reservahabitacion.php"><i class="fa fa-angle-double-right"></i> Reserva habitaciones</a></li>
+<<<<<<< HEAD
+                            <li><a  href="restaurante.php"><i class="fa fa-angle-double-right"></i> Visita nuestro restaurante</a></li>
+                            <li><a  href="conferencias.php"><i class="fa fa-angle-double-right"></i>Reserva tu sala</a></li>
+=======
                             <li><a  href="reservaconferencia.php"><i class="fa fa-angle-double-right"></i> Visita nuestro restaurante</a></li>
                             
+>>>>>>> 33162429363267cad7fc35d5667e49fbf749dc50
                         </ul>
             
                     </li>
@@ -30,12 +35,11 @@
                         <h1 class="title-widget">Barolo es</h1>
                                 
                         <ul>
-                            <li><a><i class="fa fa-angle-double-right"></i>  Seguro</a></li>
-                            <li><a><i class="fa fa-angle-double-right"></i>  Confiable</a></li>
-                            <li><a><i class="fa fa-angle-double-right"></i>  Elegante</a></li>
-                            <li><a><i class="fa fa-angle-double-right"></i>  Hospitalario</a></li>
-                            <li><a><i class="fa fa-angle-double-right"></i>  Acogedor</a></li>
-                            <li><a><i class="fa fa-angle-double-right"></i>  Hermoso</a></li>
+                            <li><i class="fa fa-angle-double-right"></i>  Seguro</li>
+                            <li><i class="fa fa-angle-double-right"></i>  Confiable</li>
+                            <li><i class="fa fa-angle-double-right"></i>  Elegante</li>
+                            <li><i class="fa fa-angle-double-right"></i>  Acogedor</li>
+                            <li><i class="fa fa-angle-double-right"></i>  Hermoso</li>
                             
                             
                         </ul>
@@ -55,15 +59,12 @@
                         <h1 class="title-widget">Socios</h1>
                                 
                         <ul>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i> Torre Futura</a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i> Cosenza Importacions</a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i> Smartmatic</a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i> TSE</a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i> Teleton</a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i> Venga la Alegria</a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i>  Domingo para Todos</a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i>  MTV</a></li>
-
+                            <li><a href="http://plazafutura.com.sv/acercade.html"><i class="fa fa-angle-double-right"></i> Torre Futura</a></li>
+                            <li><a href="http://cosenzaimportaciones.com"><i class="fa fa-angle-double-right"></i> Cosenza Importacions</a></li>
+                            <li><a href="http://www.smartmatic.com/es/"><i class="fa fa-angle-double-right"></i> Smartmatic</a></li>
+                            <li><a href="https://www.tcsgo.com/"><i class="fa fa-angle-double-right"></i> TCS</a></li>
+                            <li><a href="http://www.funter.org.sv/"><i class="fa fa-angle-double-right"></i> Teleton</a></li>
+                           
                         </ul>
                     
                     </li>
