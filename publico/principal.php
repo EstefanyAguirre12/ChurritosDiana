@@ -194,7 +194,7 @@
             
             <li class="cards__item">
                 <div class="card">
-                    <div class="card__image card__image--restaurante"></div>
+                    <div class="card__image card__image--restaurante "></div>
                     <div class="">
                         <div class="col-md-12 centered">
                             <div class="custom-heading style-1">
