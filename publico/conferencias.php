@@ -17,7 +17,7 @@
       <link rel="stylesheet" href="../web/css/color-default.css"/><!-- default template color styles -->   
       <link rel="stylesheet" href="../web/css/responsive.css"/><!-- responsive styles -->
       <link rel="stylesheet" href="../web/css/animate.css"/><!-- animation for content -->
-      
+
 
 
       <!-- Google Web fonts -->

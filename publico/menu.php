@@ -19,9 +19,7 @@
 
   <body class="pa3 pa4-ns pa5-l container">
 	<div class="advert ad--railroad">
-		<img class="wide-icon" src="
-http://i64.tinypic.com/1zslyq.png
-">
+		<img class="wide-icon" src="http://i64.tinypic.com/1zslyq.png">
 		<h4 class="din f7 ttu tracked pb2">Hotel Barolo</h4>
 		<a class="f8 lh-copy pb3" href="principal.html">Regresa al sitio web</a>
 		<h4 class="din f7 ttu tracked pb2">Restaurante Barolo</h4>

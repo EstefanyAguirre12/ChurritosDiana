@@ -1127,13 +1127,13 @@
   
   
   .nav a {
-    display: block;
+    display: block; 
     padding: .8em .6em;
     color: #575758;
     text-decoration: none;
   }
   .nav a:hover {
-      background-color: #ea5745;
+      background-color: #362715;
   color: white;
  
   
