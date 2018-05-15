@@ -1,5 +1,5 @@
 <?php
-class Salas extends Validator{
+class Pedidohabitacion extends Validator{
     private $id = null;
     private $idhabitacion = null;
     private $iddetallesres = null;
@@ -20,7 +20,7 @@ class Salas extends Validator{
 			return $this->id;
     }
     
-    public function setIdHabitacion($value){
+    public function setIdhabitacion($value){
 			if($this->validateId($value)){
 				$this->idhabitacion = $value;
 				return true;
@@ -28,11 +28,11 @@ class Salas extends Validator{
 				return false;
 			}
 		}
-		public function getIdHabitacion(){
-			return $this->nombre;
+		public function getIdhabitacion(){
+			return $this->idhabitacion;
 		}
     
-    public function setIdDetallesRes($value){
+    public function setIddetallesRes($value){
 		if($this->validateId($value)){
 			$this->iddetalleres = $value;
 			return true;
@@ -40,7 +40,7 @@ class Salas extends Validator{
 			return false;
 		}
 	}
-	public function getIdDetallesRes(){
+	public function getIddetallesRes(){
 		return $this->idestadosala;
     }
 
@@ -93,6 +93,7 @@ class Salas extends Validator{
 		$params = array($this->id);
 		$habitacion = Database::getRow($sql, $params);
 		if($habitacion){
+			$this->idhabitacion = $habitacion['FechaPedido'];
 			$this->iddetalleres = $habitacion['IdDetalleRes'];
             $this->idcuenta = $habitacion['IdCuenta'];
 						$this->fechapedido = $habitacion['FechaPedido'];
@@ -104,7 +105,7 @@ class Salas extends Validator{
     }
     //Modificar categoria
     public function updatePedidohabitacion(){
-		$sql = "UPDATE pedidohabitacion SET idDetalleRes = ?, IdCuenta = ?, FechaPedido = ? WHERE IdHabitacion = ?";
+		$sql = "UPDATE pedidohabitacion SET IdDetalleRes = ?, IdCuenta = ?, FechaPedido = ? WHERE IdHabitacion = ?";
 		$params = array($this->iddetalleres, $this->idcuenta, $this->fechapedido, $this->Id);
 		return Database::executeRow($sql, $params);
     }
