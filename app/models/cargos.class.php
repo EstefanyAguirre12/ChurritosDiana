@@ -1,8 +1,8 @@
 <?php
-class Sillas extends Validator{
+class Cargos extends Validator{
     private $id = null;
     private $nombre = null;
-    private $cantidad = null;
+    private $descripcion = null;
     
     //Métodos para sobrecarga de propiedades
     public function setId($value){
@@ -19,7 +19,7 @@ class Sillas extends Validator{
     }
     
     public function setNombre($value){
-			if($this->validateAlphanumeric($value, 1, 50)){
+			if($this->validateAlphanumeric($value, 1, 200)){
 				$this->nombre = $value;
 				return true;
 			}else{
@@ -30,57 +30,57 @@ class Sillas extends Validator{
 			return $this->nombre;
         }
         
-        public function setCantidad($value){
-			if($this->validateNumeric($value, 1, 50)){
-				$this->cantidad = $value;
+        public function setDescripcion($value){
+			if($this->validateAlphanumeric($value, 1, 200)){
+				$this->descripcion = $value;
 				return true;
 			}else{
 				return false;
 			}
 		}
-		public function getCantidad(){
-			return $this->cantidad;
+		public function getDescripcion(){
+			return $this->descripcion;
 		}
     
     //Metodos CRUD
     //Obtener Ocasion
-    public function getSillas(){
-		$sql = "SELECT IdTipoSilla, Silla, Cantidad FROM sillas ORDER BY Silla";
+    public function getCargo(){
+		$sql = "SELECT IdCargo, NombreCargo, Descripcion FROM cargos ORDER BY IdCargo";
 		$params = array(null);
 		return Database::getRows($sql, $params);
 		}
-		public function searchSillas($value){
-			$sql = "SELECT * FROM sillas WHERE Silla LIKE ?  ORDER BY Silla";
+		public function searchCargo($value){
+			$sql = "SELECT * FROM cargos WHERE IdCargo LIKE ?  ORDER BY IdCargo";
 			$params = array("%$value%");
 			return Database::getRows($sql, $params);
 		}
     //Insertar Ocasion
-    public function createSillas(){
-		$sql = "INSERT INTO sillas(Silla, Cantidad) VALUES(?, ?)";
-		$params = array($this->nombre);
+    public function createCargo(){
+		$sql = "INSERT INTO cargos(NombreCargo, Descripcion) VALUES(?, ?)";
+		$params = array($this->nombre, $this->descripcion);
 		return Database::executeRow($sql, $params);
     }
     //Leer Ocasion
-    public function readSillas(){
-		$sql = "SELECT Silla FROM sillas WHERE IdSilla = ?";
+    public function readCargo(){
+		$sql = "SELECT IdCargo FROM cargos WHERE IdCargo = ?";
 		$params = array($this->id);
-		$sillas = Database::getRow($sql, $params);
-		if($sillas){
-			$this->nombre = $sillas['Silla'];
+		$krgo = Database::getRow($sql, $params);
+		if($krgo){
+			$this->idcargo = $krgo['IdCargo'];
 			return true;
 		}else{
 			return null;
 		}
     }
     //Modificar Ocasion
-    public function updateSillas(){
-		$sql = "UPDATE sillas SET Silla = ?, Cantidad = ? WHERE IdSilla = ?";
-		$params = array($this->nombre, $this->id);
+    public function updateCargo(){
+		$sql = "UPDATE cargos SET NombreCargo = ?, Descripcion = ? WHERE IdCuenta = ?";
+		$params = array($this->nombre, $this->descripcion, $this->id);
 		return Database::executeRow($sql, $params);
     }
     //Eliminar Ocasion
-	public function deleteSillas(){
-		$sql = "DELETE FROM sillas WHERE IdSilla = ?";
+	public function deleteCargo(){
+		$sql = "DELETE FROM cargos WHERE IdCargo = ?";
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}
