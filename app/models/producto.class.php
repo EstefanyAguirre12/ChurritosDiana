@@ -1,5 +1,5 @@
 <?php
-class Salas extends Validator{
+class Producto extends Validator{
     private $id = null;
     private $nombre = null;
     private $idtipo = null;

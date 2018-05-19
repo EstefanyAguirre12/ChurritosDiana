@@ -45,7 +45,7 @@ class Sillas extends Validator{
     //Metodos CRUD
     //Obtener Ocasion
     public function getSillas(){
-		$sql = "SELECT IdTipoSilla, Silla FROM sillas ORDER BY Silla";
+		$sql = "SELECT IdTipoSilla, Silla, Cantidad FROM sillas ORDER BY Silla";
 		$params = array(null);
 		return Database::getRows($sql, $params);
 		}
@@ -56,13 +56,13 @@ class Sillas extends Validator{
 		}
     //Insertar Ocasion
     public function createSillas(){
-		$sql = "INSERT INTO sillas(Silla) VALUES(?)";
+		$sql = "INSERT INTO sillas(Silla, Cantidad) VALUES(?, ?)";
 		$params = array($this->nombre);
 		return Database::executeRow($sql, $params);
     }
     //Leer Ocasion
     public function readSillas(){
-		$sql = "SELECT Silla FROM sillas WHERE IdTipoSilla = ?";
+		$sql = "SELECT Silla FROM sillas WHERE IdSilla = ?";
 		$params = array($this->id);
 		$sillas = Database::getRow($sql, $params);
 		if($sillas){
@@ -74,13 +74,13 @@ class Sillas extends Validator{
     }
     //Modificar Ocasion
     public function updateSillas(){
-		$sql = "UPDATE sillas SET Silla = ? WHERE IdTipoSilla = ?";
+		$sql = "UPDATE sillas SET Silla = ?, Cantidad = ? WHERE IdSilla = ?";
 		$params = array($this->nombre, $this->id);
 		return Database::executeRow($sql, $params);
     }
     //Eliminar Ocasion
 	public function deleteSillas(){
-		$sql = "DELETE FROM sillas WHERE IdTipoSilla = ?";
+		$sql = "DELETE FROM sillas WHERE IdSilla = ?";
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}
