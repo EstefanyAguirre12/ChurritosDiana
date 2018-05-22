@@ -7,9 +7,9 @@ class Database{
 
     private function connect(){
         $server = "localhost";
-        $database = "db_barolo";
-        $username = "root";
-        $password = "";
+        $database = "barolo";
+        $username = "Estefany";
+        $password = "Estefany";
         try{
             @self::$connection = new PDO("mysql:host=$server; dbname=$database; charset=utf8", $username, $password);
         }catch(PDOException $exception){

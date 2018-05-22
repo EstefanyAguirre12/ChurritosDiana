@@ -35,13 +35,18 @@
                             </select> Por</label>
                         </div>
                       </div>
-                      <div class="col-sm-6">
-                        <div id="datatable-checkbox_filter" class="dataTables_filter">
-                          <label>Busquedad:
-                            <input type="search" class="form-control input-sm" placeholder="" aria-controls="datatable-checkbox">
-                          </label>
+                      <form method='post'>
+                        <div class="col-sm-6">
+                          <div id="datatable-checkbox_filter" class="dataTables_filter">
+                            <label>Busquedad:
+                              <input type="search" name="busqueda" class="form-control input-sm validate" placeholder="N° Hab / Precio" aria-controls="datatable-checkbox">
+                            </label>
+                            <button type="submit" name="buscar" class="btn btn-round btn-info">
+                              <i class="fas fa-search"></i>
+                            </button>                          
+                          </div>
                         </div>
-                      </div>
+                      </form> 
                     </div>
                     <div class="row">
                       <div class="col-sm-12">
@@ -57,176 +62,29 @@
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Eliminar</th>
                           </thead>
                           <tbody>
-                            <tr role="row" class="odd">
-                              <td>Habitacione N1</td>
-                              <td>2 personas</td>
-                              <td>$50.25</td>
-                              <td>Premiun</td>
-                              <td>Ocupada</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td>Habitacione N1</td>
-                              <td>2 personas</td>
-                              <td>$50.25</td>
-                              <td>Premiun</td>
-                              <td>Ocupada</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td>Habitacione N1</td>
-                              <td>2 personas</td>
-                              <td>$50.25</td>
-                              <td>Premiun</td>
-                              <td>Ocupada</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td>Habitacione N1</td>
-                              <td>2 personas</td>
-                              <td>$50.25</td>
-                              <td>Premiun</td>
-                              <td>Ocupada</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td>Habitacione N1</td>
-                              <td>2 personas</td>
-                              <td>$50.25</td>
-                              <td>Premiun</td>
-                              <td>Ocupada</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td>Habitacione N1</td>
-                              <td>2 personas</td>
-                              <td>$50.25</td>
-                              <td>Premiun</td>
-                              <td>Ocupada</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td>Habitacione N1</td>
-                              <td>2 personas</td>
-                              <td>$50.25</td>
-                              <td>Premiun</td>
-                              <td>Ocupada</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td>Habitacione N1</td>
-                              <td>2 personas</td>
-                              <td>$50.25</td>
-                              <td>Premiun</td>
-                              <td>Ocupada</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td>Habitacione N1</td>
-                              <td>2 personas</td>
-                              <td>$50.25</td>
-                              <td>Premiun</td>
-                              <td>Ocupada</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td>Habitacione N1</td>
-                              <td>2 personas</td>
-                              <td>$50.25</td>
-                              <td>Premiun</td>
-                              <td>Ocupada</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
+                            <?php
+                              foreach($data as $row){
+                                print("
+                                  <tr role='row' class='odd'>
+                                    <td>$row[NumeroHabitacion]</td>
+                                    <td>$row[Capacidad]</td>
+                                    <td>$row[Precio]</td>
+                                    <td>$row[TipoHabitacion]</td>
+                                    <td>$row[Estado]</td>
+                                    <td>
+                                      <button type='button' class='btn btn-round btn-info'>
+                                        <i class='far fa-edit'></i>
+                                      </button>
+                                    </td>
+                                    <td>
+                                      <button type='button' class='btn btn-round btn-danger'>
+                                        <i class='far fa-trash-alt'></i>
+                                      </button>
+                                    </td>
+                                  </tr>
+                                ");
+                              }
+                            ?>	               
                           </tbody>
                         </table>
                       </div>
@@ -284,52 +142,38 @@
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                  <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+                  <form method="post" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
                     <div class="form-group">
-                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Nnumero Habitacione*:</label>
+                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Numero Habitacion*:</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
+                        <input id="middle-name" name="num" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($hab->getNumero()) ?>" required/>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Capacidad*:</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
+                        <input id="middle-name" name="cap" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($hab->getCapacidad()) ?>" required/>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Precio*:</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
+                        <input id="middle-name" name="pre" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($hab->getPrecio()) ?>" required/>
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Tipo:*</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <select class="form-control">
-                          <option>Eliga tipo</option>
-                          <option>Economica</option>
-                          <option>Regular</option>
-                          <option>Premiun</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Estado:*</label>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <select class="form-control">
-                          <option>Eliga un estado</option>
-                          <option>Libre</option>
-                          <option>Limpieza</option>
-                          <option>Ocupada</option>
-                        </select>
+                        <?php
+                          Page::showSelect("", "TipoHabitacion", $hab->getIdTipo(), $hab->getTipo());
+                        ?>
                       </div>
                     </div>
                     <div class="ln_solid"></div>
                     <div class="form-group">
                       <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                         <button class="btn btn-primary" type="button">Cancel</button>
-                        <button type="submit" class="btn btn-success">Guardar</button>
+                        <button type="submit" name="crear" class="btn btn-success">Guardar</button>
                       </div>
                     </div>
                   </form>

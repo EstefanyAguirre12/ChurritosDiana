@@ -41,6 +41,13 @@ class Validator{
 			return false;
 		}
 	}
+	public function validateInt($value){
+		if(filter_var($value, FILTER_VALIDATE_INT, array('min_range' => 1))){
+			return true;
+		}else{
+			return false;
+		}
+	}
 
 	public function validateImage($file, $value, $path, $max_width, $max_heigth){
      	if($file['size'] <= 2097152){

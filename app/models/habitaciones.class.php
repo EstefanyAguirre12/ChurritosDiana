@@ -22,7 +22,7 @@ class Habitaciones extends Validator{
     }
     
     public function setNumero($value){
-			if($this->validateNumeric($value, 3)){
+			if($this->validateInt($value)){
 				$this->numero = $value;
 				return true;
 			}else{
@@ -70,7 +70,7 @@ class Habitaciones extends Validator{
 			}
 
 			public function setCapacidad($value){
-				if($this->validateNumeric($value,3)){
+				if($this->validateInt($value)){
 					$this->capacidad = $value;
 					return true;
 				}else{
@@ -81,24 +81,29 @@ class Habitaciones extends Validator{
 				return $this->capacidad;
 				}
     
-    //Metodos CRUD para cotegoria
+		//Metodos CRUD para cotegoria
+		public function getTipo(){
+			$sql = "SELECT * FROM TipoHabitacion";
+			$params = array(null);
+			return Database::getRows($sql, $params);
+			}
 		//Obtener categoria
 		public function getHabitacion(){
-			$sql = "SELECT IdHabitacion, NumeroHabitacion, IdEstado, IdTipoHabitacion, Precio, Capacidad FROM habitaciones ORDER BY IdHabitacion";
+			$sql = "SELECT IdHabitacion, NumeroHabitacion, t.TipoHabitacion, Precio, Capacidad, e.Estado FROM habitaciones h, tipohabitacion t, estado e Where t.IdTipoHabitacion=h.IdTipoHabitacion and e.IdEstado=h.IdEstado ORDER BY IdHabitacion";
 			$params = array(null);
 			return Database::getRows($sql, $params);
 			}
 	
     //Buscar categoria con parametros
     public function searchHabitacion($value){
-		$sql = "SELECT * FROM habitaciones WHERE NumeroHabitacion LIKE ? OR Precio LIKE ? ORDER BY NumeroHabitacion";
+		$sql = "SELECT IdHabitacion, NumeroHabitacion, t.TipoHabitacion, Precio, Capacidad, e.Estado FROM habitaciones h, tipohabitacion t, estado e Where t.IdTipoHabitacion=h.IdTipoHabitacion and e.IdEstado=h.IdEstado and (NumeroHabitacion LIKE ? OR Precio LIKE ?)";
 		$params = array("%$value%", "%$value%");
 		return Database::getRows($sql, $params);
     }
     //Insertar categoria
     public function createHabitacion(){
-		$sql = "INSERT INTO habitaciones(IdHabitacion, NumeroHabitacion, IdEstado, IdTipoHabitacion, Precio, Capacidad) VALUES(?, ?, ?, ?, ?, ?)";
-		$params = array($this->id, $this->numero, $this->idestado, $this->idtipo, $this->precio, $this->capacidad);
+		$sql = "INSERT INTO habitaciones(NumeroHabitacion, IdTipoHabitacion, Precio, Capacidad, IdEstado) VALUES(?, ?, ?, ?, 1)";
+		$params = array($this->numero, $this->idtipo, $this->precio, $this->capacidad);
 		return Database::executeRow($sql, $params);
     }
     //Leer categoria
