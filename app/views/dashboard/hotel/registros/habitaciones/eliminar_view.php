@@ -24,7 +24,7 @@
                   <form method='post'>
                     <div class='row text-center'>
                       <h4>Un registro será eliminado ¿está seguro?</h4>
-                      <a href="habitaciones.php" class="btn btn-primary" type="button">Cancel</a>
+                      <a href="habitaciones.php" class="btn btn-primary" type="button">Cancelar</a>
                         <button type="submit" name="eliminar" class="btn btn-danger">Eliminar</button> </div>
                   </form>
                 </div>

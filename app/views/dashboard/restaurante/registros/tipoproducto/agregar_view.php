@@ -2,7 +2,7 @@
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>Mantenimiento de Habitaciones</h3>
+              <h3>Mantenimiento de Restaurante</h3>
             </div>
           </div>
           <div class="clearfix"></div>  
@@ -10,7 +10,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2>Agregar nuevo tipo</h2>
+                  <h2>Agregar Nuevo Tipo</h2>
                   <ul class="nav navbar-right panel_toolbox">
                     <li>
                       <a class="collapse-link">
@@ -31,7 +31,7 @@
                     <div class="ln_solid"></div>
                     <div class="form-group">
                       <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                      <a href="indextipo.php" class="btn btn-primary" type="button">Cancelar</a>
+                      <a href="indextipo.php" class="btn btn-primary" type="button">Cancel</a>
                       <button type="submit" name="guardar" class="btn btn-success">Guardar</button>
                       </div>
                     </div>

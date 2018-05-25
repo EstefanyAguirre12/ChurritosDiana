@@ -19,10 +19,10 @@ try{
                     }
                 }
             }else{
-                Page::showMessage(2, "Registro inexistente", "indextipo.php");
+                Page::showMessage(2, "Ocasion inexistente", "index.php");
             }
         }else{
-            Page::showMessage(2, "Registro incorrecto", "indextipo.php");
+            Page::showMessage(2, "Ocasion incorrecta", "index.php");
         }
     }else{
     }

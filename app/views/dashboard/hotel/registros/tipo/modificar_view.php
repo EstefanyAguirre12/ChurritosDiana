@@ -23,35 +23,15 @@
                 <div class="x_content">
                   <form method="post" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left">
                     <div class="form-group">
-                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Numero Habitacion*:</label>
+                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Tipo Habitacion*:</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name myInput" name="num" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($hab->getNumero()) ?>" required/>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Capacidad*:</label>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name" name="cap" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($hab->getCapacidad()) ?>" required/>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Precio*:</label>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name" name="pre" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($hab->getPrecio()) ?>" required/>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Tipo:*</label>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <?php
-                          Page::showSelect("", "TipoHabitacion", $hab->getIdTipo(), $hab->getTipo());
-                        ?>
+                        <input id="middle-name myInput" name="tip" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getNombre()) ?>" required/>
                       </div>
                     </div>
                     <div class="ln_solid"></div>
                     <div class="form-group">
                       <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                        <a href="habitaciones.php" class="btn btn-primary" type="button">Cancel</a>
+                        <a href="indextipo.php" class="btn btn-primary" type="button">Cancelar</a>
                         <button type="submit" name="modificar" class="btn btn-success">Modificar</button>
                       </div>
                     </div>

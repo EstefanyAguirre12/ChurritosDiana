@@ -31,10 +31,10 @@ try{
                     }
                 }
             }else{
-                Page::showMessage(2, "Ocasion inexistente", "index.php");
+                Page::showMessage(2, "Registro inexistente", "habitaciones.php");
             }
         }else{
-            Page::showMessage(2, "Ocasion incorrecta", "index.php");
+            Page::showMessage(2, "Registro incorrecto", "habitaciones.php");
         }
     }else{
     }

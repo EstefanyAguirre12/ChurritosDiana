@@ -51,7 +51,7 @@
                     <div class="ln_solid"></div>
                     <div class="form-group">
                       <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                        <a href="habitaciones.php" class="btn btn-primary" type="button">Cancel</a>
+                        <a href="habitaciones.php" class="btn btn-primary" type="button">Cancelar</a>
                         <button type="submit" name="modificar" class="btn btn-success">Modificar</button>
                       </div>
                     </div>

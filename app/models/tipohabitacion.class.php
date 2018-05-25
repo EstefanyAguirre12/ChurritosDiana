@@ -5,14 +5,14 @@ class Tipohabitacion extends Validator{
     
     //Métodos para sobrecarga de propiedades
     public function setId($value){
-        if($this->validateId($value)){
-            $this->id = $roducto
-            return true;  
-        }
-        else{
-            return false;
-        }
-    }
+			if($this->validateId($value)){
+					$this->id = $value;
+					return true;  
+			}
+			else{
+					return false;
+			}
+		}
     public function getId(){
 			return $this->id;
     }
