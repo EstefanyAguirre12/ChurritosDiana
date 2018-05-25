@@ -108,15 +108,15 @@ class Habitaciones extends Validator{
     }
     //Leer categoria
     public function readHabitacion(){
-		$sql = "SELECT NumeroHabitacion, IdEstado, IdTipoHabitacion, Precio, Capacidad FROM salas WHERE IdHabitacion = ?";
+		$sql = "SELECT NumeroHabitacion, IdEstado, IdTipoHabitacion, Precio, Capacidad FROM habitaciones WHERE IdHabitacion = ?";
 		$params = array($this->id);
 		$habitacion = Database::getRow($sql, $params);
 		if($habitacion){
 			$this->numero = $habitacion['NumeroHabitacion'];
             $this->idestado = $habitacion['IdEstado'];
-						$this->idtipo = $habitacion['IdTipoHabitacion'];
-						$this->precio = $habitacion['Precio'];
-						$this->capacidad = $habitacion['Capacidad'];
+			$this->idtipo = $habitacion['IdTipoHabitacion'];
+			$this->precio = $habitacion['Precio'];
+			$this->capacidad = $habitacion['Capacidad'];
 			return true;
 		}else{
 			return null;

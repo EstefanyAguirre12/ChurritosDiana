@@ -11,7 +11,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2>Registros de Habitaciones</h2>
+                  <h2>Registros tipo de Habitaciones</h2>
                   <ul class="nav navbar-right panel_toolbox">
                     <li>
                       <a class="collapse-link">
@@ -39,11 +39,11 @@
                         <div class="col-sm-6">
                           <div id="datatable-checkbox_filter" class="dataTables_filter">
                             <label>Busquedad:
-                              <input type="search" name="busqueda" class="form-control input-sm validate" placeholder="N° Hab / Precio" aria-controls="datatable-checkbox">
+                              <input type="search" name="busqueda" class="form-control input-sm validate" placeholder="Tipo" aria-controls="datatable-checkbox" /required>
                             </label>
                             <button type="submit" name="buscar" class="btn btn-round btn-info">
                               <i class="fas fa-search"></i>
-                            </button>                          
+                            </button>                        
                           </div>
                         </div>
                       </form> 
@@ -66,20 +66,16 @@
                               foreach($data as $row){
                                 print("
                                   <tr role='row' class='odd'>
-                                    <td>$row[NumeroHabitacion]</td>
-                                    <td>$row[Capacidad]</td>
-                                    <td>$row[Precio]</td>
                                     <td>$row[TipoHabitacion]</td>
-                                    <td>$row[Estado]</td>
                                     <td>
-                                      <button type='button' class='btn btn-round btn-info'>
+                                      <a href='modificar.php?id=$row[IdHabitacion]' type='button' class='btn btn-round btn-info'>
                                         <i class='far fa-edit'></i>
-                                      </button>
+                                      </a>
                                     </td>
                                     <td>
-                                      <button type='button' class='btn btn-round btn-danger'>
+                                      <a href='eliminar.php?id=$row[IdHabitacion]' type='button' class='btn btn-round btn-danger'>
                                         <i class='far fa-trash-alt'></i>
-                                      </button>
+                                      </a>
                                     </td>
                                   </tr>
                                 ");
@@ -124,63 +120,14 @@
                         </div>
                       </div>
                     </div>
+                    <div class="text-right">
+                      <a href="agregar.php" type="submit" class="btn btn-success">Agregar</a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="x_panel">
-                <div class="x_title">
-                  <h2>Agregar nueva bebidad</h2>
-                  <ul class="nav navbar-right panel_toolbox">
-                    <li>
-                      <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                      </a>
-                    </li>
-                  </ul>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
-                  <form method="post" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left">
-                    <div class="form-group">
-                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Numero Habitacion*:</label>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name" name="num" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($hab->getNumero()) ?>" required/>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Capacidad*:</label>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name" name="cap" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($hab->getCapacidad()) ?>" required/>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Precio*:</label>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name" name="pre" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($hab->getPrecio()) ?>" required/>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Tipo:*</label>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <?php
-                          Page::showSelect("", "TipoHabitacion", $hab->getIdTipo(), $hab->getTipo());
-                        ?>
-                      </div>
-                    </div>
-                    <div class="ln_solid"></div>
-                    <div class="form-group">
-                      <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                        <button class="btn btn-primary" type="button">Cancel</button>
-                        <button type="submit" name="crear" class="btn btn-success">Guardar</button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-<!-- /page content -->
+          </div>  
+        </div>  
+      </div>  
+            
