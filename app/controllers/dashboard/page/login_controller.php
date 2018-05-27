@@ -19,7 +19,7 @@ try
                             session_start();
                             $_SESSION['IdUsuario'] = $login->getId();
                             $_SESSION['NombreUsuario'] = $login->getNombre();
-                            Login::showMessage(1, "Autenticación correcta", "index.php");
+                            Page::showMessage(1, "Autenticación correcta", "index.php");
                         }
                         else
                         {
@@ -43,12 +43,9 @@ try
         }
     }
     else{
-		Login::showMessage(3, "No hay usuarios disponibles", null);
 	}
-}
-catch(Exception $error)
-{
-    Login::showMessage(2, $error->getMessage(), null);
+}catch(Exception $error){
+	Page::showMessage(2, $error->getMessage(), null);
 }
 
 
