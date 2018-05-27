@@ -38,10 +38,19 @@ class Page extends Component{
 									<br />
 									<!-- sidebar menu -->
 									<div id='sidebar-menu' class='main_menu_side hidden-print main_menu  '>
-										<div class=''>
+										<div class=''>");
+										if(isset($_SESSION['IdUsuario'])){
+										print("
+										<ul class='nav side-menu '>
+										<li>
+											<a>Bienvenido $_SESSION[NombreUsuario]</a>
+										</ul>"); 
+										}
+											print("
 										<ul class='nav side-menu '>
 											<li>
 											<a href='../../otros/page/index.php'>
+											
 												<i class='material-icons'>home</i> Inicio </a>
 										</ul>
 										</div>
