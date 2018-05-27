@@ -4,7 +4,7 @@ require_once('../../../app/helpers/validator.class.php');
 require_once('../../../app/helpers/component.class.php');
 require_once('../../../app/helpers/dumper.php');
 require_once('../../../app/helpers/phpmyimporter.php');
-class Page {
+class Page extends Component {
 	public static function templateHeader($title){
 		print("
 			<!DOCTYPE html>

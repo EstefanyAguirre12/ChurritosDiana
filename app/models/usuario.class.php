@@ -1,5 +1,5 @@
 <?php
-class Usuario {
+class Usuario extends Validator {
     private $id = null;
     private $nombre = null;
     private $idempleado = null;
@@ -57,12 +57,12 @@ class Usuario {
     
     //Metodos CRUD para cotegoria
     // Verificar contraseña
-    public function checkContraseña()
+    public function checkClaveUsuario()
     {
         $sql = "SELECT ClaveUsuario FROM usuarios WHERE IdUsuario = ?";
         $params = array($this->id);
         $data = Database::getRow($sql, $params);
-        if(password_verify($this->contraseña, $data['ClaveUsuario']))
+        if(password_verify($this->clave, $data['ClaveUsuario']))
         {
             return true;
         }

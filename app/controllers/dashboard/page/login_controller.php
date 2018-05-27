@@ -10,11 +10,11 @@ try
             $_POST = $login->validateForm($_POST);
             if($login->setNombre($_POST['usuario']))
             {
-                if($login->checkUsuarioC())
+                if($login->checkUsuario())
                 {
                     if($login->setClave($_POST['contraseña']))
                     {
-                        if($login->checkContraseña())
+                        if($login->checkClaveUsuario())
                         {
                             session_start();
                             $_SESSION['IdUsuario'] = $login->getId();
@@ -43,6 +43,7 @@ try
         }
     }
     else{
+        Page::showMessage(3, "No hay usuarios disponibles", null);
 	}
 }catch(Exception $error){
 	Page::showMessage(2, $error->getMessage(), null);
