@@ -1,13 +1,13 @@
 <?php
-require_once("../../../app/models/categorialavanderia.class.php");
+require_once("../../../app/models/cargos.class.php");
 try{
 	if(isset($_GET['id'])){
-		$dato = new Categorialavanderia;
+		$dato = new Cargos;
 		if($dato->setId($_GET['id'])){
-			if($dato->readCategoria()){
+			if($dato->readCargo()){
 				if(isset($_POST['eliminar'])){
-					if($dato->deleteCategoria()){
-                        Page::showMessage(1, "Registro eliminado", "indexcategoria.php");
+					if($dato->deleteCargo()){
+                        Page::showMessage(1, "Registro eliminado", "indexcargos.php");
 					}else{
 						throw new Exception(Database::getException());
 					}
@@ -24,5 +24,5 @@ try{
 }catch(Exception $error){
 	Page::showMessage(2, $error->getMessage(), null);
 }
-require_once("../../../app/views/dashboard/lavanderia/registros/categoria/eliminar_view.php");
+require_once("../../../app/views/dashboard/registros/mantenimientos/cargos/eliminar_view.php");
 ?>

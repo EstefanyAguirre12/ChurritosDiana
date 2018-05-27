@@ -11,7 +11,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2>Registros de Cargos</h2>
+                  <h2>Registros de Tipo Ente</h2>
                   <ul class="nav navbar-right panel_toolbox">
                     <li>
                       <a class="collapse-link">
@@ -39,7 +39,7 @@
                         <div class="col-sm-6">
                           <div id="datatable-checkbox_filter" class="dataTables_filter">
                             <label>Busquedad:
-                              <input type="search" name="busqueda" class="form-control input-sm validate" placeholder="Cargo" aria-controls="datatable-checkbox" /required>
+                              <input type="search" name="busqueda" class="form-control input-sm validate" placeholder="Tipo" aria-controls="datatable-checkbox" /required>
                             </label>
                             <button type="submit" name="buscar" class="btn btn-round btn-info">
                               <i class="fas fa-search"></i>
@@ -53,8 +53,7 @@
                         <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                           <thead>
                             <tr role="row">
-                              <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">Cargo</th>
-                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Descripcion</th>
+                              <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">Tipo</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Editar</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Eliminar</th>
                           </thead>
@@ -63,15 +62,14 @@
                               foreach($data as $row){
                                 print("
                                   <tr role='row' class='odd'>
-                                    <td>$row[NombreCargo]</td>
-                                    <td>$row[Descripcion]</td>
+                                    <td>$row[TipoEnte]</td>
                                     <td>
-                                      <a href='modificarcargos.php?id=$row[IdCargo]' type='button' class='btn btn-round btn-info'>
+                                      <a href='modificartipoente.php?id=$row[IdTipo]' type='button' class='btn btn-round btn-info'>
                                         <i class='far fa-edit'></i>
                                       </a>
                                     </td>
                                     <td>
-                                      <a href='eliminarcargos.php?id=$row[IdCargo]' type='button' class='btn btn-round btn-danger'>
+                                      <a href='eliminartipoente.php?id=$row[IdTipo]' type='button' class='btn btn-round btn-danger'>
                                         <i class='far fa-trash-alt'></i>
                                       </a>
                                     </td>
@@ -119,7 +117,7 @@
                       </div>
                     </div>
                     <div class="text-right">
-                      <a href="agregarcargos.php" type="submit" class="btn btn-success">Agregar</a>
+                      <a href="agregartipoente.php" type="submit" class="btn btn-success">Agregar</a>
                     </div>
                   </div>
                 </div>

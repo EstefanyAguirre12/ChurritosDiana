@@ -6,7 +6,7 @@ class Tipoente extends Validator{
     //Métodos para sobrecarga de propiedades
     public function setId($value){
         if($this->validateId($value)){
-            $this->id = $roducto
+            $this->id = $value;
             return true;  
         }
         else{

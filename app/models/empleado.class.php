@@ -122,22 +122,31 @@ class Empleado extends Validator{
     
     //Metodos CRUD para cotegoria
 		//Obtener categoria
-		public function getEmpleado(){
-			$sql = "SELECT IdEmpleado, NombreEmpleado, ApellidosEmpleado, Direccion, DUIEmpleado, FotoEmpleado, IdCargo, IdGenero, Telefono FROM empleados ORDER BY NombreEmpleado";
-			$params = array(null);
-			return Database::getRows($sql, $params);
-			}
-	
+	public function getEmpleado(){
+		$sql = "SELECT IdEmpleado, NombreEmpleado, ApellidosEmpleado, DireccionEmpleado, DUIEmpleado, FotoEmpleado, g.NombreGenero, c.NombreCargo, e.TelefonoEmpleado FROM empleados e, cargos c, genero g WHERE c.IdCargo=e.IdCargo and g.IdGenero=e.IdGenero ORDER BY NombreEmpleado";
+		$params = array(null);
+		return Database::getRows($sql, $params);
+	}
+	public function getGenero(){
+		$sql = "SELECT * FROM genero";
+		$params = array(null);
+		return Database::getRows($sql, $params);
+	}
+	public function getCargo(){
+		$sql = "SELECT * FROM cargos";
+		$params = array(null);
+		return Database::getRows($sql, $params);
+	}
     //Buscar categoria con parametros
     public function searchEmpleado($value){
-		$sql = "SELECT * FROM empleados WHERE NombreEmpleado LIKE ? OR DUIEmpleado LIKE ? ORDER BY NombreEmpleado";
+		$sql = "SELECT IdEmpleado, NombreEmpleado, ApellidosEmpleado, DireccionEmpleado, DUIEmpleado, FotoEmpleado, g.NombreGenero, c.NombreCargo, e.TelefonoEmpleado FROM empleados e, cargos c, genero g WHERE c.IdCargo=e.IdCargo and g.IdGenero=e.IdGenero and (NombreEmpleado LIKE ? OR DUIEmpleado LIKE ?) ORDER BY NombreEmpleado";
 		$params = array("%$value%", "%$value%");
 		return Database::getRows($sql, $params);
     }
     //Insertar categoria
     public function createEmpleado(){
 		$sql = "INSERT INTO empleados(IdEmpleado, NombreEmpleado, ApellidosEmpleado, Direccion, DUIEmpleado, FotoEmpleado, IdCargo, IdGenero, Telefono) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
-		$params = array($this->id, $this->nombre, $this->apellido, $this->direccion, $this->dui, $this->foto, $this->idcargo, $this->idgenero $this->telefono);
+		$params = array($this->id, $this->nombre, $this->apellido, $this->direccion, $this->dui, $this->foto, $this->idcargo, $this->idgenero, $this->telefono);
 		return Database::executeRow($sql, $params);
     }
     //Leer categoria
