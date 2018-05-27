@@ -1,28 +1,32 @@
 <?php
-require_once("../../../app/models/tipohabitacion.class.php");
+require_once("../../../app/models/mesasrestaurante.class.php");
 try{
     //MODIFICAR
-    $dato = new Tipohabitacion;
+    $dato = new Mesarestaurante;
     if(isset($_GET['id'])){
         if($dato->setId($_GET['id'])){
-            if($dato->readTipohabitacion()){
+            if($dato->readMesarestaurante()){
                 if(isset($_POST['modificar'])){
                     $_POST = $dato->validateForm($_POST);
-                    if($dato->setNombre($_POST['tip'])){  
-                        if($dato->updateTipohabitacion()){
-                                Page::showMessage(1, "Se ha modificado correctamente", "indextipo.php");
+                    if($dato->setNumeromesa($_POST['num'])){  
+                        if($dato->setCapacidad($_POST['cap'])){  
+                            if($dato->updateMesarestaurante()){
+                                    Page::showMessage(1, "Se ha modificado correctamente", "indexmesa.php");
+                            }else{
+                                throw new Exception(Database::getException());
+                            }  
                         }else{
-                            throw new Exception(Database::getException());
-                        }                  
+                            throw new Exception("Capacidad incorrecta");
+                        }                
                     }else{
                         throw new Exception("Numero incorrecto");
                     }
                 }
             }else{
-                Page::showMessage(2, "Ocasion inexistente", "index.php");
+                Page::showMessage(2, "Registro inexistente", "indexmesa.php");
             }
         }else{
-            Page::showMessage(2, "Ocasion incorrecta", "index.php");
+            Page::showMessage(2, "Registro incorrecto", "indexmesa.php");
         }
     }else{
     }
@@ -30,5 +34,5 @@ try{
 }catch(Exception $error){
 	Page::showMessage(2, $error->getMessage(), null);
 }
-require_once("../../../app/views/dashboard/hotel/registros/tipo/modificar_view.php");
+require_once("../../../app/views/dashboard/restaurante/registros/mesas/modificar_view.php");
 ?>

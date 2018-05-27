@@ -3,7 +3,7 @@
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>Mantenimiento de Habitaciones</h3>
+              <h3>Mantenimiento de Restaurante</h3>
             </div>
           </div>
           <div class="clearfix"></div>
@@ -11,7 +11,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2>Registros tipo de Habitaciones</h2>
+                  <h2>Registros Productos</h2>
                   <ul class="nav navbar-right panel_toolbox">
                     <li>
                       <a class="collapse-link">
@@ -39,7 +39,7 @@
                         <div class="col-sm-6">
                           <div id="datatable-checkbox_filter" class="dataTables_filter">
                             <label>Busquedad:
-                              <input type="search" name="busqueda" class="form-control input-sm validate" placeholder="Tipo" aria-controls="datatable-checkbox" /required>
+                              <input type="search" name="busqueda" class="form-control input-sm validate" placeholder="Nombre/Precio" aria-controls="datatable-checkbox" /required>
                             </label>
                             <button type="submit" name="buscar" class="btn btn-round btn-info">
                               <i class="fas fa-search"></i>
@@ -53,7 +53,11 @@
                         <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                           <thead>
                             <tr role="row">
-                              <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">Tipo Habitacion</th>
+                              <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nombre</th>
+                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Tipo</th>
+                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Categoria</th>
+                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Descripcion</th>
+                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Precio</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Editar</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Eliminar</th>
                           </thead>
@@ -62,14 +66,18 @@
                               foreach($data as $row){
                                 print("
                                   <tr role='row' class='odd'>
-                                    <td>$row[TipoHabitacion]</td>
+                                    <td>$row[NombreProducto]</td>
+                                    <td>$row[TipoProducto]</td>
+                                    <td>$row[CategoriaProducto]</td>
+                                    <td>$row[Descripcion]</td>
+                                    <td>$row[Precio]</td>
                                     <td>
-                                      <a href='modificartipo.php?id=$row[IdTipoHabitacion]' type='button' class='btn btn-round btn-info'>
+                                      <a href='modificarproducto.php?id=$row[IdProducto]' type='button' class='btn btn-round btn-info'>
                                         <i class='far fa-edit'></i>
                                       </a>
                                     </td>
                                     <td>
-                                      <a href='eliminartipo.php?id=$row[IdTipoHabitacion]' type='button' class='btn btn-round btn-danger'>
+                                      <a href='eliminarproducto.php?id=$row[IdProducto]' type='button' class='btn btn-round btn-danger'>
                                         <i class='far fa-trash-alt'></i>
                                       </a>
                                     </td>
@@ -117,7 +125,7 @@
                       </div>
                     </div>
                     <div class="text-right">
-                      <a href="agregartipo.php" type="submit" class="btn btn-success">Agregar</a>
+                      <a href="agregarproducto.php" type="submit" class="btn btn-success">Agregar</a>
                     </div>
                   </div>
                 </div>

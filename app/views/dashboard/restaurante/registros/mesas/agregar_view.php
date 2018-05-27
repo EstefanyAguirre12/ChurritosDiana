@@ -23,15 +23,21 @@
                 <div class="x_content">
                   <form method="post" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left">
                     <div class="form-group">
-                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Tipo Habitacion*:</label>
+                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Numero Mesa*:</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name myInput" name="tip" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getNombre()) ?>" required/>
+                        <input id="middle-name myInput" name="num" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getNumeromesa()) ?>" required/>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Capacidad*:</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input id="middle-name" name="cap" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getCapacidad()) ?>" required/>
                       </div>
                     </div>
                     <div class="ln_solid"></div>
                     <div class="form-group">
                       <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                      <a href="indextipo.php" class="btn btn-primary" type="button">Cancel</a>
+                      <a href="indexmesa.php" class="btn btn-primary" type="button">Cancelar</a>
                       <button type="submit" name="guardar" class="btn btn-success">Guardar</button>
                       </div>
                     </div>

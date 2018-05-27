@@ -1,13 +1,13 @@
 <?php
-require_once("../../../app/models/tipohabitacion.class.php");
+require_once("../../../app/models/producto.class.php");
 try{
 	if(isset($_GET['id'])){
-		$dato = new Tipohabitacion;
+		$dato = new Producto;
 		if($dato->setId($_GET['id'])){
-			if($dato->readTipohabitacion()){
+			if($dato->readProducto()){
 				if(isset($_POST['eliminar'])){
-					if($dato->deleteTipohabitacion()){
-                        Page::showMessage(1, "Registro eliminado", "indextipo.php");
+					if($dato->deleteProducto()){
+                        Page::showMessage(1, "Registro eliminado", "indexproducto.php");
 					}else{
 						throw new Exception(Database::getException());
 					}
@@ -24,5 +24,5 @@ try{
 }catch(Exception $error){
 	Page::showMessage(2, $error->getMessage(), null);
 }
-require_once("../../../app/views/dashboard/hotel/registros/tipo/eliminar_view.php");
+require_once("../../../app/views/dashboard/restaurante/registros/productos/eliminar_view.php");
 ?>

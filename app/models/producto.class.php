@@ -35,14 +35,14 @@ class Producto extends Validator{
     
     public function setIdTipo($value){
 		if($this->validateId($value)){
-			$this->idestadosala = $value;
+			$this->idtipo = $value;
 			return true;
 		}else{
 			return false;
 		}
 	}
 	public function getIdTipo(){
-		return $this->idestadosala;
+		return $this->idtipo;
     }
 
     public function setIdCategoria($value){
@@ -59,7 +59,7 @@ class Producto extends Validator{
 		
 		public function setDescripcion($value){
 			if($this->validateAlphanumeric($value, 1, 200)){
-				$this-> = $value;
+				$this->descripcion = $value;
 				return true;
 			}else{
 				return false;
@@ -84,33 +84,43 @@ class Producto extends Validator{
     //Metodos CRUD para cotegoria
 		//Obtener categoria
 		public function getProducto(){
-			$sql = "SELECT IdProducto, NombreProducto, IdTipo, IdCategoria, Descripcion, Precio FROM producto ORDER BY IdProducto";
+			$sql = "SELECT IdProducto, NombreProducto, t.TipoProducto, c.CategoriaProducto, Descripcion, Precio FROM productos p, categoriaproducto c, tipoproducto t WHERE p.IdTipo=t.IdTipo and p.IdCategoria=c.IdCategoria ORDER BY IdProducto";
 			$params = array(null);
 			return Database::getRows($sql, $params);
 			}
-	
+		public function getTipo(){
+			$sql = "SELECT * FROM TipoProducto";
+			$params = array(null);
+			return Database::getRows($sql, $params);
+		}
+		public function getCategoria(){
+			$sql = "SELECT * FROM categoriaproducto";
+			$params = array(null);
+			return Database::getRows($sql, $params);
+		}
     //Buscar categoria con parametros
     public function searchProducto($value){
-		$sql = "SELECT * FROM productos WHERE NombreProducto LIKE ? OR Precio LIKE ? ORDER BY NombreProducto";
+		$sql = "SELECT IdProducto, NombreProducto, t.TipoProducto, c.CategoriaProducto, Descripcion, Precio FROM productos p, categoriaproducto c, tipoproducto t WHERE p.IdTipo=t.IdTipo and p.IdCategoria=c.IdCategoria and (NombreProducto LIKE ? OR Precio LIKE ?)";
 		$params = array("%$value%", "%$value%");
-		return Database::getRows($sql, $paramsProducto
+		return Database::getRows($sql, $params);
+		}
     //Insertar categoria
     public function createProducto(){
-		$sql = "INSERT INTO producto(NombreProducto, IdTipo, IdCategoria, Descripcion, Precio) VALUES(?, ?, ?, ?, ?)";
-		$params = array($this->id, $this->nombre, $this->idtipo, $this->idcategoria, $this->descripcion, $this->Precio);
+		$sql = "INSERT INTO productos(NombreProducto, IdTipo, IdCategoria, Descripcion, Precio) VALUES(?, ?, ?, ?, ?)";
+		$params = array($this->nombre, $this->idtipo, $this->idcategoria, $this->descripcion, $this->precio);
 		return Database::executeRow($sql, $params);
     }
     //Leer categoria
     public function readProducto(){
-		$sql = "SELECT NombreProducto, IdTipo, IdCategoria, Descripcion, Precio FROM producto WHERE IdProducto = ?";
+		$sql = "SELECT NombreProducto, IdTipo, IdCategoria, Descripcion, Precio FROM productos WHERE IdProducto = ?";
 		$params = array($this->id);
 		$producto = Database::getRow($sql, $params);
 		if($producto){
 			$this->nombre = $producto['NombreProducto'];
-            $this->idtipo = $producto['IdTipo'];
-						$this->idcategoria = $producto['IdCategaria'];
-						$this->descripcion = $producto['Descripcion'];
-                        $this->precio = $producto['Precio'];
+			$this->idtipo = $producto['IdTipo'];
+			$this->idcategoria = $producto['IdCategoria'];
+			$this->descripcion = $producto['Descripcion'];
+			$this->precio = $producto['Precio'];
 			return true;
 		}else{
 			return null;
@@ -118,13 +128,13 @@ class Producto extends Validator{
     }
     //Modificar categoria
     public function updateProducto(){
-		$sql = "UPDATE producto SET NombreProducto = ?, IdTipo = ?, IdCategoria = ?, Descripcion = ?, Precio = ? WHERE IdProdcuto = ?";
-		$params = array($this->nombre, $this->idtipo, $this->idcategoria, $this->descripcion, $this->precio, $this->Id);
+		$sql = "UPDATE productos SET NombreProducto = ?, IdTipo = ?, IdCategoria = ?, Descripcion = ?, Precio = ? WHERE IdProducto = ?";
+		$params = array($this->nombre, $this->idtipo, $this->idcategoria, $this->descripcion, $this->precio, $this->id);
 		return Database::executeRow($sql, $params);
     }
     //Eliminar categoria
 	public function deleteProducto(){
-		$sql = "DELETE FROM producto WHERE IdProducto = ?";
+		$sql = "DELETE FROM productos WHERE IdProducto = ?";
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}

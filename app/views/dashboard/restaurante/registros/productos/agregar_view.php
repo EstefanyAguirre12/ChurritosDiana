@@ -10,7 +10,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2>Agregar Nuevo Tipo</h2>
+                  <h2>Agregar Nuevo Producto</h2>
                   <ul class="nav navbar-right panel_toolbox">
                     <li>
                       <a class="collapse-link">
@@ -23,18 +23,48 @@
                 <div class="x_content">
                   <form method="post" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left">
                     <div class="form-group">
-                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Tipo Habitacion*:</label>
+                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Nombre*:</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name myInput" name="tip" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getNombre()) ?>" required/>
+                        <input id="middle-name myInput" name="nom" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getNombre()) ?>" required/>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Descripción*:</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input id="middle-name" name="des" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getDescripcion()) ?>" required/>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Precio*:</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input id="middle-name" name="pre" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getPrecio()) ?>" required/>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Tipo:*</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <?php
+                          Page::showSelect("", "tip", $dato->getIdTipo(), $dato->getTipo());
+                        ?>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Categoria:*</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <?php
+                          Page::showSelect("", "cat", $dato->getIdCategoria(), $dato->getCategoria());
+                        ?>
                       </div>
                     </div>
                     <div class="ln_solid"></div>
                     <div class="form-group">
                       <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                      <a href="indextipo.php" class="btn btn-primary" type="button">Cancel</a>
+                      <a href="indexproducto.php" class="btn btn-primary" type="button">Cancelar</a>
                       <button type="submit" name="guardar" class="btn btn-success">Guardar</button>
                       </div>
                     </div>
+                    
                   </form>
                 </div>
               </div>

@@ -6,7 +6,7 @@ class Tipoproducto extends Validator{
     //Métodos para sobrecarga de propiedades
     public function setId($value){
         if($this->validateId($value)){
-            $this->id = $roducto
+            $this->id = $value;
             return true;  
         }
         else{
@@ -49,11 +49,11 @@ class Tipoproducto extends Validator{
     }
     //Leer Ocasion
     public function readTiproducto(){
-		$sql = "SELECT TipoProducto FROM tipoprodcuto WHERE IdTipo = ?";
+		$sql = "SELECT TipoProducto FROM tipoproducto WHERE IdTipo = ?";
 		$params = array($this->id);
 		$tipoproducto = Database::getRow($sql, $params);
 		if($tipoproducto){
-			$this->nombre = $tipoproducto['TipoProProducto'];
+			$this->nombre = $tipoproducto['TipoProducto'];
 			return true;
 		}else{
 			return null;

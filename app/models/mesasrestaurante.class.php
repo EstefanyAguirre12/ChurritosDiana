@@ -32,7 +32,7 @@ class Mesarestaurante extends Validator{
 		}
     
     public function setCapacidad($value){
-		if($this->validateNumeric($value, 1, 200)){
+		if($this->validateInt($value)){
 			$this->capacidad = $value;
 			return true;
 		}else{
@@ -44,7 +44,7 @@ class Mesarestaurante extends Validator{
     }
 
     public function setNumeromesa($value){
-		if($this->validateNumeric($value, 3)){
+		if($this->validateInt($value)){
 			$this->numeromesa = $value;
 			return true;
 		}else{
@@ -65,14 +65,14 @@ class Mesarestaurante extends Validator{
 	
     //Buscar categoria con parametros
     public function searchMesarestaurante($value){
-		$sql = "SELECT * FROM mesarestaurante WHERE IdMesaRes LIKE ? OR Capacidad LIKE ? ORDER BY NumeroMesa";
+		$sql = "SELECT * FROM mesarestaurante WHERE NumeroMesa LIKE ? OR Capacidad LIKE ? ORDER BY NumeroMesa";
 		$params = array("%$value%", "%$value%");
 		return Database::getRows($sql, $params);
     }
     //Insertar categoria
     public function createMesarestaurante(){
-		$sql = "INSERT INTO mesarestaurante(IdEstado, NumeroMesa, Capacidad) VALUES(?, ?, ?)";
-		$params = array($this->idestado, $this->numeromesa, $this->capacidad);
+		$sql = "INSERT INTO mesarestaurante(IdEstado, NumeroMesa, Capacidad) VALUES(1, ?, ?)";
+		$params = array( $this->numeromesa, $this->capacidad);
 		return Database::executeRow($sql, $params);
     }
     //Leer categoria
@@ -91,8 +91,8 @@ class Mesarestaurante extends Validator{
     }
     //Modificar categoria
     public function updateMesarestaurante(){
-		$sql = "UPDATE mesarestaurante SET IdEstado = ?, NumeroMesa = ?, Capacidad = ? WHERE IdMesaRes = ?";
-		$params = array($this->idestado, $this->numeromesa, $this->capacidad, $this->id);
+		$sql = "UPDATE mesarestaurante SET NumeroMesa = ?, Capacidad = ? WHERE IdMesaRes = ?";
+		$params = array($this->numeromesa, $this->capacidad, $this->id);
 		return Database::executeRow($sql, $params);
     }
     //Eliminar categoria

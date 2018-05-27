@@ -47,7 +47,7 @@ class Salas extends Validator{
 
     public function setDescripcion($value){
 		if($this->validateAlphanumeric($value, 1, 200)){
-			$this->clave = $value;
+			$this->descripcion = $value;
 			return true;
 		}else{
 			return false;
@@ -70,7 +70,7 @@ class Salas extends Validator{
 			}
 
 			public function setCapacidad($value){
-				if($this->validateNumeric($value,3)){
+				if($this->validateInt($value)){
 					$this->capacidad = $value;
 					return true;
 				}else{
@@ -97,8 +97,8 @@ class Salas extends Validator{
     }
     //Insertar categoria
     public function createSala(){
-		$sql = "INSERT INTO salas(IdSala, NombreSala, IdEstadoSala, Descripcion, Costo, Capacidad) VALUES(?, ?, ?, ?, ?, ?)";
-		$params = array($this->id, $this->nombre, $this->idestadosala, $this->descripcion, $this->costo, $this->capacidad);
+		$sql = "INSERT INTO salas(NombreSala, IdEstadoSala, Descripcion, Costo, Capacidad) VALUES(?, 1, ?, ?, ?)";
+		$params = array($this->nombre, $this->descripcion, $this->costo, $this->capacidad);
 		return Database::executeRow($sql, $params);
     }
     //Leer categoria
@@ -120,7 +120,7 @@ class Salas extends Validator{
     //Modificar categoria
     public function updateSala(){
 		$sql = "UPDATE salas SET NombreSala = ?, IdEstadoSala = ?, Descripcion = ?, Costo = ?, Capacidad = ? WHERE IdSala = ?";
-		$params = array($this->nombre, $this->idestadosala, $this->descricion, $this->costo, $this->capacidad, $this->id);
+		$params = array($this->nombre, $this->idestadosala, $this->descripcion, $this->costo, $this->capacidad, $this->id);
 		return Database::executeRow($sql, $params);
     }
     //Eliminar categoria

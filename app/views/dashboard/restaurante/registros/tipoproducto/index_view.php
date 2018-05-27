@@ -3,7 +3,7 @@
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>Mantenimiento de Habitaciones</h3>
+              <h3>Mantenimiento de Restaurante</h3>
             </div>
           </div>
           <div class="clearfix"></div>
@@ -11,7 +11,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2>Registros tipo de Habitaciones</h2>
+                  <h2>Registros Tipo de Producto</h2>
                   <ul class="nav navbar-right panel_toolbox">
                     <li>
                       <a class="collapse-link">
@@ -53,7 +53,7 @@
                         <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                           <thead>
                             <tr role="row">
-                              <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">Tipo Habitacion</th>
+                              <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">Tipo Producto</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Editar</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Eliminar</th>
                           </thead>
@@ -62,14 +62,14 @@
                               foreach($data as $row){
                                 print("
                                   <tr role='row' class='odd'>
-                                    <td>$row[TipoHabitacion]</td>
+                                    <td>$row[TipoProducto]</td>
                                     <td>
-                                      <a href='modificartipo.php?id=$row[IdTipoHabitacion]' type='button' class='btn btn-round btn-info'>
+                                      <a href='modificartipo.php?id=$row[IdTipo]' type='button' class='btn btn-round btn-info'>
                                         <i class='far fa-edit'></i>
                                       </a>
                                     </td>
                                     <td>
-                                      <a href='eliminartipo.php?id=$row[IdTipoHabitacion]' type='button' class='btn btn-round btn-danger'>
+                                      <a href='eliminartipo.php?id=$row[IdTipo]' type='button' class='btn btn-round btn-danger'>
                                         <i class='far fa-trash-alt'></i>
                                       </a>
                                     </td>

@@ -1,12 +1,12 @@
 <?php
-require_once("../../../app/models/tipohabitacion.class.php");
+require_once("../../../app/models/tipoproducto.class.php");
 try{
 	if(isset($_GET['id'])){
-		$dato = new Tipohabitacion;
+		$dato = new Tipoproducto;
 		if($dato->setId($_GET['id'])){
-			if($dato->readTipohabitacion()){
+			if($dato->readTiproducto()){
 				if(isset($_POST['eliminar'])){
-					if($dato->deleteTipohabitacion()){
+					if($dato->deleteTipoProducto()){
                         Page::showMessage(1, "Registro eliminado", "indextipo.php");
 					}else{
 						throw new Exception(Database::getException());
@@ -19,10 +19,10 @@ try{
 			throw new Exception("Registro incorrecta");
 		}
 	}else{
-		Page::showMessage(3, "Seleccione un registro", "habitaciones.php");
+		Page::showMessage(3, "Seleccione un registro", "indextipo.php");
 	}
 }catch(Exception $error){
 	Page::showMessage(2, $error->getMessage(), null);
 }
-require_once("../../../app/views/dashboard/hotel/registros/tipo/eliminar_view.php");
+require_once("../../../app/views/dashboard/restaurante/registros/tipoproducto/eliminar_view.php");
 ?>

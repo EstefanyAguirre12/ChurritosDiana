@@ -1,24 +1,27 @@
 <?php
-require_once("../../../app/models/tipohabitacion.class.php");
+require_once("../../../app/models/mesasrestaurante.class.php");
 try{
 	 //Insertar
-	$dato = new Tipohabitacion;
+	$dato = new Mesarestaurante;
 	if(isset($_POST['guardar'])){
 		$_POST = $dato->validateForm($_POST);
-		if($dato->setNombre($_POST['tip'])){
-			if($dato->createTipohabitacion()){
-				Page::showMessage(1, "Se ha insertado correctamente", "indextipo.php");
+		if($dato->setNumeromesa($_POST['num'])){
+			if($dato->setCapacidad($_POST['cap'])){
+				if($dato->createMesarestaurante()){
+					Page::showMessage(1, "Se ha insertado correctamente", "indexmesa.php");
+				}else{
+					throw new Exception(Database::getException());
+				}
 			}else{
-				throw new Exception(Database::getException());
+				throw new Exception("Numero incorrecto", null);
 			}
-
 		}else{
-			throw new Exception("Tipo Habitacion incorrecto", null);
+			throw new Exception("Capacidad incorrecta", null);
 		}
 	}
 
 }catch(Exception $error){
 	Page::showMessage(2, $error->getMessage(), null);
 }
-require_once("../../../app/views/dashboard/hotel/registros/tipo/agregar_view.php");
+require_once("../../../app/views/dashboard/restaurante/registros/mesas/agregar_view.php");
 ?>
