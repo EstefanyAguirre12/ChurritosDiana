@@ -1,5 +1,5 @@
 <?php
-class Usuario extends Validator{
+class Usuario {
     private $id = null;
     private $nombre = null;
     private $idempleado = null;
@@ -56,12 +56,43 @@ class Usuario extends Validator{
     }
     
     //Metodos CRUD para cotegoria
-		//Obtener categoria
-		public function getUsuario(){
-			$sql = "SELECT IdUsuario, NombreUsuario, IdEmpleado, ClaveUsuario FROM usuarios ORDER BY IdUsuario";
-			$params = array(null);
-			return Database::getRows($sql, $params);
-			}
+    // Verificar contraseña
+    public function checkContraseña()
+    {
+        $sql = "SELECT ClaveUsuario FROM usuarios WHERE IdUsuario = ?";
+        $params = array($this->id);
+        $data = Database::getRow($sql, $params);
+        if(password_verify($this->contraseña, $data['ClaveUsuario']))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    //Verificar usuarios
+    public function checkUsuario()
+    {
+        $sql = "SELECT IdUsuario FROM usuarios WHERE NombreUsuario = ? ";
+        $params = array($this->nombre);
+        $data = Database::getRow($sql, $params);
+        if($data)
+        {
+            $this->id = $data['IdUsuario'];
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+	//Obtener categoria
+	public function getUsuario(){
+		$sql = "SELECT  IdUsuario,NombreUsuario,IdEmpelado,ClaveUsuario FROM usuarios ORDER BY IdUsuario";
+		$params = array(null);
+		return Database::getRows($sql, $params);
+		}
 	
     //Buscar categoria con parametros
     public function searchUsuario($value){
