@@ -96,7 +96,7 @@
                     </div>
                     <div class="row">
                       <div class="col-sm-5">
-                        <div class="dataTables_info" id="datatable-checkbox_info" role="status" aria-live="polite">Mostrado 10 de 57 registros</div>
+                        <div class="dataTables_info" id="datatable-checkbox_info" role="status" aria-live="polite">Mostrado 10 de 10 registros</div>
                       </div>
                       <div class="col-sm-7">
                         <nav aria-label="Page navigation">
