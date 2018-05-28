@@ -5,22 +5,26 @@ try{
 	$dato = new Usuario;
 	if(isset($_POST['guardar'])){
 		$_POST = $dato->validateForm($_POST);
-		if($dato->setNombre($_POST['nom'])){
-			if($dato->setApellido($_POST['ap'])){
-				if($dato->setDocIdentidad($_POST['dui'])){
-					if($dato->createEnte()){
-						Page::showMessage(1, "Se ha insertado correctamente", "indexentes.php");
+		if($dato->setNombre($_POST['usu'])){
+			if($dato->setIdempleado($_POST['em'])){
+				if($_POST['c1'] == $_POST['c2']){
+					if($dato->setClave($_POST['c1'])){
+						if($dato->createUsuario()){
+							Page::showMessage(1, "Se ha insertado correctamente", "indexusuarios.php");
+						}else{
+							throw new Exception(Database::getException());
+						}
 					}else{
-						throw new Exception(Database::getException());
+						throw new Exception("Clave Incorrecta", null);
 					}
 				}else{
-					throw new Exception("DUI incorrecto", null);
+					throw new Exception("Claves diferentes", null);
 				}
 			}else{
-				throw new Exception("Apellidos incorrecto", null);
+				throw new Exception("Empleado incorrecto", null);
 			}
 		}else{
-			throw new Exception("Nombre incorrecto", null);
+			throw new Exception("Usuario incorrecto", null);
 		}
 	}
 
