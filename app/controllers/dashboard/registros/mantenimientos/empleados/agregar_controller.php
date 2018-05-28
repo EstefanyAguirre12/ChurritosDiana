@@ -11,36 +11,36 @@ try{
 					if($dato->setTelefono($_POST['tel'])){
 						if($dato->setDireccion($_POST['dir'])){
 							if($dato->setFoto($_POST['fot'])){
-								if($dato->setCargo($_POST['car'])){
-									if($dato->setGenero($_POST['gen'])){
+								if($dato->setIdcargo($_POST['car'])){
+									if($dato->setIdgenero($_POST['gen'])){
 										if($dato->createEmpleado()){
-											Page::showMessage(1, "Se ha insertado correctamente", "indexempleado.php");
+											Page::showMessage(1, "Se ha insertado correctamente", "indexempleados.php");
 										}else{
 											throw new Exception(Database::getException());
 										}
 									}else{
-										throw new Exception("Tipo incorrecto", null);
+										throw new Exception("Genero incorrecto", null);
 									}
 								}else{
-									throw new Exception("Tipo incorrecto", null);
+									throw new Exception("Cargo incorrecto", null);
 								}
 							}else{
-								throw new Exception("Tipo incorrecto", null);
+								throw new Exception("Foto incorrecto", null);
 							}
 						}else{
-							throw new Exception("Tipo incorrecto", null);
+							throw new Exception("Direccion incorrecto", null);
 						}
 					}else{
-						throw new Exception("Tipo incorrecto", null);
+						throw new Exception("Telefono incorrecto", null);
 					}
 				}else{
-					throw new Exception("Tipo incorrecto", null);
+					throw new Exception("DUI incorrecto", null);
 				}
 			}else{
-				throw new Exception("Tipo incorrecto", null);
+				throw new Exception("Apellidos incorrecto", null);
 			}
 		}else{
-			throw new Exception("Tipo incorrecto", null);
+			throw new Exception("Nombre incorrecto", null);
 		}
 	}
 

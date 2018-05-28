@@ -10,7 +10,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2>Eliminar Empleado</h2>
+                  <h2>Eliminar Ente</h2>
                   <ul class="nav navbar-right panel_toolbox">
                     <li>
                       <a class="collapse-link">
@@ -24,7 +24,7 @@
                   <form method='post'>
                     <div class='row text-center'>
                       <h4>Un registro será eliminado ¿está seguro?</h4>
-                      <a href="indexempleados.php" class="btn btn-primary" type="button">Cancelar</a>
+                      <a href="indexentes.php" class="btn btn-primary" type="button">Cancelar</a>
                         <button type="submit" name="eliminar" class="btn btn-danger">Eliminar</button> </div>
                   </form>
                 </div>

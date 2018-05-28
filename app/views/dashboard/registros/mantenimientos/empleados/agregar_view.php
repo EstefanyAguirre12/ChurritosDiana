@@ -25,37 +25,37 @@
                     <div class="form-group">
                       <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Nombres*:</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name myInput" name="nom" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getNombre()) ?>" required/>
+                        <input id="middle-name" name="nom" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getNombre()) ?>" required/>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Apellidos*:</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name myInput" name="ap" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getApellido()) ?>" required/>
+                        <input id="middle-name  " name="ap" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getApellido()) ?>" required/>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">DUI*:</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name myInput" name="dui" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getDui()) ?>" required/>
+                        <input id="middle-name  " name="dui" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getDui()) ?>" required/>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Telefono*:</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name myInput" name="tel" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getTelefono()) ?>" required/>
+                        <input id="middle-name  " name="tel" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getTelefono()) ?>" required/>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Dirección*:</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name myInput" name="dir" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getDireccion()) ?>" required/>
+                        <input id="middle-name  " name="dir" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getDireccion()) ?>" required/>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Foto*:</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name myInput" name="fot" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getFoto()) ?>" required/>
+                        <input id="middle-name  " name="fot" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getFoto()) ?>" required/>
                       </div>
                     </div>
                     <div class="form-group">

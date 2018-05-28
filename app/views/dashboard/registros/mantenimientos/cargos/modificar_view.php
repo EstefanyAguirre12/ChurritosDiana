@@ -25,13 +25,13 @@
                     <div class="form-group">
                       <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Cargo*:</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name myInput" name="car" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getNombre()) ?>" required/>
+                        <input id="middle-name  " name="car" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getNombre()) ?>" required/>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Descripcion*:</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name myInput" name="des" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getDescripcion()) ?>" required/>
+                        <input id="middle-name  " name="des" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getDescripcion()) ?>" required/>
                       </div>
                     </div>
                     <div class="ln_solid"></div>

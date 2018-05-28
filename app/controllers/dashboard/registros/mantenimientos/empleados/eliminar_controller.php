@@ -1,13 +1,13 @@
 <?php
-require_once("../../../app/models/tipoente.class.php");
+require_once("../../../app/models/empleado.class.php");
 try{
 	if(isset($_GET['id'])){
-		$dato = new Tipoente;
+		$dato = new Empleado;
 		if($dato->setId($_GET['id'])){
-			if($dato->readTipoente()){
+			if($dato->readEmpleado()){
 				if(isset($_POST['eliminar'])){
-					if($dato->deleteTipoente()){
-                        Page::showMessage(1, "Registro eliminado", "indextipoente.php");
+					if($dato->deleteEmpleado()){
+                        Page::showMessage(1, "Registro eliminado", "indexempleados.php");
 					}else{
 						throw new Exception(Database::getException());
 					}
@@ -19,10 +19,10 @@ try{
 			throw new Exception("Registro incorrecta");
 		}
 	}else{
-		Page::showMessage(3, "Seleccione un registro", "indextipoente.php");
+		Page::showMessage(3, "Seleccione un registro", "indexempleados.php");
 	}
 }catch(Exception $error){
 	Page::showMessage(2, $error->getMessage(), null);
 }
-require_once("../../../app/views/dashboard/registros/mantenimientos/tipoente/eliminar_view.php");
+require_once("../../../app/views/dashboard/registros/mantenimientos/empleados/eliminar_view.php");
 ?>

@@ -89,14 +89,19 @@ class Usuario extends Validator {
     }
 	//Obtener categoria
 	public function getUsuario(){
-		$sql = "SELECT  IdUsuario,NombreUsuario,IdEmpelado,ClaveUsuario FROM usuarios ORDER BY IdUsuario";
+		$sql = "SELECT  IdUsuario,NombreUsuario,IdEmpleado,ClaveUsuario FROM usuarios ORDER BY IdUsuario";
 		$params = array(null);
 		return Database::getRows($sql, $params);
-		}
+        }
+        public function getEmpleado(){
+            $sql = "SELECT  * FROM empleados";
+            $params = array(null);
+            return Database::getRows($sql, $params);
+            }
 	
     //Buscar categoria con parametros
     public function searchUsuario($value){
-		$sql = "SELECT * FROM usuarios WHERE NombreUsuario LIKE ? OR IdUsuario LIKE ? ORDER BY NombreUsuario";
+		$sql = "SELECT * FROM usuarios WHERE NombreUsuario LIKE ? OR IdEmpleado LIKE ? ORDER BY NombreUsuario";
 		$params = array("%$value%", "%$value%");
 		return Database::getRows($sql, $params);
     }
