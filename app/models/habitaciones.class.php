@@ -89,10 +89,22 @@ class Habitaciones extends Validator{
 			}
 		//Obtener categoria
 		public function getHabitacion(){
-			$sql = "SELECT IdHabitacion, NumeroHabitacion, t.TipoHabitacion, Precio, Capacidad, e.Estado FROM habitaciones h, tipohabitacion t, estado e Where t.IdTipoHabitacion=h.IdTipoHabitacion and e.IdEstado=h.IdEstado ORDER BY IdHabitacion";
+			 $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+
+        $limite = 1;
+ 
+        $limite_inicio = ($page - 1)* $limite;
+			$sql = "SELECT IdHabitacion, NumeroHabitacion, t.TipoHabitacion, Precio, Capacidad, e.Estado FROM habitaciones h, tipohabitacion t, estado e Where t.IdTipoHabitacion=h.IdTipoHabitacion and e.IdEstado=h.IdEstado ORDER BY IdHabitacion LIMIT $limite_inicio , $limite";
 			$params = array(null);
 			return Database::getRows($sql, $params);
 			}
+
+	public function countHabitaciones()
+    {
+        $sql = "SELECT COUNT(*) AS Numero FROM habitaciones";
+        $params = array(null);
+        return database::getRow($sql, $params);
+    }
 	
     //Buscar categoria con parametros
     public function searchHabitacion($value){

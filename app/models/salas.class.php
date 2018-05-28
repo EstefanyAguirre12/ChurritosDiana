@@ -84,7 +84,12 @@ class Salas extends Validator{
     //Metodos CRUD para cotegoria
 		//Obtener categoria
 		public function getSala(){
-			$sql = "SELECT IdSala, NombreSala, IdEstadoSala, Descripcion, Costo, Capacidad FROM salas ORDER BY IdSala";
+			 $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+
+        $limite = 1;
+ 
+        $limite_inicio = ($page - 1)* $limite;
+			$sql = "SELECT IdSala, NombreSala, IdEstadoSala, Descripcion, Costo, Capacidad FROM salas ORDER BY IdSala LIMIT $limite_inicio , $limite";
 			$params = array(null);
 			return Database::getRows($sql, $params);
 			}
@@ -129,5 +134,12 @@ class Salas extends Validator{
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}
+
+	public function countSalas()
+    {
+        $sql = "SELECT COUNT(*) AS Numero FROM salas";
+        $params = array(null);
+        return database::getRow($sql, $params);
+    }
 }
 ?>
