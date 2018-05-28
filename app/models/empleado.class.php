@@ -37,7 +37,7 @@ class Empleado extends Validator{
 		}
     
     public function setApellido($value){
-		if($this->validateAlphaNumeric($value)){
+		if($this->validateAlphanumeric($value, 1, 50)){
 			$this->apellido = $value;
 			return true;
 		}else{
@@ -49,7 +49,7 @@ class Empleado extends Validator{
     }
 
     public function setDireccion($value){
-		if($this->validateAlphanumeric($value)){
+		if($this->validateAlphanumeric($value, 1, 50)){
 			$this->direccion = $value;
 			return true;
 		}else{
@@ -61,7 +61,7 @@ class Empleado extends Validator{
 		}
 		
 		public function setDui($value){
-			if($this->validateNumeric($value,10)){
+			if($this->validateInt($value)){
 				$this->dui = $value;
 				return true;
 			}else{
@@ -109,7 +109,7 @@ class Empleado extends Validator{
                         }
 
                     public function setTelefono($value){
-                        if($this->validateNumeric($value,10)){
+						if($this->validateInt($value)){
                             $this->telefono = $value;
                             return true;
                         }else{
@@ -122,38 +122,47 @@ class Empleado extends Validator{
     
     //Metodos CRUD para cotegoria
 		//Obtener categoria
-		public function getEmpleado(){
-			$sql = "SELECT IdEmpleado, NombreEmpleado, ApellidosEmpleado, Direccion, DUIEmpleado, FotoEmpleado, IdCargo, IdGenero, Telefono FROM empleados ORDER BY NombreEmpleado";
-			$params = array(null);
-			return Database::getRows($sql, $params);
-			}
-	
+	public function getEmpleado(){
+		$sql = "SELECT IdEmpleado, NombreEmpleado, ApellidosEmpleado, DireccionEmpleado, DUIEmpleado, FotoEmpleado, g.NombreGenero, c.NombreCargo, e.TelefonoEmpleado FROM empleados e, cargos c, genero g WHERE c.IdCargo=e.IdCargo and g.IdGenero=e.IdGenero ORDER BY NombreEmpleado";
+		$params = array(null);
+		return Database::getRows($sql, $params);
+	}
+	public function getGenero(){
+		$sql = "SELECT * FROM genero";
+		$params = array(null);
+		return Database::getRows($sql, $params);
+	}
+	public function getCargo(){
+		$sql = "SELECT * FROM cargos";
+		$params = array(null);
+		return Database::getRows($sql, $params);
+	}
     //Buscar categoria con parametros
     public function searchEmpleado($value){
-		$sql = "SELECT * FROM empleados WHERE NombreEmpleado LIKE ? OR DUIEmpleado LIKE ? ORDER BY NombreEmpleado";
+		$sql = "SELECT IdEmpleado, NombreEmpleado, ApellidosEmpleado, DireccionEmpleado, DUIEmpleado, FotoEmpleado, g.NombreGenero, c.NombreCargo, e.TelefonoEmpleado FROM empleados e, cargos c, genero g WHERE c.IdCargo=e.IdCargo and g.IdGenero=e.IdGenero and (NombreEmpleado LIKE ? OR DUIEmpleado LIKE ?) ORDER BY NombreEmpleado";
 		$params = array("%$value%", "%$value%");
 		return Database::getRows($sql, $params);
     }
     //Insertar categoria
     public function createEmpleado(){
-		$sql = "INSERT INTO empleados(IdEmpleado, NombreEmpleado, ApellidosEmpleado, Direccion, DUIEmpleado, FotoEmpleado, IdCargo, IdGenero, Telefono) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
-		$params = array($this->id, $this->nombre, $this->apellido, $this->direccion, $this->dui, $this->foto, $this->idcargo, $this->idgenero $this->telefono);
+		$sql = "INSERT INTO empleados(IdEmpleado, NombreEmpleado, ApellidosEmpleado, DireccionEmpleado, DUIEmpleado, FotoEmpleado, IdCargo, IdGenero, TelefonoEmpleado) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		$params = array($this->id, $this->nombre, $this->apellido, $this->direccion, $this->dui, $this->foto, $this->idcargo, $this->idgenero, $this->telefono);
 		return Database::executeRow($sql, $params);
     }
     //Leer categoria
     public function readEmpleado(){
-		$sql = "SELECT NombreEmpleado, ApellidosEmpleado, Direccion, DUIEmpleado, FotoEmpleado, IdCargo, IdGenero, Telefono FROM entes WHERE IdEmpleado = ?";
+		$sql = "SELECT NombreEmpleado, ApellidosEmpleado, DireccionEmpleado, DUIEmpleado, FotoEmpleado, IdCargo, IdGenero, TelefonoEmpleado FROM empleados WHERE IdEmpleado = ?";
 		$params = array($this->id);
 		$empleado = Database::getRow($sql, $params);
 		if($empleado){
 			$this->nombre = $empleado['NombreEmpleado'];
             $this->apellido = $empleado['ApellidosEmpleado'];
-						$this->direccion = $empleado['Direccion'];
-						$this->dui = $empleado['DUIEmpleado'];
-                        $this->foto = $empleado['FotoEmpleado'];
-                        $this->idcargo = $empleado['IdCargo'];
-                        $this->idgenero = $empleado['IdGenero'];
-                        $this->telefono = $empleado['Telefono'];
+			$this->direccion = $empleado['DireccionEmpleado'];
+			$this->dui = $empleado['DUIEmpleado'];
+			$this->foto = $empleado['FotoEmpleado'];
+			$this->idcargo = $empleado['IdCargo'];
+			$this->idgenero = $empleado['IdGenero'];
+			$this->telefono = $empleado['TelefonoEmpleado'];
 			return true;
 		}else{
 			return null;
@@ -161,7 +170,7 @@ class Empleado extends Validator{
     }
     //Modificar categoria
     public function updateEmpleado(){
-		$sql = "UPDATE empleados SET NombreEmpleado = ?, ApellidosEmpleado = ?, Direccion = ?, DUIEmpleado = ?, FotoEmpleado = ?, IdCargo = ?, IdGenero = ?, Telefono = ? WHERE IdEmpleado = ?";
+		$sql = "UPDATE empleados SET NombreEmpleado = ?, ApellidosEmpleado = ?, DireccionEmpleado = ?, DUIEmpleado = ?, FotoEmpleado = ?, IdCargo = ?, IdGenero = ?, TelefonoEmpleado = ? WHERE IdEmpleado = ?";
 		$params = array($this->nombre, $this->apellido, $this->direccion, $this->dui, $this->foto, $this->idcargo, $this->idgenero, $this->telefono, $this->id);
 		return Database::executeRow($sql, $params);
     }

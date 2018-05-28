@@ -50,7 +50,7 @@ class Cargos extends Validator{
 		return Database::getRows($sql, $params);
 		}
 		public function searchCargo($value){
-			$sql = "SELECT * FROM cargos WHERE IdCargo LIKE ?  ORDER BY IdCargo";
+			$sql = "SELECT * FROM cargos WHERE NombreCargo LIKE ?  ORDER BY IdCargo";
 			$params = array("%$value%");
 			return Database::getRows($sql, $params);
 		}
@@ -62,11 +62,12 @@ class Cargos extends Validator{
     }
     //Leer Ocasion
     public function readCargo(){
-		$sql = "SELECT IdCargo FROM cargos WHERE IdCargo = ?";
+		$sql = "SELECT NombreCargo, Descripcion FROM cargos WHERE IdCargo = ?";
 		$params = array($this->id);
 		$krgo = Database::getRow($sql, $params);
 		if($krgo){
-			$this->idcargo = $krgo['IdCargo'];
+			$this->nombre = $krgo['NombreCargo'];
+			$this->descripcion = $krgo['Descripcion'];
 			return true;
 		}else{
 			return null;
@@ -74,7 +75,7 @@ class Cargos extends Validator{
     }
     //Modificar Ocasion
     public function updateCargo(){
-		$sql = "UPDATE cargos SET NombreCargo = ?, Descripcion = ? WHERE IdCuenta = ?";
+		$sql = "UPDATE cargos SET NombreCargo = ?, Descripcion = ? WHERE IdCargo = ?";
 		$params = array($this->nombre, $this->descripcion, $this->id);
 		return Database::executeRow($sql, $params);
     }

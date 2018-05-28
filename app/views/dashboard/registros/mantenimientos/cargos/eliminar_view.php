@@ -2,7 +2,7 @@
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>Mantenimiento de Lavanderia</h3>
+              <h3>Mantenimiento de Registro</h3>
             </div>
           </div>
           <div class="clearfix"></div>  
@@ -10,7 +10,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2>Eliminar Categoria</h2>
+                  <h2>Eliminar Cargo</h2>
                   <ul class="nav navbar-right panel_toolbox">
                     <li>
                       <a class="collapse-link">
@@ -24,7 +24,7 @@
                   <form method='post'>
                     <div class='row text-center'>
                       <h4>Un registro será eliminado ¿está seguro?</h4>
-                      <a href="indexcategoria.php" class="btn btn-primary" type="button">Cancelar</a>
+                      <a href="indexcargos.php" class="btn btn-primary" type="button">Cancelar</a>
                         <button type="submit" name="eliminar" class="btn btn-danger">Eliminar</button> </div>
                   </form>
                 </div>

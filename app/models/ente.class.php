@@ -24,7 +24,7 @@ class Ente extends Validator{
     }
     
     public function setNombre($value){
-			if($this->validateAlphanumeric($value, 1, 200)){
+			if($this->validateAlphanumeric($value, 1, 50)){
 				$this->nombre = $value;
 				return true;
 			}else{
@@ -36,7 +36,7 @@ class Ente extends Validator{
 		}
     
     public function setApellido($value){
-		if($this->validateAlphaNumeric($value)){
+		if($this->validateAlphanumeric($value, 1, 50)){
 			$this->apellido = $value;
 			return true;
 		}else{
@@ -59,15 +59,15 @@ class Ente extends Validator{
 		return $this->correo;
 		}
 		
-		public function setDocidentidad($value){
-			if($this->validateNumeric($value,10)){
+		public function setDocIdentidad($value){
+			if($this->validateInt($value)){
 				$this->docidentidad = $value;
 				return true;
 			}else{
 				return false;
 			}
 		}
-		public function getDocIndentidad(){
+		public function getDocIdentidad(){
 			return $this->docidentidad;
 			}
 
@@ -96,7 +96,7 @@ class Ente extends Validator{
                     }
 
                     public function setTelefono($value){
-                        if($this->validateNumeric($value,10)){
+                        if($this->validateInt($value)){
                             $this->telefono = $value;
                             return true;
                         }else{
@@ -109,22 +109,31 @@ class Ente extends Validator{
     
     //Metodos CRUD para cotegoria
 		//Obtener categoria
-		public function getEnte(){
-			$sql = "SELECT IdEnte, Nombres, Apellidos, Correo, DocIdentidad, IdGenero, IdTipo, Telefono FROM entes ORDER BY Nombres";
-			$params = array(null);
-			return Database::getRows($sql, $params);
-			}
-	
+	public function getEnte(){
+		$sql = "SELECT IdEnte, Nombres, Apellidos, Correo, DocIdentidad, g.NombreGenero, t.TipoEnte , Telefono FROM entes e, genero g, tipoente t WHERE e.IdGenero=g.IdGenero and e.IdTipo=t.IdTipo ORDER BY Nombres";
+		$params = array(null);
+		return Database::getRows($sql, $params);
+	}
+	public function getGenero(){
+		$sql = "SELECT * FROM genero";
+		$params = array(null);
+		return Database::getRows($sql, $params);
+	}
+	public function getTipo(){
+		$sql = "SELECT * FROM tipoente";
+		$params = array(null);
+		return Database::getRows($sql, $params);
+	}
     //Buscar categoria con parametros
     public function searchEnte($value){
-		$sql = "SELECT * FROM entes WHERE Nombres LIKE ? OR DocIdentidad LIKE ? ORDER BY Nombres";
+		$sql = "SELECT IdEnte, Nombres, Apellidos, Correo, DocIdentidad, g.NombreGenero, t.TipoEnte , Telefono FROM entes e, genero g, tipoente t WHERE e.IdGenero=g.IdGenero and e.IdTipo=t.IdTipo and (Nombres LIKE ? OR DocIdentidad LIKE ?) ORDER BY Nombres";
 		$params = array("%$value%", "%$value%");
 		return Database::getRows($sql, $params);
     }
     //Insertar categoria
     public function createEnte(){
-		$sql = "INSERT INTO entes(IdEnte, Nombres, Apellidos, , Correo, DocIdentidad, IdGenero, IdTipo, Telefono) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
-		$params = array($this->id, $this->nombre, $this->apellido, $this->correo, $this->docidentidad, $this->idgenero, $this->idtipo, $this->telefono);
+		$sql = "INSERT INTO entes(Nombres, Apellidos, Correo, DocIdentidad, IdGenero, IdTipo, Telefono) VALUES(?, ?, ?, ?, ?, ?, ?)";
+		$params = array($this->nombre, $this->apellido, $this->correo, $this->docidentidad, $this->idgenero, $this->idtipo, $this->telefono);
 		return Database::executeRow($sql, $params);
     }
     //Leer categoria
@@ -135,11 +144,11 @@ class Ente extends Validator{
 		if($ente){
 			$this->nombre = $ente['Nombres'];
             $this->apellido = $ente['Apellidos'];
-						$this->correo = $ente['Correo'];
-						$this->docidentidad = $ente['DocIdentidad'];
-                        $this->idgenero = $ente['IdGenero'];
-                        $this->idtipo = $ente['IdTipo'];
-                        $this->telefono = $ente['Telefono'];
+			$this->correo = $ente['Correo'];
+			$this->docidentidad = $ente['DocIdentidad'];
+			$this->idgenero = $ente['IdGenero'];
+			$this->idtipo = $ente['IdTipo'];
+			$this->telefono = $ente['Telefono'];
 			return true;
 		}else{
 			return null;
