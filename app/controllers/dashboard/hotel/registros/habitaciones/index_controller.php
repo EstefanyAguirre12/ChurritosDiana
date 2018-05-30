@@ -21,7 +21,7 @@ try{
         //Se muestran los datos
         require_once("../../../app/views/dashboard/hotel/registros/habitaciones/index_view.php");
 	}else{
-		Page::showMessage(3, "No hay registros disponibles", "create.php");
+		Page::showMessage(3, "No hay registros disponibles", "agregar.php");
 	}
 
 }catch(Exception $error){

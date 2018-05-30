@@ -71,18 +71,25 @@ class Empleado extends Validator{
 		public function getDui(){
 			return $this->dui;
 			}
-
-			public function setFoto($value){
-				if($this->validateAlphanumeric($value, 1, 900)){
-					$this->foto = $value;
+			public function setImagen($file){
+				if($this->validateImage($file, $this->foto, "../../web/img/users/", 1920, 1020)){
+					$this->foto = $this->getImageName();
 					return true;
 				}else{
 					return false;
 				}
 			}
-			public function getFoto(){
+			public function getImagen(){
 				return $this->foto;
-                }
+			}
+			public function unsetImagen(){
+				if(unlink("../../web/img/users/".$this->foto)){
+					$this->foto = null;
+					return true;
+				}else{
+					return false;
+				}			
+			}
                 
                 public function setIdcargo($value){
                     if($this->validateId($value)){
@@ -123,7 +130,7 @@ class Empleado extends Validator{
     //Metodos CRUD para cotegoria
 		//Obtener categoria
 	public function getEmpleado(){
-		$sql = "SELECT IdEmpleado, NombreEmpleado, ApellidosEmpleado, DireccionEmpleado, DUIEmpleado, FotoEmpleado, g.NombreGenero, c.NombreCargo, e.TelefonoEmpleado FROM empleados e, cargos c, genero g WHERE c.IdCargo=e.IdCargo and g.IdGenero=e.IdGenero ORDER BY NombreEmpleado";
+		$sql = "SELECT IdEmpleado, NombreEmpleado, ApellidosEmpleado, DireccionEmpleado, DUIEmpleado, FotoEmpleado, g.NombreGenero, c.NombreCargo FROM empleados e, cargos c, genero g WHERE c.IdCargo=e.IdCargo and g.IdGenero=e.IdGenero ORDER BY NombreEmpleado";
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
@@ -151,7 +158,7 @@ class Empleado extends Validator{
     }
     //Leer categoria
     public function readEmpleado(){
-		$sql = "SELECT NombreEmpleado, ApellidosEmpleado, DireccionEmpleado, DUIEmpleado, FotoEmpleado, IdCargo, IdGenero, TelefonoEmpleado FROM empleados WHERE IdEmpleado = ?";
+		$sql = "SELECT NombreEmpleado, ApellidosEmpleado, DireccionEmpleado, DUIEmpleado, FotoEmpleado, IdCargo, IdGenero FROM empleados WHERE IdEmpleado = ?";
 		$params = array($this->id);
 		$empleado = Database::getRow($sql, $params);
 		if($empleado){

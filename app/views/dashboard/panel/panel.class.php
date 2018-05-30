@@ -193,13 +193,13 @@ class Page extends Component{
 					</a>
 					<ul class='nav child_menu'>
 						<li>
-						<a href='../../registros/mantenimientos/usuarios.php'>Usuarios</a>
+						<a href='../../registros/mantenimientos/indexusuarios.php'>Usuarios</a>
 						</li>
 						<li>
-						<a href='../../registros/mantenimientos/empleados.php'>Empleados</a>
+						<a href='../../registros/mantenimientos/indexempleados.php'>Empleados</a>
 						</li>
 						<li>
-						<a href='../../registros/mantenimientos/cargos.php'>Cargos</a>
+						<a href='../../registros/mantenimientos/indexcargos.php'>Cargos</a>
 						</li>
 					</ul>
 					</li>

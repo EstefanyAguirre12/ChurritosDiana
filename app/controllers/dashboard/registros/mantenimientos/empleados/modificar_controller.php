@@ -13,23 +13,27 @@ try{
                             if($dato->setDui($_POST['dui'])){
                                 if($dato->setTelefono($_POST['tel'])){
                                     if($dato->setDireccion($_POST['dir'])){
-                                        if($dato->setFoto($_POST['fot'])){
-                                            if($dato->setIdcargo($_POST['car'])){
-                                                if($dato->setIdgenero($_POST['gen'])){
-                                                    if($dato->updateEmpleado()){
-                                                            Page::showMessage(1, "Se ha modificado correctamente", "indexempleados.php");
+                                        if(is_uploaded_file($_FILES['foto']['tmp_name'])){
+                                            if($object->setImagen($_FILES['foto'])){
+                                                if($dato->setIdcargo($_POST['car'])){
+                                                    if($dato->setIdgenero($_POST['gen'])){
+                                                        if($dato->updateEmpleado()){
+                                                                Page::showMessage(1, "Se ha modificado correctamente", "indexempleados.php");
+                                                        }else{
+                                                            throw new Exception(Database::getException());
+                                                        }                  
                                                     }else{
-                                                        throw new Exception(Database::getException());
-                                                    }                  
+                                                        throw new Exception("Genero incorrecto", null);
+                                                    }
                                                 }else{
-                                                    throw new Exception("Genero incorrecto", null);
+                                                    throw new Exception("Cargo incorrecto", null);
                                                 }
                                             }else{
-                                                throw new Exception("Cargo incorrecto", null);
+                                                throw new Exception($object->getImageError());
                                             }
                                         }else{
-                                            throw new Exception("Foto incorrecto", null);
-                                        }
+                                            throw new Exception("Seleccione una imagen");
+                                        } 
                                     }else{
                                         throw new Exception("Direccion incorrecto", null);
                                     }

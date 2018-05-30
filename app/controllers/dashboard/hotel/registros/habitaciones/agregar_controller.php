@@ -9,10 +9,14 @@ try{
 			if($hab->setCapacidad($_POST['cap'])){
 				if($hab->setPrecio($_POST['pre'])){
 					if($hab->setIdTipo($_POST['TipoHabitacion'])){
-						if($hab->createHabitacion()){
-							Page::showMessage(1, "Se ha insertado correctamente", "habitaciones.php");
+						if($hab->setIdTipo($_POST['TipoHabitacion'])){
+							if($hab->createHabitacion()){
+								Page::showMessage(1, "Se ha insertado correctamente", "habitaciones.php");
+							}else{
+								throw new Exception(Database::getException());
+							}
 						}else{
-							throw new Exception(Database::getException());
+							throw new Exception("Tipo Habitacion Incorrecto ");
 						}
 					}else{
 						throw new Exception("Tipo Habitacion Incorrecto ");
