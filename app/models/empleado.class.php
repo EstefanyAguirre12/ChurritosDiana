@@ -79,6 +79,7 @@ class Empleado extends Validator{
 					return false;
 				}
 			}
+			//metodos foto
 			public function getImagen(){
 				return $this->foto;
 			}

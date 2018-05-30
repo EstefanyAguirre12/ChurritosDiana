@@ -1,7 +1,7 @@
 <?php
 require_once("../../../app/models/empleado.class.php");
 try{
-	 //Insertar
+	 //Insertar cambio daniel
 	$dato = new Empleado;
 	if(isset($_POST['guardar'])){
 		$_POST = $dato->validateForm($_POST);
