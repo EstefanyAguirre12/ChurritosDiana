@@ -1,13 +1,13 @@
 <?php
-require_once("../../../app/models/mesasrestaurante.class.php");
+require_once("../../../app/models/sillas.class.php");
 try{
 	if(isset($_GET['id'])){
-		$dato = new Mesarestaurante;
+		$dato = new Sillas;
 		if($dato->setId($_GET['id'])){
-			if($dato->readMesarestaurante()){
+			if($dato->readSillas()){
 				if(isset($_POST['eliminar'])){
-					if($dato->deleteMesarestaurante()){
-                        Page::showMessage(1, "Registro eliminado", "indexmesa.php");
+					if($dato->deleteSillas()){
+                        Page::showMessage(1, "Registro eliminado", "indexsilla.php");
 					}else{
 						throw new Exception(Database::getException());
 					}
@@ -19,10 +19,10 @@ try{
 			throw new Exception("Registro incorrecta");
 		}
 	}else{
-		Page::showMessage(3, "Seleccione un registro", "habitaciones.php");
+		Page::showMessage(3, "Seleccione un registro", "indexsilla.php");
 	}
 }catch(Exception $error){
 	Page::showMessage(2, $error->getMessage(), null);
 }
-require_once("../../../app/views/dashboard/eventos/registros/mesas/eliminar_view.php");
+require_once("../../../app/views/dashboard/eventos/registros/sillas/eliminar_view.php");
 ?>

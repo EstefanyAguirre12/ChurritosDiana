@@ -30,8 +30,8 @@ class Sillas extends Validator{
 			return $this->nombre;
         }
         
-        public function setCantidad($value){
-			if($this->validateNumeric($value, 1, 50)){
+		public function setCantidad($value){
+			if($this->validateInt($value)){
 				$this->cantidad = $value;
 				return true;
 			}else{
@@ -45,28 +45,40 @@ class Sillas extends Validator{
     //Metodos CRUD
     //Obtener Ocasion
     public function getSillas(){
-		$sql = "SELECT IdTipoSilla, Silla, Cantidad FROM sillas ORDER BY Silla";
+			$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+
+			$limite = 1;
+
+			$limite_inicio = ($page - 1)* $limite;
+		$sql = "SELECT * FROM sillas ORDER BY Nombre LIMIT $limite_inicio , $limite";
 		$params = array(null);
 		return Database::getRows($sql, $params);
 		}
+		public function countSillas()
+    {
+        $sql = "SELECT COUNT(*) AS Numero FROM sillas";
+        $params = array(null);
+        return database::getRow($sql, $params);
+    }
 		public function searchSillas($value){
-			$sql = "SELECT * FROM sillas WHERE Silla LIKE ?  ORDER BY Silla";
+			$sql = "SELECT * FROM sillas WHERE Nombre LIKE ?  ORDER BY IdSilla";
 			$params = array("%$value%");
 			return Database::getRows($sql, $params);
 		}
     //Insertar Ocasion
     public function createSillas(){
-		$sql = "INSERT INTO sillas(Silla, Cantidad) VALUES(?, ?)";
-		$params = array($this->nombre);
+		$sql = "INSERT INTO sillas(Nombre, Cantidad) VALUES(?, ?)";
+		$params = array($this->nombre, $this->cantidad);
 		return Database::executeRow($sql, $params);
     }
     //Leer Ocasion
     public function readSillas(){
-		$sql = "SELECT Silla FROM sillas WHERE IdSilla = ?";
+		$sql = "SELECT Nombre, Cantidad FROM sillas WHERE IdSilla = ?";
 		$params = array($this->id);
 		$sillas = Database::getRow($sql, $params);
 		if($sillas){
-			$this->nombre = $sillas['Silla'];
+			$this->nombre = $sillas['Nombre'];
+			$this->cantidad = $sillas['Cantidad'];
 			return true;
 		}else{
 			return null;
@@ -74,8 +86,8 @@ class Sillas extends Validator{
     }
     //Modificar Ocasion
     public function updateSillas(){
-		$sql = "UPDATE sillas SET Silla = ?, Cantidad = ? WHERE IdSilla = ?";
-		$params = array($this->nombre, $this->id);
+		$sql = "UPDATE sillas SET Nombre = ?, Cantidad = ? WHERE IdSilla = ?";
+		$params = array($this->nombre, $this->cantidad, $this->id);
 		return Database::executeRow($sql, $params);
     }
     //Eliminar Ocasion

@@ -1,25 +1,25 @@
 <?php
-require_once("../../../app/models/mesasrestaurante.class.php");
+require_once("../../../app/models/mesas.class.php");
 try{
     //MODIFICAR
-    $dato = new Mesarestaurante;
+    $dato = new Mesas;
     if(isset($_GET['id'])){
         if($dato->setId($_GET['id'])){
-            if($dato->readMesarestaurante()){
+            if($dato->readMesas()){
                 if(isset($_POST['modificar'])){
                     $_POST = $dato->validateForm($_POST);
-                    if($dato->setNumeromesa($_POST['num'])){  
-                        if($dato->setCapacidad($_POST['cap'])){  
-                            if($dato->updateMesarestaurante()){
+                    if($dato->setNombre($_POST['num'])){
+                        if($dato->setCantidad($_POST['cap'])){ 
+                            if($dato->updateMesas()){
                                     Page::showMessage(1, "Se ha modificado correctamente", "indexmesa.php");
                             }else{
                                 throw new Exception(Database::getException());
                             }  
                         }else{
-                            throw new Exception("Capacidad incorrecta");
+                            throw new Exception("Cantidad incorrecta");
                         }                
                     }else{
-                        throw new Exception("Numero incorrecto");
+                        throw new Exception("Nombre incorrecto");
                     }
                 }
             }else{

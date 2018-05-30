@@ -1,17 +1,17 @@
 <?php
-require_once("../../../app/models/mesasrestaurante.class.php");
+require_once("../../../app/models/sillas.class.php");
 try{
     //MODIFICAR
-    $dato = new Mesarestaurante;
+    $dato = new Sillas;
     if(isset($_GET['id'])){
         if($dato->setId($_GET['id'])){
-            if($dato->readMesarestaurante()){
+            if($dato->readSillas()){
                 if(isset($_POST['modificar'])){
                     $_POST = $dato->validateForm($_POST);
-                    if($dato->setNumeromesa($_POST['num'])){  
-                        if($dato->setCapacidad($_POST['cap'])){  
-                            if($dato->updateMesarestaurante()){
-                                    Page::showMessage(1, "Se ha modificado correctamente", "indexmesa.php");
+                    if($dato->setNombre($_POST['num'])){
+                        if($dato->setCantidad($_POST['cap'])){ 
+                            if($dato->updateSillas()){
+                                    Page::showMessage(1, "Se ha modificado correctamente", "indexsilla.php");
                             }else{
                                 throw new Exception(Database::getException());
                             }  
@@ -23,10 +23,10 @@ try{
                     }
                 }
             }else{
-                Page::showMessage(2, "Registro inexistente", "indexmesa.php");
+                Page::showMessage(2, "Registro inexistente", "indexsilla.php");
             }
         }else{
-            Page::showMessage(2, "Registro incorrecto", "indexmesa.php");
+            Page::showMessage(2, "Registro incorrecto", "indexsilla.php");
         }
     }else{
     }
@@ -34,5 +34,5 @@ try{
 }catch(Exception $error){
 	Page::showMessage(2, $error->getMessage(), null);
 }
-require_once("../../../app/views/dashboard/eventos/registros/mesas/modificar_view.php");
+require_once("../../../app/views/dashboard/eventos/registros/sillas/modificar_view.php");
 ?>

@@ -85,7 +85,7 @@ class Empleado extends Validator{
 			}
 
 		public function setImagen($file){
-			if($this->validateImage($file, $this->foto, "../../web/img/users/", 1920, 1020)){
+			if($this->validateImage($file, $this->foto, "../../web/img/users/", 500, 500)){
 				$this->foto = $this->getImageName();
 				return true;
 			}else{
@@ -142,7 +142,7 @@ class Empleado extends Validator{
     //Metodos CRUD para cotegoria
 		//Obtener categoria
 	public function getEmpleado(){
-		$sql = "SELECT IdEmpleado, NombreEmpleado, ApellidosEmpleado, DireccionEmpleado, DUIEmpleado, FotoEmpleado, g.NombreGenero, c.NombreCargo FROM empleados e, cargos c, genero g WHERE c.IdCargo=e.IdCargo and g.IdGenero=e.IdGenero ORDER BY NombreEmpleado";
+		$sql = "SELECT IdEmpleado, NombreEmpleado, ApellidosEmpleado, DireccionEmpleado, DUIEmpleado, FotoEmpleado, g.NombreGenero, c.NombreCargo, e.TelefonoEmpleado FROM empleados e, cargos c, genero g WHERE c.IdCargo=e.IdCargo and g.IdGenero=e.IdGenero ORDER BY NombreEmpleado";
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}

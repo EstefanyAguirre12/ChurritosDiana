@@ -1,21 +1,21 @@
 <?php
-require_once("../../../app/models/mesasrestaurante.class.php");
+require_once("../../../app/models/mesas.class.php");
 try{
 	//Aqui va el codigo para buscar
-	$dato = new Mesarestaurante;
+	$dato = new Mesas;
 	if(isset($_POST['buscar'])){
 		$_POST = $dato->validateForm($_POST);
-		$data = $dato->searchMesarestaurante($_POST['busqueda']);
+		$data = $dato->searchMesas($_POST['busqueda']);
 		if($data){
 			$rows = count($data);
 			Page::showMessage(4, "Se encontraron $rows resuldatos", null);
 		}else{
 			Page::showMessage(4, "No se encontraron resultados", null);
-			$data = $dato->getMesarestaurante();
+			$data = $dato->getMesa();
 		}
 	}else{
         //Se obtienen los datos
-		$data = $dato->getMesarestaurante();
+		$data = $dato->getMesa();
 	}
 	if($data){
 		//Se muestran los 

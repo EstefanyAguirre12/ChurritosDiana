@@ -23,15 +23,15 @@
         <div class="x_content">
           <form method="post" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left">
             <div class="form-group">
-              <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Numero Mesa*:</label>
+              <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Nombre*:</label>
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <input id="middle-name  " name="num" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getNumeromesa()) ?>" required/>
+                <input id="middle-name  " name="num" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getNombre()) ?>" required/>
               </div>
             </div>
             <div class="form-group">
-              <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Capacidad*:</label>
+              <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Cantidad*:</label>
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <input id="middle-name" name="cap" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getCapacidad()) ?>" required/>
+                <input id="middle-name" name="cap" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getCantidad()) ?>" required/>
               </div>
             </div>
             <div class="ln_solid"></div>
