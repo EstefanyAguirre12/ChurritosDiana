@@ -6,6 +6,7 @@ require_once('../../../app/helpers/dumper.php');
 require_once('../../../app/helpers/phpmyimporter.php');
 class Page extends Component {
 	public static function templateHeader($title){
+		session_start();
 		print("
 			<!DOCTYPE html>
 			<html lang='es'>
@@ -17,7 +18,8 @@ class Page extends Component {
 					<link type='text/css' rel='stylesheet' href='../../../web/css/daterangepicker.css'/>
 					<link type='text/css' rel='stylesheet' href='../../../web/fonts/css/fontawesome-all.min.css'/>
 					<link type='text/css' rel='stylesheet' href='../../../web/font/css/font-awesome.min.css'/>
-					<link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'/>		
+					<link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'/>	
+					<script type='text/javascript' src='../../../web/js/sweetalert.min.js'></script>		
 					<meta name='viewport' content='width=device-width, initial-scale=1.0'/>
 				</head>
 				<body class='nav-md'>

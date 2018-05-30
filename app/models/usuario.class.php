@@ -1,6 +1,7 @@
 <?php
 class Usuario extends Validator {
     private $id = null;
+    private $id_Cargo = null;
     private $nombre = null;
     private $idempleado = null;
     private $clave = null;
@@ -42,6 +43,9 @@ class Usuario extends Validator {
 	public function getIdempleado(){
 		return $this->idempleado;
     }
+    public function getCargo(){
+		return $this->id_Cargo;
+    }
 
     public function setClave($value){
 		if($this->validatePassword($value)){
@@ -59,11 +63,12 @@ class Usuario extends Validator {
     // Verificar contraseña
     public function checkClaveUsuario()
     {
-        $sql = "SELECT ClaveUsuario FROM usuarios WHERE IdUsuario = ?";
+        $sql = "SELECT ClaveUsuario,cargos.IdCargo FROM usuarios,empleados,cargos WHERE  IdUsuario = ? AND usuarios.IdEmpelado = empleados.IdEmpleado  AND empleados.IdCargo = cargos.IdCargo";
         $params = array($this->id);
         $data = Database::getRow($sql, $params);
         if(password_verify($this->clave, $data['ClaveUsuario']))
         {
+            $this->id_Cargo = $data['IdCargo'];
             return true;
         }
         else
@@ -89,15 +94,25 @@ class Usuario extends Validator {
     }
 	//Obtener categoria
 	public function getUsuario(){
-		$sql = "SELECT  IdUsuario,NombreUsuario,IdEmpleado,ClaveUsuario FROM usuarios ORDER BY IdUsuario";
-		$params = array(null);
-		return Database::getRows($sql, $params);
+        $sql = "SELECT `NombreUsuario`  FROM `usuarios` LIMIT 1";
+        $params = array(null);
+        $data = Database::getRows($sql, $params);
+        if($data){
+            return true;
+        }else{
+            return false;
         }
-        public function getEmpleado(){
-            $sql = "SELECT  * FROM empleados";
-            $params = array(null);
-            return Database::getRows($sql, $params);
-            }
+    }
+
+    public function logOut(){
+        return session_destroy();
+    }
+    
+    public function getEmpleado(){
+        $sql = "SELECT  * FROM empleados";
+        $params = array(null);
+        return Database::getRows($sql, $params);
+        }
 	
     //Buscar categoria con parametros
     public function searchUsuario($value){

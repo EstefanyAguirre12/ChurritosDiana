@@ -29,7 +29,7 @@
 					<form role="form" action="" method="post" class="login-form">
 						<div class="form-group">
 							<label class="sr-only" for="form-username"></label>
-							<input type="text" id= "usuario" name="usuario" placeholder="Usuario..." class="form-username form-control" " value'<?php print($login->getNombre())?>' required />
+							<input type="text" id= "usuario" name="usuario" placeholder="Usuario..." class="form-username form-control"  value'<?php print($login->getNombre())?>' required />
 						</div>
 						<div class="form-group">
 							<label class="sr-only" for="form-password"></label>
@@ -46,7 +46,7 @@
 			<div class="col-sm-6 col-sm-offset-3 social-login">
 				<h3>Olvido su contraseña:</h3>
 				<div class="social-login-buttons">
-					<a class="btn btn-link-2" href="index.php">Recuperar contraseña</a>
+					<a href="#" class="btn btn-link-2" href="index.php">Recuperar contraseña</a>
 				</div>
 			</div>
 		</div>
