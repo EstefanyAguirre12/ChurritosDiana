@@ -83,29 +83,6 @@ class Empleado extends Validator{
 		public function getDui(){
 			return $this->dui;
 			}
-<<<<<<< HEAD
-			public function setImagen($file){
-				if($this->validateImage($file, $this->foto, "../../web/img/users/", 1920, 1020)){
-					$this->foto = $this->getImageName();
-					return true;
-				}else{
-					return false;
-				}
-			}
-			//metodos foto
-			public function getImagen(){
-				return $this->foto;
-			}
-			public function unsetImagen(){
-				if(unlink("../../web/img/users/".$this->foto)){
-					$this->foto = null;
-					return true;
-				}else{
-					return false;
-				}			
-			}
-                
-=======
 
 		public function setImagen($file){
 			if($this->validateImage($file, $this->foto, "../../web/img/users/", 1920, 1020)){
@@ -126,7 +103,6 @@ class Empleado extends Validator{
 				return false;
 			}			
 		}
->>>>>>> 37a8ee53b5fecd0bdd592515ee2c68b05c8920ed
                 public function setIdcargo($value){
                     if($this->validateId($value)){
                         $this->idcargo = $value;

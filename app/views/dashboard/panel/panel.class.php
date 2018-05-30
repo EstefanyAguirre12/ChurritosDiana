@@ -230,14 +230,6 @@ class Page extends Component{
 					<ul class='nav child_menu'>
 						<li>
 						<a href='../../registros/mantenimientos/indexusuarios.php'>Usuarios</a>
-<<<<<<< HEAD
-						</li>
-						<li>
-						<a href='../../registros/mantenimientos/indexempleados.php'>Empleados</a>
-						</li>
-						<li>
-						<a href='../../registros/mantenimientos/indexcargos.php'>Cargos</a>
-=======
 						</li>
 						<li>
 						<a href='../../registros/mantenimientos/indexempleados.php'>Empleados</a>
@@ -250,7 +242,6 @@ class Page extends Component{
 						</li>
 						<li>
 						<a href='../../registros/mantenimientos/indextipoente.php'>Tipo Ente</a>
->>>>>>> 37a8ee53b5fecd0bdd592515ee2c68b05c8920ed
 						</li>
 					</ul>
 					</li>
