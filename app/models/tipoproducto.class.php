@@ -32,15 +32,28 @@ class Tipoproducto extends Validator{
     //Metodos CRUD
     //Obtener Ocasion
     public function getTiproducto(){
-		$sql = "SELECT IdTipo, TipoProducto FROM tipoproducto ORDER BY TipoProducto";
+    	$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+
+        $limite = 1;
+ 
+        $limite_inicio = ($page - 1)* $limite;
+		$sql = "SELECT IdTipo, TipoProducto FROM tipoproducto ORDER BY TipoProducto LIMIT $limite_inicio , $limite";
 		$params = array(null);
 		return Database::getRows($sql, $params);
 		}
-		public function searchTiproducto($value){
-			$sql = "SELECT * FROM tipoproducto WHERE TipoProducto LIKE ?  ORDER BY TipoProducto";
-			$params = array("%$value%");
-			return Database::getRows($sql, $params);
-		}
+
+	public function countTipoProducto()
+    {
+        $sql = "SELECT COUNT(*) AS Numero FROM tipoproducto";
+        $params = array(null);
+        return database::getRow($sql, $params);
+    }
+
+	public function searchTiproducto($value){
+		$sql = "SELECT * FROM tipoproducto WHERE TipoProducto LIKE ?  ORDER BY TipoProducto";
+		$params = array("%$value%");
+		return Database::getRows($sql, $params);
+	}
     //Insertar Ocasion
     public function createTiproducto(){
 		$sql = "INSERT INTO tipoproducto(TipoProducto) VALUES(?)";

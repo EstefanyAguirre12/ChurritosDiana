@@ -63,7 +63,8 @@ class Usuario extends Validator {
     // Verificar contraseña
     public function checkClaveUsuario()
     {
-        $sql = "SELECT ClaveUsuario,cargos.IdCargo FROM usuarios,empleados,cargos WHERE  IdUsuario = ? AND usuarios.IdEmpleado = empleados.IdEmpleado  AND empleados.IdCargo = cargos.IdCargo";
+        
+        $sql = "SELECT ClaveUsuario,cargos.IdCargo FROM usuarios,empleados,cargos WHERE  IdUsuario = ? AND usuarios.IdEmpleado = empleados.IdEmpleado  AND empleados.IdCargo = cargos.IdCargo ";
         $params = array($this->id);
         $data = Database::getRow($sql, $params);
         if(password_verify($this->clave, $data['ClaveUsuario']))
@@ -75,6 +76,13 @@ class Usuario extends Validator {
         {
             return false;
         }
+    }
+
+    public function countTipoProducto()
+    {
+        $sql = "SELECT COUNT(*) AS Numero FROM usuarios";
+        $params = array(null);
+        return database::getRow($sql, $params);
     }
     //Verificar usuarios
     public function checkUsuario()
@@ -94,7 +102,12 @@ class Usuario extends Validator {
     }
 	//Obtener categoria
 	public function getUsuario(){
-        $sql = "SELECT `NombreUsuario`  FROM `usuarios` LIMIT 1";
+        $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+
+        $limite = 1;
+ 
+        $limite_inicio = ($page - 1)* $limite;  
+        $sql = "SELECT `NombreUsuario`  FROM `usuarios` LIMIT $limite_inicio , $limite";
         $params = array(null);
         $data = Database::getRows($sql, $params);
         if($data){

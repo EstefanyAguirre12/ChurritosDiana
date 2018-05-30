@@ -45,10 +45,23 @@ class Cargos extends Validator{
     //Metodos CRUD
     //Obtener Ocasion
     public function getCargo(){
-		$sql = "SELECT IdCargo, NombreCargo, Descripcion FROM cargos ORDER BY IdCargo";
+    	$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+
+        $limite = 1;
+ 
+        $limite_inicio = ($page - 1)* $limite;
+		$sql = "SELECT IdCargo, NombreCargo, Descripcion FROM cargos ORDER BY IdCargo LIMIT $limite_inicio , $limite";
 		$params = array(null);
 		return Database::getRows($sql, $params);
 		}
+
+	public function countCargos()
+    {
+        $sql = "SELECT COUNT(*) AS Numero FROM cargos";
+        $params = array(null);
+        return database::getRow($sql, $params);
+    }
+
 		public function searchCargo($value){
 			$sql = "SELECT * FROM cargos WHERE NombreCargo LIKE ?  ORDER BY IdCargo";
 			$params = array("%$value%");
