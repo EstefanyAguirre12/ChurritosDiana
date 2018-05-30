@@ -1,7 +1,8 @@
 <?php
 class Empleado extends Validator{
     private $id = null;
-    private $nombre = null;
+	private $nombre = null;
+	private $usuario = null;
     private $apellido = null;
     private $direccion = null;
     private $dui = null;
@@ -34,6 +35,17 @@ class Empleado extends Validator{
 		}
 		public function getNombre(){
 			return $this->nombre;
+		}
+		public function setUsuario($value){
+			if($this->validateAlphanumeric($value, 1, 200)){
+				$this->usuario = $value;
+				return true;
+			}else{
+				return false;
+			}
+		}
+		public function getUsuario(){
+			return $this->usuario;
 		}
     
     public function setApellido($value){
@@ -180,5 +192,25 @@ class Empleado extends Validator{
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}
+
+	//CUENTA
+    public function readCuenta(){
+		$sql = " SELECT u.NombreUsuario, NombreEmpleado, ApellidosEmpleado, DireccionEmpleado, DUIEmpleado, FotoEmpleado, IdGenero, TelefonoEmpleado FROM empleados e, usuarios u WHERE e.IdEmpleado = u.IdEmpleado and u.IdUsuario=?";
+		$params = array($this->id);
+		$empleado = Database::getRow($sql, $params);
+		if($empleado){
+			$this->nombre = $empleado['NombreEmpleado'];
+            $this->apellido = $empleado['ApellidosEmpleado'];
+			$this->direccion = $empleado['DireccionEmpleado'];
+			$this->dui = $empleado['DUIEmpleado'];
+			$this->foto = $empleado['FotoEmpleado'];
+			$this->usuario = $empleado['NombreUsuario'];
+			$this->idgenero = $empleado['IdGenero'];
+			$this->telefono = $empleado['TelefonoEmpleado'];
+			return true;
+		}else{
+			return null;
+		}
+    }
 }
 ?>
