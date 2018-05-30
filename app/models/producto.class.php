@@ -83,11 +83,24 @@ class Producto extends Validator{
     
     //Metodos CRUD para cotegoria
 		//Obtener categoria
-		public function getProducto(){
-			$sql = "SELECT IdProducto, NombreProducto, t.TipoProducto, c.CategoriaProducto, Descripcion, Precio FROM productos p, categoriaproducto c, tipoproducto t WHERE p.IdTipo=t.IdTipo and p.IdCategoria=c.IdCategoria ORDER BY IdProducto";
-			$params = array(null);
-			return Database::getRows($sql, $params);
-			}
+	public function getProducto(){
+		$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+
+    $limite = 1;
+
+    $limite_inicio = ($page - 1)* $limite;
+		$sql = "SELECT IdProducto, NombreProducto, t.TipoProducto, c.CategoriaProducto, Descripcion, Precio FROM productos p, categoriaproducto c, tipoproducto t WHERE p.IdTipo=t.IdTipo and p.IdCategoria=c.IdCategoria ORDER BY IdProducto LIMIT $limite_inicio , $limite";
+		$params = array(null);
+		return Database::getRows($sql, $params);
+		}
+
+		public function countProductos()
+    {
+        $sql = "SELECT COUNT(*) AS Numero FROM productos";
+        $params = array(null);
+        return database::getRow($sql, $params);
+    }
+
 		public function getTipo(){
 			$sql = "SELECT * FROM TipoProducto";
 			$params = array(null);

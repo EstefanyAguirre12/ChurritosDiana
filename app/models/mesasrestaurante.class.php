@@ -57,11 +57,23 @@ class Mesarestaurante extends Validator{
     
     //Metodos CRUD para cotegoria
 		//Obtener categoria
-		public function getMesarestaurante(){
-			$sql = "SELECT IdMesaRes, IdEstado, NumeroMesa, Capacidad FROM mesarestaurante ORDER BY IdMesaRes";
-			$params = array(null);
-			return Database::getRows($sql, $params);
-			}
+	public function getMesarestaurante(){
+		$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+
+        $limite = 1;
+ 
+        $limite_inicio = ($page - 1)* $limite;
+		$sql = "SELECT IdMesaRes, IdEstado, NumeroMesa, Capacidad FROM mesarestaurante ORDER BY IdMesaRes LIMIT $limite_inicio , $limite";
+		$params = array(null);
+		return Database::getRows($sql, $params);
+		}
+
+	public function countMesarestaurante()
+    {
+        $sql = "SELECT COUNT(*) AS Numero FROM mesarestaurante";
+        $params = array(null);
+        return database::getRow($sql, $params);
+    }
 	
     //Buscar categoria con parametros
     public function searchMesarestaurante($value){

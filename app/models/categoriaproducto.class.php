@@ -32,10 +32,22 @@ class Categoriaproducto extends Validator{
     //Metodos CRUD
     //Obtener Ocasion
     public function getCategoriaproducto(){
-		$sql = "SELECT IdCategoria, CategoriaProducto FROM categoriaproducto ORDER BY CategoriaProducto";
+    	$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+
+        $limite = 1;
+ 
+        $limite_inicio = ($page - 1)* $limite;
+		$sql = "SELECT IdCategoria, CategoriaProducto FROM categoriaproducto ORDER BY CategoriaProducto LIMIT $limite_inicio , $limite";
 		$params = array(null);
 		return Database::getRows($sql, $params);
 		}
+
+	public function countCategoriaProducto()
+    {
+        $sql = "SELECT COUNT(*) AS Numero FROM CategoriaProducto";
+        $params = array(null);
+        return database::getRow($sql, $params);
+    }
 		public function searchCategoriaproducto($value){
 			$sql = "SELECT * FROM categoriaproducto WHERE CategoriaProducto LIKE ?  ORDER BY CategoriaProducto";
 			$params = array("%$value%");

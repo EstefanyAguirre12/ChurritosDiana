@@ -32,15 +32,28 @@ class Material extends Validator{
     //Metodos CRUD
     //Obtener Ocasion
     public function getMaterial(){
-		$sql = "SELECT IdMaterial, Material FROM material ORDER BY Material";
+    	$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+
+        $limite = 1;
+ 
+        $limite_inicio = ($page - 1)* $limite;
+		$sql = "SELECT IdMaterial, Material FROM material ORDER BY Material LIMIT $limite_inicio , $limite";
 		$params = array(null);
 		return Database::getRows($sql, $params);
 		}
-		public function searchMaterial($value){
-			$sql = "SELECT * FROM material WHERE Material LIKE ?  ORDER BY Material";
-			$params = array("%$value%");
-			return Database::getRows($sql, $params);
-		}
+
+	public function countMaterial()
+    {
+        $sql = "SELECT COUNT(*) AS Numero FROM Material";
+        $params = array(null);
+        return database::getRow($sql, $params);
+    }
+    
+	public function searchMaterial($value){
+		$sql = "SELECT * FROM material WHERE Material LIKE ?  ORDER BY Material";
+		$params = array("%$value%");
+		return Database::getRows($sql, $params);
+	}
     //Insertar Ocasion
     public function createMaterial(){
 		$sql = "INSERT INTO material(Material) VALUES(?)";

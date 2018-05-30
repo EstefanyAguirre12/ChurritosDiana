@@ -31,16 +31,30 @@ class Tipoente extends Validator{
     
     //Metodos CRUD
     //Obtener Ocasion
-    public function getTipoente(){
-		$sql = "SELECT IdTipo, TipoEnte FROM tipoente ORDER BY Tipoente";
+	public function getTipoente(){
+		$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+
+	    $limite = 1;
+
+	    $limite_inicio = ($page - 1)* $limite;
+		$sql = "SELECT IdTipo, TipoEnte FROM tipoente ORDER BY Tipoente LIMIT $limite_inicio , $limite";
 		$params = array(null);
 		return Database::getRows($sql, $params);
 		}
-		public function searchTipoente($value){
-			$sql = "SELECT * FROM tipoente WHERE TipoEnte LIKE ?  ORDER BY TipoEnte";
-			$params = array("%$value%");
-			return Database::getRows($sql, $params);
-		}
+
+	public function searchTipoente($value){
+		$sql = "SELECT * FROM tipoente WHERE TipoEnte LIKE ?  ORDER BY TipoEnte";
+		$params = array("%$value%");
+		return Database::getRows($sql, $params);
+	}
+
+	public function countTipoEnte()
+    {
+        $sql = "SELECT COUNT(*) AS Numero FROM tipoente";
+        $params = array(null);
+        return database::getRow($sql, $params);
+    }
+
     //Insertar Ocasion
     public function createTipoente(){
 		$sql = "INSERT INTO tipoente(TipoEnte) VALUES(?)";

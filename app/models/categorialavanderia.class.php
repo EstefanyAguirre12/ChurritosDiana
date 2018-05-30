@@ -32,7 +32,12 @@ class Categorialavanderia extends Validator{
     //Metodos CRUD
     //Obtener Ocasion
     public function getCategoria(){
-		$sql = "SELECT IdCategoria, Categoria FROM categorialavanderia ORDER BY Categoria";
+    	$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+
+        $limite = 1;
+ 
+        $limite_inicio = ($page - 1)* $limite;
+		$sql = "SELECT IdCategoria, Categoria FROM categorialavanderia ORDER BY Categoria LIMIT $limite_inicio , $limite";
 		$params = array(null);
 		return Database::getRows($sql, $params);
 		}
@@ -41,6 +46,13 @@ class Categorialavanderia extends Validator{
 			$params = array("%$value%");
 			return Database::getRows($sql, $params);
 		}
+
+		public function countCategorialavanderia()
+    {
+        $sql = "SELECT COUNT(*) AS Numero FROM categorialavanderia";
+        $params = array(null);
+        return database::getRow($sql, $params);
+    }
     //Insertar Ocasion
     public function createCategoria(){
 		$sql = "INSERT INTO categorialavanderia(Categoria) VALUES(?)";

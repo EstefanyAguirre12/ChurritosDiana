@@ -32,7 +32,12 @@ class Tipohabitacion extends Validator{
     //Metodos CRUD
     //Obtener Ocasion
     public function getTipohabitacion(){
-		$sql = "SELECT IdTipoHabitacion, TipoHabitacion FROM tipohabitacion ORDER BY TipoHabitacion";
+    	$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+
+        $limite = 1;
+ 
+        $limite_inicio = ($page - 1)* $limite;
+		$sql = "SELECT IdTipoHabitacion, TipoHabitacion FROM tipohabitacion ORDER BY TipoHabitacion LIMIT $limite_inicio , $limite";
 		$params = array(null);
 		return Database::getRows($sql, $params);
 		}
@@ -41,6 +46,14 @@ class Tipohabitacion extends Validator{
 			$params = array("%$value%");
 			return Database::getRows($sql, $params);
 		}
+
+	public function countTipoHabitaciones()
+    {
+        $sql = "SELECT COUNT(*) AS Numero FROM TipoHabitacion";
+        $params = array(null);
+        return database::getRow($sql, $params);
+    }
+
     //Insertar Ocasion
     public function createTipohabitacion(){
 		$sql = "INSERT INTO tipohabitacion(TipoHabitacion) VALUES(?)";
