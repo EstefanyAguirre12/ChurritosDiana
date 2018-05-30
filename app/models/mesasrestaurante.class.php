@@ -67,14 +67,18 @@ class Mesarestaurante extends Validator{
 		$params = array(null);
 		return Database::getRows($sql, $params);
 		}
-
+	public function getMesas(){
+		$sql = "SELECT `IdMesa`, `IdTipoMesa`, `Cantidad` FROM `mesas`";
+		$params = array(null);
+		return Database::getRows($sql, $params);
+	}
 	public function countMesarestaurante()
     {
         $sql = "SELECT COUNT(*) AS Numero FROM mesarestaurante";
         $params = array(null);
         return database::getRow($sql, $params);
     }
-	
+
     //Buscar categoria con parametros
     public function searchMesarestaurante($value){
 		$sql = "SELECT * FROM mesarestaurante WHERE NumeroMesa LIKE ? OR Capacidad LIKE ? ORDER BY NumeroMesa";

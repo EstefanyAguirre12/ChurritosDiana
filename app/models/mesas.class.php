@@ -49,6 +49,11 @@ class Mesas extends Validator{
 		$params = array(null);
 		return Database::getRows($sql, $params);
 		}
+		public function getMesass(){
+			$sql = "SELECT `IdMesa`, t.TipoMesa, `Cantidad` FROM mesas m, tipomesa t WHERE  m.IdTipoMesa = t.IdTipoMesa";
+			$params = array(null);
+			return Database::getRows($sql, $params);
+		}
 		public function searchMesas($value){
 			$sql = "SELECT * FROM mesas WHERE IdTipoMesa LIKE ?  ORDER BY Cantidad";
 			$params = array("%$value%");

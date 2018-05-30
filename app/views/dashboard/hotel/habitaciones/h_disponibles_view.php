@@ -3,7 +3,7 @@
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>habitaciones disponibles</h3>
+              <h3>listado de habitaciones</h3>
             </div>
           </div>
           <div class="clearfix"></div>
@@ -23,322 +23,28 @@
                 </div>
                 <div class="x_content">
                   <div class="row">
-                    <p>Seleccione las diferentes platos a comprar</p>
-                    <div class="col-md-55">
-                      <div class="thumbnail">
-                        <div class="image view view-first">
-                          <img class="estilo_stay" src="img/habitacion.jpg" alt="image">
-                          <div class="mask">
-                            <p>$ 5.25</p>
-                            <div class="tools tools-bottom">
-                              <a href="#">
-                                <i class="fas fa-plus"></i>
-                              </a>
-                              <a href="#">
-                                <i class="fa fa-times"></i>
-                              </a>
+
+                <?php
+                    foreach($habitaciones as $habitacion){
+                      print("
+                      <div class='animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12'>
+                          <div class='tile-stats'>
+                            <div class='icon'><i class='fa fa-caret-square-o-right'></i>
                             </div>
-                          </div>
-                        </div>
-                        <div class="caption">
-                          <p>Habitacion Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-55">
-                      <div class="thumbnail">
-                        <div class="image view view-first">
-                          <img class="estilo_stay" src="img/habitacion.jpg" alt="image">
-                          <div class="mask">
-                            <p>$ 5.25</p>
-                            <div class="tools tools-bottom">
-                              <a href="#">
-                                <i class="fas fa-plus"></i>
-                              </a>
-                              <a href="#">
-                                <i class="fa fa-times"></i>
-                              </a>
+                            <div class='count'> 
+                              <h2>
+                              Habitacion N:$habitacion[NumeroHabitacion] 
+                              </h2>
                             </div>
+                            <h3 class='red'>$habitacion[Estado]</h3>
+                            <p>Capacidad:$habitacion[Capacidad]  Precio:$habitacion[Precio]  </p>
                           </div>
-                        </div>
-                        <div class="caption">
-                          <p>Habitacion Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                        </div>
                       </div>
-                    </div>
-                    <div class="col-md-55">
-                      <div class="thumbnail">
-                        <div class="image view view-first">
-                          <img class="estilo_stay" "width: 100%; display: block;" src="img/habitacion.jpg" alt="image">
-                          <div class="mask">
-                            <p>$ 5.25</p>
-                            <div class="tools tools-bottom">
-                              <a href="#">
-                                <i class="fas fa-plus"></i>
-                              </a>
-                              <a href="#">
-                                <i class="fa fa-times"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="caption">
-                          <p>Habitacion Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-55">
-                      <div class="thumbnail">
-                        <div class="image view view-first">
-                          <img class="estilo_stay" src="img/habitacion.jpg" alt="image">
-                          <div class="mask">
-                            <p>$ 5.25</p>
-                            <div class="tools tools-bottom">
-                              <a href="#">
-                                <i class="fas fa-plus"></i>
-                              </a>
-                              <a href="#">
-                                <i class="fa fa-times"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="caption">
-                          <p>Habitacion Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-55">
-                      <div class="thumbnail">
-                        <div class="image view view-first">
-                          <img class="estilo_stay" src="img/habitacion.jpg" alt="image">
-                          <div class="mask">
-                            <p>$ 5.25</p>
-                            <div class="tools tools-bottom">
-                              <a href="#">
-                                <i class="fas fa-plus"></i>
-                              </a>
-                              <a href="#">
-                                <i class="fa fa-times"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="caption">
-                          <p>Habitacion Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-55">
-                      <div class="thumbnail">
-                        <div class="image view view-first">
-                          <img class="estilo_stay" src="img/habitacion.jpg" alt="image">
-                          <div class="mask">
-                            <p>$ 5.25</p>
-                            <div class="tools tools-bottom">
-                              <a href="#">
-                                <i class="fas fa-plus"></i>
-                              </a>
-                              <a href="#">
-                                <i class="fa fa-times"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="caption">
-                          <p>Habitacion Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-55">
-                      <div class="thumbnail">
-                        <div class="image view view-first">
-                          <img class="estilo_stay" src="img/habitacion.jpg" alt="image">
-                          <div class="mask">
-                            <p>$ 5.25</p>
-                            <div class="tools tools-bottom">
-                              <a href="#">
-                                <i class="fas fa-plus"></i>
-                              </a>
-                              <a href="#">
-                                <i class="fa fa-times"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="caption">
-                          <p>Habitacion Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-55">
-                      <div class="thumbnail">
-                        <div class="image view view-first">
-                          <img class="estilo_stay" src="img/habitacion.jpg" alt="image">
-                          <div class="mask">
-                            <p>$ 5.25</p>
-                            <div class="tools tools-bottom">
-                              <a href="#">
-                                <i class="fas fa-plus"></i>
-                              </a>
-                              <a href="#">
-                                <i class="fa fa-times"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="caption">
-                          <p>Habitacion Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-55">
-                      <div class="thumbnail">
-                        <div class="image view view-first">
-                          <img class="estilo_stay" src="img/habitacion.jpg" alt="image">
-                          <div class="mask">
-                            <p>$ 5.25</p>
-                            <div class="tools tools-bottom">
-                              <a href="#">
-                                <i class="fas fa-plus"></i>
-                              </a>
-                              <a href="#">
-                                <i class="fa fa-times"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="caption">
-                          <p>Habitacion Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-55">
-                      <div class="thumbnail">
-                        <div class="image view view-first">
-                          <img class="estilo_stay" src="img/habitacion.jpg" alt="image">
-                          <div class="mask">
-                            <p>$ 5.25</p>
-                            <div class="tools tools-bottom">
-                              <a href="#">
-                                <i class="fas fa-plus"></i>
-                              </a>
-                              <a href="#">
-                                <i class="fa fa-times"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="caption">
-                          <p>Habitacion Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-55">
-                      <div class="thumbnail">
-                        <div class="image view view-first">
-                          <img class="estilo_stay" src="img/habitacion.jpg" alt="image">
-                          <div class="mask">
-                            <p>$ 5.25</p>
-                            <div class="tools tools-bottom">
-                              <a href="#">
-                                <i class="fas fa-plus"></i>
-                              </a>
-                              <a href="#">
-                                <i class="fa fa-times"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="caption">
-                          <p>Habitacion Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-55">
-                      <div class="thumbnail">
-                        <div class="image view view-first">
-                          <img class="estilo_stay" src="img/habitacion.jpg" alt="image">
-                          <div class="mask">
-                            <p>$ 5.25</p>
-                            <div class="tools tools-bottom">
-                              <a href="#">
-                                <i class="fas fa-plus"></i>
-                              </a>
-                              <a href="#">
-                                <i class="fa fa-times"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="caption">
-                          <p>Habitacion Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-55">
-                      <div class="thumbnail">
-                        <div class="image view view-first">
-                          <img class="estilo_stay" src="img/habitacion.jpg" alt="image">
-                          <div class="mask">
-                            <p>$ 5.25</p>
-                            <div class="tools tools-bottom">
-                              <a href="#">
-                                <i class="fas fa-plus"></i>
-                              </a>
-                              <a href="#">
-                                <i class="fa fa-times"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="caption">
-                          <p>Habitacion Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-55">
-                      <div class="thumbnail">
-                        <div class="image view view-first">
-                          <img class="estilo_stay" src="img/habitacion.jpg" alt="image">
-                          <div class="mask">
-                            <p>$ 5.25</p>
-                            <div class="tools tools-bottom">
-                              <a href="#">
-                                <i class="fas fa-plus"></i>
-                              </a>
-                              <a href="#">
-                                <i class="fa fa-times"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="caption">
-                          <p>Habitacion Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-55">
-                      <div class="thumbnail">
-                        <div class="image view view-first">
-                          <img class="estilo_stay" src="img/habitacion.jpg" alt="image">
-                          <div class="mask">
-                            <p>$ 5.25</p>
-                            <div class="tools tools-bottom">
-                              <a href="#">
-                                <i class="fas fa-plus"></i>
-                              </a>
-                              <a href="#">
-                                <i class="fa fa-times"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="caption">
-                          <p>Habitacion Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                        </div>
-                      </div>
-                    </div>
+                      "); 
+                  }   
+                ?>
+
+
                   </div>
                 </div>
               </div>

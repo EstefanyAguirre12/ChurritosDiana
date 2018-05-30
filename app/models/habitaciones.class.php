@@ -86,7 +86,13 @@ class Habitaciones extends Validator{
 			$sql = "SELECT * FROM TipoHabitacion";
 			$params = array(null);
 			return Database::getRows($sql, $params);
-			}
+		}
+		public function getHabitaciones(){
+			$sql = "SELECT `IdHabitacion`, `NumeroHabitacion`, `Capacidad`, `Precio`, `IdTipoHabitacion`, e.Estado FROM `habitaciones` h , estado e WHERE e.IdEstado = h.IdEstado";
+			$params = array(null);
+			return Database::getRows($sql, $params);
+		}
+
 		//Obtener categoria
 		public function getHabitacion(){
 			 $page = (isset($_GET['page'])) ? $_GET['page'] : 1;

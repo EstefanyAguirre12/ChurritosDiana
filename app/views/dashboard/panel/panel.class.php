@@ -46,10 +46,7 @@ class Page extends Component{
 					</a>
 					<ul class='nav child_menu'>
 						<li>
-						<a href='../../hotel/habitaciones/h_disponibles.php'>Habitaciones disponibles</a>
-						</li>
-						<li>
-						<a href='../../hotel/habitaciones/h_reservadas.php'>Habitaciciones reservadas</a>
+						<a href='../../hotel/habitaciones/h_disponibles.php'>Listado Habitaciones</a>
 						</li>
 					</ul>
 					</li>
@@ -94,10 +91,7 @@ class Page extends Component{
 					</a>
 					<ul class='nav child_menu'>
 						<li>
-						<a href='../../restaurante/mesas/mesas_disponibles.php'>Mesas disponibles</a>
-						</li>
-						<li>
-						<a href='../../restaurante/mesas/mesas_ocupadas.php'>Mesas ocupadas</a>
+						<a href='../../restaurante/mesas/mesas_disponibles.php'>Listado Mesas</a>
 						</li>
 					</ul>
 					</li>
@@ -165,10 +159,7 @@ class Page extends Component{
 					</a>
 					<ul class='nav child_menu'>
 						<li>
-						<a href='../../eventos/salones/salones_disponibles.php'>Salones disponibles</a>
-						</li>
-						<li>
-						<a href='../../eventos/salones/salones_ocupados.php'>Salones ocupados</a>
+						<a href='../../eventos/salones/salones_disponibles.php'>Listado salones</a>
 						</li>
 					</ul>
 					</li>

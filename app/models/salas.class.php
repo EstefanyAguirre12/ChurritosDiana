@@ -93,7 +93,11 @@ class Salas extends Validator{
 			$params = array(null);
 			return Database::getRows($sql, $params);
 			}
-	
+	public function getSalas(){
+		$sql = "SELECT `IdSala`, `NombreSala`, `Descripcion`, `Capacidad`, `Costo`, e.Estado FROM `salas` s , estado e WHERE e.IdEstado = s.IdEstadoSala";
+		$params = array(null);
+		return Database::getRows($sql, $params);
+	}
     //Buscar categoria con parametros
     public function searchSala($value){
 		$sql = "SELECT * FROM salas WHERE NombreSala LIKE ? OR Capacidad LIKE ? ORDER BY NombreSala";
