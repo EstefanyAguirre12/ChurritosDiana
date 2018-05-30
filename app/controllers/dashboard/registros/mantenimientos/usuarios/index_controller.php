@@ -11,11 +11,11 @@ try{
 			Page::showMessage(4, "Se encontraron $rows resuldatos", null);
 		}else{
 			Page::showMessage(4, "No se encontraron resultados", null);
-			$data = $dato->getUsuario();
+			$data = $dato->getUsuarios();
 		}
 	}else{
         //Se obtienen los datos
-		$data = $dato->getUsuario();
+		$data = $dato->getUsuarios();
 	}
 	if($data){
 		//Se muestran los 

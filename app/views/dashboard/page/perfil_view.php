@@ -25,7 +25,7 @@
                   <div class="form-group">
                       <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Usuario*:</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name  " name="fot" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getUsuario()) ?>" required/>
+                        <input id="middle-name  " name="us" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getUsuario()) ?>" required/>
                       </div>
                     </div>
                     <div class="form-group">
@@ -75,7 +75,7 @@
                     <div class="ln_solid"></div>
                     <div class="form-group">
                       <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                        <a href="indexusuarios.php" class="btn btn-primary" type="button">Cancelar</a>
+                        <a href="index.php" class="btn btn-primary" type="button">Cancelar</a>
                         <button type="submit" name="modificar" class="btn btn-success">Modificar</button>
                       </div>
                     </div>

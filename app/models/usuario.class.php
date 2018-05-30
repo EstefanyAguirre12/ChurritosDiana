@@ -113,7 +113,11 @@ class Usuario extends Validator {
         $params = array(null);
         return Database::getRows($sql, $params);
         }
-	
+        public function getUsuarios(){
+            $sql = "SELECT  IdUsuario,NombreUsuario,IdEmpleado,ClaveUsuario FROM usuarios ORDER BY IdUsuario";
+            $params = array(null);
+            return Database::getRows($sql, $params);
+            }
     //Buscar categoria con parametros
     public function searchUsuario($value){
 		$sql = "SELECT * FROM usuarios WHERE NombreUsuario LIKE ? OR IdEmpleado LIKE ? ORDER BY NombreUsuario";
