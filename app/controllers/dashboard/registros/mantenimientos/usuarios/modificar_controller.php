@@ -1,52 +1,40 @@
 <?php
-require_once("../../../app/models/ente.class.php");
+require_once("../../../app/models/usuario.class.php");
 try{
     //MODIFICAR
-    $dato = new Ente;
+    $dato = new Usuario;
     if(isset($_GET['id'])){
         if($dato->setId($_GET['id'])){
-            if($dato->readEnte()){
+            if($dato->readUsuario()){
                 if(isset($_POST['modificar'])){
                     $_POST = $dato->validateForm($_POST);
-                    if($dato->setNombre($_POST['nom'])){
-                        if($dato->setApellido($_POST['ap'])){
-                            if($dato->setDocIdentidad($_POST['dui'])){
-                                if($dato->setTelefono($_POST['tel'])){
-                                    if($dato->setCorreo($_POST['cor'])){
-                                        if($dato->setIdtipo($_POST['tip'])){
-                                            if($dato->setIdgenero($_POST['gen'])){
-                                                if($dato->updateEnte()){
-                                                        Page::showMessage(1, "Se ha modificado correctamente", "indexentes.php");
-                                                }else{
-                                                    throw new Exception(Database::getException());
-                                                }                  
-                                            }else{
-                                                throw new Exception("Genero incorrecto", null);
-                                            }
-                                        }else{
-                                            throw new Exception("Tipo incorrecto", null);
-                                        }
+                    if($dato->setNombre($_POST['usu'])){
+                        if($dato->setIdempleado($_POST['em'])){
+                            if($_POST['c1'] == $_POST['c2']){
+                                if($dato->setClave($_POST['c1'])){
+                                    if($dato->updateUsuario()){
+                                            Page::showMessage(1, "Se ha modificado correctamente", "indexusuarios.php");
                                     }else{
-                                        throw new Exception("Correo incorrecto", null);
-                                    }
+                                        throw new Exception(Database::getException());
+                                    }                  
                                 }else{
-                                    throw new Exception("Telefono incorrecto", null);
+                                    throw new Exception("Clave Incorrecta", null);
                                 }
                             }else{
-                                throw new Exception("DUI incorrecto", null);
+                                throw new Exception("Claves diferentes", null);
                             }
                         }else{
-                            throw new Exception("Apellidos incorrecto", null);
+                            throw new Exception("Empleado incorrecto", null);
                         }
                     }else{
-                        throw new Exception("Nombre incorrecto", null);
+                        throw new Exception("Usuario incorrecto", null);
                     }
                 }
             }else{
-                Page::showMessage(2, "Registro inexistente", "indexentes.php");
+                Page::showMessage(2, "Registro inexistente", "indexusuarios.php");
             }
         }else{
-            Page::showMessage(2, "Registro incorrecta", "indexentes.php");
+            Page::showMessage(2, "Registro incorrecta", "indexusuarios.php");
         }
     }else{
     }
@@ -54,5 +42,5 @@ try{
 }catch(Exception $error){
 	Page::showMessage(2, $error->getMessage(), null);
 }
-require_once("../../../app/views/dashboard/registros/mantenimientos/entes/modificar_view.php");
+require_once("../../../app/views/dashboard/registros/mantenimientos/usuarios/modificar_view.php");
 ?>

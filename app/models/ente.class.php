@@ -110,10 +110,23 @@ class Ente extends Validator{
     //Metodos CRUD para cotegoria
 		//Obtener categoria
 	public function getEnte(){
-		$sql = "SELECT IdEnte, Nombres, Apellidos, Correo, DocIdentidad, g.NombreGenero, t.TipoEnte , Telefono FROM entes e, genero g, tipoente t WHERE e.IdGenero=g.IdGenero and e.IdTipo=t.IdTipo ORDER BY Nombres";
+		$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+
+        $limite = 1;
+ 
+        $limite_inicio = ($page - 1)* $limite;
+		$sql = "SELECT IdEnte, Nombres, Apellidos, Correo, DocIdentidad, g.NombreGenero, t.TipoEnte , Telefono FROM entes e, genero g, tipoente t WHERE e.IdGenero=g.IdGenero and e.IdTipo=t.IdTipo ORDER BY Nombres LIMIT $limite_inicio , $limite";
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
+
+	public function countEnte()
+    {
+        $sql = "SELECT COUNT(*) AS Numero FROM entes";
+        $params = array(null);
+        return database::getRow($sql, $params);
+    }
+
 	public function getGenero(){
 		$sql = "SELECT * FROM genero";
 		$params = array(null);

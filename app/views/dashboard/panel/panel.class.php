@@ -62,6 +62,9 @@ class Page extends Component{
 						<li>
 						<a href='../../hotel/registros/habitaciones.php'>Habitaciones</a>
 						</li>
+						<li>
+						<a href='../../hotel/registros/indextipo.php'>Tipo Habitacion</a>
+						</li>
 					</ul>
 					</li>
 				</ul>
@@ -119,10 +122,16 @@ class Page extends Component{
 					</a>
 					<ul class='nav child_menu'>
 						<li>
-						<a href='../../restaurante/registros/bebidas.php'>Platos</a>
+						<a href='../../restaurante/registros/indexcategoria.php'>Categoria</a>
 						</li>
 						<li>
-						<a href='../../restaurante/registros/platos.php'>Bebidas</a>
+						<a href='../../restaurante/registros/indexmesa.php'>Mesas</a>
+						</li>
+						<li>
+						<a href='../../restaurante/registros/indexproducto.php'>Productos</a>
+						</li>
+						<li>
+						<a href='../../restaurante/registros/indextipo.php'>Tipo Producto</a>
 						</li>
 					</ul>
 					</li>
@@ -170,12 +179,39 @@ class Page extends Component{
 					</a>
 					<ul class='nav child_menu'>
 						<li>
-						<a href='../../eventos/registros/salones.php'>Salones</a>
+						<a href='../../eventos/registros/indexsalon.php'>Salones</a>
 						</li>
 						<li>
 						<a href='../../eventos/registros/muebles.php'>Muenbles</a>
 						</li>
 					</ul>
+					</li>
+				</ul>
+			</div>
+		");
+	}
+	public static function Modulo_Lavanderia(){
+		print("
+			<div class='menu_section'>
+				<h3 class='text-center'>Lavanderia</h3>
+				<ul class='nav side-menu'>
+
+					<li>
+						<a>
+							<i class='material-icons'>archive</i> Registros
+							<span class='fa fa-chevron-down'></span>
+						</a>
+						<ul class='nav child_menu'>
+							<li>
+								<a href='../../lavanderia/registros/indexcategoria.php'>Categoria</a>
+							</li>
+							<li>
+								<a href='../../lavanderia/registros/indexlavanderia.php'>Objetos</a>
+							</li>
+							<li>
+								<a href='../../lavanderia/registros/indexmaterial.php'>Material</a>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</div>
@@ -194,12 +230,27 @@ class Page extends Component{
 					<ul class='nav child_menu'>
 						<li>
 						<a href='../../registros/mantenimientos/indexusuarios.php'>Usuarios</a>
+<<<<<<< HEAD
 						</li>
 						<li>
 						<a href='../../registros/mantenimientos/indexempleados.php'>Empleados</a>
 						</li>
 						<li>
 						<a href='../../registros/mantenimientos/indexcargos.php'>Cargos</a>
+=======
+						</li>
+						<li>
+						<a href='../../registros/mantenimientos/indexempleados.php'>Empleados</a>
+						</li>
+						<li>
+						<a href='../../registros/mantenimientos/indexcargos.php'>Cargos</a>
+						</li>
+						<li>
+						<a href='../../registros/mantenimientos/indexentes.php'>Entes</a>
+						</li>
+						<li>
+						<a href='../../registros/mantenimientos/indextipoente.php'>Tipo Ente</a>
+>>>>>>> 37a8ee53b5fecd0bdd592515ee2c68b05c8920ed
 						</li>
 					</ul>
 					</li>
@@ -231,6 +282,7 @@ class Page extends Component{
 				Page::Modulo_Hotel();
 				Page::Modulo_Resturante();
 				Page::Modulo_Eventos();
+				Page::Modulo_Lavanderia();
 				Page::Modulo_Registros();
 				break;
 			case 2:

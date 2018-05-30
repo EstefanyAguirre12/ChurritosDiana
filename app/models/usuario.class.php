@@ -60,10 +60,28 @@ class Usuario extends Validator {
     }
     
     //Metodos CRUD para cotegoria
+    public function checkContra(){
+        $sql = "SELECT ClaveUsuario FROM usuarios WHERE IdUsuario = ?";
+        $params = array($this->id);
+        $data = Database::getRow($sql, $params);
+        if(password_verify($this->clave, $data['ClaveUsuario'])){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //cambiar contrasena
+        public function changePassword(){
+            $hash = password_hash($this->clave, PASSWORD_DEFAULT);
+            $sql = "UPDATE usuarios SET ClaveUsuario = ? WHERE IdUsuario = ?";
+            $params = array($hash, $this->id);
+            return Database::executeRow($sql, $params);
+        }
     // Verificar contraseña
     public function checkClaveUsuario()
     {
-        $sql = "SELECT ClaveUsuario,cargos.IdCargo FROM usuarios,empleados,cargos WHERE  IdUsuario = ? AND usuarios.IdEmpelado = empleados.IdEmpleado  AND empleados.IdCargo = cargos.IdCargo";
+        
+        $sql = "SELECT ClaveUsuario,cargos.IdCargo FROM usuarios,empleados,cargos WHERE  IdUsuario = ? AND usuarios.IdEmpleado = empleados.IdEmpleado  AND empleados.IdCargo = cargos.IdCargo ";
         $params = array($this->id);
         $data = Database::getRow($sql, $params);
         if(password_verify($this->clave, $data['ClaveUsuario']))
@@ -75,6 +93,13 @@ class Usuario extends Validator {
         {
             return false;
         }
+    }
+
+    public function countTipoProducto()
+    {
+        $sql = "SELECT COUNT(*) AS Numero FROM usuarios";
+        $params = array(null);
+        return database::getRow($sql, $params);
     }
     //Verificar usuarios
     public function checkUsuario()
@@ -94,7 +119,12 @@ class Usuario extends Validator {
     }
 	//Obtener categoria
 	public function getUsuario(){
-        $sql = "SELECT `NombreUsuario`  FROM `usuarios` LIMIT 1";
+        $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+
+        $limite = 1;
+ 
+        $limite_inicio = ($page - 1)* $limite;  
+        $sql = "SELECT `NombreUsuario`  FROM `usuarios` LIMIT $limite_inicio , $limite";
         $params = array(null);
         $data = Database::getRows($sql, $params);
         if($data){
@@ -113,7 +143,11 @@ class Usuario extends Validator {
         $params = array(null);
         return Database::getRows($sql, $params);
         }
-	
+        public function getUsuarios(){
+            $sql = "SELECT  IdUsuario,NombreUsuario,IdEmpleado,ClaveUsuario FROM usuarios ORDER BY IdUsuario";
+            $params = array(null);
+            return Database::getRows($sql, $params);
+            }
     //Buscar categoria con parametros
     public function searchUsuario($value){
 		$sql = "SELECT * FROM usuarios WHERE NombreUsuario LIKE ? OR IdEmpleado LIKE ? ORDER BY NombreUsuario";
@@ -122,8 +156,9 @@ class Usuario extends Validator {
     }
     //Insertar categoria
     public function createUsuario(){
-		$sql = "INSERT INTO usuarios(IdUsuario, NombreUsuario, IdEmpleado, ClaveUsuario) VALUES(?, ?, ?, ?)";
-		$params = array($this->id, $this->nombre, $this->idempleado, $this->clave);
+        $hash = password_hash($this->clave, PASSWORD_DEFAULT);
+		$sql = "INSERT INTO usuarios(NombreUsuario, IdEmpleado, ClaveUsuario) VALUES(?, ?, ?)";
+		$params = array($this->nombre, $this->idempleado, $hash);
 		return Database::executeRow($sql, $params);
     }
     //Leer categoria

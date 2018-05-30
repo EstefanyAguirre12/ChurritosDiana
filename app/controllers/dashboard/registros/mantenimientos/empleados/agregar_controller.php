@@ -13,18 +13,31 @@ try{
 								if($dato->setIdcargo($_POST['car'])){
 									if($dato->setIdgenero($_POST['gen'])){
 										if(is_uploaded_file($_FILES['foto']['tmp_name'])){
+<<<<<<< HEAD
                                             if($object->setImagen($_FILES['foto'])){
+=======
+                                            						if($object->setImagen($_FILES['foto'])){
+>>>>>>> 37a8ee53b5fecd0bdd592515ee2c68b05c8920ed
 												if($dato->createEmpleado()){
 													Page::showMessage(1, "Se ha insertado correctamente", "indexempleados.php");
 												}else{
 													throw new Exception(Database::getException());
 												}
+<<<<<<< HEAD
                                             }else{
                                                 throw new Exception($object->getImageError());
                                             }
                                         }else{
                                             throw new Exception("Seleccione una imagen");
                                         } 
+=======
+											    }else{
+												throw new Exception($object->getImageError());
+											    }
+											}else{
+											    throw new Exception("Seleccione una imagen");
+											} 
+>>>>>>> 37a8ee53b5fecd0bdd592515ee2c68b05c8920ed
 									}else{
 										throw new Exception("Genero incorrecto", null);
 									}

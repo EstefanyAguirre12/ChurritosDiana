@@ -1,7 +1,8 @@
 <?php
 class Empleado extends Validator{
     private $id = null;
-    private $nombre = null;
+	private $nombre = null;
+	private $usuario = null;
     private $apellido = null;
     private $direccion = null;
     private $dui = null;
@@ -34,6 +35,17 @@ class Empleado extends Validator{
 		}
 		public function getNombre(){
 			return $this->nombre;
+		}
+		public function setUsuario($value){
+			if($this->validateAlphanumeric($value, 1, 200)){
+				$this->usuario = $value;
+				return true;
+			}else{
+				return false;
+			}
+		}
+		public function getUsuario(){
+			return $this->usuario;
 		}
     
     public function setApellido($value){
@@ -71,6 +83,7 @@ class Empleado extends Validator{
 		public function getDui(){
 			return $this->dui;
 			}
+<<<<<<< HEAD
 			public function setImagen($file){
 				if($this->validateImage($file, $this->foto, "../../web/img/users/", 1920, 1020)){
 					$this->foto = $this->getImageName();
@@ -92,6 +105,28 @@ class Empleado extends Validator{
 				}			
 			}
                 
+=======
+
+		public function setImagen($file){
+			if($this->validateImage($file, $this->foto, "../../web/img/users/", 1920, 1020)){
+				$this->foto = $this->getImageName();
+				return true;
+			}else{
+				return false;
+			}
+		}
+		public function getImagen(){
+			return $this->foto;
+		}
+		public function unsetImagen(){
+			if(unlink("../../web/img/users/".$this->foto)){
+				$this->foto = null;
+				return true;
+			}else{
+				return false;
+			}			
+		}
+>>>>>>> 37a8ee53b5fecd0bdd592515ee2c68b05c8920ed
                 public function setIdcargo($value){
                     if($this->validateId($value)){
                         $this->idcargo = $value;
@@ -188,5 +223,30 @@ class Empleado extends Validator{
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}
+
+	//CUENTA
+    public function readCuenta(){
+		$sql = " SELECT u.NombreUsuario, NombreEmpleado, ApellidosEmpleado, DireccionEmpleado, DUIEmpleado, FotoEmpleado, IdGenero, TelefonoEmpleado FROM empleados e, usuarios u WHERE e.IdEmpleado = u.IdEmpleado and u.IdUsuario=?";
+		$params = array($this->id);
+		$empleado = Database::getRow($sql, $params);
+		if($empleado){
+			$this->nombre = $empleado['NombreEmpleado'];
+            $this->apellido = $empleado['ApellidosEmpleado'];
+			$this->direccion = $empleado['DireccionEmpleado'];
+			$this->dui = $empleado['DUIEmpleado'];
+			$this->foto = $empleado['FotoEmpleado'];
+			$this->usuario = $empleado['NombreUsuario'];
+			$this->idgenero = $empleado['IdGenero'];
+			$this->telefono = $empleado['TelefonoEmpleado'];
+			return true;
+		}else{
+			return null;
+		}
+	}
+	public function updateCuenta(){
+		$sql = "UPDATE empleados, usuarios SET NombreUsuario=?, NombreEmpleado = ?, ApellidosEmpleado = ?, DireccionEmpleado = ?, DUIEmpleado = ?, FotoEmpleado = ?, IdCargo = ?, IdGenero = ?, TelefonoEmpleado = ? WHERE IdEmpleado = ?";
+		$params = array($this->nombre,$this->nombre, $this->apellido, $this->direccion, $this->dui, $this->foto, $this->idcargo, $this->idgenero, $this->telefono, $this->id);
+		return Database::executeRow($sql, $params);
+    }
 }
 ?>

@@ -84,10 +84,23 @@ class Lavanderia extends Validator{
     //Metodos CRUD para cotegoria
 	//Obtener categoria
 	public function getLavanderia(){
-		$sql = "SELECT Id, l.Nombre, l.Cantidad, l.Color, c.Categoria, m.Material FROM lavanderia l, material m, categorialavanderia c WHERE l.IdCategoria = c.IdCategoria and l.IdMaterial=m.IdMaterial";
+		$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+
+        $limite = 1;
+ 
+        $limite_inicio = ($page - 1)* $limite;
+		$sql = "SELECT Id, Nombre, Cantidad, Color, c.Categoria, m.Material FROM lavanderia l, material m, categorialavanderia c WHERE l.IdCategoria = c.IdCategoria and l.IdMaterial=m.IdMaterial  LIMIT $limite_inicio , $limite";
 		$params = array(null);
 		return Database::getRows($sql, $params);
 		}
+
+	public function countLavanderia()
+    {
+        $sql = "SELECT COUNT(*) AS Numero FROM lavanderia";
+        $params = array(null);
+        return database::getRow($sql, $params);
+    }
+
 	public function getCategoria(){
 		$sql = "SELECT * FROM categorialavanderia";
 		$params = array(null);
