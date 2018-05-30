@@ -18,9 +18,6 @@ class Page extends Component{
 					</a>
 					<ul class='nav child_menu'>
 						<li>
-						<a href='../../hotel/reservas/reserva_online.php'>Reservas en linea</a>
-						</li>
-						<li>
 						<a href='../../hotel/reservas/reserva_nueva.php'>Nueva reserva</a>
 						</li>
 						<li>

@@ -136,15 +136,19 @@ class Detalleconferencia extends Validator{
     //Metodos CRUD para cotegoria
 		//Obtener categoria
 		public function getDetalleconferencia(){
-			$sql = "SELECT IdReserva, IdSala, IdMesa, IdSilla, IdCuenta, HoraInicio, HoraFin, Fecha, CantidadSilas, CantidadMesas FROM detalleconferencia ORDER BY IdReserva";
+			$sql = "SELECT `IdReserva`, salas.NombreSala `IdMesa`, `CantidadMesas`, `IdSilla`, `CantidadSillas`, `HoraInicio`, `HoraFin`, detalleconferencia.Fecha,entes.Nombres 
+            FROM detalleconferencia , salas ,cuentatotal,entes
+            WHERE detalleconferencia.IdSala = salas.IdSala AND detalleconferencia.IdCuenta = cuentatotal.IdCuenta AND cuentatotal.IdEnte = entes.IdEnte";
 			$params = array(null);
 			return Database::getRows($sql, $params);
 			}
 	
     //Buscar categoria con parametros
     public function searchDetalleconferencia($value){
-		$sql = "SELECT * FROM detalleconferencia WHERE IdReserva LIKE ? OR IdMesa LIKE ? ORDER BY IdReserva";
-		$params = array("%$value%", "%$value%");
+		$sql = "SELECT `IdReserva`, salas.NombreSala `IdMesa`, `CantidadMesas`, `IdSilla`, `CantidadSillas`, `HoraInicio`, `HoraFin`, detalleconferencia.Fecha,entes.Nombres 
+        FROM detalleconferencia , salas ,cuentatotal,entes
+        WHERE detalleconferencia.IdSala = salas.IdSala AND detalleconferencia.IdCuenta = cuentatotal.IdCuenta AND cuentatotal.IdEnte = entes.IdEnte AND entes.Nombres LIKE ? ";
+		$params = array("%$value%");
 		return Database::getRows($sql, $params);
     }
     //Insertar categoria
@@ -161,13 +165,13 @@ class Detalleconferencia extends Validator{
 		if($confe){
 			$this->idsala = $confe['IdSala'];
             $this->idmesa = $confe['IdMesa'];
-						$this->idsilla = $confe['IdSilla'];
-						$this->idcuenta = $confe['IdCuenta'];
-                        $this->horain = $confe['HoraInicio'];
-                        $this->horafin = $confe['HoraFin'];
-                        $this->fecha = $confe['Fecha'];
-                        $this->cantidads = $confe['CantidadSillas'];
-                        $this->cantidadm = $confe['CantidadMesas'];
+            $this->idsilla = $confe['IdSilla'];
+            $this->idcuenta = $confe['IdCuenta'];
+            $this->horain = $confe['HoraInicio'];
+            $this->horafin = $confe['HoraFin'];
+            $this->fecha = $confe['Fecha'];
+            $this->cantidads = $confe['CantidadSillas'];
+            $this->cantidadm = $confe['CantidadMesas'];
                         
 			return true;
 		}else{
