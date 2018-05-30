@@ -60,6 +60,23 @@ class Usuario extends Validator {
     }
     
     //Metodos CRUD para cotegoria
+    public function checkContra(){
+        $sql = "SELECT ClaveUsuario FROM usuarios WHERE IdUsuario = ?";
+        $params = array($this->id);
+        $data = Database::getRow($sql, $params);
+        if(password_verify($this->clave, $data['ClaveUsuario'])){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //cambiar contrasena
+        public function changePassword(){
+            $hash = password_hash($this->clave, PASSWORD_DEFAULT);
+            $sql = "UPDATE usuarios SET ClaveUsuario = ? WHERE IdUsuario = ?";
+            $params = array($hash, $this->id);
+            return Database::executeRow($sql, $params);
+        }
     // Verificar contraseña
     public function checkClaveUsuario()
     {
