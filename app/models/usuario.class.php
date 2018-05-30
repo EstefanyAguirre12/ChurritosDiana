@@ -63,7 +63,7 @@ class Usuario extends Validator {
     // Verificar contraseña
     public function checkClaveUsuario()
     {
-        $sql = "SELECT ClaveUsuario,cargos.IdCargo FROM usuarios,empleados,cargos WHERE  IdUsuario = ? AND usuarios.IdEmpelado = empleados.IdEmpleado  AND empleados.IdCargo = cargos.IdCargo";
+        $sql = "SELECT ClaveUsuario,cargos.IdCargo FROM usuarios,empleados,cargos WHERE  IdUsuario = ? AND usuarios.IdEmpleado = empleados.IdEmpleado  AND empleados.IdCargo = cargos.IdCargo";
         $params = array($this->id);
         $data = Database::getRow($sql, $params);
         if(password_verify($this->clave, $data['ClaveUsuario']))
@@ -122,8 +122,9 @@ class Usuario extends Validator {
     }
     //Insertar categoria
     public function createUsuario(){
-		$sql = "INSERT INTO usuarios(IdUsuario, NombreUsuario, IdEmpleado, ClaveUsuario) VALUES(?, ?, ?, ?)";
-		$params = array($this->id, $this->nombre, $this->idempleado, $this->clave);
+        $hash = password_hash($this->clave, PASSWORD_DEFAULT);
+		$sql = "INSERT INTO usuarios(NombreUsuario, IdEmpleado, ClaveUsuario) VALUES(?, ?, ?)";
+		$params = array($this->nombre, $this->idempleado, $hash);
 		return Database::executeRow($sql, $params);
     }
     //Leer categoria
