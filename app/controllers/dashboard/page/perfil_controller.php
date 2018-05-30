@@ -7,35 +7,51 @@ try{
             if($dato->readCuenta()){
                 if(isset($_POST['modificar'])){
                     $_POST = $dato->validateForm($_POST);
-                    if($dato->setNombre($_POST['usu'])){
-                        if($dato->setIdempleado($_POST['em'])){
-                            if($_POST['c1'] == $_POST['c2']){
-                                if($dato->setClave($_POST['c1'])){
-                                    if($dato->updateUsuario()){
-                                            Page::showMessage(1, "Se ha modificado correctamente", "indexusuarios.php");
+                    if($dato->setNombre($_POST['nom'])){
+                        if($dato->setApellido($_POST['ap'])){
+                            if($dato->setDui($_POST['dui'])){
+                                if($dato->setTelefono($_POST['tel'])){
+                                    if($dato->setDireccion($_POST['dir'])){
+                                        if($dato->setFoto($_POST['fot'])){
+                                            if($dato->setUsuario($_POST['us'])){
+                                                if($dato->setIdgenero($_POST['gen'])){
+                                                    if($dato->updateCuenta()){
+                                                            Page::showMessage(1, "Se ha modificado correctamente", "index.php");
+                                                    }else{
+                                                        throw new Exception(Database::getException());
+                                                    }                  
+                                                }else{
+                                                    throw new Exception("Genero incorrecto", null);
+                                                }
+                                            }else{
+                                                throw new Exception("Cargo incorrecto", null);
+                                            }
+                                        }else{
+                                            throw new Exception("Foto incorrecto", null);
+                                        }
                                     }else{
-                                        throw new Exception(Database::getException());
-                                    }                  
+                                        throw new Exception("Direccion incorrecto", null);
+                                    }
                                 }else{
-                                    throw new Exception("Clave Incorrecta", null);
+                                    throw new Exception("Telefono incorrecto", null);
                                 }
                             }else{
-                                throw new Exception("Claves diferentes", null);
+                                throw new Exception("DUI incorrecto", null);
                             }
                         }else{
-                            throw new Exception("Empleado incorrecto", null);
+                            throw new Exception("Apellidos incorrecto", null);
                         }
                     }else{
-                        throw new Exception("Usuario incorrecto", null);
+                        throw new Exception("Nombre incorrecto", null);
                     }
                 }
             }else{
-                Page::showMessage(2, "Registro inexistente", "indexusuarios.php");
+                Page::showMessage(2, "Registro inexistente", "indexempleados.php");
             }
         }else{
-            Page::showMessage(2, "Registro incorrecta", "indexusuarios.php");
+            Page::showMessage(2, "Registro incorrecta", "indexempleados.php");
         }
-
+ 
 }catch(Exception $error){
 	Page::showMessage(2, $error->getMessage(), null);
 }
