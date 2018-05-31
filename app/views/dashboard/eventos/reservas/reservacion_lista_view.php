@@ -18,23 +18,20 @@
                   <div id="datatable-checkbox_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                     <div class="row">
                       <div class="col-sm-6">
-                        <div class="dataTables_length" id="datatable-checkbox_length">
-                          <label>Mostrando
-                            <select name="datatable-checkbox_length" aria-controls="datatable-checkbox" class="form-control input-sm">
-                              <option value="10">10</option>
-                              <option value="25">25</option>
-                              <option value="50">50</option>
-                              <option value="100">100</option>
-                            </select> Por</label>
-                        </div>
+
                       </div>
                       <div class="col-sm-6">
-                        <div id="datatable-checkbox_filter" class="dataTables_filter">
-                          <label>Busquedad:
-                            <input type="search" class="form-control input-sm" placeholder="" aria-controls="datatable-checkbox">
-                          </label>
-                        </div>
-                      </div>
+                        <form method='post'>
+                            <div id="datatable-checkbox_filter" class="dataTables_filter">
+                              <label>Busquedad:
+                                <input type="search" name="busqueda" class="form-control input-sm validate" placeholder="Sala" aria-controls="datatable-checkbox" /required>
+                              </label>
+                              <button type="submit" name="buscar" class="btn btn-round btn-info">
+                                <i class="fas fa-search"></i>
+                              </button>                        
+                            </div>
+                        </form>
+                      </div> 
                     </div>
                     <div class="row">
                       <div class="col-sm-12">
@@ -49,6 +46,8 @@
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Hora fin</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Fecha</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Cliente</th>
+                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Editar</th>
+                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Eliminar</th>
 
                           </thead>
                           <tbody>
@@ -59,7 +58,7 @@
                                   </tr>
                                   <tr role='row' class='odd'>
                                     <td>$row[IdReserva]</td>
-                                    <td>$row[NombreSala]</td>
+                                    <td>$row[1]</td>
                                     <td>$row[CantidadMesas]</td>
                                     <td>$row[CantidadSillas]</td>
                                     <td>$row[HoraInicio]</td>

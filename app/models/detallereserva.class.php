@@ -96,18 +96,22 @@ class Detallereserva extends Validator{
 
     //Metodos CRUD para cotegoria
 		//Obtener categoria
-		public function getDetalleres(){
-			$sql = "SELECT IdDetalle, IdHabitacion, IdCuenta, HoraInicio, HoraFin, FechaInicio, FechaFin FROM detallereserva ORDER BY IdDetalle";
-			$params = array(null);
-			return Database::getRows($sql, $params);
-			}
-	
-    //Buscar categoria con parametros
-    public function searchDetalleres($value){
-		$sql = "SELECT * FROM detallereserva WHERE IdCuenta LIKE ? OR IdDetalle LIKE ? ORDER IdDetalle";
-		$params = array("%$value%", "%$value%");
+	public function getReservas(){
+		$sql = "SELECT `IdDetalle`, `FechaInicio`, `FechaFin`, `HoraInicio`, `HoraFin`, habitaciones.NumeroHabitacion, entes.Nombres
+		FROM `detallereserva`,habitaciones,cuentatotal,entes 
+		WHERE detallereserva.IdHabitacion= habitaciones.IdHabitacion AND detallereserva.IdCuenta = cuentatotal.IdCuenta AND cuentatotal.IdEnte = entes.IdEnte";
+		$params = array(null);
 		return Database::getRows($sql, $params);
-    }
+	}
+	
+	//Buscar categoria con parametros
+	public function searchReserva($value){
+		$sql = "SELECT `IdDetalle`, `FechaInicio`, `FechaFin`, `HoraInicio`, `HoraFin`, habitaciones.NumeroHabitacion, entes.Nombres 
+		FROM `detallereserva`,habitaciones,cuentatotal,entes 
+		WHERE detallereserva.IdHabitacion= habitaciones.IdHabitacion AND detallereserva.IdCuenta = cuentatotal.IdCuenta AND cuentatotal.IdEnte = entes.IdEnte AND  entes.Nombres LIKE ? ";
+		$params = array("%$value%");
+		return Database::getRows($sql, $params);
+	}
     //Insertar categoria
     public function createDetalleres(){
 		$sql = "INSERT INTO detallereserva(IdDetalle, IdHabitacion, IdCuenta, HoraInicio, HoraFin, FechaInicio, FechaFin) VALUES(?, ?, ?, ?, ?, ?, ?)";
