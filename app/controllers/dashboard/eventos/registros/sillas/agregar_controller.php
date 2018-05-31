@@ -1,14 +1,14 @@
 <?php
-require_once("../../../app/models/mesasrestaurante.class.php");
+require_once("../../../app/models/sillas.class.php");
 try{
 	 //Insertar
-	$dato = new Mesarestaurante;
+	$dato = new Sillas;
 	if(isset($_POST['guardar'])){
 		$_POST = $dato->validateForm($_POST);
-		if($dato->setNumeromesa($_POST['num'])){
-			if($dato->setCapacidad($_POST['cap'])){
-				if($dato->createMesarestaurante()){
-					Page::showMessage(1, "Se ha insertado correctamente", "indexmesa.php");
+		if($dato->setNombre($_POST['num'])){
+			if($dato->setCantidad($_POST['cap'])){
+				if($dato->createSillas()){
+					Page::showMessage(1, "Se ha insertado correctamente", "indexsilla.php");
 				}else{
 					throw new Exception(Database::getException());
 				}
@@ -23,5 +23,5 @@ try{
 }catch(Exception $error){
 	Page::showMessage(2, $error->getMessage(), null);
 }
-require_once("../../../app/views/dashboard/eventos/registros/mesas/agregar_view.php");
+require_once("../../../app/views/dashboard/eventos/registros/sillas/agregar_view.php");
 ?>

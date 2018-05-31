@@ -10,7 +10,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
       <div class="x_panel">
         <div class="x_title">
-          <h2>Modificar Mesa</h2>
+          <h2>Modificar Silla</h2>
           <ul class="nav navbar-right panel_toolbox">
             <li>
               <a class="collapse-link">
@@ -23,21 +23,21 @@
         <div class="x_content">
           <form method="post" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left">
             <div class="form-group">
-              <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Numero Mesa*:</label>
+              <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Nombre*:</label>
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <input id="middle-name  " name="num" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getNumeromesa()) ?>" required/>
+                <input id="middle-name  " name="num" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getNombre()) ?>" required/>
               </div>
             </div>
             <div class="form-group">
-              <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Capacidad*:</label>
+              <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Cantidad*:</label>
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <input id="middle-name" name="cap" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getCapacidad()) ?>" required/>
+                <input id="middle-name" name="cap" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getCantidad()) ?>" required/>
               </div>
             </div>
             <div class="ln_solid"></div>
             <div class="form-group">
               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-              <a href="indexmesa.php" class="btn btn-primary" type="button">Cancelar</a>
+              <a href="indexsilla.php" class="btn btn-primary" type="button">Cancelar</a>
               <button type="submit" name="modificar" class="btn btn-success">Modificar</button>
               </div>
             </div>

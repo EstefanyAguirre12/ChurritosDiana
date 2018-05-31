@@ -13,14 +13,14 @@ try{
 								if($dato->setIdcargo($_POST['car'])){
 									if($dato->setIdgenero($_POST['gen'])){
 										if(is_uploaded_file($_FILES['foto']['tmp_name'])){
-                                            if($object->setImagen($_FILES['foto'])){
+                                            if($dato->setImagen($_FILES['foto'])){
 													if($dato->createEmpleado()){
 														Page::showMessage(1, "Se ha insertado correctamente", "indexempleados.php");
 													}else{
 														throw new Exception(Database::getException());
 													}
 											    }else{
-												throw new Exception($object->getImageError());
+												throw new Exception($dato->getImageError());
 											    }
 											}else{
 											    throw new Exception("Seleccione una imagen");

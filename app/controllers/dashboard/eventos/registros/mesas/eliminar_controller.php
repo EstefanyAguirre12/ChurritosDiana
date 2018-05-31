@@ -1,12 +1,12 @@
 <?php
-require_once("../../../app/models/mesasrestaurante.class.php");
+require_once("../../../app/models/mesas.class.php");
 try{
 	if(isset($_GET['id'])){
-		$dato = new Mesarestaurante;
+		$dato = new Mesas;
 		if($dato->setId($_GET['id'])){
-			if($dato->readMesarestaurante()){
+			if($dato->readMesas()){
 				if(isset($_POST['eliminar'])){
-					if($dato->deleteMesarestaurante()){
+					if($dato->deleteMesas()){
                         Page::showMessage(1, "Registro eliminado", "indexmesa.php");
 					}else{
 						throw new Exception(Database::getException());
@@ -19,7 +19,7 @@ try{
 			throw new Exception("Registro incorrecta");
 		}
 	}else{
-		Page::showMessage(3, "Seleccione un registro", "habitaciones.php");
+		Page::showMessage(3, "Seleccione un registro", "indexmesa.php");
 	}
 }catch(Exception $error){
 	Page::showMessage(2, $error->getMessage(), null);

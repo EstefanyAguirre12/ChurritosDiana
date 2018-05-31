@@ -2,21 +2,21 @@
 require_once("../../../app/models/mesas.class.php");
 try{
 	 //Insertar
-	$dato = new Mesarestaurante;
+	$dato = new Mesas;
 	if(isset($_POST['guardar'])){
 		$_POST = $dato->validateForm($_POST);
-		if($dato->setNumeromesa($_POST['num'])){
-			if($dato->setCapacidad($_POST['cap'])){
-				if($dato->createMesarestaurante()){
+		if($dato->setNombre($_POST['num'])){
+			if($dato->setCantidad($_POST['cap'])){
+				if($dato->createMesas()){
 					Page::showMessage(1, "Se ha insertado correctamente", "indexmesa.php");
 				}else{
 					throw new Exception(Database::getException());
 				}
 			}else{
-				throw new Exception("Numero incorrecto", null);
+				throw new Exception("Nombre incorrecto", null);
 			}
 		}else{
-			throw new Exception("Capacidad incorrecta", null);
+			throw new Exception("Cantidad incorrecta", null);
 		}
 	}
 

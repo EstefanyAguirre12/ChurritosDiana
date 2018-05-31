@@ -41,66 +41,48 @@
                         <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                           <thead>
                             <tr role="row">
-                              <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">Nombres sala</th>
-                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Descripcion</th>
-                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Capacidad</th>
-                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">costo</th>
-                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Estado</th>
-                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Editar</th>
-                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Eliminar</th>
+                              <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">Codigo</th>
+                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Nombre Sala</th>
+                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">N Mesas</th>
+                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">N Sillas</th>
+                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Hora inicio</th>
+                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Hora fin</th>
+                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Fecha</th>
+                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Cliente</th>
+
                           </thead>
                           <tbody>
-                            <tr role="row" class="odd">
-                              <td>Nombres e</td>
-                              <td>Lorem ipsum dolor sit amet consectetur.</td>
-                              <td>300</td>
-                              <td>$300</td>
-                              <td>libre</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td>Nombres e</td>
-                              <td>Lorem ipsum dolor sit amet consectetur.</td>
-                              <td>300</td>
-                              <td>$300</td>
-                              <td>libre</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td>Nombres e</td>
-                              <td>Lorem ipsum dolor sit amet consectetur.</td>
-                              <td>300</td>
-                              <td>$300</td>
-                              <td>libre</td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-info">
-                                  <i class="far fa-edit"></i>
-                                </button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-round btn-danger">
-                                  <i class="far fa-trash-alt"></i>
-                                </button>
-                              </td>
-                            </tr>
+                          <?php
+                            // Verifica si la URL de la pagina contirne datos
+                              foreach($data as $row){
+                                print("
+                                  </tr>
+                                  <tr role='row' class='odd'>
+                                    <td>$row[IdReserva]</td>
+                                    <td>$row[NombreSala]</td>
+                                    <td>$row[CantidadMesas]</td>
+                                    <td>$row[CantidadSillas]</td>
+                                    <td>$row[HoraInicio]</td>
+                                    <td>$row[HoraFin]</td>
+                                    <td>$row[Fecha]</td>
+                                    <td>$row[Nombres]</td>
+                                    
+                                  <td>
+                                  <a href='modificar.php?id=$row[IdReserva]' type='button' class='btn btn-round btn-info'>
+                                    <i class='far fa-edit'></i>
+                                  </a>
+                                </td>
+                                <td>
+                                  <a href='eliminar.php?id=$row[IdReserva]' type='button' class='btn btn-round btn-danger'>
+                                    <i class='far fa-trash-alt'></i>
+                                  </a>
+                                </td>
+                                </tr>
+
+                                ");
+                              }
+                            ?>	
+
                           </tbody>
                         </table>
                       </div>
