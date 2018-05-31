@@ -18,9 +18,6 @@ class Page extends Component{
 					</a>
 					<ul class='nav child_menu'>
 						<li>
-						<a href='../../hotel/reservas/reserva_online.php'>Reservas en linea</a>
-						</li>
-						<li>
 						<a href='../../hotel/reservas/reserva_nueva.php'>Nueva reserva</a>
 						</li>
 						<li>
@@ -73,17 +70,6 @@ class Page extends Component{
 			<div class='menu_section'>
 				<h3 class='text-center'>Restaurante</h3>
 				<ul class='nav side-menu'>
-					<li>
-					<a>
-						<i class='material-icons'>chrome_reader_mode</i> Menu
-						<span class='fa fa-chevron-down'></span>
-					</a>
-					<ul class='nav child_menu'>
-						<li>
-						<a href='../../restaurante/menu/menu.php'>Menus</a>
-						</li>
-					</ul>
-					</li>
 					<li>
 					<a>
 						<i class='material-icons'>tab</i> Mesas
