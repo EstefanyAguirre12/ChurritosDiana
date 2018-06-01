@@ -134,22 +134,22 @@ class Detalleconferencia extends Validator{
                             }
     
     //Metodos CRUD para cotegoria
-		//Obtener categoria
-		public function getDetalleconferencia(){
-			$sql = "SELECT `IdReserva`, salas.NombreSala `IdMesa`, `CantidadMesas`, `IdSilla`, `CantidadSillas`, `HoraInicio`, `HoraFin`, detalleconferencia.Fecha,entes.Nombres 
-            FROM detalleconferencia , salas ,cuentatotal,entes
-            WHERE detalleconferencia.IdSala = salas.IdSala AND detalleconferencia.IdCuenta = cuentatotal.IdCuenta AND cuentatotal.IdEnte = entes.IdEnte";
-			$params = array(null);
-			return Database::getRows($sql, $params);
-			}
+	public function getReservas(){
+		$sql = "SELECT `IdReserva`, salas.NombreSala `IdMesa`, `CantidadMesas`, `CantidadSillas`, `HoraInicio`, `HoraFin`, detalleconferencia.Fecha,entes.Nombres 
+		FROM detalleconferencia , salas ,cuentatotal,entes
+		WHERE detalleconferencia.IdSala = salas.IdSala AND detalleconferencia.IdCuenta = cuentatotal.IdCuenta AND cuentatotal.IdEnte = entes.IdEnte";
+		$params = array(null);
+		return Database::getRows($sql, $params);
+	}
 	
     //Buscar categoria con parametros
-    public function searchDetalleconferencia($value){
-		$sql = "SELECT `IdReserva`, salas.NombreSala `IdMesa`, `CantidadMesas`, `IdSilla`, `CantidadSillas`, `HoraInicio`, `HoraFin`, detalleconferencia.Fecha,entes.Nombres 
-        FROM detalleconferencia , salas ,cuentatotal,entes
-        WHERE detalleconferencia.IdSala = salas.IdSala AND detalleconferencia.IdCuenta = cuentatotal.IdCuenta AND cuentatotal.IdEnte = entes.IdEnte AND entes.Nombres LIKE ? ";
+    public function searchReserva($value){
+		$sql = "SELECT `IdReserva`, salas.NombreSala `IdMesa`, `CantidadMesas`, `CantidadSillas`, `HoraInicio`, `HoraFin`, detalleconferencia.Fecha,entes.Nombres 
+		FROM detalleconferencia , salas ,cuentatotal,entes
+		WHERE detalleconferencia.IdSala = salas.IdSala AND detalleconferencia.IdCuenta = cuentatotal.IdCuenta AND cuentatotal.IdEnte = entes.IdEnte AND entes.Nombres LIKE ?";
 		$params = array("%$value%");
-		return Database::getRows($sql, $params);
+        echo Database::getRows($sql, $params);
+        return false;
     }
     //Insertar categoria
     public function createDetalleconferencia(){

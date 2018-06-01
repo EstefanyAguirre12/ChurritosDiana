@@ -72,17 +72,6 @@ class Page extends Component{
 				<ul class='nav side-menu'>
 					<li>
 					<a>
-						<i class='material-icons'>chrome_reader_mode</i> Menu
-						<span class='fa fa-chevron-down'></span>
-					</a>
-					<ul class='nav child_menu'>
-						<li>
-						<a href='../../restaurante/menu/menu.php'>Menus</a>
-						</li>
-					</ul>
-					</li>
-					<li>
-					<a>
 						<i class='material-icons'>tab</i> Mesas
 						<span class='fa fa-chevron-down'></span>
 					</a>
