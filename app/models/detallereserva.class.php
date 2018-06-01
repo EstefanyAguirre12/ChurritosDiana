@@ -122,19 +122,20 @@ class Detallereserva extends Validator{
     }
     //Leer categoria
     public function readDetalleres(){
-		$sql = "SELECT IdHabitacion, IdCuenta, HoraInicio, HoraFin, FechaInicio, FechaFin FROM detallereserva WHERE IdDetalle = ?";
+		$sql = "SELECT `IdDetalle`, `FechaInicio`, `FechaFin`, `HoraInicio`, `IdHabitacion`, `HoraFin`, `IdCuenta` 
+		FROM `detallereserva` WHERE `IdDetalle` = ?";
 		$params = array($this->id);
-		$deta = Database::getRow($sql, $params);
-		if($deta){
+		$ente = Database::getRow($sql, $params);
+		if($ente){
 			$this->idhabitacion = $ente['IdHabitacion'];
             $this->idcuenta = $ente['IdCuenta'];
-						$this->horainicio = $ente['HoraInicio'];
-						$this->horafin = $ente['HoraFin'];
-                        $this->fechainicio = $ente['FechaInicio'];
-                        $this->fechafin = $ente['FechaFin'];
+			$this->horainicio = $ente['HoraInicio'];
+			$this->horafin = $ente['HoraFin'];
+			$this->fechainicio = $ente['FechaInicio'];
+			$this->fechafin = $ente['FechaFin'];
 			return true;
 		}else{
-			return null;
+			return false;
 		}
 	}
 	//Obtener sillas

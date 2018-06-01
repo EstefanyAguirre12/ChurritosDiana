@@ -30,7 +30,7 @@
                           <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                          <input type="date"  name ="fechai" class="form-control has-feedback-left"  placeholder="">
+                          <input type="date" value="<?php print($dato->getFechainicio()) ?>" name ="fechai" class="form-control has-feedback-left"  placeholder="" value="<?php print($dato->getFechainicio()) ?>" required/>
                         </div>
                       </div>
                       <div class="form-group">
@@ -38,7 +38,7 @@
                           <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                          <input type="date"  name ="fechaf" class="form-control has-feedback-left"  placeholder="">
+                          <input type="date" value="<?php print($dato->getFechainicio()) ?>" name ="fechaf" class="form-control has-feedback-left"  placeholder="">
                         </div>
                       </div>
                       <div class="form-group">
@@ -46,7 +46,7 @@
                           <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                          <input type="time"  name ="hinicio" class="form-control has-feedback-left"  placeholder="">
+                          <input type="time" value="<?php print($dato->getHorainicio()) ?>" name ="hinicio" class="form-control has-feedback-left"  placeholder="">
                         </div>
                       </div>
                       <div class="form-group">
@@ -54,7 +54,7 @@
                           <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                          <input type="time"  name ="hfin" class="form-control has-feedback-left"  placeholder="">
+                          <input type="time" value="<?php print($dato->getHorafin()) ?>" name ="hfin" class="form-control has-feedback-left"  placeholder="">
                         </div>
                       </div>
                       <div class="form-group">

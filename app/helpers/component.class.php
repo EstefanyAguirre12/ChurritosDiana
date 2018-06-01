@@ -105,7 +105,6 @@ class Component{
 		}else{
 			$text = $message;
 		}
-
 		switch($type){
 			case 1:
 				$title = "Éxito";
@@ -123,9 +122,30 @@ class Component{
 				$title = "Aviso";
 				$icon = "info";
 		}
-
 		if($url){
-			print("<script> swal({title: '$title', text: '$text', icon: '$icon', button: 'Aceptar', closeOnClickOutside: false, closeOnEsc: false}).then(value=>{location.href = '$url'}) </script>");
+			if($botton){
+			print("
+			<script>
+			swal({
+				title: '$title',
+				text: '$text',
+				icon: '$icon',
+				buttons: true,
+				dangerMode: 'agregar',
+			  })
+			  .then((agregar) => {
+				if (agregar) {
+					location.href = '$url'
+				} else {
+				  swal('Para agregar la nueva reserva el cliente debe estar registrado');
+				}
+			  });
+			  </script>  	
+			");
+			}
+			else{
+				print("<script> swal({title: '$title', text: '$text', icon: '$icon', button: 'Aceptar', closeOnClickOutside: false, closeOnEsc: false}).then(value=>{location.href = '$url'}) </script>");
+			}
 		}else{
 			print("<script> swal({title: '$title', text: '$text', icon: '$icon', button: 'Aceptar', closeOnClickOutside: false, closeOnEsc: false}) </script>");
 		}

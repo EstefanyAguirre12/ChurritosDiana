@@ -185,7 +185,8 @@ class Detalleconferencia extends Validator{
     }
     //Leer categoria
     public function readDetalleconferencia(){
-		$sql = "SELECT IdSala, IdMesa, IdSilla, IdCuenta, HoraInicio, HoraFin, Fecha, CantidadSilas, CantidadMesas FROM detalleconferencia WHERE IdReserva = ?";
+		$sql = "SELECT `IdReserva`, `IdSala`, `IdMesa`, `CantidadMesas`, `IdSilla`, `CantidadSillas`, `HoraInicio`, `HoraFin`, `Fecha`, `IdCuenta` 
+        FROM `detalleconferencia` WHERE `IdReserva`=?";
 		$params = array($this->id);
 		$confe = Database::getRow($sql, $params);
 		if($confe){
@@ -201,7 +202,7 @@ class Detalleconferencia extends Validator{
                         
 			return true;
 		}else{
-			return null;
+			return false;
 		}
     }
     //Modificar categoria
