@@ -62,5 +62,5 @@ try{
 }catch(Exception $error){
 	Page::showMessage(2, $error->getMessage(), null);
 }
-require_once("../../../app/views/dashboard/registros/mantenimientos/empleados/modificar_view.php");
+require_once("../../../app/views/dashboard/registros/mantenimientos/empleados/agregar_view.php");
 ?>

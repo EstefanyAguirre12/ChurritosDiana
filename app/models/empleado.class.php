@@ -170,7 +170,7 @@ class Empleado extends Validator{
     }
     //Leer categoria
     public function readEmpleado(){
-		$sql = "SELECT NombreEmpleado, ApellidosEmpleado, DireccionEmpleado, DUIEmpleado, FotoEmpleado, IdCargo, IdGenero FROM empleados WHERE IdEmpleado = ?";
+		$sql = "SELECT NombreEmpleado, ApellidosEmpleado, DireccionEmpleado, DUIEmpleado, FotoEmpleado, IdCargo, IdGenero, TelefonoEmpleado FROM empleados WHERE IdEmpleado = ?";
 		$params = array($this->id);
 		$empleado = Database::getRow($sql, $params);
 		if($empleado){
