@@ -20,7 +20,7 @@ class Component{
 		print("<label>$label</label>");
 	}
 
-	public static function showMessage($type, $message, $url){
+	public static function showMessage($type, $message, $url, $botton){
 		if(is_numeric($message)){
 			switch($message){
 				case 1045:
@@ -70,7 +70,29 @@ class Component{
 		}
 
 		if($url){
-			print("<script> swal({title: '$title', text: '$text', icon: '$icon', button: 'Aceptar', closeOnClickOutside: false, closeOnEsc: false}).then(value=>{location.href = '$url'}) </script>");
+			if($botton){
+			print("
+			<script>
+			swal({
+				title: '$title',
+				text: '$text',
+				icon: '$icon',
+				buttons: true,
+				dangerMode: 'agregar',
+			  })
+			  .then((agregar) => {
+				if (agregar) {
+					location.href = '$url'
+				} else {
+				  swal('Para agregar la nueva reserva el cliente debe estar registrado');
+				}
+			  });
+			  </script>  	
+			");
+			}
+			else{
+				print("<script> swal({title: '$title', text: '$text', icon: '$icon', button: 'Aceptar', closeOnClickOutside: false, closeOnEsc: false}).then(value=>{location.href = '$url'}) </script>");
+			}
 		}else{
 			print("<script> swal({title: '$title', text: '$text', icon: '$icon', button: 'Aceptar', closeOnClickOutside: false, closeOnEsc: false}) </script>");
 		}
