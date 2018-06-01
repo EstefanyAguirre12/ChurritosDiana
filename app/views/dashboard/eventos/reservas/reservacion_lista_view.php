@@ -67,12 +67,12 @@
                                     <td>$row[Nombres]</td>
                                     
                                   <td>
-                                  <a href='modificar.php?id=$row[IdReserva]' type='button' class='btn btn-round btn-info'>
+                                  <a href='reserva_editar.php?id=$row[IdReserva]' type='button' class='btn btn-round btn-info'>
                                     <i class='far fa-edit'></i>
                                   </a>
                                 </td>
                                 <td>
-                                  <a href='eliminar.php?id=$row[IdReserva]' type='button' class='btn btn-round btn-danger'>
+                                  <a href='reserva_eliminar.php?id=$row[IdReserva]' type='button' class='btn btn-round btn-danger'>
                                     <i class='far fa-trash-alt'></i>
                                   </a>
                                 </td>

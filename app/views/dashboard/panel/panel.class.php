@@ -497,8 +497,11 @@ class Page extends Component{
 					<script type='text/javascript' src='../../../web/js/bootstrap.js'></script>
 					<!-- bootstrap-progressbar -->
 					<script type='text/javascript' src='../../../web/js/bootstrap-progressbar.js'></script>
+					<script type='text/javascript' src='../../../web/js/daterangepicker/bootstrap-datetimepicker.min.js'></script>
+					<script type='text/javascript' src='../../../web/js/daterangepicker.js'></script>
 					<!-- Custom Theme Scripts -->
 					<script type='text/javascript' src='../../../web/js/custom.js'></script>
+					<script type='text/javascript' src='../../../web/js/custom.min.js'></script>
 				</body>
 			</html>
 		");

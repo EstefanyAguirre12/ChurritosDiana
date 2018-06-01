@@ -34,6 +34,7 @@ class Detallereserva extends Validator{
 			return $this->idhabitacion;
 		}
     
+
     public function setIdcuenta($value){
 		if($this->validateId($value)){
 			$this->idcuenta = $value;
@@ -44,7 +45,7 @@ class Detallereserva extends Validator{
 	}
 	public function getIdcuenta(){
 		return $this->idcuenta;
-    }
+		}
 
     public function setHorainicio($value){
 		if($this->validateDate($value)){
@@ -114,8 +115,9 @@ class Detallereserva extends Validator{
 	}
     //Insertar categoria
     public function createDetalleres(){
-		$sql = "INSERT INTO detallereserva(IdDetalle, IdHabitacion, IdCuenta, HoraInicio, HoraFin, FechaInicio, FechaFin) VALUES(?, ?, ?, ?, ?, ?, ?)";
-		$params = array($this->id, $this->idhabitacion, $this->idcuenta, $this->horainicio, $this->horafin, $this->fechainicio, $this->fechafin);
+		$sql = "INSERT INTO `detallereserva`(`IdDetalle`, `FechaInicio`, `FechaFin`, `HoraInicio`, `IdHabitacion`, `HoraFin`, `IdCuenta`) VALUES (null, ?, ?, ?, ?, ?, ?)";
+		$params = array( $this->fechainicio, $this->fechafin,$this->horainicio, $this->idhabitacion, $this->horafin, $this->idcuenta );
+		var_dump($params);
 		return Database::executeRow($sql, $params);
     }
     //Leer categoria
@@ -134,7 +136,19 @@ class Detallereserva extends Validator{
 		}else{
 			return null;
 		}
-    }
+	}
+	//Obtener sillas
+	public function gethabitacion(){
+		$sql = "SELECT `IdHabitacion`, `NumeroHabitacion`, `Capacidad`, `Precio`, `IdTipoHabitacion`, `IdEstado` FROM `habitaciones`";
+		$params = array(null);
+		return Database::getRows($sql, $params);
+	}
+	    //Obtener Salas
+		public function getCuentas(){
+			$sql = "SELECT `IdCuenta`, entes.Nombres, `Fecha` FROM `cuentatotal` INNER JOIN entes ON cuentatotal.IdEnte = entes.IdEnte";
+			$params = array(null);
+			return Database::getRows($sql, $params);
+		}
     //Modificar categoria
     public function updateDetalleres(){
 		$sql = "UPDATE detallereserva SET IdHabitacion = ?, IdCuenta = ?, HoraInicio = ?, HoraFin = ?, FechaInicio = ?, FechaFin = ? WHERE IdDetalle = ?";
@@ -142,9 +156,9 @@ class Detallereserva extends Validator{
 		return Database::executeRow($sql, $params);
     }
     //Eliminar categoria
-	public function deleteEnte(){
+	public function deleteEnte($value){
 		$sql = "DELETE FROM detallereserva WHERE IdDetalle = ?";
-		$params = array($this->id);
+		$params = array($value);
 		return Database::executeRow($sql, $params);
 	}
 }
