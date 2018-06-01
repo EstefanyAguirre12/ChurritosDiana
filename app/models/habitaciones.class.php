@@ -100,8 +100,8 @@ class Habitaciones extends Validator{
         $limite = 5;
  
         $limite_inicio = ($page - 1)* $limite;
-			$sql = "SELECT IdHabitacion, NumeroHabitacion, t.TipoHabitacion, Precio, Capacidad, e.Estado FROM habitaciones h, tipohabitacion t, estado e Where t.IdTipoHabitacion=h.IdTipoHabitacion and e.IdEstado=h.IdEstado ORDER BY IdHabitacion LIMIT $limite_inicio , $limite";
-			$params = array(null);
+		$sql = "SELECT IdHabitacion, NumeroHabitacion, tipohabitacion.TipoHabitacion, Precio, Capacidad, estado.Estado FROM habitaciones INNER JOIN tipohabitacion ON tipohabitacion.IdTipoHabitacion=habitaciones.IdTipoHabitacion INNER JOIN estado ON estado.IdEstado=habitaciones.IdEstado ORDER BY IdHabitacion LIMIT $limite_inicio , $limite";
+		$params = array(null);
 			return Database::getRows($sql, $params);
 			}
 

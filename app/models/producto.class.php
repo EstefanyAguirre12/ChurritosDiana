@@ -89,8 +89,8 @@ class Producto extends Validator{
     $limite = 5;
 
     $limite_inicio = ($page - 1)* $limite;
-		$sql = "SELECT IdProducto, NombreProducto, t.TipoProducto, c.CategoriaProducto, Descripcion, Precio FROM productos p, categoriaproducto c, tipoproducto t WHERE p.IdTipo=t.IdTipo and p.IdCategoria=c.IdCategoria ORDER BY IdProducto LIMIT $limite_inicio , $limite";
-		$params = array(null);
+		$sql = "SELECT IdProducto, NombreProducto, tipoproducto.TipoProducto, categoriaproducto.CategoriaProducto, Descripcion, Precio FROM productos	INNER JOIN tipoproducto ON tipoproducto.IdTipo=productos.IdTipo INNER JOIN categoriaproducto ON productos.IdCategoria=categoriaproducto.IdCategoria ORDER BY IdProducto LIMIT $limite_inicio , $limite";
+				$params = array(null);
 		return Database::getRows($sql, $params);
 		}
 
