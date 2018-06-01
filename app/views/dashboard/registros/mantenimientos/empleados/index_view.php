@@ -67,6 +67,9 @@
                           <tbody>
                             <?php
                               foreach($data as $row){
+                                // Verifica si la URL de la pagina contirne datos
+                                $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+                                $no=1;
                                 print("
                                   <tr role='row' class='odd'>
                                     <td>$row[NombreEmpleado]</td>
@@ -89,6 +92,8 @@
                                     </td>
                                   </tr>
                                 ");
+                                //Para que cuente cuantos datos existen
+                                $no++;
                               }
                             ?>	               
                           </tbody>
@@ -100,34 +105,75 @@
                         <div class="dataTables_info" id="datatable-checkbox_info" role="status" aria-live="polite">Mostrado 10 de 57 registros</div>
                       </div>
                       <div class="col-sm-7">
-                        <div class="dataTables_paginate paging_simple_numbers" id="datatable-checkbox_paginate">
-                          <ul class="pagination">
-                            <li class="paginate_button previous disabled" id="datatable-checkbox_previous">
-                              <a href="#" aria-controls="datatable-checkbox" data-dt-idx="0" tabindex="0">Anterior</a>
-                            </li>
-                            <li class="paginate_button active">
-                              <a href="#" aria-controls="datatable-checkbox" data-dt-idx="1" tabindex="0">1</a>
-                            </li>
-                            <li class="paginate_button ">
-                              <a href="#" aria-controls="datatable-checkbox" data-dt-idx="2" tabindex="0">2</a>
-                            </li>
-                            <li class="paginate_button ">
-                              <a href="#" aria-controls="datatable-checkbox" data-dt-idx="3" tabindex="0">3</a>
-                            </li>
-                            <li class="paginate_button ">
-                              <a href="#" aria-controls="datatable-checkbox" data-dt-idx="4" tabindex="0">4</a>
-                            </li>
-                            <li class="paginate_button ">
-                              <a href="#" aria-controls="datatable-checkbox" data-dt-idx="5" tabindex="0">5</a>
-                            </li>
-                            <li class="paginate_button ">
-                              <a href="#" aria-controls="datatable-checkbox" data-dt-idx="6" tabindex="0">6</a>
-                            </li>
-                            <li class="paginate_button next" id="datatable-checkbox_next">
-                              <a href="#" aria-controls="datatable-checkbox" data-dt-idx="7" tabindex="0">Siguiente</a>
-                            </li>
-                          </ul>
-                        </div>
+                      <nav aria-label="Page navigation">
+                      <ul class="pagination justify-content-center">
+                          <?php
+                          if($page == 1) //Si la pagina es la primera que desabilite el boton de primera y prev.
+                          {
+                          ?>
+                              <li class="page-item disabled"><a class="page-link" href="#">Primera</a></li>
+                              <li class="page-item disabled"><a class="page-link" href="#">&laquo;</a></li>
+                          <?php
+                          }
+                          else
+                          {
+                              $link_prev = ($page > 1) ? $page -1 : 1; //Si la pagina no es la primera que hablite el boton primera
+                          
+                          ?>
+                              <li class="page-item"><a class="page-link" href="indexempleados.php?page=1">Primera</a></li>
+                              <li class="page-item"><a class="page-link" href="indexempleados.php?page=<?php echo $link_prev;?>">&laquo;</a></li>
+                          <?php
+                          }
+                          ?>
+
+                          <!--Numeros-->
+                          <?php
+                          $dato = new Empleado;
+
+                          //Esta consulta calcula la cantidad de datos
+                          $cuenta = $dato->countEmpleado();
+
+                          //Los datos que mostrara por cada pagina
+                          $limit = 5;
+
+                          //Calcula el numero de datos que se han llamado y lo divide entre el limite para generar los numero que tendra la paginacion
+                          $numero_pag = ceil($cuenta['Numero'] / $limit);
+                          $cant_numero = 3;//La cantidad de enlaces antes y despues de la pagina activa
+                          $inicio_numero = ($page > $cant_numero) ? $page - $cant_numero : 1;//Para el enlace inicial
+                          $fin_numero = ($page < ($numero_pag - $cant_numero)) ? $page + $cant_numero : $numero_pag;//Para el numero de enlace final
+
+                          for($i = $inicio_numero; $i <= $fin_numero; $i++)
+                          {
+                              $link_activo = ($page == $i) ? 'active' : '';
+                              ?>
+                              <!--Se generan los enlaces de la paginacion-->
+                              <li class="page-item <?php echo $link_activo;?>"><a class="page-link" href="indexempleados.php?page=<?php echo $i;?>"><?php echo $i?></a></li>
+                              <?php
+                          }
+
+                          ?>
+
+                          <!--Adelante y atras-->
+                          <?php
+                          //Si la pagina es igual al numero de enlaces, se deshabilitara el enlace next
+                          //Esto significa que la pagina es la ultima
+                          if($page == $numero_pag)//Si es la ultima pagina
+                          {
+                              ?>
+                              <li class="page-item disabled"><a class="page-link" href="">&raquo;</a></li>
+                              <li class="page-item disabled"><a class="page-link" href="#">Ultima</a></li>
+                              <?php
+                          }else
+                          {
+                              $link_activo = ($page < $numero_pag) ? $page + 1 : $numero_pag;//Si no es la ultima pagina
+                              ?>
+                              <li class="page-item"><a class="page-link" href="indextipoente.php?page=<?php echo $link_activo;?>">&raquo;</a></li>
+                              <li class="page-item"><a class="page-link" href="indextipoente.php?page=<?php echo $numero_pag?>">Ultima</a></li>
+                              <?php
+                          }
+                          ?>
+                      </ul>
+                    </nav>
                       </div>
                     </div>
                     <div class="text-right">
