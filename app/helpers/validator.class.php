@@ -114,6 +114,20 @@ class Validator{
 			return false;
 		}
 	}
+	public function validateDate($value){
+		if($value){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	public function validateNumeric($value){
+		if($value){
+			return true;
+		}else{
+			return false;
+		}
+	}
 
 	public function validatePassword($value){
 		if(strlen($value) > 5){

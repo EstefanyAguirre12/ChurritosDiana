@@ -10,6 +10,7 @@ class Detalleconferencia extends Validator{
     private $fecha = null;
     private $cantidadm = null;
     private $cantidads = null;
+    
 
     //Métodos para sobrecarga de propiedades
     public function setId($value){
@@ -34,7 +35,7 @@ class Detalleconferencia extends Validator{
 			}
 		}
 		public function getIdsala(){
-			return $this->nombre;
+			return $this->idsala;
 		}
     
     public function setIdmesa($value){
@@ -58,7 +59,7 @@ class Detalleconferencia extends Validator{
 		}
 	}
 	public function getIdcuenta(){
-		return $this->direccion;
+		return $this->idcuenta;
 		}
 		
 		public function setIdsilla($value){
@@ -70,11 +71,11 @@ class Detalleconferencia extends Validator{
 			}
 		}
 		public function getIdsila(){
-			return $this->dui;
+			return $this->idsilla;
 			}
 
 			public function setHorain($value){
-				if($this->validateDate($value)){
+				if($this->validateNumeric($value)){
 					$this->horain = $value;
 					return true;
 				}else{
@@ -86,7 +87,7 @@ class Detalleconferencia extends Validator{
                 }
                 
                 public function setHorafi($value){
-                    if($this->validateDate($value)){
+                    if($this->validateNumeric($value)){
                         $this->horafi = $value;
                         return true;
                     }else{
@@ -110,7 +111,7 @@ class Detalleconferencia extends Validator{
                         }
 
                     public function setCantidadm($value){
-                        if($this->validateNumeric($value,10)){
+                        if($this->validateNumeric($value)){
                             $this->cantidadm = $value;
                             return true;
                         }else{
@@ -122,7 +123,7 @@ class Detalleconferencia extends Validator{
                         }
 
                         public function setCantidads($value){
-                            if($this->validateNumeric($value,10)){
+                            if($this->validateNumeric($value)){
                                 $this->cantidads = $value;
                                 return true;
                             }else{
@@ -151,10 +152,35 @@ class Detalleconferencia extends Validator{
         echo Database::getRows($sql, $params);
         return false;
     }
+    //Obtener Salas
+    public function getSalas(){
+		$sql = "SELECT `IdSala`, `NombreSala`, `Descripcion`, `Capacidad`, `Costo` FROM `salas` WHERE `IdEstadoSala`=1";
+		$params = array(null);
+		return Database::getRows($sql, $params);
+    }
+    //Obtener Salas
+    public function getCuentas(){
+        $sql = "SELECT `IdCuenta`, entes.Nombres, `Fecha` FROM `cuentatotal` INNER JOIN entes ON cuentatotal.IdEnte = entes.IdEnte";
+        $params = array(null);
+        return Database::getRows($sql, $params);
+    }
+        //Obtener mesas
+        public function getMesas(){
+            $sql = "SELECT `IdMesa`,  `Nombre` FROM `mesas";
+            $params = array(null);
+            return Database::getRows($sql, $params);
+        }
+        //Obtener sillas
+        public function getSillas(){
+            $sql = "SELECT `IdSilla`, `Nombre` FROM `sillas`";
+            $params = array(null);
+            return Database::getRows($sql, $params);
+        }
     //Insertar categoria
-    public function createDetalleconferencia(){
-		$sql = "INSERT INTO detalleconferencia(IdReserva, IdSala, IdMesa, IdSilla, IdCuenta, HoraInicio, HoraFin, Fecha, CantidadSilas, CantidadMesas) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-		$params = array($this->id, $this->idsala, $this->idmesa, $this->idsilla, $this->idcuenta, $this->horain, $this->horafin, $this->fecha, $this->cantidads, $this->cantidadm);
+    public function createRconferencia(){
+		$sql = "INSERT INTO `detalleconferencia`(`IdReserva`, `IdSala`, `IdMesa`, `CantidadMesas`, `IdSilla`, `CantidadSillas`, `HoraInicio`, `HoraFin`, `Fecha`, `IdCuenta`) VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $params = array( $this->idsala, $this->idmesa, $this->cantidadm, $this->idsilla,$this->cantidads,  $this->horain, $this->horafi, $this->fecha,$this->idcuenta );
+        var_dump( $params);
 		return Database::executeRow($sql, $params);
     }
     //Leer categoria
@@ -185,9 +211,9 @@ class Detalleconferencia extends Validator{
 		return Database::executeRow($sql, $params);
     }
     //Eliminar categoria
-	public function deleteEmpleado(){
-		$sql = "DELETE FROM detalleconferencia WHERE IdReserva = ?";
-		$params = array($this->id);
+	public function deleteConferencia($value){
+		$sql = "DELETE FROM `detalleconferencia` WHERE `IdReserva` = ?";
+		$params = array($value);
 		return Database::executeRow($sql, $params);
 	}
 }
