@@ -34,7 +34,7 @@ class Tipoente extends Validator{
 	public function getTipoente(){
 		$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 
-	    $limite = 1;
+	    $limite = 5;
 
 	    $limite_inicio = ($page - 1)* $limite;
 		$sql = "SELECT IdTipo, TipoEnte FROM tipoente ORDER BY Tipoente LIMIT $limite_inicio , $limite";

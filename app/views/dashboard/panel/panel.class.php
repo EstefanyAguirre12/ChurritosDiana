@@ -156,10 +156,13 @@ class Page extends Component{
 					</a>
 					<ul class='nav child_menu'>
 						<li>
-						<a href='../../eventos/registros/indexsalon.php'>Salones</a>
+						<a href='../../eventos/registros/indexsala.php'>Salones</a>
 						</li>
 						<li>
-						<a href='../../eventos/registros/muebles.php'>Muenbles</a>
+						<a href='../../eventos/registros/indexsilla.php'>Sillas</a>
+						</li>
+						<li>
+						<a href='../../eventos/registros/indexmesa.php'>Mesas</a>
 						</li>
 					</ul>
 					</li>

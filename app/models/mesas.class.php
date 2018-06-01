@@ -47,7 +47,7 @@ class Mesas extends Validator{
     public function getMesa(){
 		$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 
-        $limite = 1;
+        $limite = 5;
  
         $limite_inicio = ($page - 1)* $limite;
 		$sql = "SELECT * FROM mesas ORDER BY IdMesa LIMIT $limite_inicio , $limite";

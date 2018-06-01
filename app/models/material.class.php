@@ -34,7 +34,7 @@ class Material extends Validator{
     public function getMaterial(){
     	$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 
-        $limite = 1;
+        $limite = 5;
  
         $limite_inicio = ($page - 1)* $limite;
 		$sql = "SELECT IdMaterial, Material FROM material ORDER BY Material LIMIT $limite_inicio , $limite";

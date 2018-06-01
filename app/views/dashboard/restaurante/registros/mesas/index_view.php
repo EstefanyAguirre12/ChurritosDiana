@@ -122,7 +122,7 @@
                               $cuenta = $dato->countMesarestaurante();
 
                               //Los datos que mostrara por cada pagina
-                              $limit = 1;
+                              $limit = 5;
 
                               //Calcula el numero de datos que se han llamado y lo divide entre el limite para generar los numero que tendra la paginacion
                               $numero_pag = ceil($cuenta['Numero'] / $limit);

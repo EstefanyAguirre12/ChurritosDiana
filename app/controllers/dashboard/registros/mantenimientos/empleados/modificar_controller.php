@@ -14,7 +14,7 @@ try{
                                 if($dato->setTelefono($_POST['tel'])){
                                     if($dato->setDireccion($_POST['dir'])){
                                         if(is_uploaded_file($_FILES['foto']['tmp_name'])){
-                                            if($object->setImagen($_FILES['foto'])){
+                                            if(!$dato->setImagen($_FILES['foto'])){
                                                 if($dato->setIdcargo($_POST['car'])){
                                                     if($dato->setIdgenero($_POST['gen'])){
                                                         if($dato->updateEmpleado()){
@@ -29,7 +29,7 @@ try{
                                                     throw new Exception("Cargo incorrecto", null);
                                                 }
                                             }else{
-                                                throw new Exception($object->getImageError());
+                                                throw new Exception($dato->getImageError());
                                             }
                                         }else{
                                             throw new Exception("Seleccione una imagen");

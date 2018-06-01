@@ -121,7 +121,7 @@ class Usuario extends Validator {
 	public function getUsuario(){
         $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 
-        $limite = 1;
+        $limite = 5;
  
         $limite_inicio = ($page - 1)* $limite;  
         $sql = "SELECT `NombreUsuario`  FROM `usuarios` LIMIT $limite_inicio , $limite";

@@ -34,7 +34,7 @@ class Categoriaproducto extends Validator{
     public function getCategoriaproducto(){
     	$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 
-        $limite = 1;
+        $limite = 5;
  
         $limite_inicio = ($page - 1)* $limite;
 		$sql = "SELECT IdCategoria, CategoriaProducto FROM categoriaproducto ORDER BY CategoriaProducto LIMIT $limite_inicio , $limite";
