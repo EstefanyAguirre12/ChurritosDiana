@@ -85,7 +85,7 @@ class Empleado extends Validator{
 			}
 
 		public function setImagen($file){
-			if($this->validateImage($file, $this->foto, "../../web/img/users/", 500, 500)){
+			if($this->validateImage($file, $this->foto, "../../../web/img/users/", 500, 500)){
 				$this->foto = $this->getImageName();
 				return true;
 			}else{

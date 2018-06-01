@@ -86,7 +86,7 @@ class Lavanderia extends Validator{
 	public function getLavanderia(){
 		$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 
-        $limite = 1;
+        $limite = 5;
  
         $limite_inicio = ($page - 1)* $limite;
 		$sql = "SELECT Id, Nombre, Cantidad, Color, c.Categoria, m.Material FROM lavanderia l, material m, categorialavanderia c WHERE l.IdCategoria = c.IdCategoria and l.IdMaterial=m.IdMaterial  LIMIT $limite_inicio , $limite";

@@ -86,7 +86,7 @@ class Producto extends Validator{
 	public function getProducto(){
 		$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 
-    $limite = 1;
+    $limite = 5;
 
     $limite_inicio = ($page - 1)* $limite;
 		$sql = "SELECT IdProducto, NombreProducto, t.TipoProducto, c.CategoriaProducto, Descripcion, Precio FROM productos p, categoriaproducto c, tipoproducto t WHERE p.IdTipo=t.IdTipo and p.IdCategoria=c.IdCategoria ORDER BY IdProducto LIMIT $limite_inicio , $limite";

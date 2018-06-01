@@ -34,7 +34,7 @@ class Tipohabitacion extends Validator{
     public function getTipohabitacion(){
     	$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 
-        $limite = 1;
+        $limite = 5;
  
         $limite_inicio = ($page - 1)* $limite;
 		$sql = "SELECT IdTipoHabitacion, TipoHabitacion FROM tipohabitacion ORDER BY TipoHabitacion LIMIT $limite_inicio , $limite";

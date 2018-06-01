@@ -34,7 +34,7 @@ class Tipoproducto extends Validator{
     public function getTiproducto(){
     	$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 
-        $limite = 1;
+        $limite = 5;
  
         $limite_inicio = ($page - 1)* $limite;
 		$sql = "SELECT IdTipo, TipoProducto FROM tipoproducto ORDER BY TipoProducto LIMIT $limite_inicio , $limite";

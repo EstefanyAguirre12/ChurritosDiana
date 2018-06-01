@@ -47,7 +47,7 @@ class Cargos extends Validator{
     public function getCargo(){
     	$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 
-        $limite = 1;
+        $limite = 5;
  
         $limite_inicio = ($page - 1)* $limite;
 		$sql = "SELECT IdCargo, NombreCargo, Descripcion FROM cargos ORDER BY IdCargo LIMIT $limite_inicio , $limite";

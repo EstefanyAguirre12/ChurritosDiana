@@ -47,7 +47,7 @@ class Sillas extends Validator{
     public function getSillas(){
 			$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 
-			$limite = 1;
+			$limite = 5;
 
 			$limite_inicio = ($page - 1)* $limite;
 		$sql = "SELECT * FROM sillas ORDER BY Nombre LIMIT $limite_inicio , $limite";

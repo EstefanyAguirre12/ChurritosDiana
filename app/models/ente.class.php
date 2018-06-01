@@ -112,7 +112,7 @@ class Ente extends Validator{
 	public function getEnte(){
 		$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 
-        $limite = 1;
+        $limite = 5;
  
         $limite_inicio = ($page - 1)* $limite;
 		$sql = "SELECT IdEnte, Nombres, Apellidos, Correo, DocIdentidad, g.NombreGenero, t.TipoEnte , Telefono FROM entes e, genero g, tipoente t WHERE e.IdGenero=g.IdGenero and e.IdTipo=t.IdTipo ORDER BY Nombres LIMIT $limite_inicio , $limite";

@@ -74,7 +74,7 @@
                                     <td>$row[DUIEmpleado]</td>
                                     <td>$row[TelefonoEmpleado]</td>
                                     <td>$row[DireccionEmpleado]</td>
-                                    <td>$row[FotoEmpleado]</td>
+                                    <td><Img src='../../../web/img/users/$row[FotoEmpleado]' class='materialboxed' width='100' height='100'></td>
                                     <td>$row[NombreCargo]</td>
                                     <td>$row[NombreGenero]</td>
                                     <td>
