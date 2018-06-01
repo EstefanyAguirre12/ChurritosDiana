@@ -89,8 +89,8 @@ class Lavanderia extends Validator{
         $limite = 5;
  
         $limite_inicio = ($page - 1)* $limite;
-		$sql = "SELECT Id, Nombre, Cantidad, Color, c.Categoria, m.Material FROM lavanderia l, material m, categorialavanderia c WHERE l.IdCategoria = c.IdCategoria and l.IdMaterial=m.IdMaterial  LIMIT $limite_inicio , $limite";
-		$params = array(null);
+		$sql = "SELECT Id, Nombre, Cantidad, Color, categorialavanderia.Categoria, material.Material FROM lavanderia INNER JOIN categorialavanderia ON categorialavanderia.IdCategoria=lavanderia.IdCategoria INNER JOIN material ON lavanderia.IdMaterial=material.IdMaterial LIMIT $limite_inicio , $limite";
+				$params = array(null);
 		return Database::getRows($sql, $params);
 		}
 

@@ -144,10 +144,22 @@ class Usuario extends Validator {
         return Database::getRows($sql, $params);
         }
         public function getUsuarios(){
-            $sql = "SELECT  IdUsuario,NombreUsuario,IdEmpleado,ClaveUsuario FROM usuarios ORDER BY IdUsuario";
+            $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+
+            $limite = 5;
+ 
+            $limite_inicio = ($page - 1)* $limite;
+            $sql = "SELECT  IdUsuario,NombreUsuario,empleados.NombreEmpleado ,empleados.ApellidosEmpleado FROM usuarios INNER JOIN empleados ON usuarios.IdEmpleado = empleados.IdEmpleado ORDER BY IdUsuario LIMIT $limite_inicio , $limite";
             $params = array(null);
             return Database::getRows($sql, $params);
             }
+
+            public function countusuario()
+    {
+        $sql = "SELECT COUNT(*) AS Numero FROM usuarios";
+        $params = array(null);
+        return database::getRow($sql, $params);
+    }
     //Buscar categoria con parametros
     public function searchUsuario($value){
 		$sql = "SELECT * FROM usuarios WHERE NombreUsuario LIKE ? OR IdEmpleado LIKE ? ORDER BY NombreUsuario";

@@ -142,10 +142,21 @@ class Empleado extends Validator{
     //Metodos CRUD para cotegoria
 		//Obtener categoria
 	public function getEmpleado(){
-		$sql = "SELECT IdEmpleado, NombreEmpleado, ApellidosEmpleado, DireccionEmpleado, DUIEmpleado, FotoEmpleado, g.NombreGenero, c.NombreCargo, e.TelefonoEmpleado FROM empleados e, cargos c, genero g WHERE c.IdCargo=e.IdCargo and g.IdGenero=e.IdGenero ORDER BY NombreEmpleado";
+		$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+
+        $limite = 5;
+ 
+        $limite_inicio = ($page - 1)* $limite;
+		$sql = "SELECT IdEmpleado, NombreEmpleado, ApellidosEmpleado, DireccionEmpleado, DUIEmpleado, FotoEmpleado, genero.NombreGenero, cargos.NombreCargo, TelefonoEmpleado FROM empleados INNER JOIN cargos ON empleados.IdCargo=cargos.IdCargo INNER JOIN Genero on empleados.IdGenero=genero.IdGenero ORDER BY NombreEmpleado LIMIT $limite_inicio , $limite";
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
+	public function countEmpleado()
+    {
+        $sql = "SELECT COUNT(*) AS Numero FROM empleados";
+        $params = array(null);
+        return database::getRow($sql, $params);
+    }
 	public function getGenero(){
 		$sql = "SELECT * FROM genero";
 		$params = array(null);

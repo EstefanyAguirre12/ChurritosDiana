@@ -115,7 +115,7 @@ class Ente extends Validator{
         $limite = 5;
  
         $limite_inicio = ($page - 1)* $limite;
-		$sql = "SELECT IdEnte, Nombres, Apellidos, Correo, DocIdentidad, g.NombreGenero, t.TipoEnte , Telefono FROM entes e, genero g, tipoente t WHERE e.IdGenero=g.IdGenero and e.IdTipo=t.IdTipo ORDER BY Nombres LIMIT $limite_inicio , $limite";
+		$sql = "SELECT IdEnte, Nombres, Apellidos, Correo, DocIdentidad, genero.NombreGenero, tipoente.TipoEnte , Telefono FROM entes INNER JOIN genero ON genero.IdGenero=entes.IdGenero INNER JOIN tipoente ON tipoente.IdTipo=entes.IdTipo  ORDER BY Nombres LIMIT $limite_inicio , $limite";
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
