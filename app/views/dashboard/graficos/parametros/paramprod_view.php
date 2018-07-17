@@ -2,7 +2,7 @@
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>Parametros del Grafico</h3>
+              <h3>Productos y su precio</h3>
             </div>
           </div>
           <div class="clearfix"></div>  
@@ -22,14 +22,18 @@
                 </div>
                 <div class="x_content">
                   <form method="post" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left">
-                    <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Fecha fin:
-                      <span class="required">*</span>
-                    </label>
-                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                      <input type="date"  name ="fechaf" class="form-control has-feedback-left"  placeholder="">
-                    </div>
+                  <div class="form-group">
+                  <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Precio 1*:</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input id="middle-name  " name="p1" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" required/>
                   </div>
+                </div>
+                <div class="form-group">
+                  <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Precio 2*:</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input id="middle-name  " name="p2" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" required/>
+                  </div>
+                </div>
                     <div class="ln_solid"></div>
                     <div class="form-group">
                       <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">

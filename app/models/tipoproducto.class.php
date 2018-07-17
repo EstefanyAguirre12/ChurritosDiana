@@ -30,7 +30,12 @@ class Tipoproducto extends Validator{
 		}
     
     //Metodos CRUD
-    //Obtener Ocasion
+	//Obtener Ocasion
+	public function getTipos(){
+		$sql = "SELECT * FROM `tipoproducto`";
+		$params = array(null);
+		return Database::getRows($sql, $params);
+	}
     public function getTiproducto(){
     	$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 
