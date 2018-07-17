@@ -58,12 +58,7 @@
                         <input id="middle-name  " name="dir" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getDireccion()) ?>" required/>
                       </div>
                     </div>
-                    <div class="form-group">
-                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Foto*:</label>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name  " name="fot" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getFoto()) ?>" required/>
-                      </div>
-                    </div>
+                    
                     <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Genero:*</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">

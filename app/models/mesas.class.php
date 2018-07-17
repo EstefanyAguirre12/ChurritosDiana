@@ -54,6 +54,7 @@ class Mesas extends Validator{
 		$params = array(null);
 		return Database::getRows($sql, $params);
 		}
+	
 
 		public function countMesa()
     {

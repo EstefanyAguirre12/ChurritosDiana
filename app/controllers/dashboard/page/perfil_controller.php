@@ -12,7 +12,6 @@ try{
                             if($dato->setDui($_POST['dui'])){
                                 if($dato->setTelefono($_POST['tel'])){
                                     if($dato->setDireccion($_POST['dir'])){
-                                        if($dato->setFoto($_POST['fot'])){
                                             if($dato->setUsuario($_POST['us'])){
                                                 if($dato->setIdgenero($_POST['gen'])){
                                                     if($dato->updateCuenta()){
@@ -26,9 +25,7 @@ try{
                                             }else{
                                                 throw new Exception("Cargo incorrecto", null);
                                             }
-                                        }else{
-                                            throw new Exception("Foto incorrecto", null);
-                                        }
+                    
                                     }else{
                                         throw new Exception("Direccion incorrecto", null);
                                     }

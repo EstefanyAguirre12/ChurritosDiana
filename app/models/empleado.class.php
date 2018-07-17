@@ -231,8 +231,8 @@ class Empleado extends Validator{
 		}
 	}
 	public function updateCuenta(){
-		$sql = "UPDATE empleados, usuarios SET NombreUsuario=?, NombreEmpleado = ?, ApellidosEmpleado = ?, DireccionEmpleado = ?, DUIEmpleado = ?, FotoEmpleado = ?, IdCargo = ?, IdGenero = ?, TelefonoEmpleado = ? WHERE IdEmpleado = ?";
-		$params = array($this->nombre,$this->nombre, $this->apellido, $this->direccion, $this->dui, $this->foto, $this->idcargo, $this->idgenero, $this->telefono, $this->id);
+		$sql = "UPDATE empleados, usuarios SET NombreUsuario=?, NombreEmpleado = ?, ApellidosEmpleado = ?, DireccionEmpleado = ?, DUIEmpleado = ?, FotoEmpleado = ?, IdGenero = ?, TelefonoEmpleado = ? WHERE IdUsuario = ? and empleados.IdEmpleado=?";
+		$params = array($this->usuario,$this->nombre, $this->apellido, $this->direccion, $this->dui, $this->foto, $this->idgenero, $this->telefono, $this->id, $this->id);
 		return Database::executeRow($sql, $params);
     }
 }

@@ -32,13 +32,12 @@
                             </div>
                             <div class='count'> 
                               <h2>
-                              Sala:$mesa[IdMesa] 
+                              Numero:$mesa[NumeroMesa] 
                               </h2>
                               <h4>
-                                Tipo:$mesa[TipoMesa] 
                               </h4>
                             </div>
-                            <h3 class='red'>Capacidad:$mesa[Cantidad] </h3>
+                            <h3 class='red'>Capacidad:$mesa[Capacidad] </h3>
 
                           </div>
                       </div>

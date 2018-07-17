@@ -67,8 +67,8 @@ class Mesarestaurante extends Validator{
 		$params = array(null);
 		return Database::getRows($sql, $params);
 		}
-	public function getMesas(){
-		$sql = "SELECT `IdMesa`, `IdTipoMesa`, `Cantidad` FROM `mesas`";
+	public function getMesass(){
+		$sql = "SELECT IdMesaRes, IdEstado, NumeroMesa, Capacidad FROM mesarestaurante where IdEstado=1";
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}

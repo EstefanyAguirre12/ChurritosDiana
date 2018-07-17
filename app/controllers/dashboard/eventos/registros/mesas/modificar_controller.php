@@ -29,6 +29,7 @@ try{
             Page::showMessage(2, "Registro incorrecto", "indexmesa.php");
         }
     }else{
+        
     }
 
 }catch(Exception $error){

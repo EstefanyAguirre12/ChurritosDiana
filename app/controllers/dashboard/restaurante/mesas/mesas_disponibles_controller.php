@@ -1,8 +1,8 @@
 <?php
-require_once("../../../app/models/mesas.class.php");
+require_once("../../../app/models/mesasrestaurante.class.php");
 try{
 	 //Lista mesas
-    $MesH = new Mesas;
+    $MesH = new Mesarestaurante;
     $mesas = $MesH->getMesass();
     if($mesas){
 

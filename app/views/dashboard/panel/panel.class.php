@@ -244,6 +244,34 @@ class Page extends Component{
 					</li>
 				</ul>
 			</div>
+			<div class='menu_section'>
+				<h3 class='text-center'>Graficos</h3>
+				<ul class='nav side-menu'>
+					<li>
+					<a>
+						<i class='material-icons'>archive</i> Registros
+						<span class='fa fa-chevron-down'></span>
+					</a>
+					<ul class='nav child_menu'>
+						<li>
+						<a href='../../graficos/registros/grafico1.php'>Grafico1</a>
+						</li>
+						<li>
+						<a href='../../registros/mantenimientos/indexempleados.php'>Empleados</a>
+						</li>
+						<li>
+						<a href='../../registros/mantenimientos/indexcargos.php'>Cargos</a>
+						</li>
+						<li>
+						<a href='../../registros/mantenimientos/indexentes.php'>Entes</a>
+						</li>
+						<li>
+						<a href='../../registros/mantenimientos/indextipoente.php'>Tipo Ente</a>
+						</li>
+					</ul>
+					</li>
+				</ul>
+			</div>
 		");
 	}
 
@@ -348,11 +376,11 @@ class Page extends Component{
 							</a>
 							<ul class='dropdown-menu dropdown-usermenu pull-right'>
 								<li>
-								<a href=''>
-									<i class='fab fa-staylinked pull-right'></i> Tema</a>
+								<a href='contra.php'>
+									<i class='fab fa-staylinked pull-right'></i> Contraseña</a>
 								</li>
 								<li>
-								<a href=''>
+								<a href='perfil.php'>
 									<i class='fa fa-user pull-right'></i> Mi perfil</a>
 								</li>
 								<li>
