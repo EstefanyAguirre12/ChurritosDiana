@@ -76,6 +76,11 @@
                                         <i class='far fa-trash-alt'></i>
                                       </a>
                                     </td>
+                                    <td>
+                                    <a href='reporte_lavanderiaM.php?idmaterial=$row[IdMaterial]' type='button' class='btn btn-round btn-danger'>
+                                      <i class='far fa-go'></i>
+                                    </a>
+                                  </td>
                                   </tr>
                                 ");
                                 //Para que cuente cuantos datos existen
@@ -170,6 +175,5 @@
               </div>
             </div>
           </div>  
-        </div>  
-      </div>  
+  
             

@@ -151,5 +151,20 @@ class Lavanderia extends Validator{
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}
+
+	public function GetReporteCategoria($value){
+		$sql = "SELECT lavanderia.Nombre , lavanderia.Cantidad ,lavanderia.Color ,material.Material 
+		FROM categorialavanderia , lavanderia , material
+		WHERE lavanderia.IdMaterial = material.IdMaterial AND lavanderia.IdCategoria = categorialavanderia.IdCategoria AND categorialavanderia.IdCategoria =?";
+		$params = array($value);
+		return Database::getRows($sql, $params);
+	}
+	public function getCategoria22($value){
+		$sql = "SELECT categorialavanderia.Categoria 
+		 FROM categorialavanderia 
+		 WHERE categorialavanderia.IdCategoria=?";
+		$params = array($value);
+		return Database::getRow($sql, $params);
+	}
 }
 ?>

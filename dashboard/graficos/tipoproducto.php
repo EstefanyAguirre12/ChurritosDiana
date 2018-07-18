@@ -14,7 +14,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	exportEnabled: true,
 	theme: "light1", // "light1", "light2", "dark1", "dark2"
 	title:{
-		text: "Cantidad de productos por categoria"
+		text: "Cantidad de productos por Tipo"
 	},
 	data: [{
     type: "pyramid",

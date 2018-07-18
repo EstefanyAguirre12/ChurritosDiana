@@ -3,7 +3,9 @@ require_once('../../../app/models/database.class.php');
 require_once('../../../app/helpers/validator.class.php');
 require_once('../../../app/helpers/component.class.php');
 require_once('../../../app/helpers/dumper.php');
-require_once('../../../app/helpers/phpmyimporter.php');
+require_once('../../../app/helpers/fpdf.php');
+
+
 class Page extends Component{
 
 	public static function Modulo_Hotel(){
@@ -254,19 +256,19 @@ class Page extends Component{
 					</a>
 					<ul class='nav child_menu'>
 						<li>
-						<a href='../../graficos/registros/grafico1.php'>Grafico1</a>
+						<a href='../../graficos/parametros/paramfecha.php'>Reservas por Fecha</a>
 						</li>
 						<li>
-						<a href='../../registros/mantenimientos/indexempleados.php'>Empleados</a>
+						<a href='../../graficos/parametros/paramhab.php'>Reservas por Fecha</a>
 						</li>
 						<li>
-						<a href='../../registros/mantenimientos/indexcargos.php'>Cargos</a>
+						<a href='../../graficos/parametros/paramprod.php'>Reservas por Fecha</a>
 						</li>
 						<li>
-						<a href='../../registros/mantenimientos/indexentes.php'>Entes</a>
+						<a href='../../graficos/parametros/paramsalas.php'>Reservas por Fecha</a>
 						</li>
 						<li>
-						<a href='../../registros/mantenimientos/indextipoente.php'>Tipo Ente</a>
+						<a href='../../graficos/parametros/paramtipo.php'>Reservas por Fecha</a>
 						</li>
 					</ul>
 					</li>

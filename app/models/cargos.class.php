@@ -98,5 +98,17 @@ class Cargos extends Validator{
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}
+
+	public function GetReporteCargos($value){
+		$sql = "SELECT usuarios.NombreUsuario,empleados.NombreEmpleado,empleados.ApellidosEmpleado,empleados.DUIEmpleado,empleados.DireccionEmpleado, empleados.TelefonoEmpleado,empleados.FotoEmpleado, cargos.NombreCargo
+		FROM `empleados`,usuarios , cargos  WHERE usuarios.IdEmpleado= empleados.IdEmpleado AND empleados.IdCargo=cargos.IdCargo  AND cargos.IdCargo=?";
+		$params = array($value);
+		return Database::getRows($sql, $params);
+	}
+	public function getCargo11($value){
+		$sql = "SELECT cargos.NombreCargo FROM  cargos  WHERE cargos.IdCargo = ?";
+		$params = array($value);
+		return Database::getRow($sql, $params);
+	}
 }
 ?>

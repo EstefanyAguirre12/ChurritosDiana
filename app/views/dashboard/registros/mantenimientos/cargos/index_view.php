@@ -57,6 +57,7 @@
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Descripcion</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Editar</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Eliminar</th>
+                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">pdf</th>
                           </thead>
                           <tbody>
                             <?php
@@ -76,6 +77,11 @@
                                     <td>
                                       <a href='eliminarcargos.php?id=$row[IdCargo]' type='button' class='btn btn-round btn-danger'>
                                         <i class='far fa-trash-alt'></i>
+                                      </a>
+                                    </td>
+                                    <td>
+                                      <a href='reporte_cargos.php?idcargo=$row[IdCargo]' type='button' class='btn btn-round btn-danger'>
+                                        <i class='far fa-go'></i>
                                       </a>
                                     </td>
                                   </tr>
@@ -172,6 +178,5 @@
               </div>
             </div>
           </div>  
-        </div>  
-      </div>  
+
             

@@ -83,5 +83,18 @@ class Categoriaproducto extends Validator{
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}
+	public function GetReporteCategoria($value){
+		$sql = "SELECT productos.NombreProducto , productos.Descripcion , productos.Precio ,tipoproducto.TipoProducto
+		  FROM categoriaproducto,productos,tipoproducto
+		   WHERE tipoproducto.IdTipo = productos.IdTipo and productos.IdCategoria = categoriaproducto.IdCategoria AND categoriaproducto.IdCategoria=?";
+		$params = array($value);
+		return Database::getRows($sql, $params);
+	}
+	public function getCategoria33($value){
+		$sql = "SELECT `CategoriaProducto` FROM `categoriaproducto`
+		 WHERE categoriaproducto.IdCategoria=?";
+		$params = array($value);
+		return Database::getRow($sql, $params);
+	}
 }
 ?>

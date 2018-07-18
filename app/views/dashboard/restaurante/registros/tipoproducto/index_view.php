@@ -76,6 +76,11 @@
                                         <i class='far fa-trash-alt'></i>
                                       </a>
                                     </td>
+                                    <td>
+                                      <a href='reporte_tipo.php?id=$row[IdTipo]' type='button' class='btn btn-round btn-danger'>
+                                        <i class='far fa-trash-alt'></i>
+                                      </a>
+                                    </td>
                                   </tr>
                                 ");
                                 //Para que cuente cuantos datos existen
@@ -170,6 +175,5 @@
               </div>
             </div>
           </div>  
-        </div>  
-      </div>  
+
             
