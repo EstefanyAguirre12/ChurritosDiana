@@ -3,6 +3,7 @@ require_once("../../../app/models/detalleconferencia.class.php");
 try{
 	//Aqui va el codigo para buscar
 	$dato = new Detalleconferencia;
+
 	if(isset($_POST['buscar'])){
 		$_POST = $dato->validateForm($_POST);
 		$data = $dato->searchReserva($_POST['busqueda']);
@@ -22,6 +23,13 @@ try{
         require_once("../../../app/views/dashboard/eventos/reservas/reservacion_lista_view.php");
 	}else{
 		Page::showMessage(3, "No hay registros disponibles", "../../otros/page/index.php");
+	}
+	if(isset($_POST['aceptar'])){
+		
+		$F1= $_POST['fecha1'];
+		$F2= $_POST['fecha2'];
+		Page::showMessage(1, "Parametros validos ", "reporte_rangoFechaS.php?f1=$F1&f2=$F2");
+
 	}
 
 }catch(Exception $error){

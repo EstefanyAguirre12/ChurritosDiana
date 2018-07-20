@@ -138,7 +138,7 @@ class Detalleconferencia extends Validator{
 	public function getReservas(){
 		$sql = "SELECT `IdReserva`, salas.NombreSala `IdMesa`, `CantidadMesas`, `CantidadSillas`, `HoraInicio`, `HoraFin`, detalleconferencia.Fecha,entes.Nombres 
 		FROM detalleconferencia , salas ,cuentatotal,entes
-		WHERE detalleconferencia.IdSala = salas.IdSala AND detalleconferencia.IdCuenta = cuentatotal.IdCuenta AND cuentatotal.IdEnte = entes.IdEnte";
+		WHERE detalleconferencia.IdSala = salas.IdSala AND detalleconferencia.IdCuenta = cuentatotal.IdCuenta AND cuentatotal.IdEnte = entes.IdEnte  ";
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
@@ -216,6 +216,19 @@ class Detalleconferencia extends Validator{
 		$sql = "DELETE FROM `detalleconferencia` WHERE `IdReserva` = ?";
 		$params = array($value);
 		return Database::executeRow($sql, $params);
+    }
+    public function GetReporteReservaSalones($value1,$value2){
+		$sql = "SELECT  salas.NombreSala `IdMesa`, `CantidadMesas`, `CantidadSillas`, `HoraInicio`, `HoraFin`, detalleconferencia.Fecha,entes.Nombres 
+		FROM detalleconferencia , salas ,cuentatotal,entes
+		WHERE detalleconferencia.IdSala = salas.IdSala AND detalleconferencia.IdCuenta = cuentatotal.IdCuenta AND cuentatotal.IdEnte = entes.IdEnte AND detalleconferencia.Fecha BETWEEN ? AND ?";
+		$params = array("$value1","$value2");
+		return Database::getRows($sql, $params);
+	}
+	public function getCategoria33($value){
+		$sql = "SELECT `CategoriaProducto` FROM `categoriaproducto`
+		 WHERE categoriaproducto.IdCategoria=?";
+		$params = array($value);
+		return Database::getRow($sql, $params);
 	}
 }
 ?>

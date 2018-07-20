@@ -162,5 +162,12 @@ class Detallereserva extends Validator{
 		$params = array($value);
 		return Database::executeRow($sql, $params);
 	}
+	public function GetReporteReservaHabitacion($value1,$value2){
+		$sql = "SELECT entes.Nombres, habitaciones.NumeroHabitacion, `FechaInicio`, `FechaFin`, `HoraInicio`, `HoraFin`
+		FROM `detallereserva`,habitaciones,cuentatotal,entes 
+		WHERE detallereserva.IdHabitacion= habitaciones.IdHabitacion AND detallereserva.IdCuenta = cuentatotal.IdCuenta AND cuentatotal.IdEnte = entes.IdEnte and detallereserva.FechaInicio BETWEEN ? AND ?";
+		$params = array("$value1","$value2");
+		return Database::getRows($sql, $params);
+	}
 }
 ?>
