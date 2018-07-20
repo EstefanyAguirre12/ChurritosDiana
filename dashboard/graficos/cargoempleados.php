@@ -1,3 +1,4 @@
+
 <?php
 include_once('php/cargoempleado.php');
 /*include_once('php/usuarios.php');*/
@@ -7,8 +8,9 @@ include_once('php/cargoempleado.php');
 <head>
 
 <script>
-window.onload = function () {
 
+window.onload = function () {
+//Se crea el grafico
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	exportEnabled: true,
@@ -21,7 +23,6 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		name: "companies",
 		axisYType: "secondary",
 		color: "#014D65",
-
 		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
 	}]
 });

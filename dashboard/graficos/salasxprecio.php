@@ -13,7 +13,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	theme: "light2",
 	title:{
-		text: "Simple Line Chart"
+		text: "Cantidad de salas Disponibles/Ocupadas por precio"
 	},
 	axisY:{
 		includeZero: false

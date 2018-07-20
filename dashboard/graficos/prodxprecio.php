@@ -12,7 +12,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	theme: "light2", // "light1", "light2", "dark1", "dark2"
 	title:{
-		text: "Top Oil Reserves"
+		text: "Productos por precio"
 	},
 	axisY: {
 		title: "Precio"
@@ -21,7 +21,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		type: "column",  
 		showInLegend: true, 
 		legendMarkerColor: "grey",
-		legendText: "Preoductos",
+		legendText: "Productos",
 		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
 	}]
 });
