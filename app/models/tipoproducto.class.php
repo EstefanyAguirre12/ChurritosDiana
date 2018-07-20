@@ -89,5 +89,17 @@ class Tipoproducto extends Validator{
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}
+	public function GetReporteTipos($value){
+		$sql = "SELECT productos.NombreProducto , productos.Descripcion , productos.Precio ,tipoproducto.TipoProducto
+		  FROM categoriaproducto,productos,tipoproducto
+		   WHERE tipoproducto.IdTipo = productos.IdTipo and productos.IdCategoria = categoriaproducto.IdCategoria AND categoriaproducto.IdCategoria=?";
+		$params = array($value);
+		return Database::getRows($sql, $params);
+	}
+	public function getTipo4($value){
+		$sql = "SELECT tipoproducto.TipoProducto FROM  tipoproducto  WHERE tipoproducto.IdTipo=?";
+		$params = array($value);
+		return Database::getRow($sql, $params);
+	}
 }
 ?>

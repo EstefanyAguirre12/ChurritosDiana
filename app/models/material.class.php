@@ -84,5 +84,19 @@ class Material extends Validator{
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}
+	public function GetReporteMaterial($value){
+		$sql = "SELECT lavanderia.Nombre , lavanderia.Cantidad ,lavanderia.Color ,categorialavanderia.Categoria 
+		FROM categorialavanderia , lavanderia , material
+		WHERE lavanderia.IdMaterial = material.IdMaterial AND lavanderia.IdCategoria = categorialavanderia.IdCategoria AND categorialavanderia.IdCategoria =?";
+		$params = array($value);
+		return Database::getRows($sql, $params);
+	}
+	public function getMaterial22($value){
+		$sql = "SELECT material.Material
+		 FROM material 
+		 WHERE material.IdMaterial=?";
+		$params = array($value);
+		return Database::getRow($sql, $params);
+	}
 }
 ?>

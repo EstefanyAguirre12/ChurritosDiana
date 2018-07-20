@@ -21,7 +21,6 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		color: "rgba(54,158,173,.7)",
 		markerSize: 5,
 		xValueFormatString: "YYYY",
-		yValueFormatString: "$#,##0.##",
 
 		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
 	}]
