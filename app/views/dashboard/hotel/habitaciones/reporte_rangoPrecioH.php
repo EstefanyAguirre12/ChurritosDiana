@@ -3,7 +3,7 @@
 require_once("../../../app/helpers/fpdf/fpdf.php");
 require_once("../../../app/models/database.class.php");
 require_once("../../../app/helpers/validator.class.php"); 
-require_once("../../../app/models/categoriaproducto.class.php"); 
+require_once("../../../app/models/habitaciones.class.php"); 
 /*include("../../../../libraries/jpgraph.php");   
 include("../../../../libraries/jpgraph_pie.php"); 
 include("../../../../libraries/jpgraph_pie3d.php"); */
@@ -43,7 +43,7 @@ function titulo($valores)
     // fuente del header 
     $this->SetFont('Arial','B',14);   
     // celda(ancho en cm,alto en cm,texto para mostrar,borde,ajustar celda,alineacion de la celda,color de fondo)
-    $this->Cell(0,1,utf8_decode('Articulos de categoria:'.$valores[0]),0,0,'C',false);  
+    $this->Cell(0,1,utf8_decode('Articulos de:'.$valores[0]),0,0,'C',false);  
     // Line break
     $this->Ln(1);
 }
@@ -53,7 +53,7 @@ function Footer()
     $this->SetY(-2.5);
     // Arial
     $this->SetFont('Arial','B',14); 
-    $this->Cell(0,0.9,'Articulos barolo',0,2,'C',false);
+    $this->Cell(0,0.9,'Habitaciones barolo',0,2,'C',false);
     // Page number
     $this->Cell(0,0.9,'Pagina '.$this->PageNo().' de {De}',0,0,'C');
 }
@@ -101,7 +101,7 @@ function Footer()
     $this->SetTextColor(255);
     $this->SetDrawColor(0,0,0);
     $this->SetLineWidth(0.04);
-    $this->SetFont('Arial','B',10);
+    $this->SetFont('Arial','B',12);
     // Cabecera
     $w = array(5,5,5,5);
     for($i=0;$i<count($header);$i++) 
@@ -128,19 +128,19 @@ function Footer()
 }
 //llamamos la instancia de la clase(orientacion de la pagina,unidad de medda,tamaño de la pagina) 
 $fpdf= new PDF('p','cm','Letter'); 
-$header = array( 'Nombre','Descripcion','Precio','Tipo'); 
+$header = array( 'Numero habitacion','Capacidad','Precio','Tipo','Estado'); 
 
 //le asignamos margenes a la pagina
 $fpdf->setMargins(1.1,1.1,1.1);
-$fpdf->setTitle('Producto');
+$fpdf->setTitle('Habitaciones rango precios ');
 $fpdf->AliasNbPages('{De}');
 //crea una pagina nueva si el contenido excede a la primera
 $fpdf->SetAutoPageBreak(true, 3); 
 //agregamos una nueva pagina al pdf 
 session_start();
-$Categoriaproducto =new Categoriaproducto(); 
-$data=$Categoriaproducto->GetReporteCategoria($_GET['id']);
-$nombre=$Categoriaproducto->getCategoria33($_GET['id']);
+$Habitaciones =new Habitaciones(); 
+$data=$Habitaciones->GetReportePrecio($_GET['F1',$_GET['F2']);
+$nombre=$Habitaciones->getMaterial22('Fecha inicio:'.$_GET['F1'.' Fecha final:'.$_GET['F2']);
 $fpdf->AddPage();  
 $fpdf->titulo($nombre);  
 if($data!=null){ 

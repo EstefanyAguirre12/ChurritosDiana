@@ -144,6 +144,11 @@ class Salas extends Validator{
         $sql = "SELECT COUNT(*) AS Numero FROM salas";
         $params = array(null);
         return database::getRow($sql, $params);
-    }
+	}
+	public function GetReportePrecio($value1,$value2){
+		$sql = "SELECT `NombreSala`, `Descripcion`, `Capacidad`, `Costo`, e.Estado FROM salas s , estado e WHERE s.IdEstadoSala = e.IdEstado And s.Costo BETWEEN ? AND ?";
+		$params = array($value1,$value2);
+		return Database::getRows($sql, $params);
+	}
 }
 ?>

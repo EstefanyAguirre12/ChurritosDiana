@@ -3,7 +3,7 @@
 require_once("../../../app/helpers/fpdf/fpdf.php");
 require_once("../../../app/models/database.class.php");
 require_once("../../../app/helpers/validator.class.php"); 
-require_once("../../../app/models/categoriaproducto.class.php"); 
+require_once("../../../app/models/salas.class.php"); 
 /*include("../../../../libraries/jpgraph.php");   
 include("../../../../libraries/jpgraph_pie.php"); 
 include("../../../../libraries/jpgraph_pie3d.php"); */
@@ -43,7 +43,7 @@ function titulo($valores)
     // fuente del header 
     $this->SetFont('Arial','B',14);   
     // celda(ancho en cm,alto en cm,texto para mostrar,borde,ajustar celda,alineacion de la celda,color de fondo)
-    $this->Cell(0,1,utf8_decode('Articulos de categoria:'.$valores[0]),0,0,'C',false);  
+    $this->Cell(0,1,utf8_decode('Rango de precio:'.$valores),0,0,'C',false);  
     // Line break
     $this->Ln(1);
 }
@@ -53,7 +53,7 @@ function Footer()
     $this->SetY(-2.5);
     // Arial
     $this->SetFont('Arial','B',14); 
-    $this->Cell(0,0.9,'Articulos barolo',0,2,'C',false);
+    $this->Cell(0,0.9,'Salones barolo',0,2,'C',false);
     // Page number
     $this->Cell(0,0.9,'Pagina '.$this->PageNo().' de {De}',0,0,'C');
 }
@@ -101,9 +101,9 @@ function Footer()
     $this->SetTextColor(255);
     $this->SetDrawColor(0,0,0);
     $this->SetLineWidth(0.04);
-    $this->SetFont('Arial','B',10);
+    $this->SetFont('Arial','B',12);
     // Cabecera
-    $w = array(5,5,5,5);
+    $w = array(4,4,4,4,4);
     for($i=0;$i<count($header);$i++) 
     $this->Cell($w[$i],1.2,$header[$i],1,0,'C',true);
     $this->Ln();
@@ -119,6 +119,7 @@ function Footer()
        $this->Cell($w[1],2.5,$row[1],'LR',0,'C',$fill);
        $this->Cell($w[2],2.5,$row[2],'LR',0,'C',$fill);
        $this->Cell($w[3],2.5,$row[3],'LR',0,'C',$fill);
+       $this->Cell($w[4],2.5,$row[4],'LR',0,'C',$fill);
         $this->Ln();
         $fill = !$fill;
     }
@@ -128,19 +129,19 @@ function Footer()
 }
 //llamamos la instancia de la clase(orientacion de la pagina,unidad de medda,tamaño de la pagina) 
 $fpdf= new PDF('p','cm','Letter'); 
-$header = array( 'Nombre','Descripcion','Precio','Tipo'); 
+$header = array( 'Numero habitacion','Capacidad','Precio','Tipo','Estado'); 
 
 //le asignamos margenes a la pagina
 $fpdf->setMargins(1.1,1.1,1.1);
-$fpdf->setTitle('Producto');
+$fpdf->setTitle('Salones rango precios ');
 $fpdf->AliasNbPages('{De}');
 //crea una pagina nueva si el contenido excede a la primera
 $fpdf->SetAutoPageBreak(true, 3); 
 //agregamos una nueva pagina al pdf 
 session_start();
-$Categoriaproducto =new Categoriaproducto(); 
-$data=$Categoriaproducto->GetReporteCategoria($_GET['id']);
-$nombre=$Categoriaproducto->getCategoria33($_GET['id']);
+$Salas =new Salas(); 
+$data=$Salas->GetReportePrecio($_GET['f1'], $_GET['f2']);
+$nombre= 'precio inicio:'.$_GET['f1'].' precio final:'.$_GET['f2'];
 $fpdf->AddPage();  
 $fpdf->titulo($nombre);  
 if($data!=null){ 
@@ -155,7 +156,7 @@ $fpdf->SetFont('Arial',"",18);
 else{
     $fpdf->Ln(5);
     $fpdf->setFont('Arial','B',20);
-    $fpdf->Cell(0,1,utf8_decode('No hay ningun articulo asociado'),0,1,'C',false);
+    $fpdf->Cell(0,1,utf8_decode('No hay ningun salon asociado'),0,1,'C',false);
 }
 // celda(ancho en mm,alto en mm,texto para mostrar,borde,ajustar celda,alineacion de la celda,color de fondo)
  $fpdf->Output(); 

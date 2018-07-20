@@ -43,7 +43,7 @@ function titulo($valores)
     // fuente del header 
     $this->SetFont('Arial','B',14);   
     // celda(ancho en cm,alto en cm,texto para mostrar,borde,ajustar celda,alineacion de la celda,color de fondo)
-    $this->Cell(0,1,utf8_decode('Productos de:'.$valores[0]),0,0,'C',false);  
+    $this->Cell(0,1,utf8_decode('Productos de categoria :'.$valores[0]),0,0,'C',false);  
     // Line break
     $this->Ln(1);
 }
@@ -139,8 +139,8 @@ $fpdf->SetAutoPageBreak(true, 3);
 //agregamos una nueva pagina al pdf 
 session_start();
 $tipoPRODUCTO =new Tipoproducto(); 
-$data=$tipoPRODUCTO->GetReporteCategoria($_GET['id']);
-$nombre=$tipoPRODUCTO->getCategoria33($_GET['id']);
+$data=$tipoPRODUCTO->GetReporteTipos($_GET['id']);
+$nombre=$tipoPRODUCTO->getTipo4($_GET['id']);
 $fpdf->AddPage();  
 $fpdf->titulo($nombre);  
 if($data!=null){ 

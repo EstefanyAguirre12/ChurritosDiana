@@ -56,6 +56,7 @@
                               <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">Tipo Producto</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Editar</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Eliminar</th>
+                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Reporte</th>
                           </thead>
                           <tbody>
                             <?php
@@ -77,8 +78,8 @@
                                       </a>
                                     </td>
                                     <td>
-                                      <a href='reporte_tipo.php?id=$row[IdTipo]' type='button' class='btn btn-round btn-danger'>
-                                        <i class='far fa-trash-alt'></i>
+                                      <a href='reporte_tipo.php?id=$row[IdTipo]'  type='button' class='btn btn-round btn btn-success'>
+                                        <i class='fas fa-archive'></i>
                                       </a>
                                     </td>
                                   </tr>

@@ -152,5 +152,17 @@ class Habitaciones extends Validator{
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}
+
+	public function GetReportePrecio($value1,$value2){
+		$sql = "SELECT  `NumeroHabitacion`, `Capacidad`, `Precio`, t.TipoHabitacion, e.Estado FROM `habitaciones` h , estado e ,tipohabitacion t WHERE e.IdEstado = h.IdEstado AND h.IdTipoHabitacion = t.IdTipoHabitacion AND h.Precio BETWEEN ? AND ? ";
+		$params = array($value1,$value2);
+		return Database::getRows($sql, $params);
+	}
+	public function getCategoria33($value){
+		$sql = "SELECT `CategoriaProducto` FROM `categoriaproducto`
+		 WHERE categoriaproducto.IdCategoria=?";
+		$params = array($value);
+		return Database::getRow($sql, $params);
+	}
 }
 ?>

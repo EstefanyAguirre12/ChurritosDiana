@@ -80,8 +80,8 @@
                                       </a>
                                     </td>
                                     <td>
-                                      <a href='reporte_cargos.php?idcargo=$row[IdCargo]' type='button' class='btn btn-round btn-danger'>
-                                        <i class='far fa-go'></i>
+                                      <a href='reporte_cargos.php?idcargo=$row[IdCargo]' type='button' class='btn btn-round btn btn-success'>
+                                        <i class='fas fa-archive'></i>
                                       </a>
                                     </td>
                                   </tr>
