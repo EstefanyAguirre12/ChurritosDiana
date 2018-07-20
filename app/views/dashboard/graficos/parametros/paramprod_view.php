@@ -2,7 +2,7 @@
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>Productos y su precio</h3>
+              <h3>Productos por precio</h3>
             </div>
           </div>
           <div class="clearfix"></div>  
