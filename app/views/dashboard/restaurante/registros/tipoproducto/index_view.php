@@ -78,7 +78,7 @@
                                       </a>
                                     </td>
                                     <td>
-                                      <a href='reporte_tipo.php?id=$row[IdTipo]'  type='button' class='btn btn-round btn btn-success'>
+                                      <a href='reporte_tipo.php?id=$row[IdTipo]' target='_blank' type='button' class='btn btn-round btn btn-success'>
                                         <i class='fas fa-archive'></i>
                                       </a>
                                     </td>

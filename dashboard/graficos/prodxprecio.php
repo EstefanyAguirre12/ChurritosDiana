@@ -20,7 +20,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	data: [{        
 		type: "column",  
 		showInLegend: true, 
-		legendMarkerColor: "grey",
+		legendMarkerColor: "white",
 		legendText: "Productos",
 		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
 	}]

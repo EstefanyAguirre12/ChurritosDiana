@@ -78,7 +78,7 @@
                                       </a>
                                     </td>
                                     <td>
-                                       <a href='reporte_categoria.php?id=$row[IdCategoria]'  type='button' class='btn btn-round btn btn-success'>
+                                       <a href='reporte_categoria.php?id=$row[IdCategoria]' target='_blank' type='button' class='btn btn-round btn btn-success'>
                                         <i class='fas fa-archive'></i>
                                       </a>
                                     </td>

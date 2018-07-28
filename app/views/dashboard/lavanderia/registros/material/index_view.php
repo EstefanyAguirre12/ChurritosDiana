@@ -56,6 +56,7 @@
                               <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">Material</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Editar</th>
                               <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Eliminar</th>
+                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1">Reporte</th>
                           </thead>
                           <tbody>
                             <?php
@@ -77,10 +78,10 @@
                                       </a>
                                     </td>
                                     <td>
-                                    <a href='reporte_lavanderiaM.php?idmaterial=$row[IdMaterial]' type='button' class='btn btn-round btn-danger'>
-                                      <i class='far fa-go'></i>
-                                    </a>
-                                  </td>
+                                      <a href='reporte_lavanderiaM.php?idmaterial=$row[IdMaterial]'  target='_blank' type='button' class='btn btn-round btn btn-success'>
+                                        <i class='fas fa-archive'></i>
+                                      </a>
+                                    </td>
                                   </tr>
                                 ");
                                 //Para que cuente cuantos datos existen

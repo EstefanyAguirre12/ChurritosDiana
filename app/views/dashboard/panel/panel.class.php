@@ -259,16 +259,16 @@ class Page extends Component{
 						<a href='../../graficos/parametros/paramfecha.php'>Reservas por Fecha</a>
 						</li>
 						<li>
-						<a href='../../graficos/parametros/paramhab.php'>Reservas por Fecha</a>
+						<a href='../../graficos/parametros/paramhab.php'>Habitaciones por precio</a>
 						</li>
 						<li>
-						<a href='../../graficos/parametros/paramprod.php'>Reservas por Fecha</a>
+						<a href='../../graficos/parametros/paramprod.php'>Productos y precio</a>
 						</li>
 						<li>
-						<a href='../../graficos/parametros/paramsalas.php'>Reservas por Fecha</a>
+						<a href='../../graficos/parametros/paramsalas.php'>Salones por precio</a>
 						</li>
 						<li>
-						<a href='../../graficos/parametros/paramtipo.php'>Reservas por Fecha</a>
+						<a href='../../graficos/parametros/paramtipo.php'>Cantidad de productos por tipo</a>
 						</li>
 					</ul>
 					</li>

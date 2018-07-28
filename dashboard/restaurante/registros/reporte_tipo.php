@@ -43,7 +43,7 @@ function titulo($valores)
     // fuente del header 
     $this->SetFont('Arial','B',14);   
     // celda(ancho en cm,alto en cm,texto para mostrar,borde,ajustar celda,alineacion de la celda,color de fondo)
-    $this->Cell(0,1,utf8_decode('Productos de categoria :'.$valores[0]),0,0,'C',false);  
+    $this->Cell(0,1,utf8_decode('Productos de Tipo :'.$valores[0]),0,0,'C',false);  
     // Line break
     $this->Ln(1);
 }
@@ -128,7 +128,7 @@ function Footer()
 }
 //llamamos la instancia de la clase(orientacion de la pagina,unidad de medda,tamaño de la pagina) 
 $fpdf= new PDF('p','cm','Letter'); 
-$header = array( 'Nombre','Descripcion','Precio','Tipo'); 
+$header = array( 'Nombre','Descripcion','Precio','Categoria'); 
 
 //le asignamos margenes a la pagina
 $fpdf->setMargins(1.1,1.1,1.1);

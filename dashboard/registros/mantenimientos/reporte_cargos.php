@@ -130,7 +130,7 @@ function Footer()
     $this->Cell(array_sum($w),0,'','T');
 }
 }
-//llamamos la instancia de la clase(orientacion de la pagina,unidad de medda,tamaño de la pagina) 
+//llamamos la instancia de la clase(orientacion de la pagina,unidad de medida,tamaño de la pagina) 
 $fpdf= new PDF('p','cm','Letter'); 
 $header = array( 'Usuario','Nombre','Apellido','DUI','Direccion','Telefono','Foto'); 
 //le asignamos margenes a la pagina

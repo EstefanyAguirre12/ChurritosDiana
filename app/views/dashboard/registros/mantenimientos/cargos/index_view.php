@@ -80,7 +80,7 @@
                                       </a>
                                     </td>
                                     <td>
-                                      <a href='reporte_cargos.php?idcargo=$row[IdCargo]' type='button' class='btn btn-round btn btn-success'>
+                                      <a href='reporte_cargos.php?idcargo=$row[IdCargo]' target='_blank' type='button' class='btn btn-round btn btn-success'>
                                         <i class='fas fa-archive'></i>
                                       </a>
                                     </td>

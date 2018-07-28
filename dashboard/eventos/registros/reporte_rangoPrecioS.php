@@ -43,7 +43,7 @@ function titulo($valores)
     // fuente del header 
     $this->SetFont('Arial','B',14);   
     // celda(ancho en cm,alto en cm,texto para mostrar,borde,ajustar celda,alineacion de la celda,color de fondo)
-    $this->Cell(0,1,utf8_decode('Rango de precio:'.$valores),0,0,'C',false);  
+    $this->Cell(0,1,utf8_decode('Rango de capacidad:'.$valores),0,0,'C',false);  
     // Line break
     $this->Ln(1);
 }
@@ -53,7 +53,7 @@ function Footer()
     $this->SetY(-2.5);
     // Arial
     $this->SetFont('Arial','B',14); 
-    $this->Cell(0,0.9,'Salones barolo',0,2,'C',false);
+    $this->Cell(0,0.9,'Reservas salones barolo',0,2,'C',false);
     // Page number
     $this->Cell(0,0.9,'Pagina '.$this->PageNo().' de {De}',0,0,'C');
 }
@@ -94,7 +94,7 @@ function Footer()
 */
 
 // Tabla coloreada
-function tabla($header, $data)  
+ function tabla($header, $data)  
 {
     // Colores, ancho de línea y fuente en negrita
     $this->SetFillColor(53,60,140);
@@ -103,7 +103,7 @@ function tabla($header, $data)
     $this->SetLineWidth(0.04);
     $this->SetFont('Arial','B',12);
     // Cabecera
-    $w = array(4,4,4,4,4);
+    $w = array(4,4,4,3,4);
     for($i=0;$i<count($header);$i++) 
     $this->Cell($w[$i],1.2,$header[$i],1,0,'C',true);
     $this->Ln();
@@ -129,19 +129,19 @@ function tabla($header, $data)
 }
 //llamamos la instancia de la clase(orientacion de la pagina,unidad de medda,tamaño de la pagina) 
 $fpdf= new PDF('p','cm','Letter'); 
-$header = array( 'Numero habitacion','Capacidad','Precio','Tipo','Estado'); 
+$header = array( 'Nombre sala','Drescripcion','Capaciad','Costo','Estado'); 
 
 //le asignamos margenes a la pagina
 $fpdf->setMargins(1.1,1.1,1.1);
-$fpdf->setTitle('Salones rango precios ');
+$fpdf->setTitle('Salone por capacidad ');
 $fpdf->AliasNbPages('{De}');
 //crea una pagina nueva si el contenido excede a la primera
 $fpdf->SetAutoPageBreak(true, 3); 
 //agregamos una nueva pagina al pdf 
 session_start();
 $Salas =new Salas(); 
-$data=$Salas->GetReportePrecio($_GET['f1'], $_GET['f2']);
-$nombre= 'precio inicio:'.$_GET['f1'].' precio final:'.$_GET['f2'];
+$data=$Salas->GetReporteCapacidad($_GET['f1'], $_GET['f2']);
+$nombre= 'Capacidad inicial:'.$_GET['f1'].' capacidad limite:'.$_GET['f2'];
 $fpdf->AddPage();  
 $fpdf->titulo($nombre);  
 if($data!=null){ 
@@ -156,7 +156,7 @@ $fpdf->SetFont('Arial',"",18);
 else{
     $fpdf->Ln(5);
     $fpdf->setFont('Arial','B',20);
-    $fpdf->Cell(0,1,utf8_decode('No hay ningun salon asociado'),0,1,'C',false);
+    $fpdf->Cell(0,1,utf8_decode('No hay ningun rango con las capacidades disponible '),0,1,'C',false);
 }
 // celda(ancho en mm,alto en mm,texto para mostrar,borde,ajustar celda,alineacion de la celda,color de fondo)
  $fpdf->Output(); 

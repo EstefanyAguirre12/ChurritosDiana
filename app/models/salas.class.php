@@ -150,5 +150,10 @@ class Salas extends Validator{
 		$params = array($value1,$value2);
 		return Database::getRows($sql, $params);
 	}
+	public function GetReporteCapacidad($value1,$value2){
+		$sql = "SELECT  `NombreSala`, `Descripcion`, `Capacidad`, `Costo`, e.Estado FROM `salas` s , estado e WHERE e.IdEstado = s.IdEstadoSala and s.Capacidad BETWEEN ? AND ?";
+		$params = array("$value1","$value2");
+		return Database::getRows($sql, $params);
+	}
 }
 ?>
