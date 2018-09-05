@@ -26,7 +26,7 @@
 					</div>
 				</div>
 				<div class="form-bottom">
-					<form role="form" autocomplete= 'off' action="" method="post" class="login-form">
+					<form autocomplete= 'off' role="form"  action="" method="post" class="login-form">
 						<div class="form-group">
 							<label class="sr-only" for="form-username"></label>
 							<input type="text" id= "dui" name="dui" placeholder="DUI..." class="form-username form-control"  required />

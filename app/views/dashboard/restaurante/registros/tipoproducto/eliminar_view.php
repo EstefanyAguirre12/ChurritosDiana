@@ -21,7 +21,7 @@
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                  <form method='post'>
+                  <form autocomplete= 'off' method='post'>
                     <div class='row text-center'>
                       <h4>Un registro será eliminado ¿está seguro?</h4>
                       <a href="indextipo.php" class="btn btn-primary" type="button">Cancelar</a>

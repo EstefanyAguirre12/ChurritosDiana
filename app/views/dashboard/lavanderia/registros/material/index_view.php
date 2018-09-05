@@ -35,7 +35,7 @@
                             </select> Por</label>
                         </div>
                       </div>
-                      <form method='post'>
+                      <form autocomplete= 'off' method='post'>
                         <div class="col-sm-6">
                           <div id="datatable-checkbox_filter" class="dataTables_filter">
                             <label>Busquedad:
