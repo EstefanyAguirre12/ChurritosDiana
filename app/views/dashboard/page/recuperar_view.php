@@ -18,8 +18,8 @@
 			<div class="col-sm-6 col-sm-offset-3 form-box">
 				<div class="form-top">
 					<div class="form-top-left">
-						<h3>Inicio de sesion</h3>
-						<p>Ingrese su usuario y contraseña:</p>
+						<h3>Restauracion de contraseña</h3>
+						<p>Ingrese su nueva clave: por razones de seguridad al verificar el link enviado a su correo solo se prodra restaurar su contraseña durante esta sesion del navegador.</p>
 					</div>
 					<div class="form-top-right">
 						<i class="fa fa-lock"></i>
@@ -29,11 +29,11 @@
 					<form role="form" action="" autocomplete= 'off' method="post" class="login-form">
 						<div class="form-group">
 							<label class="sr-only" for="form-username"></label>
-							<input type="text" id= "usuario" name="usuario" placeholder="Usuario..." class="form-username form-control"   required />
+							<input type="text" id= "usuario" name="clave1" placeholder="Nueva contraseña..." class="form-username form-control"   required />
 						</div>
 						<div class="form-group">
 							<label class="sr-only" for="form-password"></label>
-							<input type="password" id= "contraseña" name="contraseña" placeholder="Contraseña..." class="form-password form-control"   required />
+							<input type="password" id= "contraseña" name="clave2" placeholder="Confimar contraseña..." class="form-password form-control"   required />
 						</div>
 						<button type='submit' name='entrar' class='btn btn-primary' data-toggle='tooltip' data-placement='bottom' title='Entrar'>Entrar</button>
 					</form>
@@ -42,9 +42,9 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-6 col-sm-offset-3 social-login">
-				<h3>Olvido su contraseña:</h3>
+				<h3>Error al verificar es probable que su token caduco?</h3>
 				<div class="social-login-buttons">
-					<a href="correo.php" class="btn btn-link-2" href="index.php">Recuperar contraseña</a>
+					<a href="#" class="btn btn-link-2" href="index.php">intentar de nuevo</a>
 				</div>
 			</div>
 		</div>

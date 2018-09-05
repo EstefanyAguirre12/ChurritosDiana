@@ -41,47 +41,46 @@ class Validator{
 			return false;
 		}
 	}
-	public function validateInt($value){
-		if(filter_var($value, FILTER_VALIDATE_INT, array('min_range' => 1))){
+	public function validateEnteros($value){
+		if (preg_match("/^[0-9]+$/",$value)) {
 			return true;
-		}else{
+		} else {
 			return false;
 		}
 	}
 
 	public function validateImage($file, $value, $path, $max_width, $max_heigth){
-		if($file['size'] <= 2097152){
-		   list($width, $height, $type) = getimagesize($file['tmp_name']);
-		   if($width <= $max_width && $height <= $max_heigth){
-			   if($type == 1 || $type == 2 || $type == 3){
-				   if($value){
-					   $image = $value;
-				   }else{
-					   $extension = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
-					   $image = uniqid().".".$extension;
-				   }
-				   $url = $path.$image;
-				   if(move_uploaded_file($file['tmp_name'], $url)){
-					   $this->imageName = $image;
-					   return true;
-				   }else{
-					   $this->imageError = 1;
-					   return false;
-				   }
-			   }else{
-				   $this->imageError = 2;
-				   return false;
-			   }
-		   }else{
-			   $this->imageError = 3;
-			   return false;
-		   }
-		}else{
-		   $this->imageError = 4;
-		   return false;
-		}
-   }
-
+     	if($file['size'] <= 2097152){
+	    	list($width, $height, $type) = getimagesize($file['tmp_name']);
+			if($width <= $max_width && $height <= $max_heigth){
+				if($type == 1 || $type == 2 || $type == 3){
+					if($value){
+						$image = $value;
+					}else{
+						$extension = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
+						$image = uniqid().".".$extension;
+					}
+					$url = $path.$image;
+					if(move_uploaded_file($file['tmp_name'], $url)){
+						$this->imageName = $image;
+						return true;
+					}else{
+						$this->imageError = 1;
+						return false;
+					}
+				}else{
+					$this->imageError = 2;
+					return false;
+				}
+			}else{
+				$this->imageError = 3;
+				return false;
+			}
+     	}else{
+			$this->imageError = 4;
+			return false;
+     	}
+	}
 
 	public function validateEmail($email){
 		if(filter_var($email, FILTER_VALIDATE_EMAIL)){
@@ -100,7 +99,7 @@ class Validator{
 	}
 
 	public function validateAlphanumeric($value, $minimum, $maximum){
-		if(preg_match("/^[a-zA-Z0-9ñÑáÁéÉíÍóÓúÚ\s\.]{".$minimum.",".$maximum."}$/", $value)){
+		if(preg_match("/^[a-zA-Z0-9ñÑáÁéÉíÍóÓúÚ\s\.-]{".$minimum.",".$maximum."}$/", $value)){
 			return true;
 		}else{
 			return false;
@@ -114,25 +113,39 @@ class Validator{
 			return false;
 		}
 	}
-	public function validateDate($value){
-		if($value){
-			return true;
-		}else{
-			return false;
-		}
-	}
-	public function validateNumeric($value){
-		if($value){
-			return true;
-		}else{
-			return false;
-		}
-	}
 
-	public function validatePassword($value){
+	public function validatePassword2($value){
 		if(strlen($value) > 5){
 			return true;
 		}else{
+			return false;
+		}
+	}
+	public function validatePassword($value){
+		if(preg_match('/^(?=.*\d)(?=.*[\x{0021}-\x{002b}\x{003c}-\x{0040}])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/', $value)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	public function validateFecha($value){
+		if (preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/",$value)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	public function validateDateTime($value){
+		if (preg_match('/(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})/',$value)){
+			return true;
+		} else {
+			return false;
+		}
+	}
+	public function validateLink($value){
+		if (preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$value)) {
+			return true;
+		} else {
 			return false;
 		}
 	}
