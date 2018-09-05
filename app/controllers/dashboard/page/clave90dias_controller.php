@@ -3,11 +3,8 @@ require_once("../../../app/models/usuario.class.php");
 try
 {
 	$object = new Usuario;
-	if(isset($_GET['id'])){
-		$_POST = $object->validateForm($_POST);
-		$token = $_GET['token'];
-		if($_SESSION['token_borolo'] == $token){
-			if($object->setId($_GET['id'])){ 
+			if($object->setId($_SESSION['IdUsuario'] )){ 
+				$_POST = $object->validateForm($_POST);
 				if(isset($_POST['actualizar_clave'])){ 
 					if($_POST['c1'] == $_POST['c2']){
 						if($object->setClave($_POST['c2'])){
@@ -15,8 +12,9 @@ try
 								if($_POST['c1'] == $_POST['c2']){
 									if($object->setClave($_POST['c1'])){
 										if($object->changePassword()){
-											unset($_SESSION['token_borolo']);  
-											Page::showMessage(1, "Clave cambiada", "login.php");
+											$object->updateFecha();
+											Page::showMessage(1, "Clave cambiada", "logout.php");
+
 										}else{
 											throw new Exception(Database::getException());
 										}
@@ -36,13 +34,7 @@ try
 						throw new Exception("Claves diferentes");
 					}
 				}	
-			}
-		}else{
-			Page::showMessage(3, "Este link esta vencido", "login.php");
-		}
-	}
-	else{
-		Page::showMessage(3, "Permiso denegado", "login.php");
+			
 	}
 
 }catch(Exception $error){
@@ -50,5 +42,5 @@ try
 }
 
 
-require_once("../../../app/views/dashboard/page/recuperar_view.php");
+require_once("../../../app/views/dashboard/page/90dias_view.php");
 ?>

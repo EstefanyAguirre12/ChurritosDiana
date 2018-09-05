@@ -2,8 +2,8 @@
 # | Custom error messages/pages                                        |
 # ----------------------------------------------------------------------
 
-ErrorDocument 404 /barolo/web/404.php
-ErrorDocument 403 /barolo/web/403.php
+ErrorDocument 404 /hotelbarolo/web/404.php
+ErrorDocument 403 /hotelbarolo/web/403.php
 
 # ----------------------------------------------------------------------
 # | Error prevention                                                   |

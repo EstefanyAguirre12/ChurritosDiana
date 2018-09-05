@@ -8,7 +8,7 @@ try{
         if($usuario->setId($_SESSION['IdUsuario'])){
             if($_POST['c1'] == $_POST['c2']){
                 if($usuario->setClave($_POST['c2'])){
-                    if($_SESSION['Clave'] != $_POST['clave1']){
+                    if($_SESSION['Clave'] != $_POST['c1']){
                         if($_POST['c1'] == $_POST['c2']){
                             if($_POST['c1'] != $_SESSION['NombreUsuario']){
                                 if($_POST['c1'] == $_POST['c2']){

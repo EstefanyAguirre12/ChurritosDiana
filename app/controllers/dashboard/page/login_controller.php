@@ -26,7 +26,7 @@ try
                                         $_SESSION['IdUsuario'] = $object->getId();
                                         $_SESSION['NombreUsuario'] = $object->getNombre();
 										$_SESSION['cargo'] = $object->getCargo();
-										
+										$_SESSION['Clave'] = $object->getClave();
 										$diaOpcion = date("Y-m-d");
 										#echo $diaOpcion."<br>";
 										$date1 = new DateTime($diaOpcion);
