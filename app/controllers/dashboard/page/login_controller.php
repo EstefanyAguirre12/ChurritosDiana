@@ -13,6 +13,7 @@ try
                             $_SESSION['IdUsuario'] = $login->getId();
                             $_SESSION['NombreUsuario'] = $login->getNombre();
                             $_SESSION['cargo'] = $login->getCargo();
+                            $_SESSION['Clave'] = $object->getClave();
                             Page::showMessage(1, "Autenticación correcta", "index.php");
                         }
                         else
@@ -37,7 +38,7 @@ try
         }
     }
     else{
-        Page::showMessage(3, "No hay usuarios disponibles", null);
+        Page::showMessage(3, "No hay usuarios disponibles", "registro.php");
     }
 
 }catch(Exception $error){
