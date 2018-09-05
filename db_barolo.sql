@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-09-2018 a las 02:36:20
--- Versión del servidor: 10.1.30-MariaDB
--- Versión de PHP: 7.2.1
+-- Tiempo de generación: 05-09-2018 a las 02:37:22
+-- Versión del servidor: 10.1.34-MariaDB
+-- Versión de PHP: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,7 +30,6 @@ USE `barolo`;
 -- Estructura de tabla para la tabla `acciones`
 --
 
-DROP TABLE IF EXISTS `acciones`;
 CREATE TABLE `acciones` (
   `id_accion` int(11) NOT NULL,
   `nombre_accion` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
@@ -43,7 +42,6 @@ CREATE TABLE `acciones` (
 -- Estructura de tabla para la tabla `cargos`
 --
 
-DROP TABLE IF EXISTS `cargos`;
 CREATE TABLE `cargos` (
   `IdCargo` int(11) NOT NULL,
   `NombreCargo` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
@@ -65,7 +63,6 @@ INSERT INTO `cargos` (`IdCargo`, `NombreCargo`, `Descripcion`) VALUES
 -- Estructura de tabla para la tabla `categorialavanderia`
 --
 
-DROP TABLE IF EXISTS `categorialavanderia`;
 CREATE TABLE `categorialavanderia` (
   `IdCategoria` int(11) NOT NULL,
   `Categoria` varchar(50) COLLATE utf8_spanish_ci NOT NULL
@@ -86,7 +83,6 @@ INSERT INTO `categorialavanderia` (`IdCategoria`, `Categoria`) VALUES
 -- Estructura de tabla para la tabla `categoriaproducto`
 --
 
-DROP TABLE IF EXISTS `categoriaproducto`;
 CREATE TABLE `categoriaproducto` (
   `IdCategoria` int(11) NOT NULL,
   `CategoriaProducto` varchar(50) COLLATE utf8_spanish_ci NOT NULL
@@ -110,7 +106,6 @@ INSERT INTO `categoriaproducto` (`IdCategoria`, `CategoriaProducto`) VALUES
 -- Estructura de tabla para la tabla `cuentatotal`
 --
 
-DROP TABLE IF EXISTS `cuentatotal`;
 CREATE TABLE `cuentatotal` (
   `IdCuenta` int(11) NOT NULL,
   `IdEnte` int(11) NOT NULL,
@@ -131,7 +126,6 @@ INSERT INTO `cuentatotal` (`IdCuenta`, `IdEnte`, `Fecha`) VALUES
 -- Estructura de tabla para la tabla `detalleconferencia`
 --
 
-DROP TABLE IF EXISTS `detalleconferencia`;
 CREATE TABLE `detalleconferencia` (
   `IdReserva` int(11) NOT NULL,
   `IdSala` int(11) NOT NULL,
@@ -158,7 +152,6 @@ INSERT INTO `detalleconferencia` (`IdReserva`, `IdSala`, `IdMesa`, `CantidadMesa
 -- Estructura de tabla para la tabla `detallereserva`
 --
 
-DROP TABLE IF EXISTS `detallereserva`;
 CREATE TABLE `detallereserva` (
   `IdDetalle` int(11) NOT NULL,
   `FechaInicio` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
@@ -190,7 +183,6 @@ INSERT INTO `detallereserva` (`IdDetalle`, `FechaInicio`, `FechaFin`, `HoraInici
 -- Estructura de tabla para la tabla `detallerestaurante`
 --
 
-DROP TABLE IF EXISTS `detallerestaurante`;
 CREATE TABLE `detallerestaurante` (
   `IdDetalle` int(11) NOT NULL,
   `Cantidad` int(11) NOT NULL,
@@ -205,7 +197,6 @@ CREATE TABLE `detallerestaurante` (
 -- Estructura de tabla para la tabla `empleados`
 --
 
-DROP TABLE IF EXISTS `empleados`;
 CREATE TABLE `empleados` (
   `IdEmpleado` int(11) NOT NULL,
   `NombreEmpleado` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
@@ -213,6 +204,7 @@ CREATE TABLE `empleados` (
   `DUIEmpleado` int(11) NOT NULL,
   `TelefonoEmpleado` int(11) NOT NULL,
   `DireccionEmpleado` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `correo_empleado` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `FotoEmpleado` varchar(1000) COLLATE utf8_spanish_ci NOT NULL,
   `IdCargo` int(11) NOT NULL,
   `IdGenero` int(11) NOT NULL
@@ -222,14 +214,14 @@ CREATE TABLE `empleados` (
 -- Volcado de datos para la tabla `empleados`
 --
 
-INSERT INTO `empleados` (`IdEmpleado`, `NombreEmpleado`, `ApellidosEmpleado`, `DUIEmpleado`, `TelefonoEmpleado`, `DireccionEmpleado`, `FotoEmpleado`, `IdCargo`, `IdGenero`) VALUES
-(1, 'Daniel', 'Barrera', 356151515, 515151515, 'San salvador', 'DANICX.JPG', 1, 1),
-(2, 'w', 'j', 2121, 122, 'f', 'e', 3, 1),
-(3, 'j', 'j', 2121, 122, 'f', 'e', 2, 1),
-(4, 'dwef', 'bhbh', 7667, 766, 'gtdewte', '5b0f5acadcf98.jpg', 3, 1),
-(5, 'Estefany', 'Aguirre', 12345, 12345, 'gdhr', '5b0f5b1c83bda.jpg', 2, 2),
-(6, 'rjjnj', 'njnjnj', 8787, 8787878, 'hhj', '5b10b957f03a7.jpg', 2, 1),
-(7, 'gtytvv', 'vtvtvt', 12345, 13245, 'behfbeh', '5b48e613722f5.jpg', 2, 2);
+INSERT INTO `empleados` (`IdEmpleado`, `NombreEmpleado`, `ApellidosEmpleado`, `DUIEmpleado`, `TelefonoEmpleado`, `DireccionEmpleado`, `correo_empleado`, `FotoEmpleado`, `IdCargo`, `IdGenero`) VALUES
+(1, 'Daniel', 'Barrera', 356151515, 515151515, 'San salvador', 'daniel.alex.barrera@gmail.com', 'DANICX.JPG', 1, 1),
+(2, 'w', 'j', 2121, 122, 'f', '', 'e', 3, 1),
+(3, 'j', 'j', 2121, 122, 'f', '', 'e', 2, 1),
+(4, 'dwef', 'bhbh', 7667, 766, 'gtdewte', '', '5b0f5acadcf98.jpg', 3, 1),
+(5, 'Estefany', 'Aguirre', 12345, 12345, 'gdhr', '', '5b0f5b1c83bda.jpg', 2, 2),
+(6, 'rjjnj', 'njnjnj', 8787, 8787878, 'hhj', '', '5b10b957f03a7.jpg', 2, 1),
+(7, 'gtytvv', 'vtvtvt', 12345, 13245, 'behfbeh', '', '5b48e613722f5.jpg', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -237,7 +229,6 @@ INSERT INTO `empleados` (`IdEmpleado`, `NombreEmpleado`, `ApellidosEmpleado`, `D
 -- Estructura de tabla para la tabla `entes`
 --
 
-DROP TABLE IF EXISTS `entes`;
 CREATE TABLE `entes` (
   `IdEnte` int(11) NOT NULL,
   `Nombres` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
@@ -263,7 +254,6 @@ INSERT INTO `entes` (`IdEnte`, `Nombres`, `Apellidos`, `DocIdentidad`, `Correo`,
 -- Estructura de tabla para la tabla `estado`
 --
 
-DROP TABLE IF EXISTS `estado`;
 CREATE TABLE `estado` (
   `IdEstado` int(11) NOT NULL,
   `Estado` varchar(30) COLLATE utf8_spanish_ci NOT NULL
@@ -283,7 +273,6 @@ INSERT INTO `estado` (`IdEstado`, `Estado`) VALUES
 -- Estructura de tabla para la tabla `genero`
 --
 
-DROP TABLE IF EXISTS `genero`;
 CREATE TABLE `genero` (
   `IdGenero` int(11) NOT NULL,
   `NombreGenero` varchar(15) COLLATE utf8_spanish_ci NOT NULL
@@ -303,7 +292,6 @@ INSERT INTO `genero` (`IdGenero`, `NombreGenero`) VALUES
 -- Estructura de tabla para la tabla `habitaciones`
 --
 
-DROP TABLE IF EXISTS `habitaciones`;
 CREATE TABLE `habitaciones` (
   `IdHabitacion` int(11) NOT NULL,
   `NumeroHabitacion` int(11) NOT NULL,
@@ -332,7 +320,6 @@ INSERT INTO `habitaciones` (`IdHabitacion`, `NumeroHabitacion`, `Capacidad`, `Pr
 -- Estructura de tabla para la tabla `lavanderia`
 --
 
-DROP TABLE IF EXISTS `lavanderia`;
 CREATE TABLE `lavanderia` (
   `Id` int(11) NOT NULL,
   `Nombre` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
@@ -357,7 +344,6 @@ INSERT INTO `lavanderia` (`Id`, `Nombre`, `Cantidad`, `Color`, `IdEstado`, `IdCa
 -- Estructura de tabla para la tabla `material`
 --
 
-DROP TABLE IF EXISTS `material`;
 CREATE TABLE `material` (
   `IdMaterial` int(11) NOT NULL,
   `Material` varchar(30) COLLATE utf8_spanish_ci NOT NULL
@@ -377,7 +363,6 @@ INSERT INTO `material` (`IdMaterial`, `Material`) VALUES
 -- Estructura de tabla para la tabla `mesarestaurante`
 --
 
-DROP TABLE IF EXISTS `mesarestaurante`;
 CREATE TABLE `mesarestaurante` (
   `IdMesaRes` int(11) NOT NULL,
   `NumeroMesa` int(11) NOT NULL,
@@ -403,7 +388,6 @@ INSERT INTO `mesarestaurante` (`IdMesaRes`, `NumeroMesa`, `Capacidad`, `IdEstado
 -- Estructura de tabla para la tabla `mesas`
 --
 
-DROP TABLE IF EXISTS `mesas`;
 CREATE TABLE `mesas` (
   `IdMesa` int(11) NOT NULL,
   `Cantidad` int(11) NOT NULL,
@@ -423,7 +407,6 @@ INSERT INTO `mesas` (`IdMesa`, `Cantidad`, `Nombre`) VALUES
 -- Estructura de tabla para la tabla `pedidohabitacion`
 --
 
-DROP TABLE IF EXISTS `pedidohabitacion`;
 CREATE TABLE `pedidohabitacion` (
   `IdPedido` int(11) NOT NULL,
   `IdHabitacion` int(11) NOT NULL
@@ -435,7 +418,6 @@ CREATE TABLE `pedidohabitacion` (
 -- Estructura de tabla para la tabla `productos`
 --
 
-DROP TABLE IF EXISTS `productos`;
 CREATE TABLE `productos` (
   `IdProducto` int(11) NOT NULL,
   `NombreProducto` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
@@ -481,7 +463,6 @@ INSERT INTO `productos` (`IdProducto`, `NombreProducto`, `Descripcion`, `Precio`
 -- Estructura de tabla para la tabla `salas`
 --
 
-DROP TABLE IF EXISTS `salas`;
 CREATE TABLE `salas` (
   `IdSala` int(11) NOT NULL,
   `NombreSala` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
@@ -505,7 +486,6 @@ INSERT INTO `salas` (`IdSala`, `NombreSala`, `Descripcion`, `Capacidad`, `Costo`
 -- Estructura de tabla para la tabla `sillas`
 --
 
-DROP TABLE IF EXISTS `sillas`;
 CREATE TABLE `sillas` (
   `IdSilla` int(11) NOT NULL,
   `Cantidad` int(11) NOT NULL,
@@ -525,7 +505,6 @@ INSERT INTO `sillas` (`IdSilla`, `Cantidad`, `Nombre`) VALUES
 -- Estructura de tabla para la tabla `tipoente`
 --
 
-DROP TABLE IF EXISTS `tipoente`;
 CREATE TABLE `tipoente` (
   `IdTipo` int(11) NOT NULL,
   `TipoEnte` varchar(30) COLLATE utf8_spanish_ci NOT NULL
@@ -545,7 +524,6 @@ INSERT INTO `tipoente` (`IdTipo`, `TipoEnte`) VALUES
 -- Estructura de tabla para la tabla `tipohabitacion`
 --
 
-DROP TABLE IF EXISTS `tipohabitacion`;
 CREATE TABLE `tipohabitacion` (
   `IdTipoHabitacion` int(11) NOT NULL,
   `TipoHabitacion` varchar(30) COLLATE utf8_spanish_ci NOT NULL
@@ -569,7 +547,6 @@ INSERT INTO `tipohabitacion` (`IdTipoHabitacion`, `TipoHabitacion`) VALUES
 -- Estructura de tabla para la tabla `tipomesa`
 --
 
-DROP TABLE IF EXISTS `tipomesa`;
 CREATE TABLE `tipomesa` (
   `IdTipoMesa` int(11) NOT NULL,
   `TipoMesa` varchar(30) COLLATE utf8_spanish_ci NOT NULL
@@ -581,7 +558,6 @@ CREATE TABLE `tipomesa` (
 -- Estructura de tabla para la tabla `tipoproducto`
 --
 
-DROP TABLE IF EXISTS `tipoproducto`;
 CREATE TABLE `tipoproducto` (
   `IdTipo` int(11) NOT NULL,
   `TipoProducto` varchar(30) COLLATE utf8_spanish_ci NOT NULL
@@ -607,7 +583,6 @@ INSERT INTO `tipoproducto` (`IdTipo`, `TipoProducto`) VALUES
 -- Estructura de tabla para la tabla `tiposilla`
 --
 
-DROP TABLE IF EXISTS `tiposilla`;
 CREATE TABLE `tiposilla` (
   `IdTipoSilla` int(11) NOT NULL,
   `TipoSilla` varchar(30) COLLATE utf8_spanish_ci NOT NULL
@@ -619,7 +594,6 @@ CREATE TABLE `tiposilla` (
 -- Estructura de tabla para la tabla `usuarios`
 --
 
-DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `IdUsuario` int(11) NOT NULL,
   `NombreUsuario` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
@@ -632,7 +606,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`IdUsuario`, `NombreUsuario`, `ClaveUsuario`, `IdEmpleado`) VALUES
-(1, 'Danicx', '$2y$10$A0WaxTrp1pRZ2Bm/PkG1U.u0ZZCwAWqnnzaiIQ2dXuCRczZOh0v2S', 1),
+(1, 'Danicx', '$2y$10$Jt6GgE.XDitTGycF2x1Mcu3fExuj.cnOH/Pb3HEC3iG26n4.Sjho.', 1),
 (3, 'Rolando', '123456', 2),
 (5, 'Estefany', '$2y$10$o3Hml2lgnFptuFl47lKIteS5YQ0TUAHMtZw2BAX8MoiM/Qkyj0vVe', 5),
 (8, 'Candy', '$2y$10$nbv8..0Y3NPcnzo9lnbEc.1jXQFc8gndc2eXfqhW0n.Y52ClmVndm', 4),
