@@ -36,7 +36,7 @@ try
 											$diferenciaDias= $diff->days;
 											if($diferenciaDias>=90){
 												# necesita cambiar la contraseña
-												Page::showMessage(3, "Por razones de seguridad usted tiene que cambiar su contraseña (cada 90 dias)", "contro90dias.php");
+												Page::showMessage(3, "Por razones de seguridad usted tiene que cambiar su contraseña (cada 90 dias)", "clave90dias.php");
 											}
 											else{
 												if($diferenciaDias>=85 && $diferenciaDias<90){
