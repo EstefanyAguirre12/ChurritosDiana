@@ -38,7 +38,7 @@
                                 </div>
                               </div>
                               <div class="pricing_footer">
-                                <form method='post'>
+                                <form autocomplete= 'off' method='post'>
                                     <button type="submit" name="exportar" class="btn btn-primary btn-block">Generar <span> Base de datos</span>
                                     </button>
                                 </form>

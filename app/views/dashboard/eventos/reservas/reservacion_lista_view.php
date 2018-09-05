@@ -21,7 +21,7 @@
 
                       </div>
                       <div class="col-sm-6">
-                        <form method='post'>
+                        <form autocomplete= 'off' method='post'>
                             <div id="datatable-checkbox_filter" class="dataTables_filter">
                               <label>Busquedad:
                                 <input type="search" name="busqueda" class="form-control input-sm validate" placeholder="Sala" aria-controls="datatable-checkbox" /required>
@@ -141,7 +141,7 @@
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                  <form method="post" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left">
+                  <form autocomplete= 'off' method="post" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left">
                     <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Fecha Inicial:
                       <span class="required">*</span>

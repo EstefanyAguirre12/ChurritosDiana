@@ -1,11 +1,4 @@
-<?php
-require_once("../../../app/models/usuario.class.php");
-try
-{
-    $object = new Usuario;
-    if($object->getUsuario()){
-        if(isset($_POST['entrar'])){
-            $_POST = $object->validateForm($_POST);
+   $_POST = $object->validateForm($_POST);
 
                     if($object->setNombre($_POST['usuario'])){
                         if($object->checkUsuario()){
@@ -25,8 +18,7 @@ try
 									if($object->checkClaveUsuario()){
                                         $_SESSION['IdUsuario'] = $object->getId();
                                         $_SESSION['NombreUsuario'] = $object->getNombre();
-										$_SESSION['cargo'] = $object->getCargo();
-										
+                                        $_SESSION['cargo'] = $object->getCargo();
 										$diaOpcion = date("Y-m-d");
 										#echo $diaOpcion."<br>";
 										$date1 = new DateTime($diaOpcion);
@@ -213,16 +205,3 @@ try
 					}else{
 						throw new Exception("Alias es invalido");
 					}
-        }
-    }
-    else{
-        Page::showMessage(3, "No hay usuarios disponibles", "registro.php");
-    }
-
-}catch(Exception $error){
-	Page::showMessage(2, $error->getMessage(), null);
-}
-
-
-require_once("../../../app/views/dashboard/page/login_view.php");
-?>

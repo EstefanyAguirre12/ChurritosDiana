@@ -291,7 +291,7 @@
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                  <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+                  <form autocomplete= 'off' id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
                     <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nombre de usuario:
                         <span class="required">*</span>

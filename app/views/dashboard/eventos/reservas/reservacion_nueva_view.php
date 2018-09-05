@@ -16,7 +16,7 @@
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                  <form   method="post" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left"> 
+                  <form autocomplete= 'off'   method="post" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left"> 
                     <br>
                       <div class="form-group">
                           <label class="control-label col-md-3 col-sm-3 col-xs-12">Sala de conferencia:*</label>

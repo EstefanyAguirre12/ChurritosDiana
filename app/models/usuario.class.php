@@ -5,8 +5,77 @@ class Usuario extends Validator {
     private $nombre = null;
     private $idempleado = null;
     private $clave = null;
-    
-    //Métodos para sobrecarga de propiedades
+    private $TIPOusuario = null;
+	private $FechaContra = null;	
+	private $numb_ingresos = null;	
+	private $tiempo_intentos = null;
+	private $estado_sesion = null;	
+	
+	//Métodos para sobrecarga de propiedades
+	public function settiempo_intentos($value){
+		if($this->validateDateTime($value)){
+			$this->tiempo_intentos = $value;
+			return true;
+		}else{
+			return false;
+		}
+	}
+	public function gettiempo_intentos(){
+		return $this->tiempo_intentos;
+	}
+	public function setestado_sesion($value){
+		if($this->validateEnteros($value)){
+			$this->estado_sesion = $value;
+			return true;
+		}else{
+			return false;
+		}
+	}
+	public function getestado_sesion(){
+		return $this->estado_sesion;
+	}
+
+	public function setnumb_ingresos($value){
+		if($this->validateEnteros($value)){
+			$this->numb_ingresos = $value;
+			return true;
+		}else{
+			return false;
+		}
+	}
+	public function getnumb_ingresos(){
+		return $this->numb_ingresos;
+	}
+	public function setFechaContra($value){
+		if($this->validateFecha($value)){
+			$this->FechaContra = $value;
+			return true;
+		}else{
+			return false;
+		}
+	}
+	public function getFechaContra(){
+		return $this->FechaContra;
+	}
+	public function setTIPOusuario($value){
+		if($this->validateId($value)){
+			$this->TIPOusuario = $value;
+			return true;
+		}else{
+			return false;
+		}
+	}
+	public function getTIPOusuario(){
+		return $this->TIPOusuario;
+	}
+	public function setId_usuario($value){
+		if($this->validateId($value)){
+			$this->id_usuario = $value;
+			return true;
+		}else{
+			return false;
+		}
+	}
     public function setId($value){
         if($this->validateId($value)){
             $this->id = $value;
@@ -70,6 +139,32 @@ class Usuario extends Validator {
             return false;
         }
     }
+    public function updateNumeroIntentos(){
+		$sql = "UPDATE `usuarios` SET `numb_ingresos`= ? WHERE `IdUsuario`=?";
+		$params = array($this->numb_ingresos, $this->id);
+		return Database::executeRow($sql, $params);
+	}
+	public function updateEstadoSesion(){
+		$sql = "UPDATE `usuarios` SET `estado_sesion`=? WHERE `IdUsuario`=?";
+		$params = array($this->estado_sesion, $this->id);
+		return Database::executeRow($sql, $params);
+	}
+	public function updateLastNumeroIntentos(){
+		$sql = "UPDATE `usuarios` SET `numb_ingresos`= ?,`tiempo_intentos`=? WHERE `IdUsuario`=?";
+		$params = array($this->numb_ingresos,$this->tiempo_intentos, $this->id);
+		return Database::executeRow($sql, $params);
+	}
+	public function readEstadoSesion(){
+		$sql = "SELECT `estado_sesion` FROM `usuarios` WHERE `IdUsuario`=?";
+		$params = array($this->id);
+		$user = Database::getRow($sql, $params);
+		if($user){
+			$this->estado_sesion=$user['estado_sesion'];
+			return true;
+		}else{
+			return null;
+		}
+	}
     //cambiar contrasena
         public function changePassword(){
             $hash = password_hash($this->clave, PASSWORD_DEFAULT);
@@ -104,12 +199,16 @@ class Usuario extends Validator {
     //Verificar usuarios
     public function checkUsuario()
     {
-        $sql = "SELECT IdUsuario FROM usuarios WHERE NombreUsuario = ? ";
+        $sql = "SELECT IdUsuario ,numb_ingresos,`tiempo_intentos`,estado_sesion,DATE(`tiempo_clave`)as FechaContra FROM usuarios WHERE NombreUsuario = ? ";
         $params = array($this->nombre);
         $data = Database::getRow($sql, $params);
         if($data)
         {
-            $this->id = $data['IdUsuario'];
+            $this->id = $data['IdUsuario']; 
+			$this->FechaContra=$data['FechaContra'];
+			$this->numb_ingresos=$data['numb_ingresos'];			
+			$this->tiempo_intentos=$data['tiempo_intentos'];
+			$this->estado_sesion=$data['estado_sesion'];	
             return true;
         }
         else

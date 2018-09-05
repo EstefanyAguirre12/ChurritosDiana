@@ -31,7 +31,7 @@
                             <div class="title">
                               <h1>Importar Base de datos</h1>
                             </div>
-                            <form method="post" action="" enctype="multipart/form-data">
+                            <form autocomplete= 'off' method="post" action="" enctype="multipart/form-data">
                                 <div class="x_content">
                                   <div class="">
                                       <div class="pricing_features">
