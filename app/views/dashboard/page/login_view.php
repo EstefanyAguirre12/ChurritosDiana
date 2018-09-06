@@ -1,6 +1,6 @@
 	<!-- page content -->
 <div class="top-content">
-        	
+
 <div class="inner-bg">
 	<div class="container">
 		<div class="row">
@@ -34,6 +34,10 @@
 						<div class="form-group">
 							<label class="sr-only" for="form-password"></label>
 							<input type="password" id= "contraseña" name="contraseña" placeholder="Contraseña..." class="form-password form-control"   required />
+						</div>
+            <div class="form-group">
+							<label class="sr-only" for="form-username"></label>
+							<input type="text" id= "codigo" name="codigo" placeholder="Codigo..." class="form-username form-control"   required />
 						</div>
 						<button type='submit' name='entrar' class='btn btn-primary' data-toggle='tooltip' data-placement='bottom' title='Entrar'>Entrar</button>
 					</form>
