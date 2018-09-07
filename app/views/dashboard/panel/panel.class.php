@@ -8,36 +8,46 @@ require_once('../../../app/helpers/fpdf.php');
 
 class Page extends Component{
 
-	public static function Modulo_Hotel(){
+	public static function Modulo_Hotel($h1,$h2,$h2,$h4){
+		if($h1 != 0 && $h2 != 0 && $h3 != 0  && $h4  !=0 ){
+			if($h1 !=0 ){
+
+			}
 		print("
 			<div class='menu_section'>
 				<h3 class='text-center'>Hotel</h3>
 				<ul class='nav side-menu'>
+		")
+		print("
 					<li>
-					<a>
-						<i class='material-icons'>insert_invitation</i> Reservas
-						<span class='fa fa-chevron-down'></span>
-					</a>
-					<ul class='nav child_menu'>
-						<li>
-						<a href='../../hotel/reservas/reserva_nueva.php'>Nueva reserva</a>
-						</li>
-						<li>
-						<a href='../../hotel/reservas/reserva_control.php'>Listado reserva</a>
-						</li>
-					</ul>
+						<a>
+							<i class='material-icons'>insert_invitation</i> Reservas
+							<span class='fa fa-chevron-down'></span>
+						</a>
+						<ul class='nav child_menu'>
+							<li>
+							<a href='../../hotel/reservas/reserva_nueva.php'>Nueva reserva</a>
+							</li>
+							<li>
+							<a href='../../hotel/reservas/reserva_control.php'>Listado reserva</a>
+							</li>
+						</ul>
 					</li>
+		")
+		print("
 					<li>
-					<a>
-						<i class='material-icons'>room_service</i> Servicios
-						<span class='fa fa-chevron-down'></span>
-					</a>
-					<ul class='nav child_menu'>
-						<li>
-						<a href='../../hotel/servicios/h_servicios.php'>Servicio habitacion</a>
-						</li>
-					</ul>
+						<a>
+							<i class='material-icons'>room_service</i> Servicios
+							<span class='fa fa-chevron-down'></span>
+						</a>
+						<ul class='nav child_menu'>
+							<li>
+							<a href='../../hotel/servicios/h_servicios.php'>Servicio habitacion</a>
+							</li>
+						</ul>
 					</li>
+		")
+		print("			
 					<li>
 					<a>
 						<i class='material-icons'>store</i> Habitaciones
@@ -66,8 +76,10 @@ class Page extends Component{
 				</ul>
 			</div>
 		");
+		}
+	
 	}
-	public static function Modulo_Resturante(){
+	public static function Modulo_Resturante($r1,$r2,$r3){
 		print("
 			<div class='menu_section'>
 				<h3 class='text-center'>Restaurante</h3>
@@ -121,7 +133,7 @@ class Page extends Component{
 			</div>
 		");
 	}
-	public static function Modulo_Eventos(){
+	public static function Modulo_Eventos($e1,$e2,$e3){
 		print("
 			<div class='menu_section'>
 				<h3 class='text-center'>Eventos</h3>
@@ -172,7 +184,7 @@ class Page extends Component{
 			</div>
 		");
 	}
-	public static function Modulo_Lavanderia(){
+	public static function Modulo_Lavanderia($l1){
 		print("
 			<div class='menu_section'>
 				<h3 class='text-center'>Lavanderia</h3>
@@ -199,7 +211,7 @@ class Page extends Component{
 			</div>
 		");
 	}
-	public static function Modulo_Registros(){
+	public static function Modulo_Registros($rr1,$b1,$g1){
 		print("
 			<div class='menu_section'>
 				<h3 class='text-center'>Registros</h3>
@@ -278,29 +290,12 @@ class Page extends Component{
 	}
 
 	public static function ObtenerPermisos($valu){
-		switch ($valu) {
-			case 1:
-				Page::Modulo_Hotel();
-				Page::Modulo_Resturante();
-				Page::Modulo_Eventos();
-				Page::Modulo_Lavanderia();
-				Page::Modulo_Registros();
-				break;
-			case 2:
-				Page::Modulo_Registros();
-				break;
-			case 3:
-				Page::Modulo_Hotel();
-				break;
-			case 4:
-				Page::Modulo_Resturante();
-				break;
-			case 5:
-				Page::Modulo_Eventos();
-				break;	
-			default:
-				echo "";
-		}	
+		$permisos = json_decode($valu);
+		Page::Modulo_Hotel($permisos[1],$permisos[2],$permisos[3],$permisos[4]);
+		Page::Modulo_Resturante($permisos[5],$permisos[6],$permisos[7]);
+		Page::Modulo_Eventos($permisos[8],$permisos[9],$permisos[10]);
+		Page::Modulo_Lavanderia($permisos[11];
+		Page::Modulo_Registros($permisos[12],$permisos[13],$permisos[14]);	
 	}
 
 	public static function templateHeader($title){

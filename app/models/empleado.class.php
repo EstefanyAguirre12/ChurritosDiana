@@ -73,7 +73,7 @@ class Empleado extends Validator{
 		}
 		
 		public function setDui($value){
-			if($this->validateInt($value)){
+			if($this->validateId($value)){
 				$this->dui = $value;
 				return true;
 			}else{
@@ -128,7 +128,7 @@ class Empleado extends Validator{
                         }
 
                     public function setTelefono($value){
-						if($this->validateInt($value)){
+						if($this->validateId($value)){
                             $this->telefono = $value;
                             return true;
                         }else{

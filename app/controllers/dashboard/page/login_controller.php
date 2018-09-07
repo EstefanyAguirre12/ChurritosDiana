@@ -25,7 +25,8 @@ try
 									if($object->checkClaveUsuario()){
                                         $_SESSION['IdUsuario'] = $object->getId();
                                         $_SESSION['NombreUsuario'] = $object->getNombre();
-                                        $_SESSION['cargo'] = $object->getCargo();
+										$_SESSION['cargo'] = $object->getPermisos();
+										$_SESSION['Clave'] = $object->getClave();
 										$diaOpcion = date("Y-m-d");
 										#echo $diaOpcion."<br>";
 										$date1 = new DateTime($diaOpcion);
@@ -215,7 +216,7 @@ try
         }
     }
     else{
-        Page::showMessage(3, "No hay usuarios disponibles", null);
+        Page::showMessage(3, "No hay usuarios disponibles", "registro.php");
     }
 
 }catch(Exception $error){

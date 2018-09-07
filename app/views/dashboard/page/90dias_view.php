@@ -8,8 +8,7 @@
 				<h1><strong>Barolo</strong> Hotel</h1>
 				<div class="description">
 					<p>
-						Esta sitio web es exclusivo para empleados.
-						Visitar sitio de <a href="#"><strong>Barolo</strong></a>, para cliente.
+Cambie su contraseña
 					</p>
 				</div>
 			</div>
@@ -19,7 +18,7 @@
 				<div class="form-top">
 					<div class="form-top-left">
 						<h3>Restauracion de contraseña</h3>
-						<p>Ingrese su nueva clave: por razones de seguridad al verificar el link enviado a su correo solo se prodra restaurar su contraseña durante esta sesion del navegador.</p>
+						<p>Ingrese su nueva clave: </p>
 					</div>
 					<div class="form-top-right">
 						<i class="fa fa-lock"></i>
@@ -40,14 +39,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-sm-6 col-sm-offset-3 social-login">
-				<h3>Error al verificar es probable que su token caduco?</h3>
-				<div class="social-login-buttons">
-					<a href="#" class="btn btn-link-2" href="index.php">intentar de nuevo</a>
-				</div>
-			</div>
-		</div>
+		
 	</div>
 </div>
 

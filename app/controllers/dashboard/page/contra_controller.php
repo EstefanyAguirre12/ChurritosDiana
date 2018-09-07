@@ -8,18 +8,30 @@ try{
         if($usuario->setId($_SESSION['IdUsuario'])){
             if($_POST['c1'] == $_POST['c2']){
                 if($usuario->setClave($_POST['c2'])){
-                    if($_POST['c1'] == $_POST['c2']){
-                        if($usuario->setClave($_POST['c1'])){
-                            if($usuario->changePassword()){
-                                Page::showMessage(1, "Clave cambiada", "index.php");
+                    if($_SESSION['Clave'] != $_POST['c1']){
+                        if($_POST['c1'] == $_POST['c2']){
+                            if($_POST['c1'] != $_SESSION['NombreUsuario']){
+                                if($_POST['c1'] == $_POST['c2']){
+                                    if($usuario->setClave($_POST['c1'])){
+                                        if($usuario->changePassword()){
+                                            Page::showMessage(1, "Clave cambiada", "index.php");
+                                        }else{
+                                            throw new Exception(Database::getException());
+                                        }
+                                    }else{
+                                        throw new Exception("Clave nueva menor a 6 caracteres");
+                                    }
+                                }else{
+                                    throw new Exception("Claves diferentes");
+                                }
                             }else{
-                                throw new Exception(Database::getException());
+                                throw new Exception("La clave no puede ser igual a tu Usuario");
                             }
                         }else{
-                            throw new Exception("Clave nueva menor a 6 caracteres");
+                            throw new Exception("Claves nuevas diferentes");
                         }
                     }else{
-                        throw new Exception("Claves diferentes");
+                        throw new Exception("Clave actual igual a la clave nueva");
                     }
                 }else{
                     throw new Exception("Clave menor a 6 caracteres");
