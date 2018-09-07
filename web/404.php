@@ -6,7 +6,7 @@
     <meta charset='UTF-8'>
     <title>Error 404</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
-    <link rel='stylesheet' href='css/stylomylo.css'>
+    <link rel='stylesheet' href='../../../web/css/stylomylo.css'>
     </head>
 <body>
     <link href='https://fonts.googleapis.com/css?family=Anton|Passion+One|PT+Sans+Caption' rel='stylesheet' type='text/css'>
@@ -26,7 +26,7 @@
     </div>
 <!-- Error Page -->
 </body>
-<script  src='../../web/js/indexer.js'></script>
+<script  src='../../../web/js/indexer.js'></script>
     </html>
     ");
 ?>

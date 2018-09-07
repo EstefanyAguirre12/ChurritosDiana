@@ -14,11 +14,15 @@ try{
     $handle = $link->prepare('SELECT Estado, COUNT(habitaciones.IdEstado)Cantidad from habitaciones INNER JOIN estado ON estado.IdEstado = habitaciones.IdEstado WHERE precio BETWEEN ? AND ? GROUP by Estado');
     $handle->execute(array( $precio1,  $precio2));
     $result = $handle->fetchAll(\PDO::FETCH_OBJ);
+    if($result!=null){
 
     foreach($result as $row){
         array_push($dataPoints, array("label"=> $row->Estado, "y"=> $row->Cantidad));
     }
-	$link = null;
+    $link = null;
+}else{
+    Page::showMessage(2, "No hay registros con esos parametros", "../parametros/paramhab.php");
+}
 }
 catch(\PDOException $ex){
     print($ex->getMessage());
