@@ -240,12 +240,13 @@ class Usuario extends Validator {
 	}
 	public function ObtenerCargos()
     {
-        $sql = "SELECT cargos.IdCargo ,h_reserva,h_servicio, h_registros,r_mesas,r_ordenes,r_registros,e_reservacion,e_salones,e_registro, l_registros,rr_registro,b_datos,g_registros FROM cargos  INNER JOIN empleados ON cargos.IdCargo= empleados.IdCargo INNER JOIN usuarios on empleados.IdEmpleado=usuarios.IdEmpleado WHERE usuarios.IdUsuario =? ";
+        $sql = "SELECT cargos.IdCargo ,h_reserva,h_servicio,h_habitaciones, h_registros,r_mesas,r_ordenes,r_registros,e_reservacion,e_salones,e_registro, l_registros,rr_registro,b_datos,g_registros FROM cargos  INNER JOIN empleados ON cargos.IdCargo= empleados.IdCargo INNER JOIN usuarios on empleados.IdEmpleado=usuarios.IdEmpleado WHERE usuarios.IdUsuario =? ";
         $params = array($this->id);
         $data = Database::getRow($sql, $params);
 		$this->permisos[0] = $data['IdCargo'];
-		$this->permisos[2] = $data['h_reserva'];
-		$this->permisos[3] = $data['h_servicio'];
+		$this->permisos[1] = $data['h_reserva'];
+		$this->permisos[2] = $data['h_servicio'];
+		$this->permisos[3] = $data['h_habitaciones'];
 		$this->permisos[4] = $data['h_registros'];
 		$this->permisos[5] = $data['r_mesas'];
 		$this->permisos[6] = $data['r_ordenes'];
