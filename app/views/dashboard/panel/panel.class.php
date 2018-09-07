@@ -9,7 +9,7 @@ require_once('../../../app/helpers/fpdf.php');
 class Page extends Component{
 
 	public static function Modulo_Hotel($h1,$h2,$h3,$h4){
-		if($h1 != 0 && $h2 != 0 && $h3 != 0  && $h4  !=0 ){
+		if($h1 != 0 || $h2 != 0 || $h3 != 0  || $h4  !=0 ){
 		print("
 			<div class='menu_section'>
 				<h3 class='text-center'>Hotel</h3>
@@ -89,7 +89,7 @@ class Page extends Component{
 	
 	}
 	public static function Modulo_Resturante($r1,$r2,$r3){
-		if($r1 != 0 && $r2 != 0 && $r3 != 0 ){
+		if($r1 != 0 || $r2 != 0 || $r3 != 0 ){
 			print("
 				<div class='menu_section'>
 					<h3 class='text-center'>Restaurante</h3>
@@ -159,7 +159,7 @@ class Page extends Component{
 			}
 	}
 	public static function Modulo_Eventos($e1,$e2,$e3){
-		if($e1 != 0 && $e2 != 0 && $e3 != 0 ){
+		if($e1 != 0 || $e2 != 0 || $e3 != 0 ){
 			print("
 				<div class='menu_section'>
 					<h3 class='text-center'>Eventos</h3>
@@ -260,7 +260,7 @@ class Page extends Component{
 		}
 	}
 	public static function Modulo_Registros($rr1,$b1,$g1){
-		if($rr1 != 0 && $b1 != 0 && $g1 != 0 ){
+		if($rr1 != 0 || $b1 != 0 || $g1 != 0 ){
 			print("
 				<div class='menu_section'>
 					<h3 class='text-center'>Registros</h3>
