@@ -8,11 +8,12 @@ class Usuario extends Validator {
 	private $correo_empleado = null;
 	private $dui = null;
     private $TIPOusuario = null;
-	private $FechaContra = null;	
-	private $numb_ingresos = null;	
+	private $FechaContra = null;
+	private $numb_ingresos = null;
 	private $tiempo_intentos = null;
-	private $estado_sesion = null;	
-	
+	private $estado_sesion = null;
+  private $codigo = null;
+
 	//Métodos para sobrecarga de propiedades
 	public function settiempo_intentos($value){
 		if($this->validateDateTime($value)){
@@ -92,7 +93,7 @@ class Usuario extends Validator {
     public function setId($value){
         if($this->validateId($value)){
             $this->id = $value;
-            return true;  
+            return true;
         }
         else{
             return false;
@@ -124,7 +125,7 @@ class Usuario extends Validator {
 		public function getNombre(){
 			return $this->nombre;
 		}
-    
+
     public function setIdempleado($value){
 		if($this->validateId($value)){
 			$this->idempleado = $value;
@@ -151,7 +152,20 @@ class Usuario extends Validator {
 	public function getClave(){
 		return $this->clave;
     }
-    
+
+    public function setCodigo($value){
+			if($this->validateAlphanumeric($value, 1, 50)){
+				$this->codigo = $value;
+				return true;
+			}else{
+				return false;
+			}
+		}
+		public function getCodigo(){
+			return $this->codigo;
+		}
+
+
     //Metodos CRUD para cotegoria
     public function checkContra(){
         $sql = "SELECT ClaveUsuario FROM usuarios WHERE IdUsuario = ?";
@@ -205,7 +219,7 @@ class Usuario extends Validator {
     // Verificar contraseña
     public function checkClaveUsuario()
     {
-        
+
         $sql = "SELECT ClaveUsuario,cargos.IdCargo FROM usuarios,empleados,cargos WHERE  IdUsuario = ? AND usuarios.IdEmpleado = empleados.IdEmpleado  AND empleados.IdCargo = cargos.IdCargo ";
         $params = array($this->id);
         $data = Database::getRow($sql, $params);
@@ -226,9 +240,9 @@ class Usuario extends Validator {
         $params = array(null);
         return database::getRow($sql, $params);
 	}
-	
-	
-	
+
+
+
     //Verificar usuarios
     public function checkUsuario()
     {
@@ -237,17 +251,22 @@ class Usuario extends Validator {
         $data = Database::getRow($sql, $params);
         if($data)
         {
-            $this->id = $data['IdUsuario']; 
+            $this->id = $data['IdUsuario'];
 			$this->FechaContra=$data['FechaContra'];
-			$this->numb_ingresos=$data['numb_ingresos'];			
+			$this->numb_ingresos=$data['numb_ingresos'];
 			$this->tiempo_intentos=$data['tiempo_intentos'];
-			$this->estado_sesion=$data['estado_sesion'];	
+			$this->estado_sesion=$data['estado_sesion'];
             return true;
         }
         else
         {
             return false;
         }
+	}
+  public function getCodi(){
+		$sql = "SELECT codigo FROM usuarios where IdUsuario=(SELECT max(IdUsuario) from usuarios)";
+		$params = array(null);
+		return Database::getRows($sql, $params);
 	}
 	public function checkDUI()
     {
@@ -256,8 +275,23 @@ class Usuario extends Validator {
         $data = Database::getRow($sql, $params);
         if($data)
         {
-			$this->id = $data['IdUsuario']; 
-			$this->correo_empleado = $data['correo_empleado']; 
+			$this->id = $data['IdUsuario'];
+			$this->correo_empleado = $data['correo_empleado'];
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public function checkCodi()
+    {
+        $sql = "SELECT codigo FROM usuarios WHERE IdUsuario = ?";
+        $params = array($this->id);
+        $data = database::getRow($sql, $params);
+        if($data)
+        {
             return true;
         }
         else
@@ -270,8 +304,8 @@ class Usuario extends Validator {
         $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 
         $limite = 5;
- 
-        $limite_inicio = ($page - 1)* $limite;  
+
+        $limite_inicio = ($page - 1)* $limite;
         $sql = "SELECT `NombreUsuario`  FROM `usuarios` LIMIT $limite_inicio , $limite";
         $params = array(null);
         $data = Database::getRows($sql, $params);
@@ -285,7 +319,7 @@ class Usuario extends Validator {
     public function logOut(){
         return session_destroy();
     }
-    
+
     public function getEmpleado(){
         $sql = "SELECT  * FROM empleados";
         $params = array(null);
@@ -295,7 +329,7 @@ class Usuario extends Validator {
             $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 
             $limite = 5;
- 
+
             $limite_inicio = ($page - 1)* $limite;
             $sql = "SELECT  IdUsuario,NombreUsuario,empleados.NombreEmpleado ,empleados.ApellidosEmpleado FROM usuarios INNER JOIN empleados ON usuarios.IdEmpleado = empleados.IdEmpleado ORDER BY IdUsuario LIMIT $limite_inicio , $limite";
             $params = array(null);
@@ -317,9 +351,9 @@ class Usuario extends Validator {
     //Insertar categoria
     public function createUsuario(){
         $hash = password_hash($this->clave, PASSWORD_DEFAULT);
-		$sql = "INSERT INTO usuarios(NombreUsuario, IdEmpleado, ClaveUsuario,tiempo_clave, numb_ingresos, tiempo_intentos, estado_sesion) VALUES(?, ?, ?, ?, 0, ?, 0)";
+		$sql = "INSERT INTO usuarios(NombreUsuario, IdEmpleado, ClaveUsuario,tiempo_clave, numb_ingresos, tiempo_intentos, estado_sesion,codigo) VALUES(?, ?, ?, ?, 0, ?, 0, ?)";
 		$fecha = date('Y/m/d');
-		$params = array($this->nombre, $this->idempleado, $hash, $fecha, $fecha);
+		$params = array($this->nombre, $this->idempleado, $hash, $fecha, $fecha, $this->codigo);
 		return Database::executeRow($sql, $params);
     }
     //Leer categoria
@@ -348,5 +382,8 @@ class Usuario extends Validator {
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}
+
+
+
 }
 ?>
