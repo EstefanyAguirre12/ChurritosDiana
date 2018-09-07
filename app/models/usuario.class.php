@@ -1,7 +1,8 @@
 <?php
 class Usuario extends Validator {
     private $id = null;
-    private $id_Cargo = null;
+	private $id_Cargo = null;
+	private $permiso = null;
     private $nombre = null;
     private $idempleado = null;
 	private $clave = null;
@@ -11,9 +12,10 @@ class Usuario extends Validator {
 	private $FechaContra = null;
 	private $numb_ingresos = null;
 	private $tiempo_intentos = null;
-	private $estado_sesion = null;
-  private $codigo = null;
-
+	private $estado_sesion = null;	
+	private $permisos_jason = null;
+	
+	
 	//Métodos para sobrecarga de propiedades
 	public function settiempo_intentos($value){
 		if($this->validateDateTime($value)){
@@ -34,6 +36,9 @@ class Usuario extends Validator {
 	public function getDui(){
 		return $this->dui;
 		}
+	public function getPermisos(){
+		return $this->permisos_jason;
+		}	
 	public function gettiempo_intentos(){
 		return $this->tiempo_intentos;
 	}
@@ -225,14 +230,37 @@ class Usuario extends Validator {
         $data = Database::getRow($sql, $params);
         if(password_verify($this->clave, $data['ClaveUsuario']))
         {
-			$this->id_Cargo = $data['IdCargo'];
+			$this->ObtenerCargos();
             return true;
         }
         else
         {
             return false;
         }
-    }
+	}
+	public function ObtenerCargos()
+    {
+        $sql = "SELECT cargos.IdCargo ,h_reserva,h_servicio,h_habitaciones, h_registros,r_mesas,r_ordenes,r_registros,e_reservacion,e_salones,e_registro, l_registros,rr_registro,b_datos,g_registros FROM cargos  INNER JOIN empleados ON cargos.IdCargo= empleados.IdCargo INNER JOIN usuarios on empleados.IdEmpleado=usuarios.IdEmpleado WHERE usuarios.IdUsuario =? ";
+        $params = array($this->id);
+        $data = Database::getRow($sql, $params);
+		$this->permisos[0] = $data['IdCargo'];
+		$this->permisos[1] = $data['h_reserva'];
+		$this->permisos[2] = $data['h_servicio'];
+		$this->permisos[3] = $data['h_habitaciones'];
+		$this->permisos[4] = $data['h_registros'];
+		$this->permisos[5] = $data['r_mesas'];
+		$this->permisos[6] = $data['r_ordenes'];
+		$this->permisos[7] = $data['r_registros'];
+		$this->permisos[8] = $data['e_reservacion'];
+		$this->permisos[9] = $data['e_salones'];
+		$this->permisos[10] = $data['e_registro'];
+		$this->permisos[11] = $data['l_registros'];
+		$this->permisos[12] = $data['rr_registro'];
+		$this->permisos[13] = $data['b_datos'];
+		$this->permisos[14] = $data['g_registros'];
+		$this->permisos_jason = json_encode($this->permisos);
+	}
+
 
     public function countTipoProducto()
     {
@@ -240,9 +268,9 @@ class Usuario extends Validator {
         $params = array(null);
         return database::getRow($sql, $params);
 	}
-
-
-
+	
+	
+	
     //Verificar usuarios
     public function checkUsuario()
     {
@@ -298,7 +326,8 @@ class Usuario extends Validator {
         {
             return false;
         }
-    }
+	}
+
 	//Obtener categoria
 	public function getUsuario(){
         $page = (isset($_GET['page'])) ? $_GET['page'] : 1;

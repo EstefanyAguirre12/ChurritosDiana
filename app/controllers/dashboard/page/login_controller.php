@@ -30,7 +30,7 @@ try
 
                                         $_SESSION['IdUsuario'] = $object->getId();
                                         $_SESSION['NombreUsuario'] = $object->getNombre();
-										$_SESSION['cargo'] = $object->getCargo();
+										$_SESSION['cargo'] = $object->getPermisos();
 										$_SESSION['Clave'] = $object->getClave();
 										$diaOpcion = date("Y-m-d");
 										#echo $diaOpcion."<br>";

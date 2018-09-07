@@ -8,12 +8,16 @@ require_once('../../../app/helpers/fpdf.php');
 
 class Page extends Component{
 
-	public static function Modulo_Hotel(){
+	public static function Modulo_Hotel($h1,$h2,$h3,$h4){
+		if($h1 != 0 || $h2 != 0 || $h3 != 0  || $h4  !=0 ){
 		print("
 			<div class='menu_section'>
 				<h3 class='text-center'>Hotel</h3>
 				<ul class='nav side-menu'>
-					<li>
+		");
+		if($h1 != 0 ){
+			print("
+				<li>
 					<a>
 						<i class='material-icons'>insert_invitation</i> Reservas
 						<span class='fa fa-chevron-down'></span>
@@ -26,8 +30,12 @@ class Page extends Component{
 						<a href='../../hotel/reservas/reserva_control.php'>Listado reserva</a>
 						</li>
 					</ul>
-					</li>
-					<li>
+				</li>
+			");
+		}
+		if($h2 !=0 ){
+			print("
+				<li>
 					<a>
 						<i class='material-icons'>room_service</i> Servicios
 						<span class='fa fa-chevron-down'></span>
@@ -37,8 +45,12 @@ class Page extends Component{
 						<a href='../../hotel/servicios/h_servicios.php'>Servicio habitacion</a>
 						</li>
 					</ul>
-					</li>
-					<li>
+				</li>
+			");
+		}
+		if($h3 !=0 ){
+			print("			
+				<li>
 					<a>
 						<i class='material-icons'>store</i> Habitaciones
 						<span class='fa fa-chevron-down'></span>
@@ -48,56 +60,77 @@ class Page extends Component{
 						<a href='../../hotel/habitaciones/h_disponibles.php'>Listado Habitaciones</a>
 						</li>
 					</ul>
-					</li>
+				</li>
+			");	
+		}
+		if($h4 !=0 ){
+			print("
 					<li>
-					<a>
-						<i class='material-icons'>archive</i> Registros
-						<span class='fa fa-chevron-down'></span>
-					</a>
-					<ul class='nav child_menu'>
-						<li>
-						<a href='../../hotel/registros/habitaciones.php'>Habitaciones</a>
-						</li>
-						<li>
-						<a href='../../hotel/registros/indextipo.php'>Tipo Habitacion</a>
-						</li>
-					</ul>
-					</li>
+						<a>
+							<i class='material-icons'>archive</i> Registros
+							<span class='fa fa-chevron-down'></span>
+						</a>
+						<ul class='nav child_menu'>
+							<li>
+							<a href='../../hotel/registros/habitaciones.php'>Habitaciones</a>
+							</li>
+							<li>
+							<a href='../../hotel/registros/indextipo.php'>Tipo Habitacion</a>
+							</li>
+						</ul>
+					</li>	
+			");	
+		}			
+		print("		
 				</ul>
 			</div>
 		");
+		}
+	
 	}
-	public static function Modulo_Resturante(){
-		print("
-			<div class='menu_section'>
-				<h3 class='text-center'>Restaurante</h3>
-				<ul class='nav side-menu'>
+	public static function Modulo_Resturante($r1,$r2,$r3){
+		if($r1 != 0 || $r2 != 0 || $r3 != 0 ){
+			print("
+				<div class='menu_section'>
+					<h3 class='text-center'>Restaurante</h3>
+					<ul class='nav side-menu'>
+			");
+			if($r1 !=0 ){
+				print("
 					<li>
-					<a>
-						<i class='material-icons'>tab</i> Mesas
-						<span class='fa fa-chevron-down'></span>
-					</a>
-					<ul class='nav child_menu'>
-						<li>
-						<a href='../../restaurante/mesas/mesas_disponibles.php'>Listado Mesas</a>
-						</li>
-					</ul>
+						<a>
+							<i class='material-icons'>tab</i> Mesas
+							<span class='fa fa-chevron-down'></span>
+						</a>
+						<ul class='nav child_menu'>
+							<li>
+							<a href='../../restaurante/mesas/mesas_disponibles.php'>Listado Mesas</a>
+							</li>
+						</ul>
 					</li>
+				");
+			}
+			if($r2 !=0 ){
+				print("
 					<li>
-					<a>
-						<i class='material-icons'>rate_review</i> Ordenes
-						<span class='fa fa-chevron-down'></span>
-					</a>
-					<ul class='nav child_menu'>
-						<li>
-						<a href='../../restaurante/ordenes/nueva_orden.php'>Nueva orden</a>
-						</li>
-						<li>
-						<a href='../../restaurante/ordenes/lista_ordenes.php'>Lista de ordenes</a>
-						</li>
-					</ul>
+						<a>
+							<i class='material-icons'>rate_review</i> Ordenes
+							<span class='fa fa-chevron-down'></span>
+						</a>
+						<ul class='nav child_menu'>
+							<li>
+							<a href='../../restaurante/ordenes/nueva_orden.php'>Nueva orden</a>
+							</li>
+							<li>
+							<a href='../../restaurante/ordenes/lista_ordenes.php'>Lista de ordenes</a>
+							</li>
+						</ul>
 					</li>
-					<li>
+				");
+			}
+			if($r3 !=0 ){
+				print("			
+				<li>
 					<a>
 						<i class='material-icons'>archive</i> Registros
 						<span class='fa fa-chevron-down'></span>
@@ -116,68 +149,57 @@ class Page extends Component{
 						<a href='../../restaurante/registros/indextipo.php'>Tipo Producto</a>
 						</li>
 					</ul>
-					</li>
-				</ul>
-			</div>
-		");
+				</li>
+				");	
+			}			
+			print("		
+					</ul>
+				</div>
+			");
+			}
 	}
-	public static function Modulo_Eventos(){
-		print("
-			<div class='menu_section'>
-				<h3 class='text-center'>Eventos</h3>
-				<ul class='nav side-menu'>
+	public static function Modulo_Eventos($e1,$e2,$e3){
+		if($e1 != 0 || $e2 != 0 || $e3 != 0 ){
+			print("
+				<div class='menu_section'>
+					<h3 class='text-center'>Eventos</h3>
+					<ul class='nav side-menu'>
+			");
+			if($e1 !=0 ){
+				print("
 					<li>
-					<a>
-						<i class='material-icons'>date_range</i>Reservaciones
-						<span class='fa fa-chevron-down'></span>
-					</a>
-					<ul class='nav child_menu'>
-						<li>
-						<a href='../../eventos/reservas/reservacion_nueva.php'>Nuevo reservacion</a>
-						</li>
-						<li>
-						<a href='../../eventos/reservas/reservacion_lista.php'>Lista reservaciones</a>
-						</li>
-					</ul>
+						<a>
+							<i class='material-icons'>date_range</i>Reservaciones
+							<span class='fa fa-chevron-down'></span>
+						</a>
+						<ul class='nav child_menu'>
+							<li>
+							<a href='../../eventos/reservas/reservacion_nueva.php'>Nuevo reservacion</a>
+							</li>
+							<li>
+							<a href='../../eventos/reservas/reservacion_lista.php'>Lista reservaciones</a>
+							</li>
+						</ul>
 					</li>
+				");
+			}
+			if($e2 !=0 ){
+				print("
 					<li>
-					<a>
-						<i class='material-icons'>store</i> Salones
-						<span class='fa fa-chevron-down'></span>
-					</a>
-					<ul class='nav child_menu'>
-						<li>
-						<a href='../../eventos/salones/salones_disponibles.php'>Listado salones</a>
-						</li>
-					</ul>
+						<a>
+							<i class='material-icons'>store</i> Salones
+							<span class='fa fa-chevron-down'></span>
+						</a>
+						<ul class='nav child_menu'>
+							<li>
+							<a href='../../eventos/salones/salones_disponibles.php'>Listado salones</a>
+							</li>
+						</ul>
 					</li>
-					<li>
-					<a>
-						<i class='material-icons'>archive</i> Registros
-						<span class='fa fa-chevron-down'></span>
-					</a>
-					<ul class='nav child_menu'>
-						<li>
-						<a href='../../eventos/registros/indexsala.php'>Salones</a>
-						</li>
-						<li>
-						<a href='../../eventos/registros/indexsilla.php'>Sillas</a>
-						</li>
-						<li>
-						<a href='../../eventos/registros/indexmesa.php'>Mesas</a>
-						</li>
-					</ul>
-					</li>
-				</ul>
-			</div>
-		");
-	}
-	public static function Modulo_Lavanderia(){
-		print("
-			<div class='menu_section'>
-				<h3 class='text-center'>Lavanderia</h3>
-				<ul class='nav side-menu'>
-
+				");
+			}
+			if($r3 !=0 ){
+				print("			
 					<li>
 						<a>
 							<i class='material-icons'>archive</i> Registros
@@ -185,122 +207,159 @@ class Page extends Component{
 						</a>
 						<ul class='nav child_menu'>
 							<li>
-								<a href='../../lavanderia/registros/indexcategoria.php'>Categoria</a>
+							<a href='../../eventos/registros/indexsala.php'>Salones</a>
 							</li>
 							<li>
-								<a href='../../lavanderia/registros/indexlavanderia.php'>Objetos</a>
+							<a href='../../eventos/registros/indexsilla.php'>Sillas</a>
 							</li>
 							<li>
-								<a href='../../lavanderia/registros/indexmaterial.php'>Material</a>
+							<a href='../../eventos/registros/indexmesa.php'>Mesas</a>
 							</li>
 						</ul>
 					</li>
-				</ul>
-			</div>
-		");
+				");	
+			}			
+			print("		
+					</ul>
+				</div>
+			");
+		}
 	}
-	public static function Modulo_Registros(){
-		print("
-			<div class='menu_section'>
-				<h3 class='text-center'>Registros</h3>
-				<ul class='nav side-menu'>
-					<li>
+	public static function Modulo_Lavanderia($l1){
+		if($l1 != 0){
+			print("
+				<div class='menu_section'>
+					<h3 class='text-center'>Lavanderia</h3>
+					<ul class='nav side-menu'>
+			");
+			if($l1 !=0 ){
+				print("
+				<li>
 					<a>
 						<i class='material-icons'>archive</i> Registros
 						<span class='fa fa-chevron-down'></span>
 					</a>
 					<ul class='nav child_menu'>
 						<li>
-						<a href='../../registros/mantenimientos/indexusuarios.php'>Usuarios</a>
+							<a href='../../lavanderia/registros/indexcategoria.php'>Categoria</a>
 						</li>
 						<li>
-						<a href='../../registros/mantenimientos/indexempleados.php'>Empleados</a>
+							<a href='../../lavanderia/registros/indexlavanderia.php'>Objetos</a>
 						</li>
 						<li>
-						<a href='../../registros/mantenimientos/indexcargos.php'>Cargos</a>
-						</li>
-						<li>
-						<a href='../../registros/mantenimientos/indexentes.php'>Entes</a>
-						</li>
-						<li>
-						<a href='../../registros/mantenimientos/indextipoente.php'>Tipo Ente</a>
+							<a href='../../lavanderia/registros/indexmaterial.php'>Material</a>
 						</li>
 					</ul>
-					</li>
-				</ul>
-				<h3 class='text-center'>Backup</h3>
-				<ul class='nav side-menu'>
-					<li>
-					<a>
-						<i class='material-icons'>archive</i> Datos
-						<span class='fa fa-chevron-down'></span>
-					</a>
-					<ul class='nav child_menu'>
+				</li>
+				");
+			}		
+			print("		
+					</ul>
+				</div>
+			");
+		}
+	}
+	public static function Modulo_Registros($rr1,$b1,$g1){
+		if($rr1 != 0 || $b1 != 0 || $g1 != 0 ){
+			print("
+				<div class='menu_section'>
+					<h3 class='text-center'>Registros</h3>
+			");
+			if($rr1 !=0 ){
+				print("
+					<ul class='nav side-menu'>
 						<li>
-						<a href='../../registros/backup/importar.php'>Importar</a>
-						</li>
-						<li>
-						<a href='../../registros/backup/exportar.php'>Exportar</a>
+							<a>
+								<i class='material-icons'>archive</i> Registros
+								<span class='fa fa-chevron-down'></span>
+							</a>
+							<ul class='nav child_menu'>
+								<li>
+								<a href='../../registros/mantenimientos/indexusuarios.php'>Usuarios</a>
+								</li>
+								<li>
+								<a href='../../registros/mantenimientos/indexempleados.php'>Empleados</a>
+								</li>
+								<li>
+								<a href='../../registros/mantenimientos/indexcargos.php'>Cargos</a>
+								</li>
+								<li>
+								<a href='../../registros/mantenimientos/indexentes.php'>Entes</a>
+								</li>
+								<li>
+								<a href='../../registros/mantenimientos/indextipoente.php'>Tipo Ente</a>
+								</li>
+							</ul>
 						</li>
 					</ul>
-					</li>
-				</ul>
-			</div>
-			<div class='menu_section'>
-				<h3 class='text-center'>Graficos</h3>
-				<ul class='nav side-menu'>
-					<li>
-					<a>
-						<i class='material-icons'>archive</i> Registros
-						<span class='fa fa-chevron-down'></span>
-					</a>
-					<ul class='nav child_menu'>
+				");
+			}
+			if($b1 !=0 ){
+				print("
+
+					<h3 class='text-center'>Backup</h3>
+					<ul class='nav side-menu'>
 						<li>
-						<a href='../../graficos/parametros/paramfecha.php'>Reservas por Fecha</a>
-						</li>
-						<li>
-						<a href='../../graficos/parametros/paramhab.php'>Habitaciones por precio</a>
-						</li>
-						<li>
-						<a href='../../graficos/parametros/paramprod.php'>Productos y precio</a>
-						</li>
-						<li>
-						<a href='../../graficos/parametros/paramsalas.php'>Salones por precio</a>
-						</li>
-						<li>
-						<a href='../../graficos/parametros/paramtipo.php'>Cantidad de productos por tipo</a>
+						<a>
+							<i class='material-icons'>archive</i> Datos
+							<span class='fa fa-chevron-down'></span>
+						</a>
+						<ul class='nav child_menu'>
+							<li>
+							<a href='../../registros/backup/importar.php'>Importar</a>
+							</li>
+							<li>
+							<a href='../../registros/backup/exportar.php'>Exportar</a>
+							</li>
+						</ul>
 						</li>
 					</ul>
-					</li>
-				</ul>
-			</div>
-		");
+				");
+			}
+			if($g1 !=0 ){
+				print("			
+					<h3 class='text-center'>Graficos</h3>
+					<ul class='nav side-menu'>
+						<li>
+						<a>
+							<i class='material-icons'>archive</i> Registros
+							<span class='fa fa-chevron-down'></span>
+						</a>
+						<ul class='nav child_menu'>
+							<li>
+							<a href='../../graficos/parametros/paramfecha.php'>Reservas por Fecha</a>
+							</li>
+							<li>
+							<a href='../../graficos/parametros/paramhab.php'>Habitaciones por precio</a>
+							</li>
+							<li>
+							<a href='../../graficos/parametros/paramprod.php'>Productos y precio</a>
+							</li>
+							<li>
+							<a href='../../graficos/parametros/paramsalas.php'>Salones por precio</a>
+							</li>
+							<li>
+							<a href='../../graficos/parametros/paramtipo.php'>Cantidad de productos por tipo</a>
+							</li>
+						</ul>
+						</li>
+					</ul>
+				");	
+			}			
+			print("		
+					</ul>
+				</div>
+			");
+		}
 	}
 
 	public static function ObtenerPermisos($valu){
-		switch ($valu) {
-			case 1:
-				Page::Modulo_Hotel();
-				Page::Modulo_Resturante();
-				Page::Modulo_Eventos();
-				Page::Modulo_Lavanderia();
-				Page::Modulo_Registros();
-				break;
-			case 2:
-				Page::Modulo_Registros();
-				break;
-			case 3:
-				Page::Modulo_Hotel();
-				break;
-			case 4:
-				Page::Modulo_Resturante();
-				break;
-			case 5:
-				Page::Modulo_Eventos();
-				break;	
-			default:
-				echo "";
-		}	
+		$permisos = json_decode($valu);
+		Page::Modulo_Hotel($permisos[1],$permisos[2],$permisos[3],$permisos[4]);
+		Page::Modulo_Resturante($permisos[5],$permisos[6],$permisos[7]);
+		Page::Modulo_Eventos($permisos[8],$permisos[9],$permisos[10]);
+		Page::Modulo_Lavanderia($permisos[11]);
+		Page::Modulo_Registros($permisos[12],$permisos[13],$permisos[14]);	
 	}
 
 	public static function templateHeader($title){
@@ -477,6 +536,15 @@ class Page extends Component{
 				<main>
 			");
 			Page::showMessage(3,"Debe iniciar Sesion","login.php");
+		}
+		require_once("../../../app/models/usuario.class.php");
+		$object2 = new Usuario;  
+		if($object2->setId($_SESSION['IdUsuario'])){
+		  if($object2->readEstadoSesion()){
+			if($object2->getestado_sesion()!=1){
+			  header('Location: ../otros/logout.php');
+			}
+		  }
 		}
 	}
 
