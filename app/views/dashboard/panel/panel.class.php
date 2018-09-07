@@ -8,13 +8,13 @@ require_once('../../../app/helpers/fpdf.php');
 
 class Page extends Component{
 
-	public static function Modulo_Hotel($h1,$h2,$h2,$h4){
+	public static function Modulo_Hotel($h1,$h2,$h3,$h4){
 		if($h1 != 0 && $h2 != 0 && $h3 != 0  && $h4  !=0 ){
 		print("
 			<div class='menu_section'>
 				<h3 class='text-center'>Hotel</h3>
 				<ul class='nav side-menu'>
-		")
+		");
 		if($h1 != 0 ){
 			print("
 				<li>
@@ -31,7 +31,7 @@ class Page extends Component{
 						</li>
 					</ul>
 				</li>
-			")
+			");
 		}
 		if($h2 !=0 ){
 			print("
@@ -46,7 +46,7 @@ class Page extends Component{
 						</li>
 					</ul>
 				</li>
-			")
+			");
 		}
 		if($h3 !=0 ){
 			print("			
@@ -61,7 +61,7 @@ class Page extends Component{
 						</li>
 					</ul>
 				</li>
-			")	
+			");	
 		}
 		if($h4 !=0 ){
 			print("
@@ -79,7 +79,7 @@ class Page extends Component{
 							</li>
 						</ul>
 					</li>	
-			")	
+			");	
 		}			
 		print("		
 				</ul>
@@ -94,7 +94,7 @@ class Page extends Component{
 				<div class='menu_section'>
 					<h3 class='text-center'>Restaurante</h3>
 					<ul class='nav side-menu'>
-			")
+			");
 			if($r1 !=0 ){
 				print("
 					<li>
@@ -108,7 +108,7 @@ class Page extends Component{
 							</li>
 						</ul>
 					</li>
-				")
+				");
 			}
 			if($r2 !=0 ){
 				print("
@@ -126,7 +126,7 @@ class Page extends Component{
 							</li>
 						</ul>
 					</li>
-				")
+				");
 			}
 			if($r3 !=0 ){
 				print("			
@@ -150,7 +150,7 @@ class Page extends Component{
 						</li>
 					</ul>
 				</li>
-				")	
+				");	
 			}			
 			print("		
 					</ul>
@@ -164,7 +164,7 @@ class Page extends Component{
 				<div class='menu_section'>
 					<h3 class='text-center'>Eventos</h3>
 					<ul class='nav side-menu'>
-			")
+			");
 			if($e1 !=0 ){
 				print("
 					<li>
@@ -181,7 +181,7 @@ class Page extends Component{
 							</li>
 						</ul>
 					</li>
-				")
+				");
 			}
 			if($e2 !=0 ){
 				print("
@@ -196,7 +196,7 @@ class Page extends Component{
 							</li>
 						</ul>
 					</li>
-				")
+				");
 			}
 			if($r3 !=0 ){
 				print("			
@@ -217,7 +217,7 @@ class Page extends Component{
 							</li>
 						</ul>
 					</li>
-				")	
+				");	
 			}			
 			print("		
 					</ul>
@@ -231,7 +231,7 @@ class Page extends Component{
 				<div class='menu_section'>
 					<h3 class='text-center'>Lavanderia</h3>
 					<ul class='nav side-menu'>
-			")
+			");
 			if($l1 !=0 ){
 				print("
 				<li>
@@ -251,7 +251,7 @@ class Page extends Component{
 						</li>
 					</ul>
 				</li>
-				")
+				");
 			}		
 			print("		
 					</ul>
@@ -264,7 +264,7 @@ class Page extends Component{
 			print("
 				<div class='menu_section'>
 					<h3 class='text-center'>Registros</h3>
-			")
+			");
 			if($rr1 !=0 ){
 				print("
 					<ul class='nav side-menu'>
@@ -292,7 +292,7 @@ class Page extends Component{
 							</ul>
 						</li>
 					</ul>
-				")
+				");
 			}
 			if($b1 !=0 ){
 				print("
@@ -314,7 +314,7 @@ class Page extends Component{
 						</ul>
 						</li>
 					</ul>
-				")
+				");
 			}
 			if($g1 !=0 ){
 				print("			
@@ -344,7 +344,7 @@ class Page extends Component{
 						</ul>
 						</li>
 					</ul>
-				")	
+				");	
 			}			
 			print("		
 					</ul>
@@ -358,7 +358,7 @@ class Page extends Component{
 		Page::Modulo_Hotel($permisos[1],$permisos[2],$permisos[3],$permisos[4]);
 		Page::Modulo_Resturante($permisos[5],$permisos[6],$permisos[7]);
 		Page::Modulo_Eventos($permisos[8],$permisos[9],$permisos[10]);
-		Page::Modulo_Lavanderia($permisos[11];
+		Page::Modulo_Lavanderia($permisos[11]);
 		Page::Modulo_Registros($permisos[12],$permisos[13],$permisos[14]);	
 	}
 

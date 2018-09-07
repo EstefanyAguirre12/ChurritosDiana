@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-09-2018 a las 18:57:17
--- Versión del servidor: 10.1.30-MariaDB
--- Versión de PHP: 7.2.1
+-- Tiempo de generación: 07-09-2018 a las 05:34:01
+-- Versión del servidor: 10.1.34-MariaDB
+-- Versión de PHP: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -47,17 +47,31 @@ DROP TABLE IF EXISTS `cargos`;
 CREATE TABLE `cargos` (
   `IdCargo` int(11) NOT NULL,
   `NombreCargo` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `Descripcion` varchar(100) COLLATE utf8_spanish_ci NOT NULL
+  `Descripcion` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `h_reserva` int(1) NOT NULL,
+  `h_servicio` int(1) NOT NULL,
+  `h_habitaciones` int(1) NOT NULL,
+  `h_registros` int(1) NOT NULL,
+  `r_mesas` int(1) NOT NULL,
+  `r_ordenes` int(1) NOT NULL,
+  `r_registros` int(1) NOT NULL,
+  `e_reservacion` int(1) NOT NULL,
+  `e_salones` int(1) NOT NULL,
+  `e_registro` int(1) NOT NULL,
+  `l_registros` int(1) NOT NULL,
+  `rr_registro` int(1) NOT NULL,
+  `b_datos` int(1) NOT NULL,
+  `g_registros` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `cargos`
 --
 
-INSERT INTO `cargos` (`IdCargo`, `NombreCargo`, `Descripcion`) VALUES
-(1, 'Root', 'Dios'),
-(2, 'Administrador', 'Dueño'),
-(3, 'Hotelero', 'trabajador de hotel');
+INSERT INTO `cargos` (`IdCargo`, `NombreCargo`, `Descripcion`, `h_reserva`, `h_servicio`, `h_habitaciones`, `h_registros`, `r_mesas`, `r_ordenes`, `r_registros`, `e_reservacion`, `e_salones`, `e_registro`, `l_registros`, `rr_registro`, `b_datos`, `g_registros`) VALUES
+(1, 'Root', 'Dios', 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(2, 'Administrador', 'Dueño', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(3, 'Hotelero', 'trabajador de hotel', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 

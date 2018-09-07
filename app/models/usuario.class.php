@@ -327,22 +327,7 @@ class Usuario extends Validator {
             return false;
         }
 	}
-	public function checkDUI()
-    {
-        $sql = "SELECT u.IdUsuario, e.correo_empleado FROM usuarios u ,empleados e WHERE e.DUIEmpleado = ? AND u.Idempleado = e.IdEmpleado ";
-        $params = array($this->dui);
-        $data = Database::getRow($sql, $params);
-        if($data)
-        {
-			$this->id = $data['IdUsuario']; 
-			$this->correo_empleado = $data['correo_empleado']; 
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+
 	//Obtener categoria
 	public function getUsuario(){
         $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
