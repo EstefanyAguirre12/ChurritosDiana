@@ -376,6 +376,7 @@ class Page extends Component{
 					<link type='text/css' rel='stylesheet' href='../../../web/fonts/css/fontawesome-all.min.css'/>
 					<link type='text/css' rel='stylesheet' href='../../../web/font/css/font-awesome.min.css'/>
 					<link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'/>	
+					<script src='https://www.google.com/recaptcha/api.js'></script>	
 					<script type='text/javascript' src='../../../web/js/sweetalert.min.js'></script>	
 					<meta name='viewport' content='width=device-width, initial-scale=1.0'/>
 				</head>
@@ -383,6 +384,39 @@ class Page extends Component{
 					<div class='container body'>
 						<div class='main_container'>");
 		if(isset($_SESSION['IdUsuario'])){
+
+
+//Comprobamos si esta definida la sesión 'tiempo'.
+if(isset($_SESSION['tiempo']) ) {
+
+    //Tiempo en segundos para dar vida a la sesión.
+    $inactivo = 300;//5min en este caso.
+
+    //Calculamos tiempo de vida inactivo.
+    $vida_session = time() - $_SESSION['tiempo'];
+
+        //Compraración para redirigir página, si la vida de sesión sea mayor a el tiempo insertado en inactivo.
+        if($vida_session > $inactivo)
+        {
+            
+            //Removemos sesión.
+            session_unset();
+            //Destruimos sesión.
+            session_destroy();              
+            //Redirigimos pagina.
+            header("Location: ../otros/logout.php");
+            exit();
+        }
+
+}
+
+
+$_SESSION['tiempo'] = time();
+
+
+
+
+
 			print("
 				<header >
 					<div class='col-md-3 left_col '>
