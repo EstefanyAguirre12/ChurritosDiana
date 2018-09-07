@@ -537,6 +537,15 @@ class Page extends Component{
 			");
 			Page::showMessage(3,"Debe iniciar Sesion","login.php");
 		}
+		require_once("../../../app/models/usuario.class.php");
+		$object2 = new Usuario;  
+		if($object2->setId($_SESSION['IdUsuario'])){
+		  if($object2->readEstadoSesion()){
+			if($object2->getestado_sesion()!=1){
+			  header('Location: ../otros/logout.php');
+			}
+		  }
+		}
 	}
 
 
