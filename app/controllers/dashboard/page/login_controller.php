@@ -7,8 +7,11 @@ try
         if(isset($_POST['entrar'])){
             $_POST = $object->validateForm($_POST);
 
+
                     if($object->setNombre($_POST['usuario'])){
                         if($object->checkUsuario()){
+                          if($object->checkCodi()){
+
 							$traerFecha= $object->gettiempo_intentos();
 							$traerFechaAct = date("Y-m-d H:i:s");
 							$d1 = new DateTime($traerFecha);
@@ -18,11 +21,13 @@ try
 								if($numero_intentosnew==3){
 									$numeroNewIntentos=0;
 									if($object->setnumb_ingresos($numeroNewIntentos)){
-										$object->updateNumeroIntentos();								
+										$object->updateNumeroIntentos();
 									}
 								}
                                 if($object->setClave($_POST['contraseña'])){
+
 									if($object->checkClaveUsuario()){
+
                                         $_SESSION['IdUsuario'] = $object->getId();
                                         $_SESSION['NombreUsuario'] = $object->getNombre();
 										$_SESSION['cargo'] = $object->getPermisos();
@@ -52,7 +57,7 @@ try
 																	$object->updateEstadoSesion();
 																	#	redireccionar al menu normalmente pero tiene que cambiar su contraseña en: ".$diasRestantes." dias
 																	$diasRestantes=90 - $diferenciaDias;
-																	Page::showMessage(1, "Inicio de sesion correcto (Por razones de seguridad usted tiene que cambiar su contraseña en ".$diasRestantes." dias)", "index.php");						
+																	Page::showMessage(1, "Inicio de sesion correcto (Por razones de seguridad usted tiene que cambiar su contraseña en ".$diasRestantes." dias)", "index.php");
 																}
 															}
 															else if($Id_estado==1){
@@ -60,7 +65,7 @@ try
 																if($object->setestado_sesion($sumaEstadoSesion)){
 																$object->updateEstadoSesion();
 																#redireccionar al menu normalmente
-																throw new Exception("Error la sesion de este usuario ya estaba activo, por razón de seguridad esta cuenta se suspendera");						
+																throw new Exception("Error la sesion de este usuario ya estaba activo, por razón de seguridad esta cuenta se suspendera");
 																}
 															}
 															else if($Id_estado==2){
@@ -70,7 +75,7 @@ try
 													}
 													else{
 														throw new Exception("Error al ingresar numero de intentos");
-													}									
+													}
 												}
 												else{
 													$numeroSuccesIntentos=0;
@@ -83,7 +88,7 @@ try
 																if($object->setestado_sesion($sumaEstadoSesion)){
 																	$object->updateEstadoSesion();
 																	#redireccionar al menu normalmente
-																	Page::showMessage(1, "Inicio de sesion correcto", "index.php");								
+																	Page::showMessage(1, "Inicio de sesion correcto", "index.php");
 																}
 															}
 															else if($Id_estado==1){
@@ -91,12 +96,12 @@ try
 																if($object->setestado_sesion($sumaEstadoSesion)){
 																$object->updateEstadoSesion();
 																#redireccionar al menu normalmente
-																throw new Exception("Error la sesion de este usuario ya estaba activo, por razón de seguridad esta cuenta se suspendera");						
+																throw new Exception("Error la sesion de este usuario ya estaba activo, por razón de seguridad esta cuenta se suspendera");
 																}
 															}
 															else if($Id_estado==2){
 																throw new Exception("Por motivos de seguridad este usuario a sido suspendido, revisar correo electronico con las instrucciones a seguir");
-															}													
+															}
 														}
 													}
 													else{
@@ -106,8 +111,8 @@ try
 											}
 										}else
 										{
-											throw new Exception("Cambio de contraseño forzada o erroneo (fecha de ultimo cambio de contraseña en futuro)");								
-										}							
+											throw new Exception("Cambio de contraseño forzada o erroneo (fecha de ultimo cambio de contraseña en futuro)");
+										}
                                     }
                                     else{
 										#Inicio
@@ -150,7 +155,7 @@ try
 												else{
 													throw new Exception("Error al ingresar numero de intentos");
 												}
-											}								
+											}
 										}
 										else{
 											throw new Exception("Limite de intentos excedido, porfavor vuelve a intentarlo luego de 24 horas");
@@ -197,7 +202,7 @@ try
 												else{
 													throw new Exception("Error al ingresar numero de intentos");
 												}
-											}								
+											}
 										}
 										else{
 											throw new Exception("Limite de intentos excedido porfavor, vuelve a intentarlo luego de 24 horas");
@@ -207,12 +212,22 @@ try
 							else{
 								throw new Exception("Su usuario fue bloqueado temporalmente, porfavor intentarlo luego de 24 horas de su ultimo intento");
 							}
+            }else{
+              throw new Exception("Este codigo no perneten a ninguna cuenta");
+            }
 						}else{
 							throw new Exception("Este Alias no perneten a ninguna cuenta");
 						}
 					}else{
 						throw new Exception("Alias es invalido");
 					}
+
+
+
+
+
+
+
         }
     }
     else{
