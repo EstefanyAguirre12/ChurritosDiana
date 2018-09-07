@@ -46,6 +46,9 @@
                         <?php
                           Page::showSelect("", "em", $dato->getIdempleado(), $dato->getEmpleado());
                         ?>
+
+                          <div class="g-recaptcha" data-sitekey="6LerlG0UAAAAAJaIcgt_d8LP3S61LEsUDVHXp0BJ"></div>
+
                       </div>
                     </div>
                     <div class="ln_solid"></div>

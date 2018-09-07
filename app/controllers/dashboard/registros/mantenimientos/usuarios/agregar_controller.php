@@ -15,6 +15,12 @@ try{
 			if($dato->setIdempleado($_POST['em'])){
 				if($_POST['c1'] == $_POST['c2']){
 					if($dato->setClave($_POST['c1'])){
+						$response_recaptcha = $_POST['g-recaptcha-response'];
+						if(isset($response_recaptcha)&& $response_recaptcha){
+							$secret= "6LerlG0UAAAAAOVz9KN_mw72NSssn6f022LpbSRR";
+							$ip = $_SERVER['REMOTE_ADDR'];
+							$validation_server = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$response_recaptcha&remoteip=$ip");
+							if ($validation_server!= null) {
 						if($dato->setCodigo($nueva)){
 						 if($dato->createUsuario()){
 
@@ -24,6 +30,12 @@ try{
 						}
 					}else{
 						throw new Exception("Error con el codigo", null);
+					}
+				}else{
+						throw new Exception("Error al confirmar tu REcaptcha!");
+					}
+				}else{
+					throw new Exception("Captcha erroneo amigo!");
 					}
 					}else{
 						throw new Exception("Clave Incorrecta", null);
