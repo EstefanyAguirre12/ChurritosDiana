@@ -14,7 +14,8 @@ class Usuario extends Validator {
 	private $tiempo_intentos = null;
 	private $estado_sesion = null;	
 	private $permisos_jason = null;
-	
+	private $codigo = null;
+
 	
 	//Métodos para sobrecarga de propiedades
 	public function settiempo_intentos($value){
@@ -106,7 +107,9 @@ class Usuario extends Validator {
     }
     public function getId(){
 			return $this->id;
-    }
+	}
+
+
     public function setCorreo($value){
 		if($this->validateEmail($value)){
 			$this->correo_empleado = $value;
@@ -274,8 +277,8 @@ class Usuario extends Validator {
     //Verificar usuarios
     public function checkUsuario()
     {
-        $sql = "SELECT IdUsuario ,numb_ingresos,`tiempo_intentos`,estado_sesion,DATE(`tiempo_clave`)as FechaContra FROM usuarios WHERE NombreUsuario = ? ";
-        $params = array($this->nombre);
+        $sql = "SELECT IdUsuario ,numb_ingresos,`tiempo_intentos`,estado_sesion,DATE(`tiempo_clave`)as FechaContra FROM usuarios WHERE NombreUsuario = ? and Codigo=?";
+        $params = array($this->nombre, $this->codigo);
         $data = Database::getRow($sql, $params);
         if($data)
         {

@@ -10,7 +10,8 @@ class Empleado extends Validator{
     private $idcargo = null;
     private $telefono = null;
     private $idgenero = null;
-    
+	private $correo = null;
+
     //Métodos para sobrecarga de propiedades
     public function setId($value){
         if($this->validateId($value)){
@@ -23,6 +24,18 @@ class Empleado extends Validator{
     }
     public function getId(){
 			return $this->id;
+    }
+    public function setCorreo($value){
+        if($this->validateEmail($value)){
+            $this->correo = $value;
+            return true;  
+        }
+        else{
+            return false;
+        }
+    }
+    public function getCorreo(){
+			return $this->correo;
     }
     
     public function setNombre($value){
@@ -175,8 +188,8 @@ class Empleado extends Validator{
     }
     //Insertar categoria
     public function createEmpleado(){
-		$sql = "INSERT INTO empleados(IdEmpleado, NombreEmpleado, ApellidosEmpleado, DireccionEmpleado, DUIEmpleado, FotoEmpleado, IdCargo, IdGenero, TelefonoEmpleado) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
-		$params = array($this->id, $this->nombre, $this->apellido, $this->direccion, $this->dui, $this->foto, $this->idcargo, $this->idgenero, $this->telefono);
+		$sql = "INSERT INTO empleados(IdEmpleado, NombreEmpleado, ApellidosEmpleado, DireccionEmpleado, DUIEmpleado, FotoEmpleado, IdCargo, IdGenero, TelefonoEmpleado, correo_empleado) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		$params = array($this->id, $this->nombre, $this->apellido, $this->direccion, $this->dui, $this->foto, $this->idcargo, $this->idgenero, $this->telefono, $this->correo);
 		return Database::executeRow($sql, $params);
     }
     //Leer categoria

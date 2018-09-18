@@ -1,10 +1,10 @@
 <?php
 class Pedidohabitacion extends Validator{
     private $id = null;
-    private $idhabitacion = null;
-    private $iddetallesres = null;
+    private $idproducto = null;
+    private $cantidad = null;
     private $idcuenta = null;
-    private $fechapedido = null;
+    private $estado = null;
     
     //Métodos para sobrecarga de propiedades
     public function setId($value){
@@ -20,7 +20,7 @@ class Pedidohabitacion extends Validator{
 			return $this->id;
     }
     
-    public function setIdhabitacion($value){
+    public function setIdProducto($value){
 			if($this->validateId($value)){
 				$this->idhabitacion = $value;
 				return true;
@@ -28,11 +28,11 @@ class Pedidohabitacion extends Validator{
 				return false;
 			}
 		}
-		public function getIdhabitacion(){
+		public function getIdProducto(){
 			return $this->idhabitacion;
 		}
     
-    public function setIddetallesRes($value){
+    public function setCantidad($value){
 		if($this->validateId($value)){
 			$this->iddetalleres = $value;
 			return true;
@@ -40,7 +40,7 @@ class Pedidohabitacion extends Validator{
 			return false;
 		}
 	}
-	public function getIddetallesRes(){
+	public function getCantidad(){
 		return $this->idestadosala;
     }
 
@@ -56,7 +56,7 @@ class Pedidohabitacion extends Validator{
 		return $this->idcuenta;
 		}
 		
-		public function setFechapedido($value){
+		public function setEstado($value){
 			if($this->validateDate($value)){
 				$this->fechapedido = $value;
 				return true;
@@ -64,7 +64,7 @@ class Pedidohabitacion extends Validator{
 				return false;
 			}
 		}
-		public function getFechapedido(){
+		public function getEstado(){
 			return $this->fechapedido;
 			}
 

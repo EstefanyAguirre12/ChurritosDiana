@@ -198,7 +198,7 @@ class Page extends Component{
 					</li>
 				");
 			}
-			if($r3 !=0 ){
+			if($e3 !=0 ){
 				print("			
 					<li>
 						<a>

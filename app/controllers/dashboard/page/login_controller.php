@@ -7,6 +7,8 @@ try
         if(isset($_POST['entrar'])){
             $_POST = $object->validateForm($_POST);
 			if($object->setNombre($_POST['usuario'])){
+				if($object->setCodigo($_POST['codigo'])){
+
 				if($object->checkUsuario()){
 					if($object->checkCodi()){
 						$traerFecha= $object->gettiempo_intentos();
@@ -207,6 +209,9 @@ try
 							throw new Exception("Este Alias no perneten a ninguna cuenta");
 						}
 					}else{
+						throw new Exception("Codigo es invalido");
+					}
+}else{
 						throw new Exception("Alias es invalido");
 					}
 
@@ -219,7 +224,7 @@ try
         }
     }
     else{
-        Page::showMessage(3, "No hay usuarios disponibles", "registro.php");
+        Page::showMessage(3, "No hay usuarios disponibles", "empleado.php");
     }
 
 }catch(Exception $error){
