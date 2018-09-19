@@ -368,8 +368,7 @@ class Usuario extends Validator {
             return Database::getRows($sql, $params);
             }
 
-            public function countusuario()
-    {
+            public function countusuario(){
         $sql = "SELECT COUNT(*) AS Numero FROM usuarios";
         $params = array(null);
         return database::getRow($sql, $params);
