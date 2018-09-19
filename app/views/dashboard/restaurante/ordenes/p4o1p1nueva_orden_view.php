@@ -45,31 +45,27 @@
                         </li>
                       </ul>
                     <div class="stepContainer"><div id="step-11" class="content" >
-                        <h2 class="StepTitle">Seleccione el tipo de productos</h2>  
-                        <div class="bs-docs-section">
-                          <div class="bs-glyphicons">
-                          <ul class='bs-glyphicons-list'>
-                          <?php
-                          // Verifica si la URL de la pagina contirne datos
-                            foreach($data as $row){
-                              print("
-                              
-                                <li>
-                                <span class='' aria-hidden='true'></span>
-                                <h3 class='glyphicon-class'>$row[1]</h3>
-                                <h4 class='glyphicon-class'>$row[3]</h4>  
-                                <a  href='p4o1p1nueva_orden.php?cliente=$id_cliente&cuenta=$cuenta&producto=$row[0]' class='btn btn-primary btn-xs'>selecionar</a>
-                              </li>
-                               
-                              ");
-                            }
-                          ?>
-                            </ul>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="">
-                          <a href="nueva_orden.php" class="buttonPrevious buttonDisabled btn btn-primary">Anterior</a>
+                        <h2 class="StepTitle">Agrege producto</h2>  
+
+
+                                <form autocomplete= 'off' method='post' id='demo-form2' data-parsley-validate='' class='form-horizontal form-label-left'>
+                                  <div class='animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12'>
+                                        <div class='tile-stats'>
+                                        <div class='count'><?php print($nueva_orden->getpnombre()) ?></div>
+                                        <div class='ln_solid'></div>
+                                        <h3>Precio: $ <?php print($nueva_orden->getpprecio()) ?></h3>
+                                            <div class='form-group'>
+                                              <label for='middle-name' class='control-label col-md-3 col-sm-3 col-xs-12'>Cantidad*:</label>
+                                              <div class='col-md-6 col-sm-6 col-xs-12'>
+                                                <input id='middle-name' name='cantidad' class='form-control col-md-7 col-xs-12 validate' type='text' name='middle-name' value='<?php print($nueva_orden->getCantidad()) ?>' required/>
+                                                 </div>
+                                            </div>
+                                            <div class='col-md-9 col-sm-9 col-xs-12 col-md-offset-3'>
+                                              <button type="submit"  name ='guardar' class='btn btn-info btn-lg'>Selecionar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form> 
                     </div>
                     <!-- End SmartWizard Content -->
 
