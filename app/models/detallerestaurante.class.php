@@ -10,6 +10,9 @@ class Detallerestaurante extends Validator{
 	private $IdCproducto = null;
 	private $numb_cuenta = null;
 	private $Fecha = null;
+	private $pnombre = null;
+	private $pdescripcion = null;
+	private $pprecio = null;
     //Métodos para sobrecarga de propiedades
     public function setId($value){
         if($this->validateId($value)){
@@ -98,7 +101,7 @@ class Detallerestaurante extends Validator{
 		}
 		
 		public function setCantida ($value){
-			if($this->validateNumeric($value, 2)){
+			if($this->validateEnteros($value, 2)){
 				$this->cantidad = $value;
 				return true;
 			}else{
@@ -107,7 +110,16 @@ class Detallerestaurante extends Validator{
 		}
 		public function getCantidad(){
 			return $this->cantidad;
-			}
+		}
+		public function getPnombre(){
+			return $this->pnombre;
+		}
+		public function getPdescripcion(){
+			return $this->pdescripcion;
+		}
+		public function getpprecio(){
+			return $this->pprecio;
+		}
 
     //Metodos CRUD para cotegoria
 		//Obtener categoria
@@ -133,7 +145,15 @@ class Detallerestaurante extends Validator{
 			$sql = "INSERT INTO `cuentatotal`( `numb_cuenta`, `estado_cuenta`, `total`, `IdEnte`, `Fecha`) VALUES (?,0,0,?,?)";
 			$params = array($nbcuenta,$this->idcliente,$fecha);
 			return Database::executeRow($sql, $params);
-			}
+		}
+		public function InserDetalleProducto($numbcuenta){
+			$sql1 = "SELECT `IdCuenta` FROM `cuentatotal` WHERE `numb_cuenta`=?";
+			$params1 = array($numbcuenta);
+			$this->idcuenta = Database::getRows($sql1, $params1);
+			$sql = "INSERT INTO `detallerestaurante`( `Cantidad`, `IdProducto`, `IdCuenta`, `IdMesa`) VALUES (?,?,?,0)";
+			$params = array($this->cantidad,$this->idproducto,$this->idcuenta);
+			return Database::executeRow($sql, $params);
+		}
 		//Buscar categoria con parametros
 		public function searchEnte($value){
 			$sql = "SELECT IdEnte, Nombres, Apellidos, Correo, DocIdentidad, g.NombreGenero, t.TipoEnte , Telefono FROM entes e, genero g, tipoente t WHERE e.IdGenero=g.IdGenero and e.IdTipo=t.IdTipo and (Nombres LIKE ? OR DocIdentidad LIKE ?) ORDER BY Nombres";
@@ -156,6 +176,23 @@ class Detallerestaurante extends Validator{
 				return null;
 			}
 		}
+	public function  readCuenta($numbcuenta){
+		$sql = "SELECT `IdCuenta` FROM `cuentatotal` WHERE `numb_cuenta`=?";
+		$params = array($numbcuenta);
+		$detalle = Database::getRow($sql, $params);
+			if($detalle){
+				$this->idcuenta = $detalle['IdCuenta'];
+				return true;
+			}else{
+				return null;
+			}
+		}	
+	
+	public function addDettalleRestaurante(){
+		$sql = "INSERT INTO `detallerestaurante`( `Cantidad`, `IdProducto`, `IdCuenta`, `IdMesa`) VALUES (?,?,?,1)";
+		$params = array($this->cantidad,$this->idproducto,$this->idcuenta);
+		return Database::executeRow($sql, $params);
+	}
 		public function readClientes(){
 			$sql = "SELECT `IdEnte`, `Nombres`, `Apellidos`, `DocIdentidad`, genero.NombreGenero, tipoente.TipoEnte 
 			FROM `entes` INNER JOIN tipoente on entes.IdTipo=tipoente.IdTipo INNER JOIN genero on entes.IdGenero=genero.IdGenero";
@@ -181,6 +218,19 @@ class Detallerestaurante extends Validator{
 			WHERE productos.IdCategoria =? ";
 			$params = array($this->IdCproducto);
 			return Database::getRows($sql, $params);
+		}
+		public function readProducto(){
+			$sql = "SELECT `IdProducto`, `NombreProducto`, `Descripcion`, `Precio` FROM `productos` WHERE productos.IdProducto=? ";
+			$params = array($this->idproducto);
+			$detalle = Database::getRow($sql, $params);
+			if($detalle){
+				$this->pnombre = $detalle['NombreProducto'];
+				$this->pprecio = $detalle['Precio'];
+				$this->pdescripcion = $detalle['Descripcion'];
+				return true;
+			}else{
+				return null;
+			}
 		}
 		public function readTiposPro(){
 			$sql = "SELECT `IdTipo`, `TipoProducto` FROM `tipoproducto`";
