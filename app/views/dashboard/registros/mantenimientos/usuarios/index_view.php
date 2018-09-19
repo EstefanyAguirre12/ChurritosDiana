@@ -43,10 +43,10 @@
                             </label>
                             <button type="submit" name="buscar" class="btn btn-round btn-info">
                               <i class="fas fa-search"></i>
-                            </button>                        
+                            </button>
                           </div>
                         </div>
-                      </form> 
+                      </form>
                     </div>
                     <div class="row">
                       <div class="col-sm-12">
@@ -85,8 +85,8 @@
                                  //Para que cuente cuantos datos existen
                                  $no++;
                                 }
-                              
-                            ?>	               
+
+                            ?>
                           </tbody>
                         </table>
                       </div>
@@ -109,7 +109,7 @@
                           else
                           {
                               $link_prev = ($page > 1) ? $page -1 : 1; //Si la pagina no es la primera que hablite el boton primera
-                          
+
                           ?>
                               <li class="page-item"><a class="page-link" href="indexusuarios.php?page=1">Primera</a></li>
                               <li class="page-item"><a class="page-link" href="indexusuarios.php?page=<?php echo $link_prev;?>">&laquo;</a></li>
@@ -174,7 +174,6 @@
                 </div>
               </div>
             </div>
-          </div>  
-        </div>  
-      </div>  
-            
+          </div>
+        </div>
+      </div>

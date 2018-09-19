@@ -33,18 +33,21 @@
                     </div>
                     <div class='count'> 
                       <h2>
-                      Habitacion N:$habitacion[NumeroHab] 
+                      Producto:$habitacion[NombreProducto] 
                       </h2>
                     </div>
-                    <a href='h_pedidos.php?IdUsuario=$habitacion[IdUsuario]' class='h3'>Ver</a>
+                    <h3>
+                      Cantidad:$habitacion[Cantidad] 
+                      </h3>
+                      <a href='delete.php?IdPedido=$habitacion[IdPedido]&IdUsuario=$_GET[IdUsuario]' type='submit' class='btn btn-success'>Listo</a>
                   </div>
+
               </div>
+              
               "); 
           }   
         ?>
-
-
-          </div>
+            </div>
         </div>
       </div>
     </div>

@@ -7,12 +7,12 @@ class Lavanderia extends Validator{
     private $idcategoria = null;
     private $color = null;
     private $cantidad = null;
-    
+
     //Métodos para sobrecarga de propiedades
     public function setId($value){
         if($this->validateId($value)){
             $this->id = $value;
-            return true;  
+            return true;
         }
         else{
             return false;
@@ -21,7 +21,7 @@ class Lavanderia extends Validator{
     public function getId(){
 			return $this->id;
     }
-    
+
     public function setNombre($value){
 			if($this->validateAlphanumeric($value, 1, 50)){
 				$this->nombre = $value;
@@ -33,7 +33,7 @@ class Lavanderia extends Validator{
 		public function getNombre(){
 			return $this->nombre;
 		}
-    
+
     public function setIdmaterial($value){
 		if($this->validateId($value)){
 			$this->idmaterial = $value;
@@ -44,7 +44,7 @@ class Lavanderia extends Validator{
 	}
 	public function getIdmaterial(){
 		return $this->idmaterial;
-    }		
+    }
 		public function setIdcategoria($value){
 			if($this->validateId($value)){
 				$this->idcategoria = $value;
@@ -68,7 +68,7 @@ class Lavanderia extends Validator{
 			public function getColor(){
 				return $this->color;
                 }
-                
+
                 public function setCantidad($value){
                     if($this->validateAlphanumeric($value, 1, 200)){
                         $this->cantidad = $value;
@@ -80,14 +80,14 @@ class Lavanderia extends Validator{
                 public function getCantidad(){
                     return $this->cantidad;
                     }
-    
+
     //Metodos CRUD para cotegoria
 	//Obtener categoria
 	public function getLavanderia(){
 		$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 
         $limite = 5;
- 
+
         $limite_inicio = ($page - 1)* $limite;
 		$sql = "SELECT Id, Nombre, Cantidad, Color, categorialavanderia.Categoria, material.Material FROM lavanderia INNER JOIN categorialavanderia ON categorialavanderia.IdCategoria=lavanderia.IdCategoria INNER JOIN material ON lavanderia.IdMaterial=material.IdMaterial LIMIT $limite_inicio , $limite";
 				$params = array(null);
@@ -119,7 +119,7 @@ class Lavanderia extends Validator{
     }
     //Insertar categoria
     public function createLavanderia(){
-		$sql = "INSERT INTO lavanderia(Nombre, IdMaterial, IdCategoria, Color, Cantidad) VALUES(?, ?, ?, ?, ?)";
+		$sql = "INSERT INTO lavanderia(Nombre, IdMaterial, IdCategoria, Color, Cantidad, IdEstado) VALUES(?, ?, ?, ?, ?,1)";
 		$params = array($this->nombre, $this->idmaterial, $this->idcategoria, $this->color, $this->cantidad);
 		return Database::executeRow($sql, $params);
     }
@@ -153,15 +153,15 @@ class Lavanderia extends Validator{
 	}
 
 	public function GetReporteCategoria($value){
-		$sql = "SELECT lavanderia.Nombre , lavanderia.Cantidad ,lavanderia.Color ,material.Material 
+		$sql = "SELECT lavanderia.Nombre , lavanderia.Cantidad ,lavanderia.Color ,material.Material
 		FROM categorialavanderia , lavanderia , material
 		WHERE lavanderia.IdMaterial = material.IdMaterial AND lavanderia.IdCategoria = categorialavanderia.IdCategoria AND categorialavanderia.IdCategoria =?";
 		$params = array($value);
 		return Database::getRows($sql, $params);
 	}
 	public function getCategoria22($value){
-		$sql = "SELECT categorialavanderia.Categoria 
-		 FROM categorialavanderia 
+		$sql = "SELECT categorialavanderia.Categoria
+		 FROM categorialavanderia
 		 WHERE categorialavanderia.IdCategoria=?";
 		$params = array($value);
 		return Database::getRow($sql, $params);

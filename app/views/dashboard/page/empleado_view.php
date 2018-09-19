@@ -5,12 +5,12 @@
               <h3>Mantenimiento de Registros</h3>
             </div>
           </div>
-          <div class="clearfix"></div>
+          <div class="clearfix"></div>  
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2>Modificar Empleados</h2>
+                  <h2>Agregar nuevo empleado</h2>
                   <ul class="nav navbar-right panel_toolbox">
                     <li>
                       <a class="collapse-link">
@@ -21,11 +21,11 @@
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                <form autocomplete= 'off' method="post" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" enctype='multipart/form-data'>
-                  <div class="form-group">
+                  <form autocomplete= 'off' method="post" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" enctype='multipart/form-data'>
+                    <div class="form-group">
                       <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Nombres*:</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name  " name="nom" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getNombre()) ?>" required/>
+                        <input id="middle-name" name="nom" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getNombre()) ?>" required/>
                       </div>
                     </div>
                     <div class="form-group">
@@ -53,6 +53,12 @@
                       </div>
                     </div>
                     <div class="form-group">
+                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Correo*:</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input id="middle-name  " name="email" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getCorreo()) ?>" required/>
+                      </div>
+                    </div>
+                    <div class="form-group">
                       <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Foto*:</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
                         <input type="file" name="foto"class="form-control col-md-7 col-xs-12 validate form-control-file"  aria-describedby="fileHelp" required/>
@@ -77,8 +83,8 @@
                     <div class="ln_solid"></div>
                     <div class="form-group">
                       <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                        <a href="indexempleados.php" class="btn btn-primary" type="button">Cancelar</a>
-                        <button type="submit" name="modificar" class="btn btn-success">Modificar</button>
+                      <a href="indexempleados.php" class="btn btn-primary" type="button">Cancelar</a>
+                      <button type="submit" name="guardar" class="btn btn-success">Guardar</button>
                       </div>
                     </div>
                   </form>

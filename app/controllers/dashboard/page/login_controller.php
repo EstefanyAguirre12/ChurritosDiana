@@ -6,45 +6,41 @@ try
     if($object->getUsuario()){
         if(isset($_POST['entrar'])){
             $_POST = $object->validateForm($_POST);
+			if($object->setNombre($_POST['usuario'])){
+				if($object->setCodigo($_POST['codigo'])){
 
-
-                    if($object->setNombre($_POST['usuario'])){
-                        if($object->checkUsuario()){
-                         // if($object->checkCodi()){
-
-							$traerFecha= $object->gettiempo_intentos();
-							$traerFechaAct = date("Y-m-d H:i:s");
-							$d1 = new DateTime($traerFecha);
-							$d2 = new DateTime($traerFechaAct);
-							if($d1<=$d2){
-								$numero_intentosnew=$object->getnumb_ingresos();
-								if($numero_intentosnew==3){
-									$numeroNewIntentos=0;
-									if($object->setnumb_ingresos($numeroNewIntentos)){
-										$object->updateNumeroIntentos();
-									}
+				if($object->checkUsuario()){
+					if($object->checkCodi()){
+						$traerFecha= $object->gettiempo_intentos();
+						$traerFechaAct = date("Y-m-d H:i:s");
+						$d1 = new DateTime($traerFecha);
+						$d2 = new DateTime($traerFechaAct);
+						if($d1<=$d2){
+							$numero_intentosnew=$object->getnumb_ingresos();
+							if($numero_intentosnew==3){
+								$numeroNewIntentos=0;
+								if($object->setnumb_ingresos($numeroNewIntentos)){
+									$object->updateNumeroIntentos();
 								}
-                                if($object->setClave($_POST['contraseña'])){
-
-									if($object->checkClaveUsuario()){
-
-                                        $_SESSION['IdUsuario'] = $object->getId();
-                                        $_SESSION['NombreUsuario'] = $object->getNombre();
-										$_SESSION['cargo'] = $object->getPermisos();
-										$_SESSION['Clave'] = $object->getClave();
-										$diaOpcion = date("Y-m-d");
-										#echo $diaOpcion."<br>";
-										$date1 = new DateTime($diaOpcion);
-										$date2 = new DateTime($object->getFechaContra());
-										if($date1>=$date2){
-											$diff = $date1->diff($date2);
-											// will output 2 days
-											$diferenciaDias= $diff->days;
-											if($diferenciaDias>=90){
-												# necesita cambiar la contraseña
-												Page::showMessage(3, "Por razones de seguridad usted tiene que cambiar su contraseña (cada 90 dias)", "clave90dias.php");
-											}
-											else{
+							}
+							if($object->setClave($_POST['contraseña'])){
+								if($object->checkClaveUsuario()){
+									$_SESSION['IdUsuario'] = $object->getId();
+									$_SESSION['NombreUsuario'] = $object->getNombre();
+									$_SESSION['cargo'] = $object->getPermisos();
+									$_SESSION['Clave'] = $object->getClave();
+									$diaOpcion = date("Y-m-d");
+									#echo $diaOpcion."<br>";
+									$date1 = new DateTime($diaOpcion);
+									$date2 = new DateTime($object->getFechaContra());
+									if($date1>=$date2){
+										$diff = $date1->diff($date2);
+										// will output 2 days
+										$diferenciaDias= $diff->days;
+										if($diferenciaDias>=90){
+											# necesita cambiar la contraseña
+											Page::showMessage(3, "Por razones de seguridad usted tiene que cambiar su contraseña (cada 90 dias)", "clave90dias.php");
+										}else{
 												if($diferenciaDias>=85 && $diferenciaDias<90){
 													$numeroSuccesIntentos=0;
 													if($object->setnumb_ingresos($numeroSuccesIntentos)){
@@ -59,25 +55,22 @@ try
 																	$diasRestantes=90 - $diferenciaDias;
 																	Page::showMessage(1, "Inicio de sesion correcto (Por razones de seguridad usted tiene que cambiar su contraseña en ".$diasRestantes." dias)", "index.php");
 																}
-															}
-															else if($Id_estado==1){
+															}else if($Id_estado==1){
 																$sumaEstadoSesion=$Id_estado+1;
 																if($object->setestado_sesion($sumaEstadoSesion)){
-																$object->updateEstadoSesion();
-																#redireccionar al menu normalmente
-																throw new Exception("Error la sesion de este usuario ya estaba activo, por razón de seguridad esta cuenta se suspendera");
+																	$object->updateEstadoSesion();
+																	#redireccionar al menu normalmente
+																	throw new Exception("Error la sesion de este usuario ya estaba activo, por razón de seguridad esta cuenta se suspendera");
 																}
 															}
 															else if($Id_estado==2){
 																throw new Exception("Por motivos de seguridad este usuario a sido suspendido, revisar correo electronico con las instrucciones a seguir(recupera tu contraseña para verificar tu identidad)","correo.php");
 															}
 														}
-													}
-													else{
+													}else{
 														throw new Exception("Error al ingresar numero de intentos");
 													}
-												}
-												else{
+												}else{
 													$numeroSuccesIntentos=0;
 													if($object->setnumb_ingresos($numeroSuccesIntentos)){
 														$modificarNum= $object->updateNumeroIntentos();
@@ -90,21 +83,18 @@ try
 																	#redireccionar al menu normalmente
 																	Page::showMessage(1, "Inicio de sesion correcto", "index.php");
 																}
-															}
-															else if($Id_estado==1){
+															}else if($Id_estado==1){
 																$sumaEstadoSesion=$Id_estado+1;
 																if($object->setestado_sesion($sumaEstadoSesion)){
-																$object->updateEstadoSesion();
-																#redireccionar al menu normalmente
-																throw new Exception("Error la sesion de este usuario ya estaba activo, por razón de seguridad esta cuenta se suspendera");
+																	$object->updateEstadoSesion();
+																	#redireccionar al menu normalmente
+																	throw new Exception("Error la sesion de este usuario ya estaba activo, por razón de seguridad esta cuenta se suspendera");
 																}
-															}
-															else if($Id_estado==2){
+															}else if($Id_estado==2){
 																throw new Exception("Por motivos de seguridad este usuario a sido suspendido, revisar correo electronico con las instrucciones a seguir");
 															}
 														}
-													}
-													else{
+													}else{
 														throw new Exception("Error al ingresar numero de intentos");
 													}
 												}
@@ -219,6 +209,9 @@ try
 							throw new Exception("Este Alias no perneten a ninguna cuenta");
 						}
 					}else{
+						throw new Exception("Codigo es invalido");
+					}
+}else{
 						throw new Exception("Alias es invalido");
 					}
 
@@ -231,7 +224,7 @@ try
         }
     }
     else{
-        Page::showMessage(3, "No hay usuarios disponibles", "registro.php");
+        Page::showMessage(3, "No hay usuarios disponibles", "empleado.php");
     }
 
 }catch(Exception $error){

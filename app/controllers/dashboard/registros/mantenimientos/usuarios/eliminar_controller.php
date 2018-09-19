@@ -1,13 +1,13 @@
 <?php
-require_once("../../../app/models/ente.class.php");
+require_once("../../../app/models/usuario.class.php");
 try{
 	if(isset($_GET['id'])){
-		$dato = new Ente;
+		$dato = new Usuario;
 		if($dato->setId($_GET['id'])){
-			if($dato->readEnte()){
+			if($dato->getUsuario()){
 				if(isset($_POST['eliminar'])){
-					if($dato->deleteEnte()){
-                        Page::showMessage(1, "Registro eliminado", "indexentes.php");
+					if($dato->deleteUsuario()){
+                        Page::showMessage(1, "Registro eliminado", "indexusuarios.php");
 					}else{
 						throw new Exception(Database::getException());
 					}
@@ -19,7 +19,7 @@ try{
 			throw new Exception("Registro incorrecta");
 		}
 	}else{
-		Page::showMessage(3, "Seleccione un registro", "indexentes.php");
+		Page::showMessage(3, "Seleccione un registro", "indexusuarios.php");
 	}
 }catch(Exception $error){
 	Page::showMessage(2, $error->getMessage(), null);

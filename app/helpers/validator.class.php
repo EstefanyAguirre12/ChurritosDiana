@@ -41,7 +41,15 @@ class Validator{
 			return false;
 		}
 	}
-	public function validateEnteros($value){
+
+	public function validateInt($value){
+		if(filter_var($value, FILTER_VALIDATE_INT, array('min_range' => 1))){
+			return true;
+		}else{
+			return false;
+		}
+	}
+		public function validateEnteros($value){
 		if (preg_match("/^[0-9]+$/",$value)) {
 			return true;
 		} else {

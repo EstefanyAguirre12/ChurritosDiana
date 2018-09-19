@@ -6,12 +6,12 @@ class Habitaciones extends Validator{
     private $idestado = null;
     private $capacidad = null;
     private $precio = null;
-    
+
     //Métodos para sobrecarga de propiedades
     public function setId($value){
         if($this->validateId($value)){
             $this->id = $value;
-            return true;  
+            return true;
         }
         else{
             return false;
@@ -20,7 +20,7 @@ class Habitaciones extends Validator{
     public function getId(){
 			return $this->id;
     }
-    
+
     public function setNumero($value){
 			if($this->validateInt($value)){
 				$this->numero = $value;
@@ -32,7 +32,7 @@ class Habitaciones extends Validator{
 		public function getNumero(){
 			return $this->numero;
 		}
-    
+
     public function setIdTipo($value){
 		if($this->validateId($value)){
 			$this->idtipo = $value;
@@ -56,7 +56,7 @@ class Habitaciones extends Validator{
 	public function getIdestado(){
 		return $this->idestado;
 		}
-		
+
 		public function setPrecio($value){
 			if($this->validateMoney($value,2)){
 				$this->precio = $value;
@@ -80,7 +80,7 @@ class Habitaciones extends Validator{
 			public function getCapacidad(){
 				return $this->capacidad;
 				}
-    
+
 		//Metodos CRUD para cotegoria
 		public function getTipo(){
 			$sql = "SELECT * FROM TipoHabitacion";
@@ -98,7 +98,7 @@ class Habitaciones extends Validator{
 			 $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 
         $limite = 5;
- 
+
         $limite_inicio = ($page - 1)* $limite;
 		$sql = "SELECT IdHabitacion, NumeroHabitacion, tipohabitacion.TipoHabitacion, Precio, Capacidad, estado.Estado FROM habitaciones INNER JOIN tipohabitacion ON tipohabitacion.IdTipoHabitacion=habitaciones.IdTipoHabitacion INNER JOIN estado ON estado.IdEstado=habitaciones.IdEstado ORDER BY IdHabitacion LIMIT $limite_inicio , $limite";
 		$params = array(null);
@@ -111,7 +111,7 @@ class Habitaciones extends Validator{
         $params = array(null);
         return database::getRow($sql, $params);
     }
-	
+
     //Buscar categoria con parametros
     public function searchHabitacion($value){
 		$sql = "SELECT IdHabitacion, NumeroHabitacion, t.TipoHabitacion, Precio, Capacidad, e.Estado FROM habitaciones h, tipohabitacion t, estado e Where t.IdTipoHabitacion=h.IdTipoHabitacion and e.IdEstado=h.IdEstado and (NumeroHabitacion LIKE ? OR Precio LIKE ?)";
