@@ -12,11 +12,11 @@ class Usuario extends Validator {
 	private $FechaContra = null;
 	private $numb_ingresos = null;
 	private $tiempo_intentos = null;
-	private $estado_sesion = null;	
+	private $estado_sesion = null;
 	private $permisos_jason = null;
 	private $codigo = null;
 
-	
+
 	//Métodos para sobrecarga de propiedades
 	public function settiempo_intentos($value){
 		if($this->validateDateTime($value)){
@@ -39,7 +39,7 @@ class Usuario extends Validator {
 		}
 	public function getPermisos(){
 		return $this->permisos_jason;
-		}	
+		}
 	public function gettiempo_intentos(){
 		return $this->tiempo_intentos;
 	}
@@ -271,9 +271,9 @@ class Usuario extends Validator {
         $params = array(null);
         return database::getRow($sql, $params);
 	}
-	
-	
-	
+
+
+
     //Verificar usuarios
     public function checkUsuario()
     {
@@ -376,7 +376,7 @@ class Usuario extends Validator {
     }
     //Buscar categoria con parametros
     public function searchUsuario($value){
-		$sql = "SELECT * FROM usuarios WHERE NombreUsuario LIKE ? OR IdEmpleado LIKE ? ORDER BY NombreUsuario";
+		$sql = "SELECT u.NombreUsuario,u.IdUsuario, e.NombreEmpleado,e.ApellidosEmpleado FROM usuarios u, empleados e WHERE u.IdEmpleado = e.IdEmpleado and (u.NombreUsuario LIKE ? OR e.NombreEmpleado LIKE ?) ORDER BY NombreUsuario";
 		$params = array("%$value%", "%$value%");
 		return Database::getRows($sql, $params);
     }

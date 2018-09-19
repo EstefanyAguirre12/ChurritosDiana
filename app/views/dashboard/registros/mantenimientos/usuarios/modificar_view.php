@@ -5,7 +5,7 @@
               <h3>Mantenimiento de Registros</h3>
             </div>
           </div>
-          <div class="clearfix"></div>  
+          <div class="clearfix"></div>
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
@@ -28,20 +28,9 @@
                         <input id="middle-name" name="usu" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getNombre()) ?>" required/>
                       </div>
                     </div>
+
                     <div class="form-group">
-                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Clave*:</label>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name" name="c1" class="form-control col-md-7 col-xs-12 validate" type="password" name="middle-name" value="<?php print($dato->getClave()) ?>" required/>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Confirmar Clave*:</label>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name" name="c2" class="form-control col-md-7 col-xs-12 validate" type="password" name="middle-name" required/>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Genero:*</label>
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Empleado:*</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
                         <?php
                           Page::showSelect("", "em", $dato->getIdempleado(), $dato->getEmpleado());
