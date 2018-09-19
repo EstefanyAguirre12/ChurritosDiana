@@ -70,17 +70,18 @@ class Pedidohabitacion extends Validator{
 
     //Metodos CRUD para cotegoria
 		//Obtener categoria
-		public function getPedidohabitacion(){
-			$sql = "SELECT IdHabitacion, IdDetalleRes, IdCuenta, FechaPedido FROM pedidohabitacion ORDER BY IdHabitacion";
+		public function gethabitacion(){
+			$sql = "select h.IdUsuario, h.NumeroHab from huespedusuario h, pedidohabitacion pe, cuentatotal c WHERE pe.IdCuenta = c.IdCuenta and h.IdHuesped = c.IdEnte GROUP by h.NumeroHab";
 			$params = array(null);
 			return Database::getRows($sql, $params);
 			}
-	
-    //Buscar categoria con parametros
-    public function searchPedidohabitacion($value){
-		$sql = "SELECT * FROM pedidohabitacion WHERE IdDetalleRes LIKE ? OR IdCuenta LIKE ? ORDER BY Idhabitacio";
-		$params = array("%$value%", "%$value%");
-		return Database::getRows($sql, $paramsProducto
+			public function getPedidos(){
+				$sql = "select pe.IdPedido, p.IdProducto, p.NombreProducto, p.Precio, pe.Cantidad FROM productos p, pedidohabitacion pe where pe.IdProducto = p.IdProducto and pe.Estado=1 and pe.IdCuenta=(SELECT c.IdCuenta from cuentatotal c, huespedusuario h where c.IdEnte = h.IdHuesped and h.IdUsuario=?)";
+				$params = array($this->id);
+				return Database::getRows($sql, $params);
+				}
+		
+
     //Insertar categoria
     public function createPedidohabitacion(){
 		$sql = "INSERT INTO pedidohabitacion(IdDetalleRes, IdCuenta, FechaPedido) VALUES(?, ?, ?)";
@@ -88,15 +89,15 @@ class Pedidohabitacion extends Validator{
 		return Database::executeRow($sql, $params);
     }
     //Leer categoria
-    public function readPedidohabitacion(){
-		$sql = "SELECT IdHabitacion, IdDetalleRes, IdCuenta, FechaPedido FROM pedidohabitacion WHERE IdPHabitacion = ?";
+    public function readPedido(){
+		$sql = "SELECT IdProducto, IdCuenta, Estado, Cantidad FROM pedidohabitacion WHERE IdPedido = ?";
 		$params = array($this->id);
 		$habitacion = Database::getRow($sql, $params);
 		if($habitacion){
-			$this->idhabitacion = $habitacion['FechaPedido'];
-			$this->iddetalleres = $habitacion['IdDetalleRes'];
-            $this->idcuenta = $habitacion['IdCuenta'];
-						$this->fechapedido = $habitacion['FechaPedido'];
+			$this->idhabitacion = $habitacion['IdProducto'];
+			$this->idcuenta = $habitacion['IdCuenta'];
+			$this->estado = $habitacion['Estado'];
+			$this->cantidad = $habitacion['Cantidad'];
 						
 			return true;
 		}else{
@@ -110,8 +111,8 @@ class Pedidohabitacion extends Validator{
 		return Database::executeRow($sql, $params);
     }
     //Eliminar categoria
-	public function deletePedidohabitacion(){
-		$sql = "DELETE FROM pedidohabitacion WHERE IdHabitacion = ?";
+	public function deletePedido(){
+		$sql = "DELETE FROM pedidohabitacion WHERE IdPedido = ?";
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}
