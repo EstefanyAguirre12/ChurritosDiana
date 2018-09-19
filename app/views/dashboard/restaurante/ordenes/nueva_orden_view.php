@@ -46,7 +46,7 @@
                         </ul>
                       <div class="stepContainer"><div id="step-11" class="content" >
                           <h2 class="StepTitle">Tipo de cliente</h2>
-                              <div class="animated lipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                              <div class="animated lipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                 <div class="tile-stats">
                                   <div class="count">Nuevo cliente</div>
                                   <div class="ln_solid"></div>
@@ -56,7 +56,7 @@
                                       </div>
                                 </div>
                               </div>
-                              <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                              <div class="animated lipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                 <div class="tile-stats">
                                   <div class="count">Cliente ya registrado</div>
                                   <div class="ln_solid"></div>

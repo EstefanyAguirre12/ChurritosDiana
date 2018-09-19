@@ -193,6 +193,7 @@ class Detallerestaurante extends Validator{
 		$params = array($this->cantidad,$this->idproducto,$this->idcuenta);
 		return Database::executeRow($sql, $params);
 	}
+
 		public function readClientes(){
 			$sql = "SELECT `IdEnte`, `Nombres`, `Apellidos`, `DocIdentidad`, genero.NombreGenero, tipoente.TipoEnte 
 			FROM `entes` INNER JOIN tipoente on entes.IdTipo=tipoente.IdTipo INNER JOIN genero on entes.IdGenero=genero.IdGenero";
@@ -219,6 +220,13 @@ class Detallerestaurante extends Validator{
 			$params = array($this->IdCproducto);
 			return Database::getRows($sql, $params);
 		}
+		public function readCuentaProducto(){
+			$sql = "SELECT productos.NombreProducto ,productos.Precio ,detallerestaurante.Cantidad
+			 FROM `detallerestaurante` INNER JOIN productos ON detallerestaurante.IdProducto = productos.IdProducto 
+			 WHERE detallerestaurante.IdCuenta =? ";
+			$params = array($this->idcuenta);
+			return Database::getRows($sql, $params);
+		}
 		public function readProducto(){
 			$sql = "SELECT `IdProducto`, `NombreProducto`, `Descripcion`, `Precio` FROM `productos` WHERE productos.IdProducto=? ";
 			$params = array($this->idproducto);
@@ -242,6 +250,7 @@ class Detallerestaurante extends Validator{
 			$params = array(null);
 			return Database::getRows($sql, $params);
 		}
+		
 		public function readCuentasClientes(){
 			$sql = "SELECT `IdCuenta`, entes.Nombres, `numb_cuenta`, `Fecha`,`estado_cuenta`,   `total` FROM `cuentatotal` INNER JOIN entes on entes.IdEnte= cuentatotal.IdEnte WHERE entes.IdEnte=? AND estado_cuenta = 0";
 			$params = array($this->idcliente);

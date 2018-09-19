@@ -46,7 +46,7 @@
                       </ul>
                     <div class="stepContainer"><div id="step-11" class="content" >
                         <h2 class="StepTitle">Seleccione tipo de Numero de cuenta</h2>  
-                            <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="animated lipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                               <div class="tile-stats">
                                 <div class="count">Crear nueva N° de cuenta total.</div>
                                 <div class="ln_solid"></div>
@@ -60,7 +60,7 @@
                                     </div>
                               </div>
                             </div>
-                            <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="animated lipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                               <div class="tile-stats">
                                 <div class="count">Cargar a N° cuenta</div>
                                 <div class="ln_solid"></div>

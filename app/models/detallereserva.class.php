@@ -117,7 +117,6 @@ class Detallereserva extends Validator{
     public function createDetalleres(){
 		$sql = "INSERT INTO `detallereserva`(`IdDetalle`, `FechaInicio`, `FechaFin`, `HoraInicio`, `IdHabitacion`, `HoraFin`, `IdCuenta`) VALUES (null, ?, ?, ?, ?, ?, ?)";
 		$params = array( $this->fechainicio, $this->fechafin,$this->horainicio, $this->idhabitacion, $this->horafin, $this->idcuenta );
-		var_dump($params);
 		return Database::executeRow($sql, $params);
     }
     //Leer categoria

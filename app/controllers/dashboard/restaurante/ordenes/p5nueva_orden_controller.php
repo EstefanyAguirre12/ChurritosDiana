@@ -5,18 +5,19 @@ try{
 	$nueva_orden = new Detallerestaurante;
     if(isset($_GET['cliente'])){
         if(isset($_GET['cuenta'])){
-            $id_cliente = $_GET['cliente'];
-            $cuenta = $_GET['cuenta'];
-            $data1 = $nueva_orden->readTiposPro();
-            $data2 = $nueva_orden->readCategoriaPro();
-           
+            if($nueva_orden->readCuenta($_GET['cuenta'])){
+                $nueva_orden->readCuenta($_GET['cuenta']);
+                $data = $nueva_orden->readCuentaProducto($_GET['cuenta']);
+            }else{
+                throw new Exception("Error ningun cliente selecionado", null);
+            }
         }else{
             throw new Exception("Error ningun cliente selecionado", null);
         }
     }else{
         throw new Exception("Error ningun cliente selecionado", null);
     }
-	if( isset( $data1) && isset($data2) ){
+	if($data){
 		//Se muestran los 
         require_once("../../../app/views/dashboard/restaurante/ordenes/p5nueva_orden_view.php");
 	}else{

@@ -75,7 +75,7 @@ class Detalleconferencia extends Validator{
 			}
 
 			public function setHorain($value){
-				if($this->validateNumeric($value)){
+				if(isset($value)){
 					$this->horain = $value;
 					return true;
 				}else{
@@ -87,7 +87,7 @@ class Detalleconferencia extends Validator{
                 }
                 
                 public function setHorafi($value){
-                    if($this->validateNumeric($value)){
+                    if(isset($value)){
                         $this->horafi = $value;
                         return true;
                     }else{
@@ -111,7 +111,7 @@ class Detalleconferencia extends Validator{
                         }
 
                     public function setCantidadm($value){
-                        if($this->validateNumeric($value)){
+                        if($this->validateEnteros($value)){
                             $this->cantidadm = $value;
                             return true;
                         }else{
@@ -123,7 +123,7 @@ class Detalleconferencia extends Validator{
                         }
 
                         public function setCantidads($value){
-                            if($this->validateNumeric($value)){
+                            if($this->validateEnteros($value)){
                                 $this->cantidads = $value;
                                 return true;
                             }else{

@@ -561,16 +561,12 @@ class Page extends Component{
 								<div class=' container' class ='footer_fixed'>
 									<div class='row'>
 										<div class='col-sm-3 myCols'>
-											<h5>titulo 1</h5>
-											<ul>
-												<li><a href='#'>Home</a></li>
-											</ul>
+											<h5>Barolo</h5>
+											
 										</div>
 										<div class='col-sm-3 myCols'>
-											<h5>About us</h5>
-											<ul>
-												<li><a href='#'>Company Information</a></li>
-											</ul>
+											<h5>Sistema de administracion de hoteles</h5>
+											
 										</div>
 										<div class='col-sm-3 myCols'>
 											<h5>Support</h5>

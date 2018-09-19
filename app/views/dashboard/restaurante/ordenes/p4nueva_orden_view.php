@@ -87,7 +87,11 @@
                         </div>
                     </div>
                     <div class="">
-                          <a href="nueva_orden.php" class="buttonPrevious buttonDisabled btn btn-primary">Anterior</a>
+                    <?php
+                        print("
+                          <a href='p5nueva_orden.php?cliente=$id_cliente&cuenta=$cuenta' class='buttonPrevious buttonDisabled btn btn-primary'>Finalizar</a>
+                        ");
+                      ?>
                     </div>
                     <!-- End SmartWizard Content -->
 

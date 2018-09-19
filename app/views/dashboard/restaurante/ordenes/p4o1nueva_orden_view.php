@@ -56,8 +56,8 @@
                               
                                 <li>
                                 <span class='' aria-hidden='true'></span>
-                                <h3 class='glyphicon-class'>$row[1]</h3>
-                                <h4 class='glyphicon-class'>$row[3]</h4>  
+                                <h4 class='glyphicon-class'>$row[1]</h4>
+                                <h5 class='glyphicon-class'>$row[3]</h5>  
                                 <a  href='p4o1p1nueva_orden.php?cliente=$id_cliente&cuenta=$cuenta&producto=$row[0]' class='btn btn-primary btn-xs'>selecionar</a>
                               </li>
                                

@@ -45,18 +45,15 @@
                         </li>
                       </ul>
                     <div class="stepContainer"><div id="step-11" class="content" >
-                        <h2 class="StepTitle">Seleccione el tipo de productos</h2>  
+                        <h2 class="StepTitle">Lista de productos selecinados</h2>  
                         <div class="x_content">
                               <div class="table-responsive">
                                 <table class="table table-striped jambo_table bulk_action">
                                   <thead>
                                     <tr class="headings">
-                                      <th class="column-title">Nombres cliente </th>
-                                      <th class="column-title">Apellidos cliente </th>
-                                      <th class="column-title">DUI </th>
-                                      <th class="column-title">Genero</th>
-                                      <th class="column-title">Tipo de cliente</th>
-                                      <th class="column-title no-link last"><span class="nobr">Accion</span></th>
+                                      <th class="column-title">Producto</th>
+                                      <th class="column-title">Precio</th>
+                                      <th class="column-title">Cantidad </th>
                                     </tr>
                                   </thead>
 
@@ -69,16 +66,9 @@
                                               print("
                                                 </tr>
                                                 <tr role='row' class='odd'>
+                                                  <td>$row[0]</td>
                                                   <td>$row[1]</td>
-                                                  <td>$row[2]</td>
-                                                  <td>$row[3]</td>
-                                                  <td>$row[4]</td>
-                                                  <td>$row[5]</td>                             
-                                                  <td>
-                                                    <a href='p3nueva_orden.php?cliente=$row[0]' type='button' class='btn btn-primary'>
-                                                      <i class='fa fa-plus-circle'></i>
-                                                    </a>
-                                                  </td>
+                                                  <td>$row[2]</td>   
                                               </tr>
                                               ");
                                             }
