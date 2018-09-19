@@ -10,7 +10,7 @@ try
 
                     if($object->setNombre($_POST['usuario'])){
                         if($object->checkUsuario()){
-                          if($object->checkCodi()){
+                         // if($object->checkCodi()){
 
 							$traerFecha= $object->gettiempo_intentos();
 							$traerFechaAct = date("Y-m-d H:i:s");
@@ -212,9 +212,9 @@ try
 							else{
 								throw new Exception("Su usuario fue bloqueado temporalmente, porfavor intentarlo luego de 24 horas de su ultimo intento");
 							}
-            }else{
+         /*   }else{
               throw new Exception("Este codigo no perneten a ninguna cuenta");
-            }
+            }*/
 						}else{
 							throw new Exception("Este Alias no perneten a ninguna cuenta");
 						}
