@@ -60,7 +60,7 @@ class Ente extends Validator{
 		}
 		
 		public function setDocIdentidad($value){
-			if($this->validateInt($value)){
+			if($this->validateEnteros($value)){
 				$this->docidentidad = $value;
 				return true;
 			}else{
@@ -96,7 +96,7 @@ class Ente extends Validator{
                     }
 
                     public function setTelefono($value){
-                        if($this->validateInt($value)){
+                        if($this->validateEnteros($value)){
                             $this->telefono = $value;
                             return true;
                         }else{
@@ -148,6 +148,7 @@ class Ente extends Validator{
 		$sql = "INSERT INTO entes(Nombres, Apellidos, Correo, DocIdentidad, IdGenero, IdTipo, Telefono) VALUES(?, ?, ?, ?, ?, ?, ?)";
 		$params = array($this->nombre, $this->apellido, $this->correo, $this->docidentidad, $this->idgenero, $this->idtipo, $this->telefono);
 		return Database::executeRow($sql, $params);
+		LastCliente();
     }
     //Leer categoria
     public function readEnte(){
@@ -162,6 +163,17 @@ class Ente extends Validator{
 			$this->idgenero = $ente['IdGenero'];
 			$this->idtipo = $ente['IdTipo'];
 			$this->telefono = $ente['Telefono'];
+			return true;
+		}else{
+			return null;
+		}
+	}
+	public function LastCliente(){
+		$sql = "SELECT idEnte FROM entes WHERE DocIdentidad = ?";
+		$params = array($this->docidentidad);
+		$ente = Database::getRow($sql, $params);
+		if($ente){
+			$this->id = $ente['idEnte'];
 			return true;
 		}else{
 			return null;

@@ -9,383 +9,55 @@
           <div class="clearfix"></div>
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="x_panel">
-                <div class="x_title">
-                  <h2>Listado ordenes</h2>
-                  <ul class="nav navbar-right panel_toolbox">
-                    <li>
-                      <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                      </a>
-                    </li>
-                  </ul>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
-                  <div id="datatable-checkbox_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="dataTables_length" id="datatable-checkbox_length">
-                          <label>Mostrando
-                            <select name="datatable-checkbox_length" aria-controls="datatable-checkbox" class="form-control input-sm">
-                              <option value="10">10</option>
-                              <option value="25">25</option>
-                              <option value="50">50</option>
-                              <option value="100">100</option>
-                            </select> Por</label>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div id="datatable-checkbox_filter" class="dataTables_filter">
-                          <label>Busquedad:
-                            <input type="search" class="form-control input-sm" placeholder="" aria-controls="datatable-checkbox">
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
-                          <thead>
-                            <tr role="row">
-                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Cliente</th>
-                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Mesa</th>
-                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Productos</th>
-                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Total</th>
-                              <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Fecha</th>
-                          </thead>
-                          <tbody>
-                            <tr role="row" class="odd">
-                              <td>Nombres e</td>
-                              <td>mesa 1</td>
-                              <td>
-                                <div class="col-md-55">
-                                  <div class="thumbnail">
-                                    <div class="image view view-first">
-                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
-                                    </div>
-                                    <div class="caption">
-                                      <p>
-                                        <strong>PLato de pollo</strong>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-55">
-                                  <div class="thumbnail">
-                                    <div class="image view view-first">
-                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
-                                    </div>
-                                    <div class="caption">
-                                      <p>
-                                        <strong>Jugo de fresa</strong>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>$10.25</td>
-                              <td>25/03/2018</td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td>Nombres e</td>
-                              <td>mesa 1</td>
-                              <td>
-                                <div class="col-md-55">
-                                  <div class="thumbnail">
-                                    <div class="image view view-first">
-                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
-                                    </div>
-                                    <div class="caption">
-                                      <p>
-                                        <strong>PLato de pollo</strong>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-55">
-                                  <div class="thumbnail">
-                                    <div class="image view view-first">
-                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
-                                    </div>
-                                    <div class="caption">
-                                      <p>
-                                        <strong>Jugo de fresa</strong>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>$10.25</td>
-                              <td>25/03/2018</td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td>Nombres e</td>
-                              <td>mesa 1</td>
-                              <td>
-                                <div class="col-md-55">
-                                  <div class="thumbnail">
-                                    <div class="image view view-first">
-                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
-                                    </div>
-                                    <div class="caption">
-                                      <p>
-                                        <strong>PLato de pollo</strong>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-55">
-                                  <div class="thumbnail">
-                                    <div class="image view view-first">
-                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
-                                    </div>
-                                    <div class="caption">
-                                      <p>
-                                        <strong>Jugo de fresa</strong>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>$10.25</td>
-                              <td>25/03/2018</td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td>Nombres e</td>
-                              <td>mesa 1</td>
-                              <td>
-                                <div class="col-md-55">
-                                  <div class="thumbnail">
-                                    <div class="image view view-first">
-                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
-                                    </div>
-                                    <div class="caption">
-                                      <p>
-                                        <strong>PLato de pollo</strong>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-55">
-                                  <div class="thumbnail">
-                                    <div class="image view view-first">
-                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
-                                    </div>
-                                    <div class="caption">
-                                      <p>
-                                        <strong>Jugo de fresa</strong>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>$10.25</td>
-                              <td>25/03/2018</td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td>Nombres e</td>
-                              <td>mesa 1</td>
-                              <td>
-                                <div class="col-md-55">
-                                  <div class="thumbnail">
-                                    <div class="image view view-first">
-                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
-                                    </div>
-                                    <div class="caption">
-                                      <p>
-                                        <strong>PLato de pollo</strong>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-55">
-                                  <div class="thumbnail">
-                                    <div class="image view view-first">
-                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
-                                    </div>
-                                    <div class="caption">
-                                      <p>
-                                        <strong>Jugo de fresa</strong>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>$10.25</td>
-                              <td>25/03/2018</td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td>Nombres e</td>
-                              <td>mesa 1</td>
-                              <td>
-                                <div class="col-md-55">
-                                  <div class="thumbnail">
-                                    <div class="image view view-first">
-                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
-                                    </div>
-                                    <div class="caption">
-                                      <p>
-                                        <strong>PLato de pollo</strong>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-55">
-                                  <div class="thumbnail">
-                                    <div class="image view view-first">
-                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
-                                    </div>
-                                    <div class="caption">
-                                      <p>
-                                        <strong>Jugo de fresa</strong>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>$10.25</td>
-                              <td>25/03/2018</td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td>Nombres e</td>
-                              <td>mesa 1</td>
-                              <td>
-                                <div class="col-md-55">
-                                  <div class="thumbnail">
-                                    <div class="image view view-first">
-                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
-                                    </div>
-                                    <div class="caption">
-                                      <p>
-                                        <strong>PLato de pollo</strong>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-55">
-                                  <div class="thumbnail">
-                                    <div class="image view view-first">
-                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
-                                    </div>
-                                    <div class="caption">
-                                      <p>
-                                        <strong>Jugo de fresa</strong>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>$10.25</td>
-                              <td>25/03/2018</td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td>Nombres e</td>
-                              <td>mesa 1</td>
-                              <td>
-                                <div class="col-md-55">
-                                  <div class="thumbnail">
-                                    <div class="image view view-first">
-                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
-                                    </div>
-                                    <div class="caption">
-                                      <p>
-                                        <strong>PLato de pollo</strong>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-55">
-                                  <div class="thumbnail">
-                                    <div class="image view view-first">
-                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
-                                    </div>
-                                    <div class="caption">
-                                      <p>
-                                        <strong>Jugo de fresa</strong>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>$10.25</td>
-                              <td>25/03/2018</td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td>Nombres e</td>
-                              <td>mesa 1</td>
-                              <td>
-                                <div class="col-md-55">
-                                  <div class="thumbnail">
-                                    <div class="image view view-first">
-                                      <img class="estilo_stay" src="img/plato1.jpg" alt="image">
-                                    </div>
-                                    <div class="caption">
-                                      <p>
-                                        <strong>PLato de pollo</strong>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-55">
-                                  <div class="thumbnail">
-                                    <div class="image view view-first">
-                                      <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
-                                    </div>
-                                    <div class="caption">
-                                      <p>
-                                        <strong>Jugo de fresa</strong>
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>$10.25</td>
-                              <td>25/03/2018</td>
-                            </tr>
+            <div class="x_panel">
+                  <div class="x_title">
+                    <h2>listado de ordenes<small>restaurante</small></h2>
+                    <div class="clearfix"></div>
+                  </div>
 
-                          </tbody>
-                        </table>
-                      </div>
+                  <div class="x_content">
+                    <div class="table-responsive">
+                      <table class="table table-striped jambo_table bulk_action">
+                        <thead>
+                          <tr class="headings">
+                            <th>
+                              <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" id="check-all" class="flat" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                            </th>
+                            <th class="column-title">Invoice </th>
+                            <th class="column-title">Invoice Date </th>
+                            <th class="column-title">Order </th>
+                            <th class="column-title">Bill to Name </th>
+                            <th class="column-title">Status </th>
+                            <th class="column-title">Amount </th>
+                            <th class="column-title no-link last"><span class="nobr">Action</span>
+                            </th>
+                            <th class="bulk-actions" colspan="7">
+                              <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                            </th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr class="even pointer">
+                              <td class="a-center ">
+                                <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" name="table_records" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                              </td>
+                              <td class=" ">121000040</td>
+                              <td class=" ">May 23, 2014 11:47:56 PM </td>
+                              <td class=" ">121000210 <i class="success fa fa-long-arrow-up"></i></td>
+                              <td class=" ">John Blank L</td>
+                              <td class=" ">Paid</td>
+                              <td class="a-right a-right ">$7.45</td>
+                              <td class=" last"><a href="#">View</a>
+                              </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
-                    <div class="row">
-                      <div class="col-sm-5">
-                        <div class="dataTables_info" id="datatable-checkbox_info" role="status" aria-live="polite">Mostrado 10 de 57 registros</div>
-                      </div>
-                      <div class="col-sm-7">
-                        <div class="dataTables_paginate paging_simple_numbers" id="datatable-checkbox_paginate">
-                          <ul class="pagination">
-                            <li class="paginate_button previous disabled" id="datatable-checkbox_previous">
-                              <a href="#" aria-controls="datatable-checkbox" data-dt-idx="0" tabindex="0">Anterior</a>
-                            </li>
-                            <li class="paginate_button active">
-                              <a href="#" aria-controls="datatable-checkbox" data-dt-idx="1" tabindex="0">1</a>
-                            </li>
-                            <li class="paginate_button ">
-                              <a href="#" aria-controls="datatable-checkbox" data-dt-idx="2" tabindex="0">2</a>
-                            </li>
-                            <li class="paginate_button ">
-                              <a href="#" aria-controls="datatable-checkbox" data-dt-idx="3" tabindex="0">3</a>
-                            </li>
-                            <li class="paginate_button ">
-                              <a href="#" aria-controls="datatable-checkbox" data-dt-idx="4" tabindex="0">4</a>
-                            </li>
-                            <li class="paginate_button ">
-                              <a href="#" aria-controls="datatable-checkbox" data-dt-idx="5" tabindex="0">5</a>
-                            </li>
-                            <li class="paginate_button ">
-                              <a href="#" aria-controls="datatable-checkbox" data-dt-idx="6" tabindex="0">6</a>
-                            </li>
-                            <li class="paginate_button next" id="datatable-checkbox_next">
-                              <a href="#" aria-controls="datatable-checkbox" data-dt-idx="7" tabindex="0">Siguiente</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+							
+						
                   </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>

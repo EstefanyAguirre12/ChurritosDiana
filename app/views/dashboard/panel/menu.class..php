@@ -380,15 +380,39 @@ class Page extends Component{
 					<script type='text/javascript' src='../../../web/js/sweetalert.min.js'></script>	
 					<meta name='viewport' content='width=device-width, initial-scale=1.0'/>
 				</head>
-				<body class='nav-md '>
+				<body class='nav-md'>
 					<div class='container body'>
 						<div class='main_container'>");
 		if(isset($_SESSION['IdUsuario'])){
+						//Comprobamos si esta definida la sesión 'tiempo'.
+			if(isset($_SESSION['tiempo']) ) {
+
+				//Tiempo en segundos para dar vida a la sesión.
+				$inactivo = 300;//5min en este caso.
+
+				//Calculamos tiempo de vida inactivo.
+				$vida_session = time() - $_SESSION['tiempo'];
+
+					//Compraración para redirigir página, si la vida de sesión sea mayor a el tiempo insertado en inactivo.
+					if($vida_session > $inactivo)
+					{
+						
+						//Removemos sesión.
+						session_unset();
+						//Destruimos sesión.
+						session_destroy();              
+						//Redirigimos pagina.
+						header("Location: ../otros/logout.php");
+						exit();
+					}
+
+			}
+			$_SESSION['tiempo'] = time();
 			print("
 				<header >
 					<div class='col-md-3 left_col '>
 						<div class='left_col scroll-view '>
-						<div class='navbar  nav_title'>
+						<div class='navbar nav_title'>
 							<a href='../../otros/page/index.php' class='site_title'>
 							<i class='material-icons'>business </i>
 							</i>
@@ -398,11 +422,11 @@ class Page extends Component{
 						<div class='clearfix'></div>
 						<br />
 						<!-- sidebar menu -->
-						<div id='sidebar-menu' class='menu_fixed  hidden-print main_menu  '>
+						<div id='sidebar-menu' class='main_menu_side hidden-print main_menu  '>
 						<div class=''> ");
 							if(isset($_SESSION['IdUsuario'])){
 							print("
-							<ul class='nav side-menu menu_fixed '>
+							<ul class='nav side-menu '>
 							<li>
 								<a>Bienvenido $_SESSION[NombreUsuario]</a>
 							</ul>"); 
@@ -423,7 +447,7 @@ class Page extends Component{
 						</div>
 					</div>
 					<!-- top navigation -->
-					<div class='top_nav menu_fixed '>
+					<div class='top_nav  '>
 					<div class='nav_menu '>
 						<nav>
 						<div class='nav toggle'>
@@ -544,7 +568,220 @@ class Page extends Component{
 			if($object2->setId($_SESSION['IdUsuario'])){
 				if($object2->readEstadoSesion()){
 				  if($object2->getestado_sesion()!=1){
-					header('Location: page/logout.php');
+					header('Location: ../otros/logout.php');
+				  }
+				}
+			  }
+		}
+
+	}
+	public static function templateHeaderMain($title){
+		session_start();
+		print("
+			<!DOCTYPE html>
+			<html lang='es'>
+				<head>
+					<meta charset='utf-8'>
+					<title>Dashboard - $title</title>
+					<link type='text/css' rel='stylesheet' href='../../../web/css/bootstrap.css'/>
+					<link type='text/css' rel='stylesheet' href='../../../web/css/custom.css'/>
+					<link type='text/css' rel='stylesheet' href='../../../web/css/daterangepicker.css'/>
+					<link type='text/css' rel='stylesheet' href='../../../web/fonts/css/fontawesome-all.min.css'/>
+					<link type='text/css' rel='stylesheet' href='../../../web/font/css/font-awesome.min.css'/>
+					<link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'/>	
+					<script src='https://www.google.com/recaptcha/api.js'></script>	
+					<script type='text/javascript' src='../../../web/js/sweetalert.min.js'></script>	
+					<meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+				</head>
+				<body class='nav-md '>
+					<div class='container body'>
+						<div class='main_container'>");
+		if(isset($_SESSION['IdUsuario'])){
+						//Comprobamos si esta definida la sesión 'tiempo'.
+			if(isset($_SESSION['tiempo']) ) {
+
+				//Tiempo en segundos para dar vida a la sesión.
+				$inactivo = 300;//5min en este caso.
+
+				//Calculamos tiempo de vida inactivo.
+				$vida_session = time() - $_SESSION['tiempo'];
+
+					//Compraración para redirigir página, si la vida de sesión sea mayor a el tiempo insertado en inactivo.
+					if($vida_session > $inactivo)
+					{
+						
+						//Removemos sesión.
+						session_unset();
+						//Destruimos sesión.
+						session_destroy();              
+						//Redirigimos pagina.
+						header("Location: ../otros/logout.php");
+						exit();
+					}
+
+			}
+			$_SESSION['tiempo'] = time();
+			print("
+				<header >
+					<div class='col-md-3 left_col '>
+						<div class='left_col scroll-view '>
+						<div class='navbar nav_title'>
+							<a href='../../otros/page/index.php' class='site_title'>
+							<i class='material-icons'>business </i>
+							</i>
+							<span>Barolo</span>
+							</a>
+						</div>
+						<div class='clearfix'></div>
+						<br />
+						<!-- sidebar menu -->
+						<div id='sidebar-menu' class=' menu_fixed hidden-print main_menu  '>
+						<div class=''> ");
+							if(isset($_SESSION['IdUsuario'])){
+							print("
+							<ul class='nav side-menu '>
+							<li>
+								<a>Bienvenido $_SESSION[NombreUsuario]</a>
+							</ul>"); 
+							}
+								print("
+							<ul class='nav side-menu '>
+								<li>
+								<a href='../../otros/page/index.php'>
+								
+									<i class='material-icons'>home</i> Inicio </a>
+							</ul>
+						</div>
+			");	
+			Page::ObtenerPermisos($_SESSION['cargo']);					
+			print("		
+						</div>
+						<!-- /sidebar menu -->
+						</div>
+					</div>
+					<!-- top navigation -->
+					<div class='top_nav  '>
+					<div class='nav_menu '>
+						<nav>
+						<div class='nav toggle'>
+							<a id='menu_toggle'>
+							<i class='material-icons'>menu</i>
+							</a>
+						</div>
+						<ul class='nav navbar-nav navbar-right'>
+							<li class=''>
+							<a href='javascript:;' class='user-profile dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>
+								<i class='fas fa-cog'></i>
+							</a>
+							<ul class='dropdown-menu dropdown-usermenu pull-right'>
+								<li>
+								<a href='contra.php'>
+									<i class='fab fa-staylinked pull-right'></i> Contraseña</a>
+								</li>
+								<li>
+								<a href='perfil.php'>
+									<i class='fa fa-user pull-right'></i> Mi perfil</a>
+								</li>
+								<li>
+								<a href='logout.php'>
+									<i class='fa fa-sign-out pull-right'></i> Cerrar sesion</a>
+								</li>
+							</ul>
+							</li>
+							<li class=''>
+							<a href='javascript:;' class='user-profile dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>
+								<i class='fas fa-envelope'></i>
+							</a>
+							</li>
+							<li class=''>
+							<a href='javascript:;' class='user-profile dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>
+								<i class='fas fa-bell'></i>
+							</a>
+							</li>
+						</ul>
+						</nav>
+					</div>
+					</div>
+					<!-- /top navigation -->
+				</header>
+				<main>
+			");
+		}else{
+			print("
+				<header >
+					<div class='col-md-3 left_col '>
+						<div class='left_col scroll-view '>
+						<div class='navbar nav_title'>
+							<a href='../../otros/page/index.php' class='site_title'>
+							<i class='material-icons'>business </i>
+							</i>
+							<span>Barolo</span>
+							</a>
+						</div>
+						<div class='clearfix'></div>
+						<br />
+						<!-- sidebar menu -->
+						<div id='sidebar-menu' class='main_menu_side hidden-print main_menu  '>
+						</div>
+						<!-- /sidebar menu -->
+						</div>
+					</div>
+					<!-- top navigation -->
+					<div class='top_nav  '>
+					<div class='nav_menu '>
+						<nav>
+						<div class='nav toggle'>
+							<a id='menu_toggle'>
+							<i class='material-icons'>menu</i>
+							</a>
+						</div>
+						<ul class='nav navbar-nav navbar-right'>
+							<li class=''>
+							<a href='javascript:;' class='user-profile dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>
+								<i class='fas fa-cog'></i>
+							</a>
+							<ul class='dropdown-menu dropdown-usermenu pull-right'>
+								<li>
+								<a href=''>
+									<i class='fab fa-staylinked pull-right'></i> Tema</a>
+								</li>
+								<li>
+								<a href=''>
+									<i class='fa fa-user pull-right'></i> Mi perfil</a>
+								</li>
+								<li>
+								<a href='logout.php'>
+									<i class='fa fa-sign-out pull-right'></i> Cerrar sesion</a>
+								</li>
+							</ul>
+							</li>
+							<li class=''>
+							<a href='javascript:;' class='user-profile dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>
+								<i class='fas fa-envelope'></i>
+							</a>
+							</li>
+							<li class=''>
+							<a href='javascript:;' class='user-profile dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>
+								<i class='fas fa-bell'></i>
+							</a>
+							</li>
+						</ul>
+						</nav>
+					</div>
+					</div>
+					<!-- /top navigation -->
+				</header>
+				<main>
+			");
+			Page::showMessage(3,"Debe iniciar Sesion","login.php");
+		}
+		require_once("../../../app/models/usuario.class.php");
+		$object2 = new Usuario;  
+		if(isset($_SESSION['IdUsuario'])){
+			if($object2->setId($_SESSION['IdUsuario'])){
+				if($object2->readEstadoSesion()){
+				  if($object2->getestado_sesion()!=1){
+					header('Location: ../otros/logout.php');
 				  }
 				}
 			  }
@@ -552,13 +789,12 @@ class Page extends Component{
 
 	}
 
-
 	public static function templateFooter(){
 		print("
 							</main>
 							<!-- Footer -->
-							<footer id='myFooter' >
-								<div class=' container' class ='footer_fixed'>
+							<footer id='myFooter'>
+								<div class='container'>
 									<div class='row'>
 										<div class='col-sm-3 myCols'>
 											<h5>titulo 1</h5>

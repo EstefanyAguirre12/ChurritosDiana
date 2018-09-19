@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-09-2018 a las 05:34:01
+-- Tiempo de generación: 19-09-2018 a las 03:32:05
 -- Versión del servidor: 10.1.34-MariaDB
 -- Versión de PHP: 7.2.7
 
@@ -69,7 +69,7 @@ CREATE TABLE `cargos` (
 --
 
 INSERT INTO `cargos` (`IdCargo`, `NombreCargo`, `Descripcion`, `h_reserva`, `h_servicio`, `h_habitaciones`, `h_registros`, `r_mesas`, `r_ordenes`, `r_registros`, `e_reservacion`, `e_salones`, `e_registro`, `l_registros`, `rr_registro`, `b_datos`, `g_registros`) VALUES
-(1, 'Root', 'Dios', 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(1, 'Root', 'Dios', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 (2, 'Administrador', 'Dueño', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (3, 'Hotelero', 'trabajador de hotel', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
@@ -127,17 +127,23 @@ INSERT INTO `categoriaproducto` (`IdCategoria`, `CategoriaProducto`) VALUES
 DROP TABLE IF EXISTS `cuentatotal`;
 CREATE TABLE `cuentatotal` (
   `IdCuenta` int(11) NOT NULL,
+  `numb_cuenta` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `estado_cuenta` int(1) NOT NULL,
+  `total` int(11) NOT NULL,
   `IdEnte` int(11) NOT NULL,
-  `Fecha` varchar(10) COLLATE utf8_spanish_ci NOT NULL
+  `Fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `cuentatotal`
 --
 
-INSERT INTO `cuentatotal` (`IdCuenta`, `IdEnte`, `Fecha`) VALUES
-(1, 2, '12/06/18'),
-(2, 1, '12/06/18');
+INSERT INTO `cuentatotal` (`IdCuenta`, `numb_cuenta`, `estado_cuenta`, `total`, `IdEnte`, `Fecha`) VALUES
+(1, '21206181006', 0, 0, 2, '2012-06-18 00:00:00'),
+(2, '1190920180248', 0, 0, 1, '2018-09-19 02:48:50'),
+(26, '1190920180250', 0, 0, 1, '2018-09-19 02:50:22'),
+(27, '22190920180251', 0, 0, 22, '2018-09-19 02:51:24'),
+(28, '8190920180259', 0, 0, 8, '2018-09-19 02:59:02');
 
 -- --------------------------------------------------------
 
@@ -270,7 +276,17 @@ CREATE TABLE `entes` (
 
 INSERT INTO `entes` (`IdEnte`, `Nombres`, `Apellidos`, `DocIdentidad`, `Correo`, `Telefono`, `IdGenero`, `IdTipo`) VALUES
 (1, 'Roland', 'Van', 123456, 'sds@mdkf.co', 12345678, 1, 3),
-(2, 'Andres', 'Martinez', 12345678, 'andresguapo@gmail.com', 54896624, 1, 2);
+(2, 'Andres', 'Martinez', 12345678, 'andresguapo@gmail.com', 54896624, 1, 2),
+(3, 'Alexander', 'Alexander', 2147483647, 'daniel.alex.barrfdfdera@gmail.com', 76825348, 1, 2),
+(4, 'ella', 'no', 76825348, 'daniel.alex.barrera@gmail.com', 76825348, 1, 3),
+(6, '76825348', 'Alexander', 232323232, 'daniel.aldsdsex.barrera@gmail.com', 2147483647, 1, 2),
+(8, 'dsfdfsfds', 'fdsfsdf', 545, 'ddfdfaniel.alex.gfgfdgbarrera@gmail.com', 2147483647, 1, 2),
+(13, 'dfdsssssssssssss', 'ssfdsdddddddddd', 232222, 'daniel.adfdlex.barrera@gmail.comfgdfgfg', 768343, 1, 2),
+(16, 'dsfdfsfdsfds', 'fsdfsdfsdf', 111132332, 'sadsalex.barrera@gmail.com', 411113434, 1, 2),
+(17, 'sdfsdfsdfds', 'fsdfsdfsdf', 343432111, 'danbarrera@gmail.co', 1212224525, 2, 3),
+(18, 'dffffffffff', 'dsaasdas', 23314521, 'daniea@gmail.com', 121234545, 1, 2),
+(19, 'dsadsadsadsad', 'adsagsvs', 13231324, 'arrera@gmail.com', 2147483647, 1, 3),
+(22, 'dfdggfdgdf', 'gdfgdfgdf', 565634543, 'danbarrera@gmail.com', 768253486, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -651,11 +667,11 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`IdUsuario`, `NombreUsuario`, `ClaveUsuario`, `IdEmpleado`, `tiempo_clave`, `numb_ingresos`, `tiempo_intentos`, `estado_sesion`) VALUES
-(1, 'Danicx', '$2y$10$JaUZOh1SRXd8mu5EBBKhmeAvKo5Vtud0Nu/DqlhavY55EzraOxFGe', 1, '2018-09-05 00:00:00', 0, '2018-08-06 18:52:15', 0),
-(3, 'Rolando', '123456', 2, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
-(5, 'Estefany', '$2y$10$o3Hml2lgnFptuFl47lKIteS5YQ0TUAHMtZw2BAX8MoiM/Qkyj0vVe', 5, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
-(8, 'Candy', '$2y$10$nbv8..0Y3NPcnzo9lnbEc.1jXQFc8gndc2eXfqhW0n.Y52ClmVndm', 4, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
-(10, 'Estef', '$2y$10$SculHJeWjwjmseEe6gIpAu0aba2YXL/FabLEEulid9EXkIvduS9FK', 7, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0);
+(1, 'Danicx', '$2y$10$Jt6GgE.XDitTGycF2x1Mcu3fExuj.cnOH/Pb3HEC3iG26n4.Sjho.', 1, '2018-09-05 00:00:00', 0, '2018-08-06 18:52:15', 1),
+(3, 'Rolando', '$2y$10$Jt6GgE.XDitTGycF2x1Mcu3fExuj.cnOH/Pb3HEC3iG26n4.Sjho.', 2, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
+(5, 'Estefany', '$2y$10$Jt6GgE.XDitTGycF2x1Mcu3fExuj.cnOH/Pb3HEC3iG26n4.Sjho.', 5, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
+(8, 'Candy', '$2y$10$Jt6GgE.XDitTGycF2x1Mcu3fExuj.cnOH/Pb3HEC3iG26n4.Sjho.', 4, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
+(10, 'Estef', '$2y$10$Jt6GgE.XDitTGycF2x1Mcu3fExuj.cnOH/Pb3HEC3iG26n4.Sjho.', 7, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0);
 
 --
 -- Índices para tablas volcadas
@@ -694,6 +710,7 @@ ALTER TABLE `categoriaproducto`
 --
 ALTER TABLE `cuentatotal`
   ADD PRIMARY KEY (`IdCuenta`),
+  ADD UNIQUE KEY `numb_cuenta` (`numb_cuenta`),
   ADD KEY `IdEnte` (`IdEnte`);
 
 --
@@ -737,6 +754,7 @@ ALTER TABLE `empleados`
 --
 ALTER TABLE `entes`
   ADD PRIMARY KEY (`IdEnte`),
+  ADD UNIQUE KEY `DocIdentidad` (`DocIdentidad`),
   ADD KEY `IdGenero` (`IdGenero`),
   ADD KEY `IdTipo` (`IdTipo`);
 
@@ -887,7 +905,7 @@ ALTER TABLE `categoriaproducto`
 -- AUTO_INCREMENT de la tabla `cuentatotal`
 --
 ALTER TABLE `cuentatotal`
-  MODIFY `IdCuenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IdCuenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `detalleconferencia`
@@ -917,7 +935,7 @@ ALTER TABLE `empleados`
 -- AUTO_INCREMENT de la tabla `entes`
 --
 ALTER TABLE `entes`
-  MODIFY `IdEnte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IdEnte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `estado`

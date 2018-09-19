@@ -9,299 +9,69 @@
           <div class="clearfix"></div>
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="x_panel">
-                <div class="x_title">
-                  <h2>Nueva ordenes restaurante </h2>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
-                  <br>
-                  <form autocomplete= 'off' id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left">
-                    <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre cliente:</label>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <select class="form-control">
-                          <option value="">Lorem, ipsum dolor.</option>
-                          <option value="">Lorem, ipsum dolor.</option>
-                          <option value="">Lorem, ipsum dolor.</option>
-                          <option value="">Lorem, ipsum dolor.</option>
-                          <option value="">Lorem, ipsum dolor.</option>
-                          <option value="">Lorem, ipsum dolor.</option>
-                          <option value="">Lorem, ipsum dolor.</option>
-                          <option value="">Lorem, ipsum dolor.</option>
-                          <option value="">Lorem, ipsum dolor.</option>
-                          <option value="">Lorem, ipsum dolor.</option>
-
-                        </select>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Fecha
-                        <span class="required">*</span>
-                      </label>
-                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <fieldset>
-                          <div class="control-group">
-                            <div class="controls">
-                              <input type="text" class="form-control has-feedback-left" id="single_cal4" placeholder="" aria-describedby="inputSuccess2Status4">
-                              <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
-                              <span id="inputSuccess2Status4" class="sr-only">(success)</span>
-                            </div>
-                          </div>
-                        </fieldset>
-                      </div>
-                    </div>
-                    <div class="ln_solid"></div>
-                    <h3>Productos </h3>
-                  </form>
-                  <br>
-                  <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
-                    <div class="panel">
-                      <a class="panel-heading collapsed" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-                        aria-expanded="false" aria-controls="collapseOne">
-                        <h4 class="panel-title bg-rojo1">Menu bebidad</h4>
-                      </a>
-                      <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false"
-                        style="height: 0px;">
-                        <div class="panel-body">
-                          <div class="row">
-                            <p>Seleccione las diferentes bebidadas a comprar</p>
-                            <div class="col-md-55">
-                              <div class="thumbnail">
-                                <div class="image view view-first">
-                                  <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
-                                  <div class="mask">
-                                    <p>$ 5.25</p>
-                                    <div class="tools tools-bottom">
-                                      <a href="#">
-                                        <i class="fas fa-plus"></i>
-                                      </a>
-                                      <a href="#">
-                                        <i class="fa fa-times"></i>
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="caption">
-                                  <p>Plato 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-md-55">
-                              <div class="thumbnail">
-                                <div class="image view view-first">
-                                  <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
-                                  <div class="mask">
-                                    <p>$ 5.25</p>
-                                    <div class="tools tools-bottom">
-                                      <a href="#">
-                                        <i class="fas fa-plus"></i>
-                                      </a>
-                                      <a href="#">
-                                        <i class="fa fa-times"></i>
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="caption">
-                                  <p>Plato 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-md-55">
-                              <div class="thumbnail">
-                                <div class="image view view-first">
-                                  <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
-                                  <div class="mask">
-                                    <p>$ 5.25</p>
-                                    <div class="tools tools-bottom">
-                                      <a href="#">
-                                        <i class="fas fa-plus"></i>
-                                      </a>
-                                      <a href="#">
-                                        <i class="fa fa-times"></i>
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="caption">
-                                  <p>Plato 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-md-55">
-                              <div class="thumbnail">
-                                <div class="image view view-first">
-                                  <img class="estilo_stay" src="img/bebida1.jpg" alt="image">
-                                  <div class="mask">
-                                    <p>$ 5.25</p>
-                                    <div class="tools tools-bottom">
-                                      <a href="#">
-                                        <i class="fas fa-plus"></i>
-                                      </a>
-                                      <a href="#">
-                                        <i class="fa fa-times"></i>
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="caption">
-                                  <p>Plato 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="panel">
-                      <a class="panel-heading collapsed" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
-                        aria-expanded="false" aria-controls="collapseTwo">
-                        <h4 class="panel-title bg-rojo1">Menu plato</h4>
-                      </a>
-                      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false">
-                        <div class="panel-body">
-                          <div class="row">
-                            <p>Seleccione las diferentes platos a comprar</p>
-                            <div class="col-md-55">
-                              <div class="thumbnail">
-                                <div class="image view view-first">
-                                  <img class="estilo_stay" src="img/plato1.jpg" alt="image">
-                                  <div class="mask">
-                                    <p>$ 5.25</p>
-                                    <div class="tools tools-bottom">
-                                      <a href="#">
-                                        <i class="fas fa-plus"></i>
-                                      </a>
-                                      <a href="#">
-                                        <i class="fa fa-times"></i>
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="caption">
-                                  <p>Plato 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-md-55">
-                              <div class="thumbnail">
-                                <div class="image view view-first">
-                                  <img class="estilo_stay" src="img/plato1.jpg" alt="image">
-                                  <div class="mask">
-                                    <p>$ 5.25</p>
-                                    <div class="tools tools-bottom">
-                                      <a href="#">
-                                        <i class="fas fa-plus"></i>
-                                      </a>
-                                      <a href="#">
-                                        <i class="fa fa-times"></i>
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="caption">
-                                  <p>Plato 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-md-55">
-                              <div class="thumbnail">
-                                <div class="image view view-first">
-                                  <img class="estilo_stay" src="img/plato1.jpg" alt="image">
-                                  <div class="mask">
-                                    <p>$ 5.25</p>
-                                    <div class="tools tools-bottom">
-                                      <a href="#">
-                                        <i class="fas fa-plus"></i>
-                                      </a>
-                                      <a href="#">
-                                        <i class="fa fa-times"></i>
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="caption">
-                                  <p>Plato 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-md-55">
-                              <div class="thumbnail">
-                                <div class="image view view-first">
-                                  <img class="estilo_stay" src="img/plato1.jpg" alt="image">
-                                  <div class="mask">
-                                    <p>$ 5.25</p>
-                                    <div class="tools tools-bottom">
-                                      <a href="#">
-                                        <i class="fas fa-plus"></i>
-                                      </a>
-                                      <a href="#">
-                                        <i class="fa fa-times"></i>
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="caption">
-                                  <p>Plato 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, necessitatibus?</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="ln_solid"></div>
-                  <h3>Total </h3>
-                  </form>
-                  <br>
+              <div class="x_panel"> 
                   <div class="x_content">
-                    <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>Producto</th>
-                          <th>Cantidad</th>
-                          <th>Precio</th>
-                          <th>Total</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>3</td>
-                          <td>#5.25</td>
-                          <td>#15.10</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>3</td>
-                          <td>#5.25</td>
-                          <td>#15.10</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>3</td>
-                          <td>#5.25</td>
-                          <td>#15.10</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div class="x_title">
+                      <h2>Nueva orden <small>paso 1</small></h2>
+                      <div class="clearfix"></div>
+                    </div>
+                    <!-- Tabs -->
+                    <div id="wizard_verticle" class="form_wizard wizard_verticle">
+                        <ul class="list-unstyled wizard_steps anchor">
+                          <li>
+                            <a href="#paso1" class="selected" isdone="1" rel="1">
+                              <span class="step_no">1</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#paso2" class="disabled" isdone="0" rel="2">
+                              <span class="step_no">2</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#paso3" class="disabled" isdone="0" rel="3">
+                              <span class="step_no">3</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#paso4" class="disabled" isdone="0" rel="4">
+                              <span class="step_no">4</span>
+                            </a>
+                          </li>
+                        </ul>
+                      <div class="stepContainer"><div id="step-11" class="content" >
+                          <h2 class="StepTitle">Tipo de cliente</h2>
+                              <div class="animated lipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                <div class="tile-stats">
+                                  <div class="count">Nuevo cliente</div>
+                                  <div class="ln_solid"></div>
+                                  <h3>Se procede a registrar nuevo cliente</h3>
+                                      <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                                          <a href="p2o1nueva_orden.php" class="btn btn-info btn-lg">Selecionar</a>
+                                      </div>
+                                </div>
+                              </div>
+                              <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                <div class="tile-stats">
+                                  <div class="count">Cliente ya registrado</div>
+                                  <div class="ln_solid"></div>
+                                  <h3>Se a selecionar un cliente ya registrado  (se crea nueva cuenta de pago)</h3>
+                                      <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                                        <a href="p2o2nueva_orden.php" class="btn btn-info btn-lg">Selecionar</a>
+                                      </div>
+                                </div>
+                              </div>
+                      </div>
+                    </div>
+                    <div class="">
+                          <a href="#" class="buttonPrevious buttonDisabled btn btn-primary">Anterior</a>
+                          <a href="#" class="buttonNext btn btn-success">Siguiente</a>
+                    </div>
+                    <!-- End SmartWizard Content -->
+
                   </div>
-                </div>
-                <div class="ln_solid"></div>
-                <div class="form-group">
-                  <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                    <button class="btn btn-primary" type="reset">Limpiar</button>
-                    <button type="submit" class="btn btn-success">Aceptar</button>
-                  </div>
-                </div>
-                </form>
               </div>
+            </div>
             </div>
           </div>
         </div>
