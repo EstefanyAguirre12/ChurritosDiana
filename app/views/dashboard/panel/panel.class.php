@@ -198,7 +198,7 @@ class Page extends Component{
 					</li>
 				");
 			}
-			if($r3 !=0 ){
+			if($e3 !=0 ){
 				print("			
 					<li>
 						<a>
@@ -380,48 +380,15 @@ class Page extends Component{
 					<script type='text/javascript' src='../../../web/js/sweetalert.min.js'></script>	
 					<meta name='viewport' content='width=device-width, initial-scale=1.0'/>
 				</head>
-				<body class='nav-md'>
+				<body class='nav-md '>
 					<div class='container body'>
 						<div class='main_container'>");
 		if(isset($_SESSION['IdUsuario'])){
-
-
-//Comprobamos si esta definida la sesión 'tiempo'.
-if(isset($_SESSION['tiempo']) ) {
-
-    //Tiempo en segundos para dar vida a la sesión.
-    $inactivo = 300;//5min en este caso.
-
-    //Calculamos tiempo de vida inactivo.
-    $vida_session = time() - $_SESSION['tiempo'];
-
-        //Compraración para redirigir página, si la vida de sesión sea mayor a el tiempo insertado en inactivo.
-        if($vida_session > $inactivo)
-        {
-            
-            //Removemos sesión.
-            session_unset();
-            //Destruimos sesión.
-            session_destroy();              
-            //Redirigimos pagina.
-            header("Location: ../otros/logout.php");
-            exit();
-        }
-
-}
-
-
-$_SESSION['tiempo'] = time();
-
-
-
-
-
 			print("
 				<header >
 					<div class='col-md-3 left_col '>
 						<div class='left_col scroll-view '>
-						<div class='navbar nav_title'>
+						<div class='navbar  nav_title'>
 							<a href='../../otros/page/index.php' class='site_title'>
 							<i class='material-icons'>business </i>
 							</i>
@@ -431,11 +398,11 @@ $_SESSION['tiempo'] = time();
 						<div class='clearfix'></div>
 						<br />
 						<!-- sidebar menu -->
-						<div id='sidebar-menu' class='main_menu_side hidden-print main_menu  '>
+						<div id='sidebar-menu' class='menu_fixed  hidden-print main_menu  '>
 						<div class=''> ");
 							if(isset($_SESSION['IdUsuario'])){
 							print("
-							<ul class='nav side-menu '>
+							<ul class='nav side-menu menu_fixed '>
 							<li>
 								<a>Bienvenido $_SESSION[NombreUsuario]</a>
 							</ul>"); 
@@ -456,7 +423,7 @@ $_SESSION['tiempo'] = time();
 						</div>
 					</div>
 					<!-- top navigation -->
-					<div class='top_nav  '>
+					<div class='top_nav menu_fixed '>
 					<div class='nav_menu '>
 						<nav>
 						<div class='nav toggle'>
@@ -573,13 +540,16 @@ $_SESSION['tiempo'] = time();
 		}
 		require_once("../../../app/models/usuario.class.php");
 		$object2 = new Usuario;  
-		if($object2->setId($_SESSION['IdUsuario'])){
-		  if($object2->readEstadoSesion()){
-			if($object2->getestado_sesion()!=1){
-			  header('Location: ../otros/logout.php');
-			}
-		  }
+		if(isset($_SESSION['IdUsuario'])){
+			if($object2->setId($_SESSION['IdUsuario'])){
+				if($object2->readEstadoSesion()){
+				  if($object2->getestado_sesion()!=1){
+					header('Location: page/logout.php');
+				  }
+				}
+			  }
 		}
+
 	}
 
 
@@ -587,8 +557,8 @@ $_SESSION['tiempo'] = time();
 		print("
 							</main>
 							<!-- Footer -->
-							<footer id='myFooter'>
-								<div class='container'>
+							<footer id='myFooter' >
+								<div class=' container' class ='footer_fixed'>
 									<div class='row'>
 										<div class='col-sm-3 myCols'>
 											<h5>titulo 1</h5>
