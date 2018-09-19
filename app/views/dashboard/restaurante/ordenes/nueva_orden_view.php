@@ -38,6 +38,11 @@
                               <span class="step_no">4</span>
                             </a>
                           </li>
+                          <li>
+                            <a href="#paso5" class="disabled" isdone="0" rel="4">
+                              <span class="step_no">5</span>
+                            </a>
+                          </li>
                         </ul>
                       <div class="stepContainer"><div id="step-11" class="content" >
                           <h2 class="StepTitle">Tipo de cliente</h2>

@@ -9,6 +9,7 @@ try{
             $cuenta = $_GET['cuenta'];
             $data1 = $nueva_orden->readTiposPro();
             $data2 = $nueva_orden->readCategoriaPro();
+           
         }else{
             throw new Exception("Error ningun cliente selecionado", null);
         }

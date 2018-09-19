@@ -54,13 +54,12 @@
                             foreach($data as $row){
                               print("
                               
-                                  <li>
-                                    <span class='' aria-hidden='true'></span>
-                                    <h3 class='glyphicon-class'>$row[1]</h3>
-                                    <h4 class='glyphicon-class'>$row[3]</h4>
-                                    <a  href='p4o2nueva_orden.php?cliente=$id_cliente&cuenta=$cuenta&tipo=$row[0]' class='btn btn-primary btn-xs'>selecionar</a>
-                                    <input type='checkbox' id='permVentas' name='permVentas' />
-                                  </li>
+                                <li>
+                                <span class='' aria-hidden='true'></span>
+                                <h3 class='glyphicon-class'>$row[1]</h3>
+                                <h4 class='glyphicon-class'>$row[3]</h4>  
+                                <a  href='p4produtosnueva_orden.php?cliente=$id_cliente&cuenta=$cuenta&producto=$row[0]' class='btn btn-primary btn-xs'>selecionar</a>
+                              </li>
                                
                               ");
                             }
