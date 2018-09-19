@@ -36,7 +36,7 @@ class Cargos extends Validator{
 	
 
 	public function setPerm1($value){
-        if($this->validateId($value)){
+        if($this->validateAlphanumeric($value, 1, 200)){
             $this->perm1 = $value;
             return true;  
         }
@@ -50,7 +50,7 @@ class Cargos extends Validator{
 
 
 	public function setPerm2($value){
-        if($this->validateId($value)){
+        if($this->validateAlphanumeric($value, 1, 200)){
             $this->perm2 = $value;
             return true;  
         }
@@ -63,7 +63,7 @@ class Cargos extends Validator{
 	}
 	
 	public function setPerm3($value){
-        if($this->validateId($value)){
+        if($this->validateAlphanumeric($value, 1, 200)){
             $this->perm3 = $value;
             return true;  
         }
@@ -76,7 +76,7 @@ class Cargos extends Validator{
 	}
 	
 	public function setPerm4($value){
-        if($this->validateId($value)){
+        if($this->validateAlphanumeric($value, 1, 200)){
             $this->perm4 = $value;
             return true;  
         }
@@ -89,7 +89,7 @@ class Cargos extends Validator{
 	}
 	
 	public function setPerm5($value){
-        if($this->validateId($value)){
+        if($this->validateAlphanumeric($value, 1, 200)){
             $this->perm5 = $value;
             return true;  
         }
@@ -102,7 +102,7 @@ class Cargos extends Validator{
 	}
 
 	public function setPerm6($value){
-        if($this->validateId($value)){
+        if($this->validateAlphanumeric($value, 1, 200)){
             $this->perm6 = $value;
             return true;  
         }
@@ -115,7 +115,7 @@ class Cargos extends Validator{
 	}
 	
 	public function setPerm7($value){
-        if($this->validateId($value)){
+        if($this->validateAlphanumeric($value, 1, 200)){
             $this->perm7 = $value;
             return true;  
         }
@@ -128,7 +128,7 @@ class Cargos extends Validator{
 	}
 	
 	public function setPerm8($value){
-        if($this->validateId($value)){
+        if($this->validateAlphanumeric($value, 1, 200)){
             $this->perm8 = $value;
             return true;  
         }
@@ -141,7 +141,7 @@ class Cargos extends Validator{
 	}
 	
 	public function setPerm9($value){
-        if($this->validateId($value)){
+        if($this->validateAlphanumeric($value, 1, 200)){
             $this->perm9 = $value;
             return true;  
         }
@@ -154,7 +154,7 @@ class Cargos extends Validator{
 	}
 	
 	public function setPerm10($value){
-        if($this->validateId($value)){
+        if($this->validateAlphanumeric($value, 1, 200)){
             $this->perm10 = $value;
             return true;  
         }
@@ -167,7 +167,7 @@ class Cargos extends Validator{
 	}
 	
 	public function setPerm11($value){
-        if($this->validateId($value)){
+        if($this->validateAlphanumeric($value, 1, 200)){
             $this->perm11 = $value;
             return true;  
         }
@@ -180,7 +180,7 @@ class Cargos extends Validator{
 	}
 	
 	public function setPerm12($value){
-        if($this->validateId($value)){
+        if($this->validateAlphanumeric($value, 1, 200)){
             $this->perm12 = $value;
             return true;  
         }
@@ -193,7 +193,7 @@ class Cargos extends Validator{
 	}
 	
 	public function setPerm13($value){
-        if($this->validateId($value)){
+        if($this->validateAlphanumeric($value, 1, 200)){
             $this->perm13 = $value;
             return true;  
         }
@@ -206,7 +206,7 @@ class Cargos extends Validator{
 	}
 	
 	public function setPerm14($value){
-        if($this->validateId($value)){
+        if($this->validateAlphanumeric($value, 1, 200)){
             $this->perm14 = $value;
             return true;  
         }
@@ -271,7 +271,7 @@ class Cargos extends Validator{
 		}
     //Insertar Ocasion
     public function createCargo(){
-		$sql = "INSERT INTO cargos(NombreCargo, Descripcion, h_reserva, h_servicio, h_habitaciones, h_registros, r_mesas, r_ordenes, r_registros, e_reservacion, e_salones, e_registro, l_registros, rr_registros, b_datos, g_registros) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
+		$sql = "INSERT INTO cargos(NombreCargo, Descripcion, h_reserva, h_servicio, h_habitaciones, h_registros, r_mesas, r_ordenes, r_registros, e_reservacion, e_salones, e_registro, l_registros, rr_registro, b_datos, g_registros) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
 		$params = array($this->nombre, $this->descripcion, $this->perm1, $this->perm2, $this->perm3, $this->perm4, $this->perm5, $this->perm6, $this->perm7, $this->perm8, $this->perm9, $this->perm10, $this->perm11, $this->perm12, $this->perm13, $this->perm14);
 		return Database::executeRow($sql, $params);
     }
@@ -290,8 +290,8 @@ class Cargos extends Validator{
     }
     //Modificar Ocasion
     public function updateCargo(){
-		$sql = "UPDATE cargos SET NombreCargo = ?, Descripcion = ? WHERE IdCargo = ?";
-		$params = array($this->nombre, $this->descripcion, $this->id);
+		$sql = "UPDATE cargos SET NombreCargo = ?, Descripcion = ?, h_reserva = ?, h_servicio = ?, h_habitaciones = ?, h_registros = ?, r_mesas = ?, r_ordenes = ?, r_registros = ?, e_reservacion = ?, e_salones = ?, e_registro = ?, l_registros = ?, rr_registro = ?, b_datos = ?, g_registros = ? WHERE IdCargo = ?";
+		$params = array($this->nombre, $this->descripcion, $this->perm1, $this->perm2, $this->perm3, $this->perm4, $this->perm5, $this->perm6, $this->perm7, $this->perm8, $this->perm9, $this->perm10, $this->perm11, $this->perm12, $this->perm13, $this->perm14, $this->id);
 		return Database::executeRow($sql, $params);
     }
     //Eliminar Ocasion
