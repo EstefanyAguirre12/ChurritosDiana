@@ -88,7 +88,7 @@ try
 																if($object->setestado_sesion($sumaEstadoSesion)){
 																	$object->updateEstadoSesion();
 																	#redireccionar al menu normalmente
-																	throw new Exception("Error la sesion de este usuario ya estaba activo, por razÃ³n de seguridad esta cuenta se suspendera");
+																	throw new Exception("Error la sesion de este usuario ya estaba activo, por razones de seguridad esta cuenta se suspendera");
 																}
 															}else if($Id_estado==2){
 																throw new Exception("Por motivos de seguridad este usuario a sido suspendido, revisar correo electronico con las instrucciones a seguir");
@@ -101,7 +101,7 @@ try
 											}
 										}else
 										{
-											throw new Exception("Cambio de contraseÃ±o forzada o erroneo (fecha de ultimo cambio de contraseÃ±a en futuro)");
+											throw new Exception("Cambio de contraseña forzada o erroneo (fecha de ultimo cambio de contraseña en futuro)");
 										}
                                     }
                                     else{
@@ -115,7 +115,7 @@ try
 													$modificarNum= $object->updateNumeroIntentos();
 													if($modificarNum){
 														$intentos= 3-$SumaNum;
-														throw new Exception("ContraseÃ±a incorrecta, numero de intentos restantes: ".$intentos);
+														throw new Exception("Contraseñaa incorrecta, numero de intentos restantes: ".$intentos);
 													}
 												}
 												else{
@@ -162,7 +162,7 @@ try
 													$modificarNum= $object->updateNumeroIntentos();
 													if($modificarNum){
 														$intentos= 3-$SumaNum;
-														throw new Exception("ContraseÃ±a incorrecta, numero de intentos restantes: ".$intentos);
+														throw new Exception("Contraseñaa incorrecta, numero de intentos restantes: ".$intentos);
 													}
 												}
 												else{
@@ -234,4 +234,3 @@ try
 
 require_once("../../../app/views/dashboard/page/login_view.php");
 ?>
-

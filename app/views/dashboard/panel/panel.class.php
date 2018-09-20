@@ -49,7 +49,7 @@ class Page extends Component{
 			");
 		}
 		if($h3 !=0 ){
-			print("			
+			print("
 				<li>
 					<a>
 						<i class='material-icons'>store</i> Habitaciones
@@ -61,7 +61,7 @@ class Page extends Component{
 						</li>
 					</ul>
 				</li>
-			");	
+			");
 		}
 		if($h4 !=0 ){
 			print("
@@ -78,15 +78,15 @@ class Page extends Component{
 							<a href='../../hotel/registros/indextipo.php'>Tipo Habitacion</a>
 							</li>
 						</ul>
-					</li>	
-			");	
-		}			
-		print("		
+					</li>
+			");
+		}
+		print("
 				</ul>
 			</div>
 		");
 		}
-	
+
 	}
 	public static function Modulo_Resturante($r1,$r2,$r3){
 		if($r1 != 0 || $r2 != 0 || $r3 != 0 ){
@@ -129,7 +129,7 @@ class Page extends Component{
 				");
 			}
 			if($r3 !=0 ){
-				print("			
+				print("
 				<li>
 					<a>
 						<i class='material-icons'>archive</i> Registros
@@ -150,9 +150,9 @@ class Page extends Component{
 						</li>
 					</ul>
 				</li>
-				");	
-			}			
-			print("		
+				");
+			}
+			print("
 					</ul>
 				</div>
 			");
@@ -199,7 +199,7 @@ class Page extends Component{
 				");
 			}
 			if($e3 !=0 ){
-				print("			
+				print("
 					<li>
 						<a>
 							<i class='material-icons'>archive</i> Registros
@@ -217,9 +217,9 @@ class Page extends Component{
 							</li>
 						</ul>
 					</li>
-				");	
-			}			
-			print("		
+				");
+			}
+			print("
 					</ul>
 				</div>
 			");
@@ -252,8 +252,8 @@ class Page extends Component{
 					</ul>
 				</li>
 				");
-			}		
-			print("		
+			}
+			print("
 					</ul>
 				</div>
 			");
@@ -317,7 +317,7 @@ class Page extends Component{
 				");
 			}
 			if($g1 !=0 ){
-				print("			
+				print("
 					<h3 class='text-center'>Graficos</h3>
 					<ul class='nav side-menu'>
 						<li>
@@ -344,9 +344,9 @@ class Page extends Component{
 						</ul>
 						</li>
 					</ul>
-				");	
-			}			
-			print("		
+				");
+			}
+			print("
 					</ul>
 				</div>
 			");
@@ -359,7 +359,7 @@ class Page extends Component{
 		Page::Modulo_Resturante($permisos[5],$permisos[6],$permisos[7]);
 		Page::Modulo_Eventos($permisos[8],$permisos[9],$permisos[10]);
 		Page::Modulo_Lavanderia($permisos[11]);
-		Page::Modulo_Registros($permisos[12],$permisos[13],$permisos[14]);	
+		Page::Modulo_Registros($permisos[12],$permisos[13],$permisos[14]);
 	}
 
 	public static function templateHeader($title){
@@ -375,9 +375,10 @@ class Page extends Component{
 					<link type='text/css' rel='stylesheet' href='../../../web/css/daterangepicker.css'/>
 					<link type='text/css' rel='stylesheet' href='../../../web/fonts/css/fontawesome-all.min.css'/>
 					<link type='text/css' rel='stylesheet' href='../../../web/font/css/font-awesome.min.css'/>
-					<link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'/>	
-					<script src='https://www.google.com/recaptcha/api.js'></script>	
-					<script type='text/javascript' src='../../../web/js/sweetalert.min.js'></script>	
+					<link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'/>
+					<script src='https://www.google.com/recaptcha/api.js'></script>
+					<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
+					<script type='text/javascript' src='../../../web/js/sweetalert.min.js'></script>
 					<meta name='viewport' content='width=device-width, initial-scale=1.0'/>
 				</head>
 				<body class='nav-md '>
@@ -405,19 +406,19 @@ class Page extends Component{
 							<ul class='nav side-menu menu_fixed '>
 							<li>
 								<a>Bienvenido $_SESSION[NombreUsuario]</a>
-							</ul>"); 
+							</ul>");
 							}
 								print("
 							<ul class='nav side-menu '>
 								<li>
 								<a href='../../otros/page/index.php'>
-								
+
 									<i class='material-icons'>home</i> Inicio </a>
 							</ul>
 						</div>
-			");	
-			Page::ObtenerPermisos($_SESSION['cargo']);					
-			print("		
+			");
+			Page::ObtenerPermisos($_SESSION['cargo']);
+			print("
 						</div>
 						<!-- /sidebar menu -->
 						</div>
@@ -539,7 +540,7 @@ class Page extends Component{
 			Page::showMessage(3,"Debe iniciar Sesion","login.php");
 		}
 		require_once("../../../app/models/usuario.class.php");
-		$object2 = new Usuario;  
+		$object2 = new Usuario;
 		if(isset($_SESSION['IdUsuario'])){
 			if($object2->setId($_SESSION['IdUsuario'])){
 				if($object2->readEstadoSesion()){
@@ -562,11 +563,11 @@ class Page extends Component{
 									<div class='row'>
 										<div class='col-sm-3 myCols'>
 											<h5>Barolo</h5>
-											
+
 										</div>
 										<div class='col-sm-3 myCols'>
 											<h5>Sistema de administracion de hoteles</h5>
-											
+
 										</div>
 										<div class='col-sm-3 myCols'>
 											<h5>Support</h5>
@@ -588,18 +589,20 @@ class Page extends Component{
 							</footer>
 							<!-- ./Footer -->
 						</div>
-					</div>  
+					</div>
 					<!-- jQuery -->
 					<script type='text/javascript' src='../../../web/js/jquery.js'></script>
 					<!-- Bootstrap -->
 					<script type='text/javascript' src='../../../web/js/bootstrap.js'></script>
 					<!-- bootstrap-progressbar -->
+										<script type='text/javascript' src='../../../web/js/index.js'></script>
 					<script type='text/javascript' src='../../../web/js/bootstrap-progressbar.js'></script>
 					<script type='text/javascript' src='../../../web/js/daterangepicker/bootstrap-datetimepicker.min.js'></script>
 					<script type='text/javascript' src='../../../web/js/daterangepicker.js'></script>
 					<!-- Custom Theme Scripts -->
 					<script type='text/javascript' src='../../../web/js/custom.js'></script>
 					<script type='text/javascript' src='../../../web/js/custom.min.js'></script>
+
 				</body>
 			</html>
 		");

@@ -19,7 +19,7 @@ class Usuario extends Validator {
 
 	//Métodos para sobrecarga de propiedades
 	public function settiempo_intentos($value){
-		if($this->validateDateTime($value)){
+		if($this->validateDate($value)){
 			$this->tiempo_intentos = $value;
 			return true;
 		}else{
