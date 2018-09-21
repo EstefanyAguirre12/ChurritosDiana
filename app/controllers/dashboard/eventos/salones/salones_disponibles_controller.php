@@ -4,13 +4,7 @@ try{
 	 //Lista Habitaciones
     $sala = new Salas;
     $salas = $sala->getSalas();
-    if(isset($_POST['aceptar'])){
-		
-		$F1= $_POST['precio1'];
-		$F2= $_POST['precio2'];
-		Page::showMessage(1, "Parametros validos ", "reporte_rangoPrecioE.php?f1=$F1&f2=$F2");
-
-	}
+   
     if($salas){
 
     }else{

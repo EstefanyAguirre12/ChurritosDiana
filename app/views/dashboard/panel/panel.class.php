@@ -348,13 +348,13 @@ class Page extends Component{
 							<a href='../../graficosyreportes/parametros/hdisponibles.php'>Reporte habitaciones por precio</a>
 							</li>
 							<li>
-							<a href='../../graficosyreportes/parametros/paramprod.php'>Reporte productos y precio</a>
+							<a href='../../graficosyreportes/parametros/reservalista.php'>Reporte eventos por fecha</a>
 							</li>
 							<li>
-							<a href='../../graficosyreportes/parametros/paramsalas.php'>Reporte salones por precio</a>
+							<a href='../../graficosyreportes/parametros/sdisponibles.php'>Reporte salones por precio</a>
 							</li>
 							<li>
-							<a href='../../graficosyreportes/parametros/paramtipo.php'>Reporte productos por tipo</a>
+							<a href='../../graficosyreportes/parametros/capacidad.php'>Reporte salas por capacidad</a>
 							</li>
 						</ul>
 						</li>
