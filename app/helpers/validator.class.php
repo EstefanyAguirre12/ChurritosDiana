@@ -150,6 +150,13 @@ class Validator{
 			return false;
 		}
 	}
+	public function validateDateTime($value){
+		if (preg_match('/(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})/',$value)){
+			return true;
+		} else {
+			return false;
+		}
+	}
 	public function validateLink($value){
 		if (preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$value)) {
 			return true;
