@@ -260,13 +260,13 @@
         <a class="pull-right" data-go="next"><div class="btn"><i class="icon-chevron"></i></div></a>
     </div><hr/>
     <div class="day-headers">
-      <div class="day header">Mon</div>
-      <div class="day header">Tue</div>
-      <div class="day header">Wed</div>
-      <div class="day header">Thu</div>
-      <div class="day header">Fri</div>
-      <div class="day header">Sat</div>
-      <div class="day header">Sun</div>
+      <div class="day header">Lun</div>
+      <div class="day header">Mar</div>
+      <div class="day header">Mie</div>
+      <div class="day header">Jue</div>
+      <div class="day header">Vie</div>
+      <div class="day header">Sab</div>
+      <div class="day header">Dom</div>
     </div>
     <div class="days" data-group="days">
       <!-- the place where days will be generated -->
