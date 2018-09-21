@@ -318,7 +318,7 @@ class Page extends Component{
 			}
 			if($g1 !=0 ){
 				print("
-					<h3 class='text-center'>Graficos</h3>
+					<h3 class='text-center'>Graficos Y Reportes</h3>
 					<ul class='nav side-menu'>
 						<li>
 						<a>
@@ -327,19 +327,34 @@ class Page extends Component{
 						</a>
 						<ul class='nav child_menu'>
 							<li>
-							<a href='../../graficos/parametros/paramfecha.php'>Reservas por Fecha</a>
+							<a href='../../graficosyreportes/parametros/paramfecha.php'>Grafico reservas por fecha</a>
 							</li>
 							<li>
-							<a href='../../graficos/parametros/paramhab.php'>Habitaciones por precio</a>
+							<a href='../../graficosyreportes/parametros/paramhab.php'>Grafico habitaciones por precio</a>
 							</li>
 							<li>
-							<a href='../../graficos/parametros/paramprod.php'>Productos y precio</a>
+							<a href='../../graficosyreportes/parametros/paramprod.php'>Grafico productos y precio</a>
 							</li>
 							<li>
-							<a href='../../graficos/parametros/paramsalas.php'>Salones por precio</a>
+							<a href='../../graficosyreportes/parametros/paramsalas.php'>Grafico salones por precio</a>
 							</li>
 							<li>
-							<a href='../../graficos/parametros/paramtipo.php'>Cantidad de productos por tipo</a>
+							<a href='../../graficosyreportes/parametros/paramtipo.php'>Grafico productos por tipo</a>
+							</li>
+							<li>
+							<a href='../../graficosyreportes/parametros/reservacontrol.php'>Reporte reservas por fecha</a>
+							</li>
+							<li>
+							<a href='../../graficosyreportes/parametros/hdisponibles.php'>Reporte habitaciones por precio</a>
+							</li>
+							<li>
+							<a href='../../graficosyreportes/parametros/paramprod.php'>Reporte productos y precio</a>
+							</li>
+							<li>
+							<a href='../../graficosyreportes/parametros/paramsalas.php'>Reporte salones por precio</a>
+							</li>
+							<li>
+							<a href='../../graficosyreportes/parametros/paramtipo.php'>Reporte productos por tipo</a>
 							</li>
 						</ul>
 						</li>
@@ -375,7 +390,7 @@ class Page extends Component{
 					<link type='text/css' rel='stylesheet' href='../../../web/css/daterangepicker.css'/>
 					<link type='text/css' rel='stylesheet' href='../../../web/fonts/css/fontawesome-all.min.css'/>
 					<link type='text/css' rel='stylesheet' href='../../../web/font/css/font-awesome.min.css'/>
-					<link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'/>
+					<link type='text/css' rel='stylesheet' href='../../../web/css/icon.css'/>
 					<script src='https://www.google.com/recaptcha/api.js'></script>
 					<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
 					<script type='text/javascript' src='../../../web/js/sweetalert.min.js'></script>

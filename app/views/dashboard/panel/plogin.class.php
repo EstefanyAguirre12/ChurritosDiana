@@ -18,7 +18,7 @@ class Page extends Component {
 					<link type='text/css' rel='stylesheet' href='../../../web/css/daterangepicker.css'/>
 					<link type='text/css' rel='stylesheet' href='../../../web/fonts/css/fontawesome-all.min.css'/>
 					<link type='text/css' rel='stylesheet' href='../../../web/font/css/font-awesome.min.css'/>
-					<link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'/>	
+					<link type='text/css' rel='stylesheet' href='../../../web/css/icon.css'/>
 					<script type='text/javascript' src='../../../web/js/sweetalert.min.js'></script>
 					<script src='https://www.google.com/recaptcha/api.js'></script>			
 					<meta name='viewport' content='width=device-width, initial-scale=1.0'/>
