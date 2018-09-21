@@ -2,7 +2,7 @@
 html , body{
 
  height:100%;
-overflow: hidden;
+overflow:
 }
 
 .full-width {
@@ -4524,322 +4524,87 @@ a{text-decoration: none}
 
 /* PROBANDO */
 
-/* -- usable codes start -- */
 
-.clock-container {
-  width: 350px;
-  margin-left:35%;
-  margin-top: -30%;
-  height: 25%;
-  overflow-x: hidden;
-  overflow-y: auto;
+
+.calendar-page {
+  width: 500px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.responsive-calendar-modal {
+  background-color: #1d86c8;
+  color: white;
+  padding: 1em;
+}
+
+.responsive-calendar .controls {
+  text-align: center;
+}
+
+.responsive-calendar .controls a {
+  cursor: pointer;
+  color: red;
+}
+
+.responsive-calendar .controls h4 {
+  display: inline;
+}
+
+.responsive-calendar .day-headers,
+.responsive-calendar .days {
+  font-size: 0;
+}
+
+.responsive-calendar .day {
+  display: inline-block;
+  position: relative;
+  font-size: 14px;
+  width: 14.285714285714286%;
+  text-align: center;
+}
+
+.responsive-calendar .day a {
+  color: #000000;
+  display: block;
+  cursor: pointer;
+  padding: 20% 0 20% 0;
+}
+
+.responsive-calendar .day a:hover {
+  background-color: #eee;
+  text-decoration: none;
+}
+
+.responsive-calendar .day.header {
+  border-bottom: 1px gray solid;
+}
+
+.responsive-calendar .day.active a {
+  background-color: #1d86c8;
+  color: #ffffff;
+}
+
+.responsive-calendar .day.active a:hover {
+  background-color: #36a0e2;
+}
+
+.responsive-calendar .day.active .not-current {
+  background-color: #8fcaef;
+  color: #ffffff;
+}
+
+.responsive-calendar .day.active .not-current:hover {
+  background-color: #bcdff5;
+}
+
+.responsive-calendar .day.not-current a {
+  color: #ddd;
+}
+
+.responsive-calendar .day .badge {
   position: absolute;
-}
-
-li,
-ul,
-section, .esto{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-weight: inherit;
-    font-style: inherit;
-    font-size: 100%;
-    font-family: inherit;
-    vertical-align: baseline;
-    text-decoration: none;
-    list-style: none;
-}
-img {
-    width: 100%
-}
-.anim04c {
-    -webkit-transition: all .4s cubic-bezier(.5, .35, .15, 1.4);
-    transition: all .4s cubic-bezier(.5, .35, .15, 1.4);
-}
-
-/*-----*/
-
-.outer {
-    position: relative;
-    top: 50%;
-    z-index: 1;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    cursor: pointer;
-}
-/*-----*/
-
-.signboard {
-    width: 100px;
-    height: 100px;
-    margin: auto;
-    color: #fff;
-    border-radius: 10px;
-}
-/*-----*/
-
-.front {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    background: #705d48;
-    text-align: center;
-}
-.right {
-    position: absolute;
-    right: : 0;
-    z-index: 2;
-    -webkit-transform: rotate(-10deg) translate(7px, 8px);
-    -moz-transform: rotate(-10deg) translate(7px, 8px);
-    -ms-transform: rotate(-10deg) translate(7px, 8px);
-    -o-transform: rotate(-10deg) translate(7px, 8px);
-    transform: rotate(-10deg) translate(7px, 8px);
-    background: #8C6738;
-}
-.left {
-    position: absolute;
-    left: 0;
-    z-index: 1;
-    -webkit-transform: rotate(5deg) translate(-4px, 4px);
-    -moz-transform: rotate(5deg) translate(-4px, 4px);
-    -ms-transform: rotate(5deg) translate(-4px, 4px);
-    -o-transform: rotate(5deg) translate(-4px, 4px);
-    transform: rotate(5deg) translate(-4px, 4px);
-    background: #B48D5B;
-}
-/*-----*/
-
-.outer:hover .inner {
-    -webkit-transform: rotate(0) translate(0);
-    -moz-transform: rotate(0) translate(0);
-    -ms-transform: rotate(0) translate(0);
-    -o-transform: rotate(0) translate(0);
-    transform: rotate(0) translate(0);
-}
-/*-----*/
-
-.outer:active .inner {
-    -webkit-transform: rotate(0) translate(0) scale(0.9);
-    -moz-transform: rotate(0) translate(0) scale(0.9);
-    -ms-transform: rotate(0) translate(0) scale(0.9);
-    -o-transform: rotate(0) translate(0) scale(0.9);
-    transform: rotate(0) translate(0) scale(0.9);
-}
-.outer:active .front .date {
-    -webkit-transform: scale(2);
-}
-.outer:active .front .day,
-.outer:active .front .month {
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
-    transform: scale(0);
-}
-.outer:active .right {
-    -webkit-transform: rotate(-5deg) translateX(80px) scale(0.9);
-    -moz-transform: rotate(-5deg) translateX(80px) scale(0.9);
-    -ms-transform: rotate(-5deg) translateX(80px) scale(0.9);
-    -o-transform: rotate(-5deg) translateX(80px) scale(0.9);
-    transform: rotate(-5deg) translateX(80px) scale(0.9);
-}
-.outer:active .left {
-    -webkit-transform: rotate(5deg) translateX(-80px) scale(0.9);
-    -moz-transform: rotate(5deg) translateX(-80px) scale(0.9);
-    -ms-transform: rotate(5deg) translateX(-80px) scale(0.9);
-    -o-transform: rotate(5deg) translateX(-80px) scale(0.9);
-    transform: rotate(5deg) translateX(-80px) scale(0.9);
-}
-/*-----*/
-
-.outer:active .calendarMain {
-    -webkit-transform: scale(1.8);
-    opacity: 0;
-    visibility: hidden;
-}
-.outer:active .clock {
-    -webkit-transform: scale(1.4);
-    opacity: 1;
-    visibility: visible;
-}
-.outer:active .calendarNormal {
-    bottom: -30px;
-    opacity: 1;
-    visibility: visible;
-}
-.outer:active .year {
-    top: -30px;
-    opacity: 1;
-    visibility: visible;
-    letter-spacing: 3px;
-}
-/*-----*/
-
-.calendarMain {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    opacity: 1;
-}
-.month,
-.day {
-    font-size: 10px;
-    line-height: 30px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-.date {
-    font-size: 40px;
-    line-height: 40px;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-/*-----*/
-
-.clock {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    font-size: 40px;
-    line-height: 100px;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-align: center;
-    opacity: 0;
-    visibility: hidden;
-}
-/*-----*/
-
-.year {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    font-size: 14px;
-    line-height: 30px;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 0;
-    text-align: center;
-    opacity: 0;
-    visibility: hidden;
-    color: #705d48;
-}
-.calendarNormal {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    font-size: 14px;
-    line-height: 30px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-align: center;
-    opacity: 0;
-    visibility: hidden;
-}
-.date2 {
-    color: #705d48;
-}
-.day2 {
-    color: #B48D5B;
-}
-.month2 {
-    color: #8C6738;
-}
-/* -- usable codes end -- */
-
-/* -- unusable codes (text, logo, etc.) -- */
-
-.info {
-    width: 100%;
-    height: 25%;
-    position: absolute;
-    top: 15%;
-    text-align: center;
-    opacity: 0;
-}
-.info li {
-    width: 100%;
-}
-.hover,
-.click,
-.yeaa {
-    font-size: 14px;
-    line-height: 25px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
-    bottom: 0;
-    opacity: 1;
-}
-.dribbble {
-    position: absolute;
-    top: -60px;
-    font-size: 14px;
-    opacity: 0;
-}
-em {
-    color: #ed4988;
-}
-.designer {
-    width: 100%;
-    height: 50%;
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-    opacity: 0;
-}
-.designer li {
-    width: 100%;
-    position: absolute;
-    bottom: 50%;
-}
-.designer a {
-    width: 30px;
-    height: 30px;
-    display: block;
-    position: relative;
-    border-radius: 100%;
-    margin: auto;
-    color: rgba(46, 204, 113, 0.55);
-}
-.designer a:after {
-    content: "see designs";
-    position: absolute;
-    top: 0;
-    left: 40px;
-    font-size: 14px;
-    line-height: 33px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    white-space: nowrap;
-}
-.designer a:hover:after {
-    color: #2ecc71;
-}
-.designer img {
-    display: block;
-    border-radius: 100%;
-}
-body:hover .info,
-body:hover .designer {
-    opacity: 1;
-}
-::selection {
-    background: transparent;
-}
-::-moz-selection {
-    background: transparent;
+  top: 2px;
+  right: 2px;
+  z-index: 1;
 }

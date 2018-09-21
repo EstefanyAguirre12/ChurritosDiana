@@ -558,7 +558,7 @@ class Page extends Component{
 		print("
 							</main>
 							<!-- Footer -->
-							<footer id='myFooter' >
+							<footer id='myFooter' class='fixed-bottom' >
 								<div class=' container' class ='footer_fixed'>
 									<div class='row'>
 										<div class='col-sm-3 myCols'>
