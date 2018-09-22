@@ -394,7 +394,7 @@ class Page extends Component{
 					<script src='https://www.google.com/recaptcha/api.js'></script>
 					<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
 					<link type='text/css' rel='stylesheet' href='../../../web/css/custom.css'/>
-					<script type='text/javascript' src='../../../web/js/sweetalert.min.js'></script>4
+					<script type='text/javascript' src='../../../web/js/sweetalert.min.js'></script>
 					<meta name='viewport' content='width=device-width, initial-scale=1.0'/>
 				</head>
 				<body class='nav-md '>
