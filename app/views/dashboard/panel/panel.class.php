@@ -389,11 +389,12 @@ class Page extends Component{
 					<link type='text/css' rel='stylesheet' href='../../../web/css/daterangepicker.css'/>
 					<link type='text/css' rel='stylesheet' href='../../../web/fonts/css/fontawesome-all.min.css'/>
 					<link type='text/css' rel='stylesheet' href='../../../web/font/css/font-awesome.min.css'/>
+					<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Slabo+27px|Yesteryear'>
 					<link type='text/css' rel='stylesheet' href='../../../web/css/icon.css'/>
 					<script src='https://www.google.com/recaptcha/api.js'></script>
 					<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
 					<link type='text/css' rel='stylesheet' href='../../../web/css/custom.css'/>
-					<script type='text/javascript' src='../../../web/js/sweetalert.min.js'></script>
+					<script type='text/javascript' src='../../../web/js/sweetalert.min.js'></script>4
 					<meta name='viewport' content='width=device-width, initial-scale=1.0'/>
 				</head>
 				<body class='nav-md '>

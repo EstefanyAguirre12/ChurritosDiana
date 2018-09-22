@@ -9,43 +9,35 @@
           <div class="clearfix"></div>
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="x_panel">
-                <div class="x_title">
-                  <h2>Listado mesas </h2>
-                  <ul class="nav navbar-right panel_toolbox">
-                    <li>
-                      <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                      </a>
-                    </li>
-                  </ul>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
-                  <div class="row">
-                  <?php
-                    foreach($mesas as $mesa){
-                      print("
-                      <div class='animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12'>
-                          <div class='tile-stats'>
 
-                            <div class='count'>
-                              <h2>
-                              Numero:$mesa[NumeroMesa]
-                              </h2>
-                              <h4>
-                              </h4>
-                            </div>
-                            <h3 class='red'>Capacidad:$mesa[Capacidad] </h3>
+    <div class='piña-wrapper'>
 
-                          </div>
-                      </div>
-                      ");
-                  }
-                ?>
-                  </div>
-                </div>
-              </div>
+    <div class='piña-header'>
+      <h1 class='piña-header__title'>Listado de mesas</h1>
+      <h2 class='piña-header__subtitle'>restaurante o sole mio</h2>
+    </div>
+
+    <div class='cards'>
+      <?php
+        foreach($mesas as $mesa){
+          print("
+      <div class=' card [ is-collapsed ] '>
+        <div class='card__inner [ js-expander ]'>
+          <span>Mesa #: $mesa[NumeroMesa]</span>
+          <br>
+          <i class='fas fa-utensils'></i>
+        </div>
+        <div class='card__expander'>
+          <i class='fa fa-close [ js-collapser ]'></i>
+          Capacidad: $mesa[Capacidad]
+        </div>
+      </div>
+      ");
+  }
+  ?>
+    </div>
+
+  </div>
             </div>
           </div>
 
