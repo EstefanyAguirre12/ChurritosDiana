@@ -14,8 +14,10 @@
                     <div class="x_title">
                       <h2>Nueva orden <small>paso 2</small></h2>
                       <div class="clearfix"></div>
-                    </div
-                    <!-- Tabs -->
+                    </div>
+                    <div class="">
+                          <a href="nueva_orden.php" class="buttonPrevious buttonDisabled btn btn-primary">Anterior</a>
+                    </div>
                     <div id="wizard_verticle" class="form_wizard wizard_verticle">
                       <ul class="list-unstyled wizard_steps anchor">
                         <li>
@@ -91,9 +93,6 @@
                       
                             </div>
                       </div>
-                    </div>
-                    <div class="">
-                          <a href="nueva_orden.php" class="buttonPrevious buttonDisabled btn btn-primary">Anterior</a>
                     </div>
                     <!-- End SmartWizard Content -->
 
