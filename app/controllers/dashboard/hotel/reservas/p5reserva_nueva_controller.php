@@ -1,16 +1,14 @@
 <?php
-require_once("../../../app/models/detallerestaurante.class.php");
+require_once("../../../app/models/detallereserva.class.php");
 try{
 	//Aqui va el codigo para buscar
-	$nueva_orden = new Detallerestaurante;
+	$nueva_orden = new Detallereserva;
     if(isset($_GET['cliente'])){
         if(isset($_GET['cuenta'])){
-            if($nueva_orden->readCuenta($_GET['cuenta'])){
+            $id_cliente = $_GET['cliente'];
+            $cuenta = $_GET['cuenta'];
                 $nueva_orden->readCuenta($_GET['cuenta']);
-                $data = $nueva_orden->readCuentaProducto($_GET['cuenta']);
-            }else{
-                throw new Exception("Error ningun cliente selecionado", null);
-            }
+                $data = $nueva_orden->readCuentaHabitaciones();
         }else{
             throw new Exception("Error ningun cliente selecionado", null);
         }

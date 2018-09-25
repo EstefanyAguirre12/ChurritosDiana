@@ -86,7 +86,7 @@
                                                   
                                                  </td>                         
                                                 <td>
-                                                  <a href='p4nueva_orden.php?cliente=$id_cliente[0]&cuenta=$row[2]' type='button' class='btn btn-primary'>
+                                                  <a href='p4reserva_nueva.php?cliente=$id_cliente[0]&cuenta=$row[2]' type='button' class='btn btn-primary'>
                                                     <i class='fa fa-plus-circle'></i>
                                                   </a>
                                                 </td>
@@ -105,7 +105,7 @@
                     </div>
                     </div>
                     <div class="">
-                          <a href="nueva_orden.php" class="buttonPrevious buttonDisabled btn btn-primary">Anterior</a>
+                          <a href="reservacion_nueva.php" class="buttonPrevious buttonDisabled btn btn-primary">Anterior</a>
                     </div>
                     <!-- End SmartWizard Content -->
 

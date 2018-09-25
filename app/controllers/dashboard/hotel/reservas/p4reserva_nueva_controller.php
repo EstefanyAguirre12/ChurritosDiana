@@ -1,14 +1,13 @@
 <?php
-require_once("../../../app/models/detallerestaurante.class.php");
+require_once("../../../app/models/detallereserva.class.php");
 try{
 	//Aqui va el codigo para buscar
-	$nueva_orden = new Detallerestaurante;
+	$nueva_orden = new Detallereserva;
     if(isset($_GET['cliente'])){
         if(isset($_GET['cuenta'])){
             $id_cliente = $_GET['cliente'];
             $cuenta = $_GET['cuenta'];
-            $data1 = $nueva_orden->readTiposPro();
-            $data2 = $nueva_orden->readCategoriaPro();
+            $data = $nueva_orden->ReadHabitaciones();
            
         }else{
             throw new Exception("Error ningun cliente selecionado", null);
@@ -16,11 +15,11 @@ try{
     }else{
         throw new Exception("Error ningun cliente selecionado", null);
     }
-	if( isset( $data1) && isset($data2) ){
+	if($data){
 		//Se muestran los 
         require_once("../../../app/views/dashboard/hotel/reservas/p4reserva_nueva_view.php");
 	}else{
-		Page::showMessage(3, "No hay registros disponibles", "nueva_orden.php");
+		Page::showMessage(3, "No hay registros disponibles", "reserva_nueva.php");
 	}
 
 }catch(Exception $error){

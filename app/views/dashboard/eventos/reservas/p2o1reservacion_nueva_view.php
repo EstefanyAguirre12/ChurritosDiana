@@ -3,7 +3,7 @@
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>Serivicios restaurante</h3>
+              <h3>Nueva reserva eventos</h3>
             </div>
           </div>
           <div class="clearfix"></div>
@@ -12,12 +12,11 @@
               <div class="x_panel"> 
                   <div class="x_content">
                   <div class="x_title">
-                      <h2>Nueva orden <small>paso 2</small></h2>
+                      <h2>Nueva reserva <small>paso 2</small></h2>
                       <div class="clearfix"></div>
                     </div>
                     <div class="">
-                          <a href="#" class=" buttonDisabled btn btn-primary">Anterior</a>
-                          <a href="#" class=" btn btn-success">Siguiente</a>
+                          <a href="reservacion_nueva.php" class="buttonPrevious buttonDisabled btn btn-primary">Anterior</a>
                     </div>
                     <!-- Tabs -->
                     <div id="wizard_verticle" class="form_wizard wizard_verticle">
@@ -100,14 +99,10 @@
                             <div class="ln_solid"></div>
                             <div class="form-group">
                               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                              <a href="indexentes.php" class="btn btn-primary" type="button">Cancelar</a>
                               <button type="submit" name="guardar" class="btn btn-success">Guardar</button>
                               </div>
                             </div>
                           </form> 
-                    </div>
-                    <div class="">
-                          <a href="nueva_orden.php" class="buttonPrevious buttonDisabled btn btn-primary">Anterior</a>
                     </div>
                     <!-- End SmartWizard Content -->
 

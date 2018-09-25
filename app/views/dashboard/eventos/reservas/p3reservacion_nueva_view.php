@@ -3,7 +3,7 @@
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>Serivicios restaurante</h3>
+              <h3>Nueva reserva eventos</h3>
             </div>
           </div>
           <div class="clearfix"></div>
@@ -12,12 +12,11 @@
               <div class="x_panel"> 
                   <div class="x_content">
                     <div class="x_title">
-                      <h2>Nueva orden <small>paso 3</small></h2>
+                      <h2>Nueva reserva <small>paso 3</small></h2>
                       <div class="clearfix"></div>
                     </div>
                     <div class="">
-                          <a href="#" class=" buttonDisabled btn btn-primary">Anterior</a>
-                          <a href="#" class=" btn btn-success">Siguiente</a>
+                          <a href="reservacios_nueva.php" class=" buttonDisabled btn btn-primary">Anterior</a>
                     </div>
                     <!-- Tabs -->
                     <div id="wizard_verticle" class="form_wizard wizard_verticle">
@@ -50,7 +49,7 @@
                       </ul>
                     <div class="stepContainer"><div id="step-11" class="content" >
                         <h2 class="StepTitle">Seleccione tipo de Numero de cuenta</h2>  
-                        <div class="animated lipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="animated lipInY col-lg-6 col-md-6 col-sm-6 col-xs-12">
                               <div class="tile-stats">
                                 <div class="count">Crear nueva N° de cuenta total.</div>
                                 <div class="ln_solid"></div>
@@ -58,13 +57,13 @@
                                     <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
                                     <?php
                                         print("
-                                            <a href='p3o1nueva_orden.php?cliente=$id_cliente' class='btn btn-info btn-lg'>Selecionar</a>
+                                            <a href='p3o1reservacion_nueva.php?cliente=$id_cliente' class='btn btn-info btn-lg'>Selecionar</a>
                                         ");
                                       ?>
                                     </div>
                               </div>
                             </div>
-                            <div class="animated lipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="animated lipInY col-lg-6 col-md-6 col-sm-6 col-xs-12">
                               <div class="tile-stats">
                                 <div class="count">Cargar a N° cuenta</div>
                                 <div class="ln_solid"></div>
@@ -72,7 +71,7 @@
                                     <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
                                     <?php
                                         print("
-                                            <a href='p3o2nueva_orden.php?cliente=$id_cliente' class='btn btn-info btn-lg'>Selecionar</a>
+                                            <a href='p3o2reservacion_nueva.php?cliente=$id_cliente' class='btn btn-info btn-lg'>Selecionar</a>
                                         ");
                                       ?>
                                     </div>
@@ -82,9 +81,6 @@
 
 
                       </div>
-                    </div>
-                    <div class="">
-                          <a href="nueva_orden.php" class="buttonPrevious buttonDisabled btn btn-primary">Anterior</a>
                     </div>
                     <!-- End SmartWizard Content -->
 

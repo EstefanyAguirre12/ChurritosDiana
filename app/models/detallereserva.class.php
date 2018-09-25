@@ -143,6 +143,18 @@ class Detallereserva extends Validator{
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
+		//Obtener sillas
+		public function ReadHabitaciones(){
+			$sql = "SELECT `IdHabitacion`, `NumeroHabitacion`, `Capacidad`, `Precio`, `IdTipoHabitacion`, `IdEstado` FROM `habitaciones`";
+			$params = array(null);
+			return Database::getRows($sql, $params);
+		}
+	//Obtener sillas
+	public function ReadHabitacion(){
+		$sql = "SELECT `IdHabitacion`, `NumeroHabitacion`, `Capacidad`, `Precio`, `IdTipoHabitacion`, `IdEstado` FROM `habitaciones` where IdHabitacion=?";
+		$params = array($this->idhabitacion );
+		return Database::getRows($sql, $params);
+	}
 	    //Obtener Salas
 		public function getCuentas(){
 			$sql = "SELECT `IdCuenta`, entes.Nombres, `Fecha` FROM `cuentatotal` INNER JOIN entes ON cuentatotal.IdEnte = entes.IdEnte";
@@ -154,7 +166,24 @@ class Detallereserva extends Validator{
 		$sql = "UPDATE detallereserva SET IdHabitacion = ?, IdCuenta = ?, HoraInicio = ?, HoraFin = ?, FechaInicio = ?, FechaFin = ? WHERE IdDetalle = ?";
 		$params = array($this->idhabitacion, $this->idcuenta, $this->horainicio, $this->horafin, $this->fechainicio, $this->fechafin, $this->id);
 		return Database::executeRow($sql, $params);
-    }
+	}
+	public function readCuentaHabitaciones(){
+		$sql = "SELECT  habitaciones.NumeroHabitacion,`FechaInicio`, `FechaFin`, `HoraInicio`,  `HoraFin` ,habitaciones.Precio
+		FROM `detallereserva` INNER JOIN habitaciones ON detallereserva.IdHabitacion= habitaciones.IdHabitacion WHERE detallereserva.IdCuenta= ? ";
+		$params = array($this->idcuenta);
+		return Database::getRows($sql, $params);
+	}
+	public function  readCuenta($numbcuenta){
+		$sql = "SELECT `IdCuenta` FROM `cuentatotal` WHERE `numb_cuenta`=?";
+		$params = array($numbcuenta);
+		$detalle = Database::getRow($sql, $params);
+			if($detalle){
+				$this->idcuenta = $detalle['IdCuenta'];
+				return true;
+			}else{
+				return null;
+			}
+		}	
     //Eliminar categoria
 	public function deleteEnte($value){
 		$sql = "DELETE FROM detallereserva WHERE IdDetalle = ?";
