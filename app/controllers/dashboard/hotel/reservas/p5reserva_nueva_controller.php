@@ -5,10 +5,10 @@ try{
 	$nueva_orden = new Detallereserva;
     if(isset($_GET['cliente'])){
         if(isset($_GET['cuenta'])){
-            $id_cliente = $_GET['cliente'];
-            $cuenta = $_GET['cuenta'];
+                $id_cliente = $_GET['cliente'];
+                $cuenta = $_GET['cuenta'];
                 $nueva_orden->readCuenta($_GET['cuenta']);
-                $data = $nueva_orden->readCuentaHabitaciones();
+                $data = $nueva_orden->readCuentaEventos();
         }else{
             throw new Exception("Error ningun cliente selecionado", null);
         }

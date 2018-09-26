@@ -166,7 +166,7 @@ class Detalleconferencia extends Validator{
     }
         //Obtener mesas
         public function getMesas(){
-            $sql = "SELECT `IdMesa`,  `Nombre` FROM `mesas";
+            $sql = "SELECT `IdMesa`,  `Nombre` FROM mesas";
             $params = array(null);
             return Database::getRows($sql, $params);
         }
@@ -176,13 +176,35 @@ class Detalleconferencia extends Validator{
             $params = array(null);
             return Database::getRows($sql, $params);
         }
+        public function ReadSalones(){
+			$sql = "SELECT `IdSala`, `NombreSala`, `Descripcion`, `Capacidad`, `Costo`, `IdEstadoSala` FROM `salas` ";
+			$params = array(null);
+			return Database::getRows($sql, $params);
+		}
     //Insertar categoria
     public function createRconferencia(){
 		$sql = "INSERT INTO `detalleconferencia`(`IdReserva`, `IdSala`, `IdMesa`, `CantidadMesas`, `IdSilla`, `CantidadSillas`, `HoraInicio`, `HoraFin`, `Fecha`, `IdCuenta`) VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $params = array( $this->idsala, $this->idmesa, $this->cantidadm, $this->idsilla,$this->cantidads,  $this->horain, $this->horafi, $this->fecha,$this->idcuenta );
-        var_dump( $params);
 		return Database::executeRow($sql, $params);
     }
+    public function readCuentaEventos(){
+		$sql = "SELECT salas.NombreSala, mesas.Nombre, `CantidadMesas`, sillas.Nombre, `CantidadSillas`, `HoraInicio`, `HoraFin`, `Fecha` 
+        FROM `detalleconferencia` INNER JOIN salas on salas.IdSala =detalleconferencia.IdSala INNER JOIN mesas ON mesas.IdMesa = detalleconferencia.IdMesa INNER JOIN sillas on sillas.IdSilla = detalleconferencia.IdSilla 
+            WHERE detalleconferencia.IdCuenta =? ";
+		$params = array($this->idcuenta);
+		return Database::getRows($sql, $params);
+	}
+    public function  readCuenta($numbcuenta){
+		$sql = "SELECT `IdCuenta` FROM `cuentatotal` WHERE `numb_cuenta`=?";
+		$params = array($numbcuenta);
+		$detalle = Database::getRow($sql, $params);
+			if($detalle){
+				$this->idcuenta = $detalle['IdCuenta'];
+				return true;
+			}else{
+				return null;
+			}
+		}	
     //Leer categoria
     public function readDetalleconferencia(){
 		$sql = "SELECT `IdReserva`, `IdSala`, `IdMesa`, `CantidadMesas`, `IdSilla`, `CantidadSillas`, `HoraInicio`, `HoraFin`, `Fecha`, `IdCuenta` 
