@@ -3,7 +3,7 @@
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>Serivicios restaurante</h3>
+              <h3>Reservacion eventos</h3>
             </div>
           </div>
           <div class="clearfix"></div>
@@ -12,12 +12,8 @@
               <div class="x_panel"> 
                   <div class="x_content">
                     <div class="x_title">
-                      <h2>Nueva orden <small>paso 1</small></h2>
+                      <h2>Reservacion de eventos <small>paso 1</small></h2>
                       <div class="clearfix"></div>
-                    </div>
-                    <div class="">
-                          <a href="#" class=" buttonDisabled btn btn-primary">Anterior</a>
-                          <a href="#" class=" btn btn-success">Siguiente</a>
                     </div>
                     <!-- Tabs -->
                     <div id="wizard_verticle" class="form_wizard wizard_verticle">
@@ -56,7 +52,7 @@
                                   <div class="ln_solid"></div>
                                   <h3>Se procede a registrar nuevo cliente</h3>
                                       <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-                                          <a href="p2o1nueva_orden.php" class="btn btn-info btn-lg">Selecionar</a>
+                                          <a href="p2o1reservacion_nueva.php" class="btn btn-info btn-lg">Selecionar</a>
                                       </div>
                                 </div>
                               </div>
@@ -66,7 +62,7 @@
                                   <div class="ln_solid"></div>
                                   <h3>Se a selecionar un cliente ya registrado  (se crea nueva cuenta de pago)</h3>
                                       <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-                                        <a href="p2o2nueva_orden.php" class="btn btn-info btn-lg">Selecionar</a>
+                                        <a href="p2o2reservacion_nueva.php" class="btn btn-info btn-lg">Selecionar</a>
                                       </div>
                                 </div>
                               </div>

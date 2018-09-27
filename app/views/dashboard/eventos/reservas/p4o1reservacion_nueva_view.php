@@ -3,7 +3,7 @@
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>Serivicios restaurante</h3>
+            <h3>Nueva reserva hotel</h3>
             </div>
           </div>
           <div class="clearfix"></div>
@@ -12,12 +12,14 @@
               <div class="x_panel"> 
                   <div class="x_content">
                     <div class="x_title">
-                      <h2>Nueva orden <small>paso 3</small></h2>
+                    <h2>Nueva reserva <small>paso 5</small></h2>
                       <div class="clearfix"></div>
                     </div>
                     <div class="">
-                          <a href="#" class=" buttonDisabled btn btn-primary">Anterior</a>
-                          <a href="#" class=" btn btn-success">Siguiente</a>
+                      <?php print("
+                        <a href='p4reservacion_nueva.php?cliente=$id_cliente&cuenta=$cuenta ' class=' buttonDisabled btn btn-primary'>Anterior</a>
+                      ");
+                      ?>
                     </div>
                     <!-- Tabs -->
                     <div id="wizard_verticle" class="form_wizard wizard_verticle">
@@ -50,30 +52,72 @@
                       </ul>
                     <div class="stepContainer"><div id="step-11" class="content" >
                         <h2 class="StepTitle">Seleccione el tipo de productos</h2>  
-                        <div class="bs-docs-section">
-                          <div class="bs-glyphicons">
-                          <ul class='bs-glyphicons-list'>
-                          <?php
-                          // Verifica si la URL de la pagina contirne datos
-                            foreach($data as $row){
-                              print("
-                              
-                                <li>
-                                <span class='' aria-hidden='true'></span>
-                                <h4 class='glyphicon-class'>$row[1]</h4>
-                                <h5 class='glyphicon-class'>$row[3]</h5>  
-                                <a  href='p4o1p1nueva_orden.php?cliente=$id_cliente&cuenta=$cuenta&producto=$row[0]' class='btn btn-primary btn-xs'>selecionar</a>
-                              </li>
-                               
-                              ");
-                            }
-                          ?>
-                            </ul>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="">
-                          <a href="nueva_orden.php" class="buttonPrevious buttonDisabled btn btn-primary">Anterior</a>
+                        <form autocomplete= 'off'   method="post" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left"> 
+                            <br>
+                              <div class="form-group">
+                                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Mesas*</label>
+                                  <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <?php
+                                      Page::showSelect("", "mesa", $nueva_orden->getIdmesa(), $nueva_orden->getMesas());
+                                    ?>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Cantidad de mesas:
+                                  <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                                  <input type="number"  name ="cantidadM" class="form-control has-feedback-left" id="inputSuccess2" placeholder="">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Sillas*</label>
+                                  <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <?php
+                                      Page::showSelect("", "sillas", $nueva_orden->getIdsila(), $nueva_orden->getSillas());
+                                    ?>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Cantidad de sillas:
+                                  <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                                  <input type="number"  name ="cantidadS" class="form-control has-feedback-left" id="inputSuccess2" placeholder="">
+                                </div>
+                              </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Fecha:
+                                  <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                                  <input type="date"  name ="fecha" class="form-control has-feedback-left"  placeholder="">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Hora inicio:
+                                  <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                                  <input type="time"  name ="hinicio" class="form-control has-feedback-left"  placeholder="">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Hora Fin:
+                                  <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                                  <input type="time"  name ="hfin" class="form-control has-feedback-left"  placeholder="">
+                                </div>
+                              </div>
+                            <div class="ln_solid"></div>
+                            <div class="form-group">
+                              <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                <button class="btn btn-primary" type="reset">Limpiar</button>
+                                <button type="submit" name="enviar" class="btn btn-success">Aceptar</button>
+                              </div>
+                            </div>
+                          </form>
                     </div>
                     <!-- End SmartWizard Content -->
 

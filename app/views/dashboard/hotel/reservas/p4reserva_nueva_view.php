@@ -3,7 +3,7 @@
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>Serivicios restaurante</h3>
+            <h3>Nueva reserva hotel</h3>
             </div>
           </div>
           <div class="clearfix"></div>
@@ -12,12 +12,15 @@
               <div class="x_panel"> 
                   <div class="x_content">
                     <div class="x_title">
-                      <h2>Nueva orden <small>paso 3</small></h2>
+                    <h2>Nueva reserva <small>paso 4</small></h2>
                       <div class="clearfix"></div>
                     </div>
                     <div class="">
-                          <a href="#" class=" buttonDisabled btn btn-primary">Anterior</a>
-                          <a href="#" class=" btn btn-success">Siguiente</a>
+                    <?php print("
+                        <a href='p3reserva_nueva.php?cliente=$id_cliente ' class=' buttonDisabled btn btn-primary'>Anterior</a>
+                        <a href='p5reserva_nueva.php?cliente=$id_cliente&cuenta=$cuenta' class='buttonPrevious buttonDisabled btn btn-success'>Finalizar</a>
+                    ");
+                    ?>
                     </div>
                     <!-- Tabs -->
                     <div id="wizard_verticle" class="form_wizard wizard_verticle">
@@ -49,19 +52,20 @@
                         </li>
                       </ul>
                     <div class="stepContainer"><div id="step-11" class="content" >
-                        <h2 class="StepTitle">Seleccione el tipo de productos</h2>  
+                        <h2 class="StepTitle">Seleccione la habitacion</h2>  
                         <div class="bs-docs-section">
                           <div class="bs-glyphicons">
                           <ul class='bs-glyphicons-list'>
                           <?php
                           // Verifica si la URL de la pagina contirne datos
-                            foreach($data1 as $row){
+                            foreach($data as $row){
                               print("
                               
                                   <li>
                                     <span class='' aria-hidden='true'></span>
-                                    <h3 class='glyphicon-class'>$row[1]</h3>
-                                    <a  href='p4o1reserva_nueva.php?cliente=$id_cliente&cuenta=$cuenta&tipo=$row[0]' class='btn btn-primary btn-xs'>selecionar</a>
+                                    <h3 class='glyphicon-class'>N° Habitacion :$row[1]</h3>
+                                    <h3 class='glyphicon-class'>Capacidad:$row[2] Precio:$row[3]</h3>
+                                    <a  href='p4o1reserva_nueva.php?cliente=$id_cliente&cuenta=$cuenta&habitacion=$row[0]' class='btn btn-primary btn-xs'>selecionar</a>
                                   </li>
                                
                               ");
@@ -70,33 +74,9 @@
                             </ul>
                           </div>
                         </div>
-                        <h2 class="StepTitle">Seleccione una categoria de productos</h2>  
-                        <div class="bs-docs-section">
-                          <div class="bs-glyphicons">
-                            <ul class='bs-glyphicons-list'>
-                          <?php
-                          // Verifica si la URL de la pagina contirne datos
-                            foreach($data2 as $row){
-                              print("
-                                  <li>
-                                    <span class='' aria-hidden='true'></span>
-                                    <h3 class='glyphicon-class'>$row[1]</h3>
-                                    <a  href='p4o2reserva_nueva.php?cliente=$id_cliente&cuenta=$cuenta&categoria=$row[0]' class='btn btn-primary btn-xs'>selecionar</a>
-                                  </li>
-                              ");
-                            }
-                          ?>
-                           </ul>
-                          </div>
-                        </div>
+
                     </div>
-                    <div class="">
-                    <?php
-                        print("
-                          <a href='p5reserva_nueva.php?cliente=$id_cliente&cuenta=$cuenta' class='buttonPrevious buttonDisabled btn btn-primary'>Finalizar</a>
-                        ");
-                      ?>
-                    </div>
+
                     <!-- End SmartWizard Content -->
 
                   </div>

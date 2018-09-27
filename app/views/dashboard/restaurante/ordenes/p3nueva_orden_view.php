@@ -14,8 +14,10 @@
                     <div class="x_title">
                       <h2>Nueva orden <small>paso 3</small></h2>
                       <div class="clearfix"></div>
-                    </div
-                    <!-- Tabs -->
+                    </div>
+                    <div class="">
+                          <a href="nueva_orden.php" class=" buttonDisabled btn btn-primary">Anterior</a>
+                    </div>
                     <div id="wizard_verticle" class="form_wizard wizard_verticle">
                       <ul class="list-unstyled wizard_steps anchor">
                         <li>
@@ -46,12 +48,12 @@
                       </ul>
                     <div class="stepContainer"><div id="step-11" class="content" >
                         <h2 class="StepTitle">Seleccione tipo de Numero de cuenta</h2>  
-                        <div class="animated lipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="animated lipInY col-lg-6 col-md-6 col-sm-6 col-xs-12">
                               <div class="tile-stats">
                                 <div class="count">Crear nueva N° de cuenta total.</div>
                                 <div class="ln_solid"></div>
                                 <h3>se crea nueva cuenta de pago.</h3>
-                                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                     <?php
                                         print("
                                             <a href='p3o1nueva_orden.php?cliente=$id_cliente' class='btn btn-info btn-lg'>Selecionar</a>
@@ -60,7 +62,7 @@
                                     </div>
                               </div>
                             </div>
-                            <div class="animated lipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="animated lipInY col-lg-6 col-md-6 col-sm-6 col-xs-12">
                               <div class="tile-stats">
                                 <div class="count">Cargar a N° cuenta</div>
                                 <div class="ln_solid"></div>
@@ -78,9 +80,6 @@
 
 
                       </div>
-                    </div>
-                    <div class="">
-                          <a href="nueva_orden.php" class="buttonPrevious buttonDisabled btn btn-primary">Anterior</a>
                     </div>
                     <!-- End SmartWizard Content -->
 

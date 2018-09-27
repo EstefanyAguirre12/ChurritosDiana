@@ -3,7 +3,7 @@
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>Serivicios restaurante</h3>
+              <h3>Nueva reserva hotel</h3>
             </div>
           </div>
           <div class="clearfix"></div>
@@ -12,7 +12,7 @@
               <div class="x_panel"> 
                   <div class="x_content">
                   <div class="x_title">
-                      <h2>Nueva orden <small>paso 2</small></h2>
+                      <h2>Nueva reserva <small>paso 2</small></h2>
                       <div class="clearfix"></div>
                     </div>
                     <div class="">

@@ -3,7 +3,7 @@
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>Serivicios restaurante</h3>
+              <h3>Nueva reserva eventos</h3>
             </div>
           </div>
           <div class="clearfix"></div>
@@ -12,12 +12,11 @@
               <div class="x_panel"> 
                   <div class="x_content">
                     <div class="x_title">
-                      <h2>Nueva orden <small>paso 2</small></h2>
+                      <h2>Nueva reserva<small>paso 2</small></h2>
                       <div class="clearfix"></div>
                     </div>
                     <div class="">
-                          <a href="#" class=" buttonDisabled btn btn-primary">Anterior</a>
-                          <a href="#" class=" btn btn-success">Siguiente</a>
+                          <a href="reservacion_nueva.php" class=" buttonDisabled btn btn-primary">Anterior</a>
                     </div>
                     <!-- Tabs -->
                     <div id="wizard_verticle" class="form_wizard wizard_verticle">
@@ -79,7 +78,7 @@
                                                   <td>$row[4]</td>
                                                   <td>$row[5]</td>                             
                                                   <td>
-                                                    <a href='p3nueva_orden.php?cliente=$row[0]' type='button' class='btn btn-primary'>
+                                                    <a href='p3reservacion_nueva.php?cliente=$row[0]' type='button' class='btn btn-primary'>
                                                       <i class='fa fa-plus-circle'></i>
                                                     </a>
                                                   </td>
@@ -95,9 +94,6 @@
                       
                             </div>
                       </div>
-                    </div>
-                    <div class="">
-                          <a href="nueva_orden.php" class="buttonPrevious buttonDisabled btn btn-primary">Anterior</a>
                     </div>
                     <!-- End SmartWizard Content -->
 

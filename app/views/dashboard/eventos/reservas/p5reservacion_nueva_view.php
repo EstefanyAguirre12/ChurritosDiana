@@ -3,7 +3,7 @@
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>Serivicios restaurante</h3>
+            <h3>Nueva reserva eventos</h3>
             </div>
           </div>
           <div class="clearfix"></div>
@@ -12,12 +12,14 @@
               <div class="x_panel"> 
                   <div class="x_content">
                     <div class="x_title">
-                      <h2>Nueva orden <small>paso 3</small></h2>
+                    <h2>Nueva reserva <small>paso 5</small></h2>
                       <div class="clearfix"></div>
                     </div>
                     <div class="">
-                          <a href="#" class=" buttonDisabled btn btn-primary">Anterior</a>
-                          <a href="#" class=" btn btn-success">Siguiente</a>
+                      <?php print("
+                        <a href='p4reservacion_nueva.php?cliente=$id_cliente&cuenta=$cuenta ' class=' buttonDisabled btn btn-primary'>Anterior</a>
+                      ");
+                      ?>
                     </div>
                     <!-- Tabs -->
                     <div id="wizard_verticle" class="form_wizard wizard_verticle">
@@ -55,9 +57,11 @@
                                 <table class="table table-striped jambo_table bulk_action">
                                   <thead>
                                     <tr class="headings">
-                                      <th class="column-title">Producto</th>
-                                      <th class="column-title">Precio</th>
-                                      <th class="column-title">Cantidad </th>
+                                      <th class="column-title">Sala</th>
+                                      <th class="column-title">Mesa,cantidad</th>
+                                      <th class="column-title">Sillas,cantidad </th>
+                                      <th class="column-title">Horas </th>
+                                      <th class="column-title">Fecha </th>
                                     </tr>
                                   </thead>
 
@@ -71,8 +75,10 @@
                                                 </tr>
                                                 <tr role='row' class='odd'>
                                                   <td>$row[0]</td>
-                                                  <td>$row[1]</td>
-                                                  <td>$row[2]</td>   
+                                                  <td>$row[1] - $row[2]</td>
+                                                  <td>$row[3] - $row[4]</td>
+                                                  <td>$row[5] - $row[6]</td>
+                                                  <td>$row[7]</td>
                                               </tr>
                                               ");
                                             }
@@ -84,9 +90,6 @@
                         
                       
                             </div>
-                    </div>
-                    <div class="">
-                          <a href="nueva_orden.php" class="buttonPrevious buttonDisabled btn btn-primary">Anterior</a>
                     </div>
                     <!-- End SmartWizard Content -->
 
