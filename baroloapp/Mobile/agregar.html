@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang='es'>
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BAROLO</title>
+    <link type='text/css' rel='stylesheet' href='css/bootstrap.min.css'>
+    <link type='text/css' rel='stylesheet' href='css/style.css'>
+    <link type='text/css' rel='stylesheet' href='css/color.css'>
+    <script type='text/javascript' src='js/jquery.js'></script>
+    <script  type="text/javascript">
+        $(document).ready(function() {
+         var IdU = getParameterByName('IdUsuario');
+         $("#f").append("<a class='navbar-brand' href='principal.html?IdUsuario="+IdU+"'>BAROLO</a>"); 
+         $("#hola").append("<a class='nav-link' href='pedido.html?IdUsuario="+IdU+"'>Pedido <span class='sr-only'>(current)</span></a>");
+        });
+     </script>
+  </head>
+  <body>
+    <nav  class='navbar navbar-expand-lg navbar-light bg-light fixed-top'>
+        <ul class='navbar-nav'>
+            <li id="f" class='nav-item'>
+            </li>            
+        </ul>
+        <ul class='navbar-nav'>
+            <li id="hola" class='nav-item'>
+            </li>            
+        </ul>
+        <ul class='navbar-nav'>
+            <li class='nav-item'>
+            <a class='nav-link' href='login.html'>Cerrar Sesión <span class='sr-only'>(current)</span></a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <div class="row">
+            <!-- .col-md-12 start -->
+            <div class="col-md-12 centered">
+                <div class="custom-heading style-1" >
+                    <br><br><br>
+                    <h2>Ingrese la cantidad que deseé:</h2>     
+                    <!-- .divider.style-2 start -->
+                    <label>
+                        <input id='cantidad' type='number' name='cantidad' min='1' max='500'>
+                    </label>     
+                </div>
+                <a id="insert" class="discover_more has_transition_400">ACEPTAR</a>
+                <!-- .custom-heading.style-1 end --> 
+            </div><!-- .col-md-12 end -->
+        </div><!-- .row end -->
+    </main>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type='text/javascript' src='js/sweetalert.min.js'></script>		
+    <!-- jQuery -->
+    <script type='text/javascript' src='js/jquery.js'></script>
+    <!-- Bootstrap -->
+    <script type='text/javascript' src='js/bootstrap.js'></script>
+    <!-- bootstrap-progressbar -->
+    <script type='text/javascript' src='js/bootstrap-progressbar.js'></script>
+    <!-- Custom Theme Scripts -->
+    <script type='text/javascript' src='js/agregar.js'></script>    <script type="text/javascript"></script>
+    
+
+</body>
+
+</html>
