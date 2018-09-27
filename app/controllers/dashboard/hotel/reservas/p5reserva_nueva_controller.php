@@ -8,7 +8,7 @@ try{
                 $id_cliente = $_GET['cliente'];
                 $cuenta = $_GET['cuenta'];
                 $nueva_orden->readCuenta($_GET['cuenta']);
-                $data = $nueva_orden->readCuentaEventos();
+                $data = $nueva_orden->readCuentaHabitaciones();
         }else{
             throw new Exception("Error ningun cliente selecionado", null);
         }
@@ -16,7 +16,7 @@ try{
         throw new Exception("Error ningun cliente selecionado", null);
     }
 	if($data){
-		//Se muestran los 
+		//Se muestran los
         require_once("../../../app/views/dashboard/hotel/reservas/p5reserva_nueva_view.php");
 	}else{
 		Page::showMessage(3, "No hay registros disponibles", "nueva_orden.php");

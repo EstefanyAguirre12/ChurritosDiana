@@ -37,7 +37,7 @@
 						</div>
             <div class="form-group">
 							<label class="sr-only" for="form-username"></label>
-							<input type="text" id= "codigo" name="codigo" placeholder="Codigo..." class="form-username form-control"   required />
+							<input type="password" id= "codigo" name="codigo" placeholder="Codigo..." class="form-username form-control"   required />
 						</div>
 						<button type='submit' name='entrar' class='btn btn-primary' data-toggle='tooltip' data-placement='bottom' title='Entrar'>Entrar</button>
 					</form>

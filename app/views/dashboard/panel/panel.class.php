@@ -468,16 +468,6 @@ class Page extends Component{
 								</li>
 							</ul>
 							</li>
-							<li class=''>
-							<a href='javascript:;' class='user-profile dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>
-								<i class='fas fa-envelope'></i>
-							</a>
-							</li>
-							<li class=''>
-							<a href='javascript:;' class='user-profile dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>
-								<i class='fas fa-bell'></i>
-							</a>
-							</li>
 						</ul>
 						</nav>
 					</div>
@@ -516,15 +506,8 @@ class Page extends Component{
 							</a>
 						</div>
 						<ul class='nav navbar-nav navbar-right'>
-							<li class=''>
-							<a href='javascript:;' class='user-profile dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>
-								<i class='fas fa-cog'></i>
-							</a>
+
 							<ul class='dropdown-menu dropdown-usermenu pull-right'>
-								<li>
-								<a href=''>
-									<i class='fab fa-staylinked pull-right'></i> Tema</a>
-								</li>
 								<li>
 								<a href=''>
 									<i class='fa fa-user pull-right'></i> Mi perfil</a>
@@ -536,14 +519,8 @@ class Page extends Component{
 							</ul>
 							</li>
 							<li class=''>
-							<a href='javascript:;' class='user-profile dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>
-								<i class='fas fa-envelope'></i>
-							</a>
 							</li>
 							<li class=''>
-							<a href='javascript:;' class='user-profile dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>
-								<i class='fas fa-bell'></i>
-							</a>
 							</li>
 						</ul>
 						</nav>
