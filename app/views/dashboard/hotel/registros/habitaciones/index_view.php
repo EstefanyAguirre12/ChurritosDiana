@@ -22,32 +22,21 @@
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                  <div id="datatable-checkbox_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="dataTables_length" id="datatable-checkbox_length">
-                          <label>Mostrando
-                            <select name="datatable-checkbox_length" aria-controls="datatable-checkbox" class="form-control input-sm">
-                              <option value="10">10</option>
-                              <option value="25">25</option>
-                              <option value="50">50</option>
-                              <option value="100">100</option>
-                            </select> Por</label>
+                  <div class="row">
+                    <form autocomplete= 'off' method='post'>
+                      <div class="col-sm-12">
+                        <div id="datatable-checkbox_filter" class="dataTables_filter">
+                          <label>Busquedad
+                            <input type="search" name="busqueda" class="form-control input-sm validate" placeholder="N° Hab / Precio" aria-controls="datatable-checkbox" /required>
+                          </label>
+                          <button type="submit" name="buscar" class="btn btn-round btn-info">
+                            <i class="fas fa-search"></i>
+                          </button>
                         </div>
                       </div>
-                      <form autocomplete= 'off' method='post'>
-                        <div class="col-sm-6">
-                          <div id="datatable-checkbox_filter" class="dataTables_filter">
-                            <label>Busquedad:
-                              <input type="search" name="busqueda" class="form-control input-sm validate" placeholder="N° Hab / Precio" aria-controls="datatable-checkbox" /required>
-                            </label>
-                            <button type="submit" name="buscar" class="btn btn-round btn-info">
-                              <i class="fas fa-search"></i>
-                            </button>                        
-                          </div>
-                        </div>
-                      </form> 
-                    </div>
+                    </form>
+                  </div>
+                  <div id="datatable-checkbox_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                     <div class="row">
                       <div class="col-sm-12">
                         <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
@@ -89,15 +78,12 @@
                                 //Para que cuente cuantos datos existen
                                 $no++;
                               }
-                            ?>	               
+                            ?>
                           </tbody>
                         </table>
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-sm-5">
-                        <div class="dataTables_info" id="datatable-checkbox_info" role="status" aria-live="polite">Mostrado 10 de 57 registros</div>
-                      </div>
                       <div class="col-sm-7">
                         <nav aria-label="Page navigation">
                           <ul class="pagination justify-content-center">
@@ -112,7 +98,7 @@
                               else
                               {
                                   $link_prev = ($page > 1) ? $page -1 : 1; //Si la pagina no es la primera que hablite el boton primera
-                              
+
                               ?>
                                   <li class="page-item"><a class="page-link" href="habitaciones.php?page=1">Primera</a></li>
                                   <li class="page-item"><a class="page-link" href="habitaciones.php?page=<?php echo $link_prev;?>">&laquo;</a></li>
@@ -177,7 +163,6 @@
                 </div>
               </div>
             </div>
-          </div>  
-        </div>  
-      </div>  
-            
+          </div>
+        </div>
+      </div>

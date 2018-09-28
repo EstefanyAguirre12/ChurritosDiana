@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-09-2018 a las 04:11:32
--- Versión del servidor: 10.1.34-MariaDB
--- Versión de PHP: 7.2.7
+-- Tiempo de generación: 28-09-2018 a las 04:42:52
+-- Versión del servidor: 10.1.33-MariaDB
+-- Versión de PHP: 7.2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -46,20 +46,20 @@ CREATE TABLE `cargos` (
   `IdCargo` int(11) NOT NULL,
   `NombreCargo` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `Descripcion` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
-  `h_reserva` int(1) NOT NULL,
-  `h_servicio` int(1) NOT NULL,
-  `h_habitaciones` int(1) NOT NULL,
-  `h_registros` int(1) NOT NULL,
-  `r_mesas` int(1) NOT NULL,
-  `r_ordenes` int(1) NOT NULL,
-  `r_registros` int(1) NOT NULL,
-  `e_reservacion` int(1) NOT NULL,
-  `e_salones` int(1) NOT NULL,
-  `e_registro` int(1) NOT NULL,
-  `l_registros` int(1) NOT NULL,
-  `rr_registro` int(1) NOT NULL,
-  `b_datos` int(1) NOT NULL,
-  `g_registros` int(1) NOT NULL
+  `h_reserva` varchar(1) COLLATE utf8_spanish_ci NOT NULL,
+  `h_servicio` varchar(1) COLLATE utf8_spanish_ci NOT NULL,
+  `h_habitaciones` varchar(1) COLLATE utf8_spanish_ci NOT NULL,
+  `h_registros` varchar(1) COLLATE utf8_spanish_ci NOT NULL,
+  `r_mesas` varchar(1) COLLATE utf8_spanish_ci NOT NULL,
+  `r_ordenes` varchar(1) COLLATE utf8_spanish_ci NOT NULL,
+  `r_registros` varchar(1) COLLATE utf8_spanish_ci NOT NULL,
+  `e_reservacion` varchar(1) COLLATE utf8_spanish_ci NOT NULL,
+  `e_salones` varchar(1) COLLATE utf8_spanish_ci NOT NULL,
+  `e_registro` varchar(1) COLLATE utf8_spanish_ci NOT NULL,
+  `l_registros` varchar(1) COLLATE utf8_spanish_ci NOT NULL,
+  `rr_registro` varchar(1) COLLATE utf8_spanish_ci NOT NULL,
+  `b_datos` varchar(1) COLLATE utf8_spanish_ci NOT NULL,
+  `g_registros` varchar(1) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -67,9 +67,11 @@ CREATE TABLE `cargos` (
 --
 
 INSERT INTO `cargos` (`IdCargo`, `NombreCargo`, `Descripcion`, `h_reserva`, `h_servicio`, `h_habitaciones`, `h_registros`, `r_mesas`, `r_ordenes`, `r_registros`, `e_reservacion`, `e_salones`, `e_registro`, `l_registros`, `rr_registro`, `b_datos`, `g_registros`) VALUES
-(1, 'Root', 'Dios', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-(2, 'Administrador', 'Dueño', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(3, 'Hotelero', 'trabajador de hotel', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+(1, 'Root', 'Este tipo de usuario tiene acceso a todo el sistema', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'),
+(2, 'Administrador', 'Este a usuario es el cargo de local', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '0', '1'),
+(3, 'Hotelero', 'Administrador de hotel', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'),
+(5, 'Eventos', 'Administrador de eventos', '0', '0', '0', '0', '0', '0', '0', '1', '1', '1', '0', '0', '0', '0'),
+(6, 'Restaurante', 'Administrador de restaurante', '0', '0', '0', '0', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0');
 
 -- --------------------------------------------------------
 
@@ -87,9 +89,9 @@ CREATE TABLE `categorialavanderia` (
 --
 
 INSERT INTO `categorialavanderia` (`IdCategoria`, `Categoria`) VALUES
-(1, 'higiene'),
-(3, 'manteleria'),
-(2, 'ropa de cama');
+(1, 'Linpieza'),
+(3, 'Mateleria'),
+(2, 'Ropa');
 
 -- --------------------------------------------------------
 
@@ -139,7 +141,13 @@ INSERT INTO `cuentatotal` (`IdCuenta`, `numb_cuenta`, `estado_cuenta`, `total`, 
 (26, '1190920180250', 0, 0, 1, '2018-09-19 02:50:22'),
 (27, '22190920180251', 0, 0, 22, '2018-09-19 02:51:24'),
 (28, '8190920180259', 0, 0, 8, '2018-09-19 02:59:02'),
-(29, '3190920180336', 0, 0, 3, '2018-09-19 03:36:57');
+(29, '24190920181606', 0, 0, 24, '2018-09-19 16:06:58'),
+(30, '13270920181626', 0, 0, 13, '2018-09-27 16:26:48'),
+(31, '25270920181830', 0, 0, 25, '2018-09-27 18:30:36'),
+(32, '26270920181840', 0, 0, 26, '2018-09-27 18:40:14'),
+(33, '27270920181911', 0, 0, 27, '2018-09-27 19:11:04'),
+(34, '28270920182304', 0, 0, 28, '2018-09-27 23:04:09'),
+(35, '29270920182315', 0, 0, 29, '2018-09-27 23:15:30');
 
 -- --------------------------------------------------------
 
@@ -165,7 +173,9 @@ CREATE TABLE `detalleconferencia` (
 --
 
 INSERT INTO `detalleconferencia` (`IdReserva`, `IdSala`, `IdMesa`, `CantidadMesas`, `IdSilla`, `CantidadSillas`, `HoraInicio`, `HoraFin`, `Fecha`, `IdCuenta`) VALUES
-(1, 1, 1, 214, 1, 232, '02:32', '12:31', '2018-06-21', 1);
+(1, 1, 1, 214, 1, 232, '02:32', '12:31', '2018-06-21', 1),
+(2, 2, 1, 2, 1, 23, '01:00', '02:00', '2018-09-19', 29),
+(3, 2, 1, 3, 1, 5, '01:20', '03:55', '2018-09-28', 31);
 
 -- --------------------------------------------------------
 
@@ -196,7 +206,21 @@ INSERT INTO `detallereserva` (`IdDetalle`, `FechaInicio`, `FechaFin`, `HoraInici
 (7, '2018-07-20', '2018-06-14', '02:13', 9, '14:33', 1),
 (8, '2018-07-10', '2018-06-14', '02:13', 10, '14:33', 1),
 (9, '2018-07-20', '2018-06-14', '02:13', 12, '14:33', 1),
-(10, '2018-07-27', '2018-07-31', '15:13', 10, '01:05', 2);
+(10, '2018-07-27', '2018-07-31', '15:13', 10, '01:05', 2),
+(11, '2018-09-20', '2018-09-20', '14:23', 9, '15:23', 29),
+(12, '2018-09-20', '2018-09-20', '14:23', 9, '15:23', 29),
+(13, '2018-09-20', '2018-09-20', '14:23', 9, '15:23', 29),
+(14, '2018-09-21', '2018-09-23', '13:00', 6, '16:00', 29),
+(15, '2018-09-27', '2018-09-19', '23:32', 8, '03:23', 30),
+(16, '2018-09-27', '2018-09-29', '04:01', 6, '05:02', 2),
+(17, '', '', '', 6, '', 2),
+(18, '2018-09-26', '2018-09-25', '04:03', 8, '06:09', 2),
+(19, '2018-09-27', '2018-09-30', '10:32', 6, '10:32', 31),
+(20, '2018-09-27', '2018-09-30', '01:30', 14, '01:00', 32),
+(21, '2018-09-27', '2018-09-29', '06:05', 8, '04:05', 2),
+(22, '2018-09-27', '2018-09-28', '01:30', 6, '01:00', 33),
+(23, '2018-09-27', '2018-09-30', '04:34', 10, '04:43', 34),
+(24, '2018-09-27', '2018-09-29', '03:23', 8, '03:23', 35);
 
 -- --------------------------------------------------------
 
@@ -212,6 +236,23 @@ CREATE TABLE `detallerestaurante` (
   `IdMesa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `detallerestaurante`
+--
+
+INSERT INTO `detallerestaurante` (`IdDetalle`, `Cantidad`, `IdProducto`, `IdCuenta`, `IdMesa`) VALUES
+(1, 2, 2, 2, 1),
+(2, 4, 24, 1, 1),
+(3, 2, 12, 29, 1),
+(4, 1, 26, 29, 1),
+(5, 1, 29, 31, 1),
+(6, 2, 29, 32, 1),
+(7, 2, 20, 32, 1),
+(8, 5, 9, 32, 1),
+(9, 1, 29, 33, 1),
+(10, 2, 21, 34, 1),
+(11, 5, 21, 35, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -222,9 +263,9 @@ CREATE TABLE `empleados` (
   `IdEmpleado` int(11) NOT NULL,
   `NombreEmpleado` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `ApellidosEmpleado` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `DUIEmpleado` int(11) NOT NULL,
-  `TelefonoEmpleado` int(11) NOT NULL,
-  `DireccionEmpleado` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `DUIEmpleado` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
+  `TelefonoEmpleado` varchar(9) COLLATE utf8_spanish_ci NOT NULL,
+  `DireccionEmpleado` varchar(300) COLLATE utf8_spanish_ci NOT NULL,
   `correo_empleado` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `FotoEmpleado` varchar(1000) COLLATE utf8_spanish_ci NOT NULL,
   `IdCargo` int(11) NOT NULL,
@@ -236,13 +277,13 @@ CREATE TABLE `empleados` (
 --
 
 INSERT INTO `empleados` (`IdEmpleado`, `NombreEmpleado`, `ApellidosEmpleado`, `DUIEmpleado`, `TelefonoEmpleado`, `DireccionEmpleado`, `correo_empleado`, `FotoEmpleado`, `IdCargo`, `IdGenero`) VALUES
-(1, 'Daniel', 'Barrera', 356151515, 515151515, 'San salvador', 'daniel.alex.barrera@gmail.com', 'DANICX.JPG', 1, 1),
-(2, 'w', 'j', 2121, 122, 'f', '', 'e', 3, 1),
-(3, 'j', 'j', 2121, 122, 'f', '', 'e', 2, 1),
-(4, 'dwef', 'bhbh', 7667, 766, 'gtdewte', '', '5b0f5acadcf98.jpg', 3, 1),
-(5, 'Estefany', 'Aguirre', 12345, 12345, 'gdhr', '', '5b0f5b1c83bda.jpg', 2, 2),
-(6, 'rjjnj', 'njnjnj', 8787, 8787878, 'hhj', '', '5b10b957f03a7.jpg', 2, 1),
-(7, 'gtytvv', 'vtvtvt', 12345, 13245, 'behfbeh', '', '5b48e613722f5.jpg', 2, 2);
+(1, 'Daniel Alexander', 'Barrera Marroquin', '059586029', '48990908', 'San salvador', 'daniel.alex.barrera@gmail.com', 'DANICX.JPG', 1, 1),
+(2, 'David andres', 'Godines', '059586021', '73237747', '89 Avenida Norte y Calle 11 Poniente\r\n', 'david.godines@gmail.com', '5b0f5acadcf98.jpg', 3, 1),
+(3, 'Erick jose', 'Recinos', '550955632', '13271176', 'Colonia Buenos Aires 3, Diagonal Centroamérica, Avenida Alvarado, contiguo al Ministerio de Hacienda', 'erick.recinos@hotmail.com', '5b48e613722f5.jpg', 2, 1),
+(4, 'Felix gerardo', 'palacios', '252247811', '73237747', ' Colonia San Francisco, Avenida Las Camelias y Calle Los Abetos No. 21', 'felix.cliford@gmail.com', '5b0f5acadcf98.jpg', 3, 1),
+(5, 'Estefany', 'Aguirre', '913826261', '82944371', ' 1ª Calle Poniente entre 60ª Avenida Norte y Boulevard Constitución', 'estefany.aguirre@hotmil.com', '5b0f5b1c83bda.jpg', 2, 2),
+(6, 'Daniel Alejandro', 'Merches', '402884411', '37576418', ' Colonia San Francisco, Avenida Las Camelias y Calle Los Abetos No. 21', 'daniel.alegandro@gmail.com', '5b10b957f03a7.jpg', 2, 1),
+(7, 'Jose andres', 'Martines', '492424449', '22603910', 'Avenida Monseñor Romero y Final Calle 5 de Noviembre entre 21ª y 23ª Calle Oriente, una cuadra al no', 'andres.martines@hotmail.com', '5b48e613722f5.jpg', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -254,9 +295,9 @@ CREATE TABLE `entes` (
   `IdEnte` int(11) NOT NULL,
   `Nombres` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `Apellidos` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `DocIdentidad` int(11) NOT NULL,
+  `DocIdentidad` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
   `Correo` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `Telefono` int(11) NOT NULL,
+  `Telefono` varchar(9) COLLATE utf8_spanish_ci NOT NULL,
   `IdGenero` int(11) NOT NULL,
   `IdTipo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -266,18 +307,24 @@ CREATE TABLE `entes` (
 --
 
 INSERT INTO `entes` (`IdEnte`, `Nombres`, `Apellidos`, `DocIdentidad`, `Correo`, `Telefono`, `IdGenero`, `IdTipo`) VALUES
-(1, 'Roland', 'Van', 123456, 'sds@mdkf.co', 12345678, 1, 3),
-(2, 'Andres', 'Martinez', 12345678, 'andresguapo@gmail.com', 54896624, 1, 2),
-(3, 'Alexander', 'Alexander', 2147483647, 'daniel.alex.barrfdfdera@gmail.com', 76825348, 1, 2),
-(4, 'ella', 'no', 76825348, 'daniel.alex.barrera@gmail.com', 76825348, 1, 3),
-(6, '76825348', 'Alexander', 232323232, 'daniel.aldsdsex.barrera@gmail.com', 2147483647, 1, 2),
-(8, 'dsfdfsfds', 'fdsfsdf', 545, 'ddfdfaniel.alex.gfgfdgbarrera@gmail.com', 2147483647, 1, 2),
-(13, 'dfdsssssssssssss', 'ssfdsdddddddddd', 232222, 'daniel.adfdlex.barrera@gmail.comfgdfgfg', 768343, 1, 2),
-(16, 'dsfdfsfdsfds', 'fsdfsdfsdf', 111132332, 'sadsalex.barrera@gmail.com', 411113434, 1, 2),
-(17, 'sdfsdfsdfds', 'fsdfsdfsdf', 343432111, 'danbarrera@gmail.co', 1212224525, 2, 3),
-(18, 'dffffffffff', 'dsaasdas', 23314521, 'daniea@gmail.com', 121234545, 1, 2),
-(19, 'dsadsadsadsad', 'adsagsvs', 13231324, 'arrera@gmail.com', 2147483647, 1, 3),
-(22, 'dfdggfdgdf', 'gdfgdfgdf', 565634543, 'danbarrera@gmail.com', 768253486, 1, 2);
+(1, 'Roland', 'Van', '571682960', 'sds@mdkf.co', '19432849', 1, 3),
+(2, 'Andres', 'Martinez', '481471199', 'andresguapo@gmail.com', '96351801', 1, 2),
+(3, 'Alexander', 'Alexander', '331645619', 'daniel.alex.barrfdfdera@gmail.com', '34160163', 1, 2),
+(4, 'ella', 'no', '952884643', 'daniel.alex.barrera@gmail.com', '07728671', 1, 3),
+(6, '76825348', 'Alexander', '232323232', 'daniel.aldsdsex.barrera@gmail.com', '56845471', 1, 2),
+(8, 'dsfdfsfds', 'fdsfsdf', '952884624', 'ddfdfaniel.alex.gfgfdgbarrera@gmail.com', '28343154', 1, 2),
+(13, 'dfdsssssssssssss', 'ssfdsdddddddddd', '952884626', 'daniel.adfdlex.barrera@gmail.com', '67728491', 1, 2),
+(16, 'dsfdfsfdsfds', 'fsdfsdfsdf', '148203874', 'sadsalex.barrera@gmail.com', '58453137', 1, 2),
+(17, 'sdfsdfsdfds', 'fsdfsdfsdf', '548303874', 'danbarrera@gmail.co', '85841925', 2, 3),
+(18, 'dffffffffff', 'dsaasdas', '148303877', 'daniea@gmail.com', '50597369', 1, 2),
+(19, 'dsadsadsadsad', 'adsagsvs', '132313245', 'arrera@gmail.com', '60515665', 1, 3),
+(22, 'dfdggfdgdf', 'gdfgdfgdf', '565634543', 'danbarrera@gmail.com', '91313237', 1, 2),
+(24, 'Ariel', 'Reyes', '132324234', 'arel.reyes@gmail.com', '46787105', 1, 2),
+(25, 'Estefany', 'Arce', '148303874', 'tefaxd@hotmail.com', '71078029', 2, 3),
+(26, 'Jhon', 'Olmedo', '283431541', 'olmedo@hotmail.com', '85125366', 1, 3),
+(27, 'Jhon', 'Cruz', '049217414', 'jhoncrz@hotmail.com', '90364043', 1, 3),
+(28, 'Michelle', 'Matamoros', '012345678', 'michell.matamoros@gmail.com', '73254899', 2, 2),
+(29, 'Gabriel', 'Chavez', '987654321', 'gabriel.chavez@gmail.com', '78956642', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -325,7 +372,7 @@ INSERT INTO `genero` (`IdGenero`, `NombreGenero`) VALUES
 
 CREATE TABLE `habitaciones` (
   `IdHabitacion` int(11) NOT NULL,
-  `NumeroHabitacion` int(11) NOT NULL,
+  `NumeroHabitacion` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `Capacidad` int(11) NOT NULL,
   `Precio` double(6,2) NOT NULL,
   `IdTipoHabitacion` int(11) NOT NULL,
@@ -337,13 +384,36 @@ CREATE TABLE `habitaciones` (
 --
 
 INSERT INTO `habitaciones` (`IdHabitacion`, `NumeroHabitacion`, `Capacidad`, `Precio`, `IdTipoHabitacion`, `IdEstado`) VALUES
-(6, 102, 2, 30.00, 1, 1),
-(8, 2, 2, 89.99, 2, 2),
-(9, 69, 2, 69.00, 2, 1),
-(10, 22, 4, 40.00, 1, 1),
-(11, 40, 1, 70.00, 2, 1),
-(12, 12, 5, 120.00, 6, 1),
-(13, 12, 12, 120.00, 5, 1);
+(6, 'Presidencial 1', 10, 30.00, 1, 1),
+(8, 'Individual 1', 1, 89.99, 2, 2),
+(9, 'Familiar 1', 4, 69.00, 2, 1),
+(10, 'Individual 2', 1, 40.00, 1, 1),
+(11, 'Lujo 1', 5, 70.00, 2, 1),
+(12, 'Pareja 1', 2, 120.00, 6, 1),
+(13, 'Lujo 2', 5, 120.00, 5, 1),
+(14, 'Pareja 2', 2, 12.00, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `huespedusuario`
+--
+
+CREATE TABLE `huespedusuario` (
+  `IdUsuario` int(11) NOT NULL,
+  `Clave` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `NumeroHab` int(4) NOT NULL,
+  `IdHuesped` int(11) NOT NULL,
+  `Usuario` varchar(50) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `huespedusuario`
+--
+
+INSERT INTO `huespedusuario` (`IdUsuario`, `Clave`, `NumeroHab`, `IdHuesped`, `Usuario`) VALUES
+(2, '$2y$10$HSDpFJAZGpYEvYsYJbm3POb4XeBdyeyBpSBZTVMLOuWyvgBTw3wUS', 6, 1, 'Andress'),
+(3, '$2y$10$tYMNzlLI2ConOo.LL9iLPOZH5Z6Zx/yRb0LF4gA2vOZOqGsfMuB3i', 100, 2, 'Estefany');
 
 -- --------------------------------------------------------
 
@@ -411,7 +481,8 @@ INSERT INTO `mesarestaurante` (`IdMesaRes`, `NumeroMesa`, `Capacidad`, `IdEstado
 (3, 3, 6, 1),
 (4, 4, 8, 1),
 (5, 5, 8, 1),
-(6, 6, 5, 1);
+(6, 6, 5, 1),
+(7, 1, 6, 1);
 
 -- --------------------------------------------------------
 
@@ -430,7 +501,9 @@ CREATE TABLE `mesas` (
 --
 
 INSERT INTO `mesas` (`IdMesa`, `Cantidad`, `Nombre`) VALUES
-(1, 30, 'Redonda');
+(1, 30, 'Redonda'),
+(2, 20, 'Glorieta'),
+(3, 50, 'Cuadrada');
 
 -- --------------------------------------------------------
 
@@ -440,8 +513,20 @@ INSERT INTO `mesas` (`IdMesa`, `Cantidad`, `Nombre`) VALUES
 
 CREATE TABLE `pedidohabitacion` (
   `IdPedido` int(11) NOT NULL,
-  `IdHabitacion` int(11) NOT NULL
+  `IdProducto` int(11) NOT NULL,
+  `Cantidad` int(11) NOT NULL,
+  `Estado` int(1) NOT NULL,
+  `IdCuenta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `pedidohabitacion`
+--
+
+INSERT INTO `pedidohabitacion` (`IdPedido`, `IdProducto`, `Cantidad`, `Estado`, `IdCuenta`) VALUES
+(2, 6, 2, 1, 1),
+(16, 4, 1, 1, 2),
+(18, 12, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -486,7 +571,12 @@ INSERT INTO `productos` (`IdProducto`, `NombreProducto`, `Descripcion`, `Precio`
 (23, 'Jugo', 'Sabroso estofado al estilo nordico', 12.00, 3, 2),
 (24, 'Soda', 'Sabroso estofado al estilo nordico', 12.00, 3, 2),
 (25, 'Pollo', 'juguito', 3.00, 5, 1),
-(26, 'Pasta ', 'juguito', 5.00, 5, 1);
+(26, 'Pasta ', 'juguito', 5.00, 5, 1),
+(27, 'Palitos de queso', 'Ricos palitos de queso, para tu antojo', 0.00, 6, 5),
+(28, 'Palitos de queso', 'Ricos palitos de queso, para tu antojo', 2.00, 6, 5),
+(29, 'Chimichangas', 'Ricas tortillas con frijoles de la casa, mix de carnes y bañado en nuestro adereso secreto', 4.50, 2, 1),
+(30, 'Chimichangas', 'Ricas tortillitas con frijoles de la casa, mix de nuestras carnes y adereso secreto.', 450.00, 2, 1),
+(31, 'Estofado Nordico', 'Rico estofado nordico originario del comedor de batalla', 599.00, 2, 3);
 
 -- --------------------------------------------------------
 
@@ -508,8 +598,9 @@ CREATE TABLE `salas` (
 --
 
 INSERT INTO `salas` (`IdSala`, `NombreSala`, `Descripcion`, `Capacidad`, `Costo`, `IdEstadoSala`) VALUES
-(1, 'Sala1', 'sala numero 1', 50, 30, 2),
-(2, 'Sala 2', 'sala numero 2', 12, 12, 1);
+(1, 'Sala1', 'Sala recomendad para eventos pequeños', 50, 30, 2),
+(2, 'Sala 2', 'sala recomendad para eventos de larga duracion', 12, 12, 1),
+(3, 'Sala 3', 'sala recomendad para eventos de en dias calurosos', 400, 50, 1);
 
 -- --------------------------------------------------------
 
@@ -599,7 +690,7 @@ CREATE TABLE `tipoproducto` (
 --
 
 INSERT INTO `tipoproducto` (`IdTipo`, `TipoProducto`) VALUES
-(1, 'postre'),
+(1, 'Bebida'),
 (2, 'plato principal'),
 (3, 'sopa'),
 (4, 'ensalada'),
@@ -633,19 +724,17 @@ CREATE TABLE `usuarios` (
   `tiempo_clave` datetime NOT NULL,
   `numb_ingresos` int(1) NOT NULL,
   `tiempo_intentos` datetime NOT NULL,
-  `estado_sesion` int(1) NOT NULL
+  `estado_sesion` int(1) NOT NULL,
+  `Codigo` varchar(5) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`IdUsuario`, `NombreUsuario`, `ClaveUsuario`, `IdEmpleado`, `tiempo_clave`, `numb_ingresos`, `tiempo_intentos`, `estado_sesion`) VALUES
-(1, 'Danicx', '$2y$10$Jt6GgE.XDitTGycF2x1Mcu3fExuj.cnOH/Pb3HEC3iG26n4.Sjho.', 1, '2018-09-05 00:00:00', 0, '2018-08-06 18:52:15', 1),
-(3, 'Rolando', '$2y$10$Jt6GgE.XDitTGycF2x1Mcu3fExuj.cnOH/Pb3HEC3iG26n4.Sjho.', 2, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
-(5, 'Estefany', '$2y$10$Jt6GgE.XDitTGycF2x1Mcu3fExuj.cnOH/Pb3HEC3iG26n4.Sjho.', 5, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
-(8, 'Candy', '$2y$10$Jt6GgE.XDitTGycF2x1Mcu3fExuj.cnOH/Pb3HEC3iG26n4.Sjho.', 4, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
-(10, 'Estef', '$2y$10$Jt6GgE.XDitTGycF2x1Mcu3fExuj.cnOH/Pb3HEC3iG26n4.Sjho.', 7, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0);
+INSERT INTO `usuarios` (`IdUsuario`, `NombreUsuario`, `ClaveUsuario`, `IdEmpleado`, `tiempo_clave`, `numb_ingresos`, `tiempo_intentos`, `estado_sesion`, `Codigo`) VALUES
+(12, 'Danicx', '$2y$10$KIY341NPzpUyjkJHJ7sKmeRDBo7dsfBahhMoYStjbSuJHNzd8xbVe', 1, '2018-09-06 00:00:00', 0, '2018-09-21 00:00:00', 1, '12345'),
+(13, 'Alfa1234', '$2y$10$wBmdorn7rJ9udaQIBny0d.jntrbtSCdLabw.lN7.lYj5mU7sL8MuC', 4, '2018-09-06 00:00:00', 0, '2018-09-07 00:00:00', 0, 'GH620');
 
 --
 -- Índices para tablas volcadas
@@ -719,6 +808,7 @@ ALTER TABLE `detallerestaurante`
 --
 ALTER TABLE `empleados`
   ADD PRIMARY KEY (`IdEmpleado`),
+  ADD UNIQUE KEY `DUIEmpleado_2` (`DUIEmpleado`),
   ADD KEY `IdCargo` (`IdCargo`),
   ADD KEY `IdGenero` (`IdGenero`),
   ADD KEY `DUIEmpleado` (`DUIEmpleado`);
@@ -749,8 +839,16 @@ ALTER TABLE `genero`
 --
 ALTER TABLE `habitaciones`
   ADD PRIMARY KEY (`IdHabitacion`),
+  ADD UNIQUE KEY `NumeroHabitacion` (`NumeroHabitacion`),
   ADD KEY `IdTipoHabitacion` (`IdTipoHabitacion`),
   ADD KEY `IdEstado` (`IdEstado`);
+
+--
+-- Indices de la tabla `huespedusuario`
+--
+ALTER TABLE `huespedusuario`
+  ADD PRIMARY KEY (`IdUsuario`),
+  ADD KEY `IdHuesped` (`IdHuesped`);
 
 --
 -- Indices de la tabla `lavanderia`
@@ -785,7 +883,8 @@ ALTER TABLE `mesas`
 --
 ALTER TABLE `pedidohabitacion`
   ADD PRIMARY KEY (`IdPedido`),
-  ADD KEY `IdHabitacion` (`IdHabitacion`);
+  ADD KEY `IdCuenta` (`IdCuenta`),
+  ADD KEY `IdProducto` (`IdProducto`);
 
 --
 -- Indices de la tabla `productos`
@@ -800,6 +899,7 @@ ALTER TABLE `productos`
 --
 ALTER TABLE `salas`
   ADD PRIMARY KEY (`IdSala`),
+  ADD UNIQUE KEY `NombreSala` (`NombreSala`),
   ADD KEY `IdEstadoSala` (`IdEstadoSala`);
 
 --
@@ -861,7 +961,7 @@ ALTER TABLE `acciones`
 -- AUTO_INCREMENT de la tabla `cargos`
 --
 ALTER TABLE `cargos`
-  MODIFY `IdCargo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `IdCargo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `categorialavanderia`
@@ -879,25 +979,25 @@ ALTER TABLE `categoriaproducto`
 -- AUTO_INCREMENT de la tabla `cuentatotal`
 --
 ALTER TABLE `cuentatotal`
-  MODIFY `IdCuenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `IdCuenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `detalleconferencia`
 --
 ALTER TABLE `detalleconferencia`
-  MODIFY `IdReserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IdReserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `detallereserva`
 --
 ALTER TABLE `detallereserva`
-  MODIFY `IdDetalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `IdDetalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `detallerestaurante`
 --
 ALTER TABLE `detallerestaurante`
-  MODIFY `IdDetalle` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdDetalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `empleados`
@@ -909,7 +1009,7 @@ ALTER TABLE `empleados`
 -- AUTO_INCREMENT de la tabla `entes`
 --
 ALTER TABLE `entes`
-  MODIFY `IdEnte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `IdEnte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de la tabla `estado`
@@ -921,7 +1021,13 @@ ALTER TABLE `estado`
 -- AUTO_INCREMENT de la tabla `habitaciones`
 --
 ALTER TABLE `habitaciones`
-  MODIFY `IdHabitacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `IdHabitacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT de la tabla `huespedusuario`
+--
+ALTER TABLE `huespedusuario`
+  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `lavanderia`
@@ -939,31 +1045,31 @@ ALTER TABLE `material`
 -- AUTO_INCREMENT de la tabla `mesarestaurante`
 --
 ALTER TABLE `mesarestaurante`
-  MODIFY `IdMesaRes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `IdMesaRes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `mesas`
 --
 ALTER TABLE `mesas`
-  MODIFY `IdMesa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IdMesa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `pedidohabitacion`
 --
 ALTER TABLE `pedidohabitacion`
-  MODIFY `IdPedido` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `IdProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `IdProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de la tabla `salas`
 --
 ALTER TABLE `salas`
-  MODIFY `IdSala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IdSala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `sillas`
@@ -1005,7 +1111,7 @@ ALTER TABLE `tiposilla`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Restricciones para tablas volcadas
@@ -1063,6 +1169,12 @@ ALTER TABLE `habitaciones`
   ADD CONSTRAINT `habitaciones_ibfk_2` FOREIGN KEY (`IdTipoHabitacion`) REFERENCES `tipohabitacion` (`IdTipoHabitacion`);
 
 --
+-- Filtros para la tabla `huespedusuario`
+--
+ALTER TABLE `huespedusuario`
+  ADD CONSTRAINT `huespedusuario_ibfk_1` FOREIGN KEY (`IdHuesped`) REFERENCES `entes` (`IdEnte`);
+
+--
 -- Filtros para la tabla `lavanderia`
 --
 ALTER TABLE `lavanderia`
@@ -1075,6 +1187,13 @@ ALTER TABLE `lavanderia`
 --
 ALTER TABLE `mesarestaurante`
   ADD CONSTRAINT `mesarestaurante_ibfk_1` FOREIGN KEY (`IdEstado`) REFERENCES `estado` (`IdEstado`);
+
+--
+-- Filtros para la tabla `pedidohabitacion`
+--
+ALTER TABLE `pedidohabitacion`
+  ADD CONSTRAINT `pedidohabitacion_ibfk_1` FOREIGN KEY (`IdCuenta`) REFERENCES `cuentatotal` (`IdCuenta`),
+  ADD CONSTRAINT `pedidohabitacion_ibfk_2` FOREIGN KEY (`IdProducto`) REFERENCES `productos` (`IdProducto`);
 
 --
 -- Filtros para la tabla `productos`
