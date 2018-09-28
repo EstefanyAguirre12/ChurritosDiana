@@ -396,6 +396,7 @@ class Page extends Component{
 					<link type='text/css' rel='stylesheet' href='../../../web/css/custom.css'/>
 					<script type='text/javascript' src='../../../web/js/sweetalert.min.js'></script>
 					<meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+					<link rel='shortcut icon' href='../../../web/img/favicon.ico' />
 				</head>
 				<body class='nav-md '>
 					<div class='container body'>

@@ -177,7 +177,7 @@ class Detalleconferencia extends Validator{
             return Database::getRows($sql, $params);
         }
         public function ReadSalones(){
-			$sql = "SELECT `IdSala`, `NombreSala`, `Descripcion`, `Capacidad`, `Costo`, `IdEstadoSala` FROM `salas` ";
+			$sql = "SELECT `IdSala`, `NombreSala`, `Descripcion`, `Capacidad`, `Costo`, `IdEstadoSala` FROM `salas` WHERE salas.IdEstadoSala=1 ";
 			$params = array(null);
 			return Database::getRows($sql, $params);
 		}

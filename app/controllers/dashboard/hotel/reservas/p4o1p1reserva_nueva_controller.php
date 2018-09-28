@@ -8,7 +8,9 @@ try{
            $nueva_orden->readCuenta($_GET['cuenta']);
            if($nueva_orden->setIdproducto($_GET['producto'])){
                 if($nueva_orden->addDettalleRestaurante()){
-                    Page::showMessage(1, "Se ha agregado correctamente se continuara con selecion de productos" , null);
+                    $id_cliente = $_GET['cliente'];
+                    $cuenta = $_GET['cuenta'];
+                    Page::showMessage(1, "Se ha agregado correctamente se continuara con selecion de productos" , "p4reserva_nueva.php?cliente=$id_cliente&cuenta=$cuenta ");
                 }else{
                     throw new Exception(Database::getException());
                 }

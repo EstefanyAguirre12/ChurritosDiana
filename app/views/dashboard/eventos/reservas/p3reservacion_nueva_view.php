@@ -16,7 +16,7 @@
                       <div class="clearfix"></div>
                     </div>
                     <div class="">
-                          <a href="reservacios_nueva.php" class=" buttonDisabled btn btn-primary">Anterior</a>
+                          <a href="reservacion_nueva.php" class=" buttonDisabled btn btn-primary">Anterior</a>
                     </div>
                     <!-- Tabs -->
                     <div id="wizard_verticle" class="form_wizard wizard_verticle">

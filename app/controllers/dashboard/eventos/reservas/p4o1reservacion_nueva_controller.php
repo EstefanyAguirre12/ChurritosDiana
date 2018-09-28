@@ -32,7 +32,7 @@ try{
                                     if($nueva_orden->setCantidads($_POST['cantidadS'])){
                                         if($nueva_orden->setCantidadm($_POST['cantidadM'])){
                                             if($nueva_orden->createRconferencia()){
-                                                Page::showMessage(1, "Se ha insertado correctamente", null);
+                                                Page::showMessage(1, "Se ha insertado correctamente", "p4reservacion_nueva.php?cliente=$id_cliente&cuenta=$cuenta ");
                                             }else{
                                                 throw new Exception(Database::getException());
                                             }

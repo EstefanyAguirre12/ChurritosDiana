@@ -29,7 +29,7 @@
 					<form autocomplete= 'off' role="form"  action="" method="post" class="login-form">
 						<div class="form-group">
 							<label class="sr-only" for="form-username"></label>
-							<input type="text" id= "dui" name="dui" placeholder="DUI..." class="form-username form-control"  required />
+							<input type="number" id= "dui" name="dui" placeholder="DUI..." class="form-username form-control"  required />
 						</div>
 						  <button type='submit' name='entrar' class='btn btn-primary' data-toggle='tooltip' data-placement='bottom' title='Entrar'>Enviar</button>
 					</form>

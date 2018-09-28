@@ -1,4 +1,5 @@
 <!-- page content -->
+
 <div class="right_col" role="main" class="estilo_righ">
         <div class="">
           <div class="page-title">
@@ -65,13 +66,13 @@
                             <div class="form-group">
                               <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">DUI*:</label>
                               <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="middle-name" name="dui" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getDocIdentidad()) ?>" required/>
+                                <input id="middle-name" name="dui" class="form-control col-md-7 col-xs-12 validate" type="number" name="middle-name" value="<?php print($dato->getDocIdentidad()) ?>" required/>
                               </div>
                             </div>
                             <div class="form-group">
                               <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Telefono*:</label>
                               <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="middle-name" name="tel" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getTelefono()) ?>" required/>
+                                <input id="middle-name" name="tel" class="form-control col-md-7 col-xs-12 validate" type="number" name="middle-name" value="<?php print($dato->getTelefono()) ?>" required/>
                               </div>
                             </div>
                             <div class="form-group">

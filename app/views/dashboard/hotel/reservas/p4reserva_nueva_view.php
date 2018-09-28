@@ -51,8 +51,8 @@
                           </a>
                         </li>
                       </ul>
-                    <div class="stepContainer"><div id="step-11" class="content" >
-                        <h2 class="StepTitle">Seleccione la habitacion</h2>  
+                    <div class=""><div id="step-11" class="content" >
+                        <h2 class="">Seleccione la habitacion</h2>  
                         <div class="bs-docs-section">
                           <div class="bs-glyphicons">
                           <ul class='bs-glyphicons-list'>
@@ -63,8 +63,8 @@
                               
                                   <li>
                                     <span class='' aria-hidden='true'></span>
-                                    <h3 class='glyphicon-class'>N° Habitacion :$row[1]</h3>
-                                    <h3 class='glyphicon-class'>Capacidad:$row[2] Precio:$row[3]</h3>
+                                    <h3 >$row[1]</h3>
+                                    <h5 class='glyphicon-class'>Capacidad:$row[2] $:$row[3]</h5>
                                     <a  href='p4o1reserva_nueva.php?cliente=$id_cliente&cuenta=$cuenta&habitacion=$row[0]' class='btn btn-primary btn-xs'>selecionar</a>
                                   </li>
                                
