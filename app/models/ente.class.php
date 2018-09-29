@@ -60,11 +60,7 @@ class Ente extends Validator{
 		}
 		
 		public function setDocIdentidad($value){
-<<<<<<< HEAD
-			if($this->validateDui($value)){
-=======
 			if($this->validateDUI($value)){
->>>>>>> 018536ef98dfce9ba0be143781eb43ab80fa8477
 				$this->docidentidad = $value;
 				return true;
 			}else{

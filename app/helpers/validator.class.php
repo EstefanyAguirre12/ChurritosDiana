@@ -188,14 +188,6 @@ class Validator{
 		}
 		return true; 
 	}
-	public function validateDui($value){
-		if(strlen($value) < 9){
-			return false;
-		}
-		if(strlen($value) > 9){
-			return false;
-		}
-		return true; 
-	}
+	
 }
 ?>
