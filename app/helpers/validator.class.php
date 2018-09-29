@@ -56,6 +56,21 @@ class Validator{
 			return false;
 		}
 	}
+	public function validateDUI($value){
+		if(preg_match("/^[0-9\.-]{10,10}$/", $value)){
+			return true;
+		} else {
+			return false;
+		}
+	}
+	public function validateTelefono($value){
+		if(preg_match("/^[0-9\.-]{9,9}$/", $value)){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 
 	public function validateImage($file, $value, $path, $max_width, $max_heigth){
      	if($file['size'] <= 2097152){

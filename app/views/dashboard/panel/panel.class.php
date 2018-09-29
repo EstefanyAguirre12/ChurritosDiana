@@ -596,7 +596,8 @@ class Page extends Component{
 					<!-- Custom Theme Scripts -->
 					<script type='text/javascript' src='../../../web/js/custom.js'></script>
 					<script type='text/javascript' src='../../../web/js/custom.min.js'></script>
-					
+					<script type='text/javascript' src='../../../web/js/jquery.inputmask.bundle.min.js'></script>
+
 				</body>
 			</html>
 		");
