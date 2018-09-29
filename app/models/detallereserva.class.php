@@ -7,12 +7,12 @@ class Detallereserva extends Validator{
     private $horafin = null;
     private $fechainicio = null;
     private $fechafin = null;
-    
+
     //Métodos para sobrecarga de propiedades
     public function setId($value){
         if($this->validateId($value)){
             $this->id = $value;
-            return true;  
+            return true;
         }
         else{
             return false;
@@ -21,7 +21,7 @@ class Detallereserva extends Validator{
     public function getId(){
 			return $this->id;
     }
-    
+
     public function setIdhabitacion($value){
 			if($this->validateId($value)){
 				$this->idhabitacion = $value;
@@ -33,7 +33,7 @@ class Detallereserva extends Validator{
 		public function getIdhabitacion(){
 			return $this->idhabitacion;
 		}
-    
+
 
     public function setIdcuenta($value){
 		if($this->validateId($value)){
@@ -58,7 +58,7 @@ class Detallereserva extends Validator{
 	public function getHorainicio(){
 		return $this->horainicio;
 		}
-		
+
 		public function setHorafin($value){
 			if($this->validateDate($value)){
 				$this->horafin = $value;
@@ -82,7 +82,7 @@ class Detallereserva extends Validator{
 			public function getFechainicio(){
 				return $this->fechainicio;
                 }
-                
+
                 public function setFechafin($value){
                     if($this->validateDate($value)){
                         $this->fechafin = $value;
@@ -99,16 +99,16 @@ class Detallereserva extends Validator{
 		//Obtener categoria
 	public function getReservas(){
 		$sql = "SELECT `IdDetalle`, `FechaInicio`, `FechaFin`, `HoraInicio`, `HoraFin`, habitaciones.NumeroHabitacion, entes.Nombres
-		FROM `detallereserva`,habitaciones,cuentatotal,entes 
+		FROM `detallereserva`,habitaciones,cuentatotal,entes
 		WHERE detallereserva.IdHabitacion= habitaciones.IdHabitacion AND detallereserva.IdCuenta = cuentatotal.IdCuenta AND cuentatotal.IdEnte = entes.IdEnte";
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
-	
+
 	//Buscar categoria con parametros
 	public function searchReserva($value){
-		$sql = "SELECT `IdDetalle`, `FechaInicio`, `FechaFin`, `HoraInicio`, `HoraFin`, habitaciones.NumeroHabitacion, entes.Nombres 
-		FROM `detallereserva`,habitaciones,cuentatotal,entes 
+		$sql = "SELECT `IdDetalle`, `FechaInicio`, `FechaFin`, `HoraInicio`, `HoraFin`, habitaciones.NumeroHabitacion, entes.Nombres
+		FROM `detallereserva`,habitaciones,cuentatotal,entes
 		WHERE detallereserva.IdHabitacion= habitaciones.IdHabitacion AND detallereserva.IdCuenta = cuentatotal.IdCuenta AND cuentatotal.IdEnte = entes.IdEnte AND  entes.Nombres LIKE ? ";
 		$params = array("%$value%");
 		return Database::getRows($sql, $params);
@@ -118,10 +118,21 @@ class Detallereserva extends Validator{
 		$sql = "INSERT INTO `detallereserva`(`IdDetalle`, `FechaInicio`, `FechaFin`, `HoraInicio`, `IdHabitacion`, `HoraFin`, `IdCuenta`) VALUES (null, ?, ?, ?, ?, ?, ?)";
 		$params = array( $this->fechainicio, $this->fechafin,$this->horainicio, $this->idhabitacion, $this->horafin, $this->idcuenta );
 		return Database::executeRow($sql, $params);
-    }
+  }
+  public function eliminarHabitacion(){
+  $sql = "DELETE FROM `detallereserva` WHERE `IdHabitacion`=? AND `IdCuenta`= ? ";
+  $params = array( $this->idhabitacion,$this->idcuenta );
+  return Database::executeRow($sql, $params);
+  $this->updateHabitacion();
+  }
+  public function updateHabitacion(){
+  $sql = "UPDATE `habitaciones` SET `IdEstado`=1 WHERE `IdHabitacion`=? ";
+  $params = array($this->idhabitacion);
+  return Database::getRows($sql, $params);
+}
     //Leer categoria
     public function readDetalleres(){
-		$sql = "SELECT `IdDetalle`, `FechaInicio`, `FechaFin`, `HoraInicio`, `IdHabitacion`, `HoraFin`, `IdCuenta` 
+		$sql = "SELECT `IdDetalle`, `FechaInicio`, `FechaFin`, `HoraInicio`, `IdHabitacion`, `HoraFin`, `IdCuenta`
 		FROM `detallereserva` WHERE `IdDetalle` = ?";
 		$params = array($this->id);
 		$ente = Database::getRow($sql, $params);
@@ -168,7 +179,7 @@ class Detallereserva extends Validator{
 		return Database::executeRow($sql, $params);
 	}
 	public function readCuentaHabitaciones(){
-		$sql = "SELECT  habitaciones.NumeroHabitacion,`FechaInicio`, `FechaFin`, `HoraInicio`,  `HoraFin` ,habitaciones.Precio
+		$sql = "SELECT  habitaciones.NumeroHabitacion,`FechaInicio`, `FechaFin`, `HoraInicio`,  `HoraFin` ,habitaciones.Precio,habitaciones.IdHabitacion
 		FROM `detallereserva` INNER JOIN habitaciones ON detallereserva.IdHabitacion= habitaciones.IdHabitacion WHERE detallereserva.IdCuenta= ? ";
 		$params = array($this->idcuenta);
 		return Database::getRows($sql, $params);
@@ -183,7 +194,7 @@ class Detallereserva extends Validator{
 			}else{
 				return null;
 			}
-		}	
+		}
     //Eliminar categoria
 	public function deleteEnte($value){
 		$sql = "DELETE FROM detallereserva WHERE IdDetalle = ?";
@@ -192,7 +203,7 @@ class Detallereserva extends Validator{
 	}
 	public function GetReporteReservaHabitacion($value1,$value2){
 		$sql = "SELECT entes.Nombres, habitaciones.NumeroHabitacion, `FechaInicio`, `FechaFin`, `HoraInicio`, `HoraFin`
-		FROM `detallereserva`,habitaciones,cuentatotal,entes 
+		FROM `detallereserva`,habitaciones,cuentatotal,entes
 		WHERE detallereserva.IdHabitacion= habitaciones.IdHabitacion AND detallereserva.IdCuenta = cuentatotal.IdCuenta AND cuentatotal.IdEnte = entes.IdEnte and detallereserva.FechaInicio BETWEEN ? AND ?";
 		$params = array("$value1","$value2");
 		return Database::getRows($sql, $params);

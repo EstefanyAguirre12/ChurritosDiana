@@ -10,13 +10,13 @@ class Detalleconferencia extends Validator{
     private $fecha = null;
     private $cantidadm = null;
     private $cantidads = null;
-    
+
 
     //Métodos para sobrecarga de propiedades
     public function setId($value){
         if($this->validateId($value)){
             $this->id = $value;
-            return true;  
+            return true;
         }
         else{
             return false;
@@ -25,7 +25,7 @@ class Detalleconferencia extends Validator{
     public function getId(){
 			return $this->id;
     }
-    
+
     public function setIdsala($value){
 			if($this->validateId($value)){
 				$this->idsala = $value;
@@ -37,7 +37,7 @@ class Detalleconferencia extends Validator{
 		public function getIdsala(){
 			return $this->idsala;
 		}
-    
+
     public function setIdmesa($value){
 		if($this->validateId($value)){
 			$this->idmesa = $value;
@@ -61,7 +61,7 @@ class Detalleconferencia extends Validator{
 	public function getIdcuenta(){
 		return $this->idcuenta;
 		}
-		
+
 		public function setIdsilla($value){
 			if($this->validateId($value)){
 				$this->idsilla = $value;
@@ -85,7 +85,7 @@ class Detalleconferencia extends Validator{
 			public function getHorain(){
 				return $this->horain;
                 }
-                
+
                 public function setHorafi($value){
                     if(isset($value)){
                         $this->horafi = $value;
@@ -133,19 +133,19 @@ class Detalleconferencia extends Validator{
                         public function getCantidads(){
                             return $this->cantidads;
                             }
-    
+
     //Metodos CRUD para cotegoria
 	public function getReservas(){
-		$sql = "SELECT `IdReserva`, salas.NombreSala `IdMesa`, `CantidadMesas`, `CantidadSillas`, `HoraInicio`, `HoraFin`, detalleconferencia.Fecha,entes.Nombres 
+		$sql = "SELECT `IdReserva`, salas.NombreSala `IdMesa`, `CantidadMesas`, `CantidadSillas`, `HoraInicio`, `HoraFin`, detalleconferencia.Fecha,entes.Nombres
 		FROM detalleconferencia , salas ,cuentatotal,entes
 		WHERE detalleconferencia.IdSala = salas.IdSala AND detalleconferencia.IdCuenta = cuentatotal.IdCuenta AND cuentatotal.IdEnte = entes.IdEnte  ";
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
-	
+
     //Buscar categoria con parametros
     public function searchReserva($value){
-		$sql = "SELECT `IdReserva`, salas.NombreSala `IdMesa`, `CantidadMesas`, `CantidadSillas`, `HoraInicio`, `HoraFin`, detalleconferencia.Fecha,entes.Nombres 
+		$sql = "SELECT `IdReserva`, salas.NombreSala `IdMesa`, `CantidadMesas`, `CantidadSillas`, `HoraInicio`, `HoraFin`, detalleconferencia.Fecha,entes.Nombres
 		FROM detalleconferencia , salas ,cuentatotal,entes
 		WHERE detalleconferencia.IdSala = salas.IdSala AND detalleconferencia.IdCuenta = cuentatotal.IdCuenta AND cuentatotal.IdEnte = entes.IdEnte AND entes.Nombres LIKE ?";
 		$params = array("%$value%");
@@ -182,10 +182,16 @@ class Detalleconferencia extends Validator{
 			return Database::getRows($sql, $params);
 		}
     //Insertar categoria
-    public function createRconferencia(){
-		$sql = "INSERT INTO `detalleconferencia`(`IdReserva`, `IdSala`, `IdMesa`, `CantidadMesas`, `IdSilla`, `CantidadSillas`, `HoraInicio`, `HoraFin`, `Fecha`, `IdCuenta`) VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        $params = array( $this->idsala, $this->idmesa, $this->cantidadm, $this->idsilla,$this->cantidads,  $this->horain, $this->horafi, $this->fecha,$this->idcuenta );
+    public function eliminarSala(){
+		$sql = "DELETE FROM `detalleconferencia` WHERE IdSala =? AND IdCuenta=? ";
+    $params = array( $this->idsala,$this->idcuenta );
 		return Database::executeRow($sql, $params);
+    $this->updateSalas();
+    }
+    public function createRconferencia(){
+    $sql = "INSERT INTO `detalleconferencia`(`IdReserva`, `IdSala`, `IdMesa`, `CantidadMesas`, `IdSilla`, `CantidadSillas`, `HoraInicio`, `HoraFin`, `Fecha`, `IdCuenta`) VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $params = array( $this->idsala, $this->idmesa, $this->cantidadm, $this->idsilla,$this->cantidads,  $this->horain, $this->horafi, $this->fecha,$this->idcuenta );
+    return Database::executeRow($sql, $params);
     }
     public function PagarCuenta($value1,$value2){
 		$sql = "UPDATE `cuentatotal` SET `estado_cuenta`= 2,`pago`=? WHERE cuentatotal.numb_cuenta=?";
@@ -193,12 +199,17 @@ class Detalleconferencia extends Validator{
 		return Database::executeRow($sql, $params);
     }
     public function readCuentaEventos(){
-		$sql = "SELECT salas.NombreSala, mesas.Nombre, `CantidadMesas`, sillas.Nombre, `CantidadSillas`, `HoraInicio`, `HoraFin`, `Fecha` ,salas.Costo
-        FROM `detalleconferencia` INNER JOIN salas on salas.IdSala =detalleconferencia.IdSala INNER JOIN mesas ON mesas.IdMesa = detalleconferencia.IdMesa INNER JOIN sillas on sillas.IdSilla = detalleconferencia.IdSilla 
+		$sql = "SELECT salas.NombreSala, mesas.Nombre, `CantidadMesas`, sillas.Nombre, `CantidadSillas`, `HoraInicio`, `HoraFin`, `Fecha` ,salas.Costo,salas.IdSala
+        FROM `detalleconferencia` INNER JOIN salas on salas.IdSala =detalleconferencia.IdSala INNER JOIN mesas ON mesas.IdMesa = detalleconferencia.IdMesa INNER JOIN sillas on sillas.IdSilla = detalleconferencia.IdSilla
             WHERE detalleconferencia.IdCuenta =? ";
 		$params = array($this->idcuenta);
 		return Database::getRows($sql, $params);
 	}
+  public function updateSalas(){
+  $sql = "UPDATE `salas` SET `IdEstadoSala`=1 WHERE `IdSala`= ? ";
+  $params = array($this->idsala);
+  return Database::getRows($sql, $params);
+}
     public function  readCuenta($numbcuenta){
 		$sql = "SELECT `IdCuenta` FROM `cuentatotal` WHERE `numb_cuenta`=?";
 		$params = array($numbcuenta);
@@ -209,10 +220,10 @@ class Detalleconferencia extends Validator{
 			}else{
 				return null;
 			}
-		}	
+		}
     //Leer categoria
     public function readDetalleconferencia(){
-		$sql = "SELECT `IdReserva`, `IdSala`, `IdMesa`, `CantidadMesas`, `IdSilla`, `CantidadSillas`, `HoraInicio`, `HoraFin`, `Fecha`, `IdCuenta` 
+		$sql = "SELECT `IdReserva`, `IdSala`, `IdMesa`, `CantidadMesas`, `IdSilla`, `CantidadSillas`, `HoraInicio`, `HoraFin`, `Fecha`, `IdCuenta`
         FROM `detalleconferencia` WHERE `IdReserva`=?";
 		$params = array($this->id);
 		$confe = Database::getRow($sql, $params);
@@ -226,7 +237,7 @@ class Detalleconferencia extends Validator{
             $this->fecha = $confe['Fecha'];
             $this->cantidads = $confe['CantidadSillas'];
             $this->cantidadm = $confe['CantidadMesas'];
-                        
+
 			return true;
 		}else{
 			return false;
@@ -245,7 +256,7 @@ class Detalleconferencia extends Validator{
 		return Database::executeRow($sql, $params);
     }
     public function GetReporteReservaSalones($value1,$value2){
-		$sql = "SELECT  salas.NombreSala `IdMesa`, `CantidadMesas`, `CantidadSillas`, `HoraInicio`, `HoraFin`, detalleconferencia.Fecha,entes.Nombres 
+		$sql = "SELECT  salas.NombreSala `IdMesa`, `CantidadMesas`, `CantidadSillas`, `HoraInicio`, `HoraFin`, detalleconferencia.Fecha,entes.Nombres
 		FROM detalleconferencia , salas ,cuentatotal,entes
 		WHERE detalleconferencia.IdSala = salas.IdSala AND detalleconferencia.IdCuenta = cuentatotal.IdCuenta AND cuentatotal.IdEnte = entes.IdEnte AND detalleconferencia.Fecha BETWEEN ? AND ?";
 		$params = array("$value1","$value2");

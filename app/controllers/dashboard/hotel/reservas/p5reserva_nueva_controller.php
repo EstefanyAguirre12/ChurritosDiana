@@ -15,11 +15,22 @@ try{
     }else{
         throw new Exception("Error ningun cliente selecionado", null);
     }
+		if(isset($_POST['eliminar'])){
+				$nueva_orden->setIdhabitacion($_POST['IdHabitacion']);
+				$nueva_orden->readCuenta($_GET['cuenta']);
+			if(	$nueva_orden->eliminarHabitacion()){
+				$nueva_orden->updateHabitacion();
+				Page::showMessage(1, "Se ha insertado correctamente se continuara con selecion de productos" , "p5reserva_nueva.php?cliente=$id_cliente&cuenta=$cuenta");
+			}else {
+			throw new Exception("Error al eliminar", null);
+			}
+
+		}
 	if($data){
 		//Se muestran los
         require_once("../../../app/views/dashboard/hotel/reservas/p5reserva_nueva_view.php");
 	}else{
-		Page::showMessage(3, "No hay registros disponibles", "reserva_nueva.php");
+		Page::showMessage(3, "No hay registros disponibles", "p4reserva_nueva.php?cliente=$id_cliente&cuenta=$cuenta");
 	}
 
 }catch(Exception $error){

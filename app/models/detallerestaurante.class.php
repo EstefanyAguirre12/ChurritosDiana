@@ -17,7 +17,7 @@ class Detallerestaurante extends Validator{
     public function setId($value){
         if($this->validateId($value)){
             $this->id = $value;
-            return true;  
+            return true;
         }
         else{
             return false;
@@ -26,11 +26,11 @@ class Detallerestaurante extends Validator{
     public function getId(){
 			return $this->id;
     }
-	
+
 	public function setIdTproducto($value){
         if($this->validateId($value)){
             $this->IdTproducto = $value;
-            return true;  
+            return true;
         }
         else{
             return false;
@@ -42,7 +42,7 @@ class Detallerestaurante extends Validator{
 	public function setIdCproducto($value){
         if($this->validateId($value)){
             $this->IdCproducto = $value;
-            return true;  
+            return true;
         }
         else{
             return false;
@@ -54,7 +54,7 @@ class Detallerestaurante extends Validator{
 	public function setIdCliente($value){
         if($this->validateId($value)){
             $this->idcliente = $value;
-            return true;  
+            return true;
         }
         else{
             return false;
@@ -63,7 +63,7 @@ class Detallerestaurante extends Validator{
     public function getIdCliente(){
 			return $this->idcliente;
     }
-    
+
     public function setIdmesa($value){
 			if($this->validateId($value)){
 				$this->idmesa = $value;
@@ -75,7 +75,7 @@ class Detallerestaurante extends Validator{
 		public function getIdmesa(){
 			return $this->idmesa;
 		}
-    
+
     public function setIdproducto($value){
 		if($this->validateId($value)){
 			$this->idproducto = $value;
@@ -99,7 +99,7 @@ class Detallerestaurante extends Validator{
 	public function getIdCuenta(){
 		return $this->idcuenta;
 		}
-		
+
 		public function setCantida ($value){
 			if($this->validateEnteros($value, 2)){
 				$this->cantidad = $value;
@@ -128,7 +128,7 @@ class Detallerestaurante extends Validator{
 			$params = array(null);
 			return Database::getRows($sql, $params);
 			}
-	
+
     //Buscar categoria con parametros
     public function searchDetallerestaurante($value){
 		$sql = "SELECT * FROM detallerestaurante WHERE IdDetalle LIKE ? OR IdProducto LIKE ? ORDER BY IdDetalle";
@@ -170,7 +170,7 @@ class Detallerestaurante extends Validator{
 				$this->idproducto = $detalle['IdProducto'];
 				$this->idcuenta = $detalle['IdCuenta'];
 				$this->cantidad = $detalle['Cantidad'];
-							
+
 				return true;
 			}else{
 				return null;
@@ -186,8 +186,8 @@ class Detallerestaurante extends Validator{
 			}else{
 				return null;
 			}
-		}	
-	
+		}
+
 	public function addDettalleRestaurante(){
 		$sql = "INSERT INTO `detallerestaurante`( `Cantidad`, `IdProducto`, `IdCuenta`, `IdMesa`) VALUES (?,?,?,1)";
 		$params = array($this->cantidad,$this->idproducto,$this->idcuenta);
@@ -195,38 +195,49 @@ class Detallerestaurante extends Validator{
 	}
 
 		public function readClientes(){
-			$sql = "SELECT `IdEnte`, `Nombres`, `Apellidos`, `DocIdentidad`, genero.NombreGenero, tipoente.TipoEnte 
+			$sql = "SELECT `IdEnte`, `Nombres`, `Apellidos`, `DocIdentidad`, genero.NombreGenero, tipoente.TipoEnte
 			FROM `entes` INNER JOIN tipoente on entes.IdTipo=tipoente.IdTipo INNER JOIN genero on entes.IdGenero=genero.IdGenero";
 			$params = array(null);
 			return Database::getRows($sql, $params);
 		}
 		public function readProductos(){
-			$sql = "SELECT `IdEnte`, `Nombres`, `Apellidos`, `DocIdentidad`, genero.NombreGenero, tipoente.TipoEnte 
+			$sql = "SELECT `IdEnte`, `Nombres`, `Apellidos`, `DocIdentidad`, genero.NombreGenero, tipoente.TipoEnte
 			FROM `entes` INNER JOIN tipoente on entes.IdTipo=tipoente.IdTipo INNER JOIN genero on entes.IdGenero=genero.IdGenero";
 			$params = array(null);
 			return Database::getRows($sql, $params);
 		}
 		public function readTiposProductos(){
-			$sql = "SELECT `IdProducto`, `NombreProducto`, `Descripcion`, `Precio` 
-			FROM `productos` INNER JOIN tipoproducto on productos.IdTipo = tipoproducto.IdTipo 
+			$sql = "SELECT `IdProducto`, `NombreProducto`, `Descripcion`, `Precio`
+			FROM `productos` INNER JOIN tipoproducto on productos.IdTipo = tipoproducto.IdTipo
 			WHERE tipoproducto.IdTipo =?";
 			$params = array($this->IdTproducto);
 			return Database::getRows($sql, $params);
 		}
 		public function readCategoriaProductos(){
-			$sql = "SELECT `IdProducto`, `NombreProducto`, `Descripcion`, `Precio` 
-			FROM `productos` INNER JOIN categoriaproducto on categoriaproducto.IdCategoria = productos.IdCategoria 
+			$sql = "SELECT `IdProducto`, `NombreProducto`, `Descripcion`, `Precio`
+			FROM `productos` INNER JOIN categoriaproducto on categoriaproducto.IdCategoria = productos.IdCategoria
 			WHERE productos.IdCategoria =? ";
 			$params = array($this->IdCproducto);
 			return Database::getRows($sql, $params);
 		}
 		public function readCuentaProducto(){
-			$sql = "SELECT productos.NombreProducto ,productos.Precio ,detallerestaurante.Cantidad
-			 FROM `detallerestaurante` INNER JOIN productos ON detallerestaurante.IdProducto = productos.IdProducto 
+			$sql = "SELECT productos.NombreProducto ,productos.Precio ,detallerestaurante.Cantidad,productos.IdProducto
+			 FROM `detallerestaurante` INNER JOIN productos ON detallerestaurante.IdProducto = productos.IdProducto
 			 WHERE detallerestaurante.IdCuenta =? ";
 			$params = array($this->idcuenta);
 			return Database::getRows($sql, $params);
 		}
+		public function eliminarProducto(){
+		$sql = "DELETE FROM `detallerestaurante` WHERE `IdProducto` =? AND `IdCuenta`=?";
+		$params = array( $this->idproducto,$this->idcuenta );
+		return Database::executeRow($sql, $params);
+		//$this->updateHabitacion();
+		}
+		public function updateHabitacion(){
+		$sql = "UPDATE `habitaciones` SET `IdEstado`=1 WHERE `IdHabitacion`=? ";
+		$params = array($this->idhabitacion);
+		return Database::getRows($sql, $params);
+	}
 		public function readProducto(){
 			$sql = "SELECT `IdProducto`, `NombreProducto`, `Descripcion`, `Precio` FROM `productos` WHERE productos.IdProducto=? ";
 			$params = array($this->idproducto);
@@ -250,13 +261,13 @@ class Detallerestaurante extends Validator{
 			$params = array(null);
 			return Database::getRows($sql, $params);
 		}
-		
+
 		public function readCuentasClientes(){
 			$sql = "SELECT `IdCuenta`, entes.Nombres, `numb_cuenta`, `Fecha`,`estado_cuenta`, `total`, cuentatotal.costo_h,cuentatotal.costo_r,cuentatotal.costo_e FROM `cuentatotal` INNER JOIN entes on entes.IdEnte= cuentatotal.IdEnte WHERE entes.IdEnte= ? AND estado_cuenta =0";
 			$params = array($this->idcliente);
 			return Database::getRows($sql, $params);
 		}
-		
+
     //Modificar categoria
     public function updateDetallerestaurante(){
 		$sql = "UPDATE detallerestaurante SET IdMesa = ?, IdProducto = ?, IdCuenta = ?, Cantidad = ? WHERE IdDetalle = ?";

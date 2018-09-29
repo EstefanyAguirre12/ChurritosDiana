@@ -9,7 +9,7 @@
           <div class="clearfix"></div>
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="x_panel"> 
+              <div class="x_panel">
                   <div class="x_content">
                     <div class="x_title">
                       <h2>Nueva orden <small>paso 1</small></h2>
@@ -70,6 +70,16 @@
                                       </div>
                                 </div>
                               </div>
+                      </div>
+                      <div class="animated lipInY col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="tile-stats">
+                          <div class="count">Procesar Pago</div>
+                          <div class="ln_solid"></div>
+                          <h3>Se continua con proceso de cancelacion de una cuenta</h3>
+                              <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                                <a href="p2o3reservacion_nueva.php" class="btn btn-info btn-lg">Selecionar</a>
+                              </div>
+                        </div>
                       </div>
                     </div>
                     <!-- End SmartWizard Content -->

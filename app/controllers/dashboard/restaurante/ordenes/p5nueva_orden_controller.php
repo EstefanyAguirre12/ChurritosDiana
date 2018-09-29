@@ -19,11 +19,22 @@ try{
     }else{
         throw new Exception("Error ningun cliente selecionado", null);
     }
+		if(isset($_POST['eliminar'])){
+				$nueva_orden->setIdproducto($_POST['IdProducto']);
+				$nueva_orden->readCuenta($_GET['cuenta']);
+			if(	$nueva_orden->eliminarProducto()){
+				//$nueva_orden->updateHabitacion();
+				Page::showMessage(1, "Se ha insertado correctamente se continuara con selecion de productos" , "p5nueva_orden.php?cliente=$id_cliente&cuenta=$cuenta");
+			}else {
+			throw new Exception("Error al eliminar", null);
+			}
+
+		}
 	if($data){
-		//Se muestran los 
+		//Se muestran los
         require_once("../../../app/views/dashboard/restaurante/ordenes/p5nueva_orden_view.php");
 	}else{
-		Page::showMessage(3, "No hay registros disponibles", "nueva_orden.php");
+		Page::showMessage(3, "No hay registros disponibles", "p4nueva_orden.php?cliente=$id_cliente&cuenta=$cuenta");
 	}
 
 }catch(Exception $error){
