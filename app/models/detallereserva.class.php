@@ -145,7 +145,7 @@ class Detallereserva extends Validator{
 	}
 		//Obtener sillas
 		public function ReadHabitaciones(){
-			$sql = "SELECT `IdHabitacion`, `NumeroHabitacion`, `Capacidad`, `Precio`, `IdTipoHabitacion`, `IdEstado` FROM `habitaciones`";
+			$sql = "SELECT `IdHabitacion`, `NumeroHabitacion`, `Capacidad`, `Precio`, `IdTipoHabitacion`, `IdEstado` FROM `habitaciones` WHERE IdEstado=1";
 			$params = array(null);
 			return Database::getRows($sql, $params);
 		}

@@ -3,7 +3,7 @@
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>Serivicios restaurante</h3>
+            <h3>Proceso de pago</h3>
             </div>
           </div>
           <div class="clearfix"></div>
@@ -12,13 +12,14 @@
               <div class="x_panel"> 
                   <div class="x_content">
                     <div class="x_title">
-                      <h2>Nueva orden <small>paso 3</small></h2>
+                      <h2>Proceso de pago <small>paso 3</small></h2>
                       <div class="clearfix"></div>
                     </div>
                     <?php print("
-                      <a href='p3nueva_orden.php?cliente=$id_cliente ' class=' buttonDisabled btn btn-primary'>Anterior</a>
+                      <a href='p2o3reservacion_nueva.php?cliente=$id_cliente ' class=' buttonDisabled btn btn-primary'>Anterior</a>
                     ");
                     ?>
+                    </div>
                     <!-- Tabs -->
                     <div id="wizard_verticle" class="form_wizard wizard_verticle">
                       <ul class="list-unstyled wizard_steps anchor">
@@ -40,11 +41,6 @@
                         <li>
                           <a href="#paso4" class="disabled" isdone="0" rel="4">
                             <span class="step_no">4</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#paso5" class="disabled" isdone="0" rel="3">
-                            <span class="step_no">5</span>
                           </a>
                         </li>
                       </ul>
@@ -84,7 +80,7 @@
                                                   
                                                  </td>                         
                                                 <td>
-                                                  <a href='p4nueva_orden.php?cliente=$id_cliente[0]&cuenta=$row[2]' type='button' class='btn btn-primary'>
+                                                  <a href='p4o3reservacion_nueva.php?cliente=$id_cliente[0]&cuenta=$row[2]' type='button' class='btn btn-primary'>
                                                     <i class='fa fa-plus-circle'></i>
                                                   </a>
                                                 </td>

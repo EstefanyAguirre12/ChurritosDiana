@@ -14,7 +14,11 @@
                     <div class="x_title">
                       <h2>Nueva orden <small>paso 3</small></h2>
                       <div class="clearfix"></div>
-                    </div
+                    </div>
+                    <?php print("
+                        <a href='p4nueva_orden.php?cliente=$id_cliente&cuenta=$cuenta ' class=' buttonDisabled btn btn-primary'>Anterior</a>
+                      ");
+                      ?>
                     <!-- Tabs -->
                     <div id="wizard_verticle" class="form_wizard wizard_verticle">
                       <ul class="list-unstyled wizard_steps anchor">
@@ -67,9 +71,6 @@
                             </ul>
                           </div>
                         </div>
-                    </div>
-                    <div class="">
-                          <a href="nueva_orden.php" class="buttonPrevious buttonDisabled btn btn-primary">Finalizar</a>
                     </div>
                     <!-- End SmartWizard Content -->
 

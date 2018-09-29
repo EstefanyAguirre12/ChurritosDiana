@@ -51,7 +51,7 @@
                         </li>
                       </ul>
                     <div class="stepContainer"><div id="step-11" class="content" >
-                        <h2 class="StepTitle">Seleccione el tipo de productos</h2>  
+                        <h2 class="StepTitle">Seleccione los detales de la reserva</h2>  
                         <form autocomplete= 'off'   method="post" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left"> 
                             <br>
                               <div class="form-group">
@@ -113,7 +113,6 @@
                             <div class="ln_solid"></div>
                             <div class="form-group">
                               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                <button class="btn btn-primary" type="reset">Limpiar</button>
                                 <button type="submit" name="enviar" class="btn btn-success">Aceptar</button>
                               </div>
                             </div>

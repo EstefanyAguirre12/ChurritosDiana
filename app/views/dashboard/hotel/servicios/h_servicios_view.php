@@ -24,25 +24,27 @@
         <div class="x_content">
           <div class="row">
 
-        <?php
-            foreach($habitaciones as $habitacion){
-              print("
-              <div class='animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12'>
-                  <div class='tile-stats'>
-                    <div class='icon'><i class='fa fa-caret-square-o-right'></i>
-                    </div>
-                    <div class='count'> 
-                      <h2>
-                      Habitacion N:$habitacion[NumeroHab] 
-                      </h2>
-                    </div>
-                    <a href='h_pedidos.php?IdUsuario=$habitacion[IdUsuario]' class='h3'>Ver</a>
-                  </div>
-              </div>
-              "); 
-          }   
-        ?>
 
+                <div class="cards"> 
+                <?php
+                    foreach($habitaciones as $habitacion){
+                      print("
+
+                        <div class=' card [ is-collapsed ] '>
+                          <div class='card__inner [ js-expander ]'>
+                            <span>Habitacion N:$habitacion[NumeroHab] </span>
+                            <br>
+                            <i class='fas fa-calendar-alt'></i>
+                          </div>
+                          <div class='card__expander'>
+                            <i class='fa fa-close [ js-collapser ]'></i>
+                              <a href='h_pedidos.php?IdUsuario=$habitacion[IdUsuario]' class='h3'>Ver</a>
+                          </div>
+                      </div>
+                      "); 
+                  }   
+                ?>
+              </div>  
 
           </div>
         </div>

@@ -3,7 +3,7 @@
         <div class="">
           <div class="page-title">
             <div class="title_left">
-            <h3>Nueva reserva hotel</h3>
+              <h3>Nueva reserva eventos</h3>
             </div>
           </div>
           <div class="clearfix"></div>
@@ -12,14 +12,11 @@
               <div class="x_panel"> 
                   <div class="x_content">
                     <div class="x_title">
-                    <h2>Nueva reserva <small>paso 5</small></h2>
+                      <h2>Nueva reserva<small>paso 2</small></h2>
                       <div class="clearfix"></div>
                     </div>
                     <div class="">
-                      <?php print("
-                        <a href='p4reserva_nueva.php?cliente=$id_cliente&cuenta=$cuenta ' class=' buttonDisabled btn btn-primary'>Anterior</a>
-                      ");
-                      ?>
+                          <a href="reservacion_nueva.php" class=" buttonDisabled btn btn-primary">Anterior</a>
                     </div>
                     <!-- Tabs -->
                     <div id="wizard_verticle" class="form_wizard wizard_verticle">
@@ -30,37 +27,34 @@
                           </a>
                         </li>
                         <li>
-                          <a href="#paso2" class="done" isdone="0" rel="2">
+                          <a href="#paso2" class="selected" isdone="0" rel="2">
                             <span class="step_no">2</span>
                           </a>
                         </li>
                         <li>
-                          <a href="#paso3" class="done" isdone="0" rel="3">
+                          <a href="#paso3" class="disabled" isdone="0" rel="3">
                             <span class="step_no">3</span>
                           </a>
                         </li>
                         <li>
-                          <a href="#paso4" class="done" isdone="0" rel="4">
+                          <a href="#paso4" class="disabled" isdone="0" rel="4">
                             <span class="step_no">4</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#paso5" class="selected" isdone="0" rel="3">
-                            <span class="step_no">5</span>
                           </a>
                         </li>
                       </ul>
                     <div class="stepContainer"><div id="step-11" class="content" >
-                        <h2 class="StepTitle">Lista de productos selecinados</h2>  
-                        <div class="x_content">
+                        <h2 class="StepTitle">Tipo de cliente</h2> 
+                            <div class="x_content">
                               <div class="table-responsive">
                                 <table class="table table-striped jambo_table bulk_action">
                                   <thead>
                                     <tr class="headings">
-                                      <th class="column-title">N° Habitacion</th>
-                                      <th class="column-title">Fechas</th>
-                                      <th class="column-title">Horas </th>
-                                      <th class="column-title">Precio </th>
+                                      <th class="column-title">Nombres cliente </th>
+                                      <th class="column-title">Apellidos cliente </th>
+                                      <th class="column-title">DUI </th>
+                                      <th class="column-title">Genero</th>
+                                      <th class="column-title">Tipo de cliente</th>
+                                      <th class="column-title no-link last"><span class="nobr">Accion</span></th>
                                     </tr>
                                   </thead>
 
@@ -73,10 +67,16 @@
                                               print("
                                                 </tr>
                                                 <tr role='row' class='odd'>
-                                                  <td>$row[0]</td>
-                                                  <td>$row[1] - $row[2]</td>
-                                                  <td>$row[3] - $row[4]</td>
-                                                  <td>$row[5]</td>
+                                                  <td>$row[1]</td>
+                                                  <td>$row[2]</td>
+                                                  <td>$row[3]</td>
+                                                  <td>$row[4]</td>
+                                                  <td>$row[5]</td>                             
+                                                  <td>
+                                                    <a href='p3o3reservacion_nueva.php?cliente=$row[0]' type='button' class='btn btn-primary'>
+                                                      <i class='fa fa-plus-circle'></i>
+                                                    </a>
+                                                  </td>
                                               </tr>
                                               ");
                                             }
@@ -85,7 +85,10 @@
                                   </tbody>
                                 </table>
                               </div>
+                        
+                      
                             </div>
+                      </div>
                     </div>
                     <!-- End SmartWizard Content -->
 

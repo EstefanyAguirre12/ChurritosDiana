@@ -23,27 +23,29 @@
                 </div>
                 <div class="x_content">
                   <div class="row">
-
+                <div class="cards"> 
                 <?php
                     foreach($habitaciones as $habitacion){
                       print("
-                      <div class='animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12'>
-                          <div class='tile-stats'>
-                            <div class='icon'><i class='fa fa-caret-square-o-right'></i>
-                            </div>
-                            <div class='count'> 
-                              <h2>
-                              Habitacion N:$habitacion[NumeroHabitacion] 
-                              </h2>
-                            </div>
-                            <h3 class='red'>$habitacion[Estado]</h3>
-                            <p>Capacidad:$habitacion[Capacidad]  Precio:$habitacion[Precio]  </p>
+
+                        <div class=' card [ is-collapsed ] '>
+                          <div class='card__inner [ js-expander ]'>
+                            <span>Habitacion N:$habitacion[NumeroHabitacion] </span>
+                            <br>
+                            <span>Estado:$habitacion[Estado]</span>
+                            <br>
+                            <i class='fas fa-calendar-alt'></i>
+                          </div>
+                          <div class='card__expander'>
+                            <i class='fa fa-close [ js-collapser ]'></i>
+                              <h3 >Precio:$habitacion[Precio]  <br> <br> Capacidad:$habitacion[Capacidad]  </h3>
+        
                           </div>
                       </div>
                       "); 
                   }   
                 ?>
-
+              </div>         
 
                   </div>
                 </div>

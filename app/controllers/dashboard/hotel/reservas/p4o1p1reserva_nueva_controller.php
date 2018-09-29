@@ -8,7 +8,9 @@ try{
            $nueva_orden->readCuenta($_GET['cuenta']);
            if($nueva_orden->setIdproducto($_GET['producto'])){
                 if($nueva_orden->addDettalleRestaurante()){
-                    Page::showMessage(1, "Se ha agregado correctamente se continuara con selecion de productos" , null);
+                    $id_cliente = $_GET['cliente'];
+                    $cuenta = $_GET['cuenta'];
+                    Page::showMessage(1, "Se ha agregado correctamente se continuara con selecion de productos" , "p4reserva_nueva.php?cliente=$id_cliente&cuenta=$cuenta ");
                 }else{
                     throw new Exception(Database::getException());
                 }
@@ -44,7 +46,7 @@ try{
 		//Se muestran los 
         require_once("../../../app/views/dashboard/hotel/reservas/p4o1p1reserva_nueva_view.php");
 	}else{
-		Page::showMessage(3, "No hay registros disponibles", "nueva_orden.php");
+		Page::showMessage(3, "No hay registros disponibles", "reserva_nueva.php");
 	}
 
 }catch(Exception $error){

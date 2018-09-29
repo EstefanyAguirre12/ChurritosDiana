@@ -6,6 +6,8 @@ try{
     if(isset($_GET['cliente'])){
         if(isset($_GET['cuenta'])){
             if($nueva_orden->readCuenta($_GET['cuenta'])){
+                $id_cliente = $_GET['cliente'];
+                $cuenta = $_GET['cuenta'];
                 $nueva_orden->readCuenta($_GET['cuenta']);
                 $data = $nueva_orden->readCuentaProducto($_GET['cuenta']);
             }else{

@@ -37,13 +37,13 @@
                     <div class="form-group">
                       <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">DUI*:</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name  " name="dui" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getDui()) ?>" required/>
+                        <input id="middle-name  " name="dui" class="form-control col-md-7 col-xs-12 validate" data-inputmask="'mask' : '99999999-9'" name="middle-name" value="<?php print($dato->getDui()) ?>" required/>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Telefono*:</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="middle-name  " name="tel" class="form-control col-md-7 col-xs-12 validate" type="text" name="middle-name" value="<?php print($dato->getTelefono()) ?>" required/>
+                        <input id="middle-name  " name="tel" class="form-control col-md-7 col-xs-12 validate" data-inputmask="'mask' : '9999-9999'" name="middle-name" value="<?php print($dato->getTelefono()) ?>" required/>
                       </div>
                     </div>
                     <div class="form-group">

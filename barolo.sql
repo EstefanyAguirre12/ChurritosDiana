@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-09-2018 a las 04:42:52
--- Versión del servidor: 10.1.33-MariaDB
--- Versión de PHP: 7.2.6
+-- Tiempo de generación: 29-09-2018 a las 10:18:00
+-- Versión del servidor: 10.1.34-MariaDB
+-- Versión de PHP: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,6 +30,7 @@ USE `barolo`;
 -- Estructura de tabla para la tabla `acciones`
 --
 
+DROP TABLE IF EXISTS `acciones`;
 CREATE TABLE `acciones` (
   `id_accion` int(11) NOT NULL,
   `nombre_accion` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
@@ -42,6 +43,7 @@ CREATE TABLE `acciones` (
 -- Estructura de tabla para la tabla `cargos`
 --
 
+DROP TABLE IF EXISTS `cargos`;
 CREATE TABLE `cargos` (
   `IdCargo` int(11) NOT NULL,
   `NombreCargo` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
@@ -79,6 +81,7 @@ INSERT INTO `cargos` (`IdCargo`, `NombreCargo`, `Descripcion`, `h_reserva`, `h_s
 -- Estructura de tabla para la tabla `categorialavanderia`
 --
 
+DROP TABLE IF EXISTS `categorialavanderia`;
 CREATE TABLE `categorialavanderia` (
   `IdCategoria` int(11) NOT NULL,
   `Categoria` varchar(50) COLLATE utf8_spanish_ci NOT NULL
@@ -99,6 +102,7 @@ INSERT INTO `categorialavanderia` (`IdCategoria`, `Categoria`) VALUES
 -- Estructura de tabla para la tabla `categoriaproducto`
 --
 
+DROP TABLE IF EXISTS `categoriaproducto`;
 CREATE TABLE `categoriaproducto` (
   `IdCategoria` int(11) NOT NULL,
   `CategoriaProducto` varchar(50) COLLATE utf8_spanish_ci NOT NULL
@@ -122,11 +126,16 @@ INSERT INTO `categoriaproducto` (`IdCategoria`, `CategoriaProducto`) VALUES
 -- Estructura de tabla para la tabla `cuentatotal`
 --
 
+DROP TABLE IF EXISTS `cuentatotal`;
 CREATE TABLE `cuentatotal` (
   `IdCuenta` int(11) NOT NULL,
   `numb_cuenta` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `estado_cuenta` int(1) NOT NULL,
+  `costo_e` int(10) NOT NULL,
+  `costo_r` int(10) NOT NULL,
+  `costo_h` int(10) NOT NULL,
   `total` int(11) NOT NULL,
+  `pago` int(10) NOT NULL,
   `IdEnte` int(11) NOT NULL,
   `Fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -135,19 +144,23 @@ CREATE TABLE `cuentatotal` (
 -- Volcado de datos para la tabla `cuentatotal`
 --
 
-INSERT INTO `cuentatotal` (`IdCuenta`, `numb_cuenta`, `estado_cuenta`, `total`, `IdEnte`, `Fecha`) VALUES
-(1, '21206181006', 0, 0, 2, '2012-06-18 00:00:00'),
-(2, '1190920180248', 0, 0, 1, '2018-09-19 02:48:50'),
-(26, '1190920180250', 0, 0, 1, '2018-09-19 02:50:22'),
-(27, '22190920180251', 0, 0, 22, '2018-09-19 02:51:24'),
-(28, '8190920180259', 0, 0, 8, '2018-09-19 02:59:02'),
-(29, '24190920181606', 0, 0, 24, '2018-09-19 16:06:58'),
-(30, '13270920181626', 0, 0, 13, '2018-09-27 16:26:48'),
-(31, '25270920181830', 0, 0, 25, '2018-09-27 18:30:36'),
-(32, '26270920181840', 0, 0, 26, '2018-09-27 18:40:14'),
-(33, '27270920181911', 0, 0, 27, '2018-09-27 19:11:04'),
-(34, '28270920182304', 0, 0, 28, '2018-09-27 23:04:09'),
-(35, '29270920182315', 0, 0, 29, '2018-09-27 23:15:30');
+INSERT INTO `cuentatotal` (`IdCuenta`, `numb_cuenta`, `estado_cuenta`, `costo_e`, `costo_r`, `costo_h`, `total`, `pago`, `IdEnte`, `Fecha`) VALUES
+(1, '21206181006', 0, 0, 0, 0, 60, 0, 2, '2012-06-18 00:00:00'),
+(2, '1190920180248', 1, 0, 7, 0, 0, 0, 1, '2018-09-19 02:48:50'),
+(26, '1190920180250', 0, 0, 0, 0, 0, 0, 1, '2018-09-19 02:50:22'),
+(27, '22190920180251', 0, 0, 0, 0, 0, 0, 22, '2018-09-19 02:51:24'),
+(28, '8190920180259', 0, 0, 0, 0, 0, 0, 8, '2018-09-19 02:59:02'),
+(29, '24190920181606', 0, 0, 0, 0, 0, 0, 24, '2018-09-19 16:06:58'),
+(30, '13270920181626', 0, 0, 0, 0, 0, 0, 13, '2018-09-27 16:26:48'),
+(31, '25270920181830', 0, 0, 0, 0, 130, 0, 25, '2018-09-27 18:30:36'),
+(32, '26270920181840', 2, 0, 0, 70, 140, 0, 26, '2018-09-27 18:40:14'),
+(33, '27270920181911', 0, 0, 0, 0, 0, 0, 27, '2018-09-27 19:11:04'),
+(34, '28270920182304', 0, 0, 0, 0, 0, 0, 28, '2018-09-27 23:04:09'),
+(35, '29270920182315', 0, 0, 0, 0, 0, 0, 29, '2018-09-27 23:15:30'),
+(36, '31290920180312', 0, 0, 0, 0, 0, 0, 31, '2018-09-29 03:12:17'),
+(37, '35290920180337', 0, 0, 0, 0, 0, 0, 35, '2018-09-29 03:37:43'),
+(38, '3290920180614', 2, 50, 12, 90, 152, 160, 3, '2018-09-29 06:14:58'),
+(39, '3290920181014', 0, 0, 0, 0, 0, 0, 3, '2018-09-29 10:14:29');
 
 -- --------------------------------------------------------
 
@@ -155,6 +168,7 @@ INSERT INTO `cuentatotal` (`IdCuenta`, `numb_cuenta`, `estado_cuenta`, `total`, 
 -- Estructura de tabla para la tabla `detalleconferencia`
 --
 
+DROP TABLE IF EXISTS `detalleconferencia`;
 CREATE TABLE `detalleconferencia` (
   `IdReserva` int(11) NOT NULL,
   `IdSala` int(11) NOT NULL,
@@ -173,9 +187,20 @@ CREATE TABLE `detalleconferencia` (
 --
 
 INSERT INTO `detalleconferencia` (`IdReserva`, `IdSala`, `IdMesa`, `CantidadMesas`, `IdSilla`, `CantidadSillas`, `HoraInicio`, `HoraFin`, `Fecha`, `IdCuenta`) VALUES
-(1, 1, 1, 214, 1, 232, '02:32', '12:31', '2018-06-21', 1),
-(2, 2, 1, 2, 1, 23, '01:00', '02:00', '2018-09-19', 29),
-(3, 2, 1, 3, 1, 5, '01:20', '03:55', '2018-09-28', 31);
+(1, 3, 2, 12, 1, 54, '04:54', '05:54', '2018-09-30', 38);
+
+--
+-- Disparadores `detalleconferencia`
+--
+DROP TRIGGER IF EXISTS `update_salas`;
+DELIMITER $$
+CREATE TRIGGER `update_salas` AFTER INSERT ON `detalleconferencia` FOR EACH ROW BEGIN
+UPDATE salas SET salas.IdEstadoSala=2 WHERE salas.IdSala= NEW.IdSala;
+UPDATE cuentatotal SET cuentatotal.costo_e = ( SELECT SUM(salas.Costo) FROM salas INNER JOIN detalleconferencia ON detalleconferencia.IdSala = salas.IdSala WHERE detalleconferencia.IdCuenta= NEW.IdCuenta ) , cuentatotal.total=(SELECT SUM(cuentatotal.costo_e+ cuentatotal.costo_r+cuentatotal.costo_h))
+WHERE cuentatotal.IdCuenta = NEW.IdCuenta;  
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -183,6 +208,7 @@ INSERT INTO `detalleconferencia` (`IdReserva`, `IdSala`, `IdMesa`, `CantidadMesa
 -- Estructura de tabla para la tabla `detallereserva`
 --
 
+DROP TABLE IF EXISTS `detallereserva`;
 CREATE TABLE `detallereserva` (
   `IdDetalle` int(11) NOT NULL,
   `FechaInicio` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
@@ -198,29 +224,20 @@ CREATE TABLE `detallereserva` (
 --
 
 INSERT INTO `detallereserva` (`IdDetalle`, `FechaInicio`, `FechaFin`, `HoraInicio`, `IdHabitacion`, `HoraFin`, `IdCuenta`) VALUES
-(1, '2018-06-28', '2018-06-28', '15:21', 11, '00:12', 1),
-(3, '2018-06-28', '2018-06-14', '02:13', 6, '14:33', 1),
-(4, '2018-07-28', '2018-06-14', '02:13', 9, '14:33', 1),
-(5, '2018-07-10', '2018-06-14', '02:13', 9, '14:33', 1),
-(6, '2018-07-15', '2018-06-14', '02:13', 9, '14:33', 1),
-(7, '2018-07-20', '2018-06-14', '02:13', 9, '14:33', 1),
-(8, '2018-07-10', '2018-06-14', '02:13', 10, '14:33', 1),
-(9, '2018-07-20', '2018-06-14', '02:13', 12, '14:33', 1),
-(10, '2018-07-27', '2018-07-31', '15:13', 10, '01:05', 2),
-(11, '2018-09-20', '2018-09-20', '14:23', 9, '15:23', 29),
-(12, '2018-09-20', '2018-09-20', '14:23', 9, '15:23', 29),
-(13, '2018-09-20', '2018-09-20', '14:23', 9, '15:23', 29),
-(14, '2018-09-21', '2018-09-23', '13:00', 6, '16:00', 29),
-(15, '2018-09-27', '2018-09-19', '23:32', 8, '03:23', 30),
-(16, '2018-09-27', '2018-09-29', '04:01', 6, '05:02', 2),
-(17, '', '', '', 6, '', 2),
-(18, '2018-09-26', '2018-09-25', '04:03', 8, '06:09', 2),
-(19, '2018-09-27', '2018-09-30', '10:32', 6, '10:32', 31),
-(20, '2018-09-27', '2018-09-30', '01:30', 14, '01:00', 32),
-(21, '2018-09-27', '2018-09-29', '06:05', 8, '04:05', 2),
-(22, '2018-09-27', '2018-09-28', '01:30', 6, '01:00', 33),
-(23, '2018-09-27', '2018-09-30', '04:34', 10, '04:43', 34),
-(24, '2018-09-27', '2018-09-29', '03:23', 8, '03:23', 35);
+(1, '2018-09-29', '2018-09-30', '07:59', 8, '07:59', 38);
+
+--
+-- Disparadores `detallereserva`
+--
+DROP TRIGGER IF EXISTS `update_habitaciones`;
+DELIMITER $$
+CREATE TRIGGER `update_habitaciones` AFTER INSERT ON `detallereserva` FOR EACH ROW BEGIN
+UPDATE habitaciones SET habitaciones.IdEstado=2 WHERE habitaciones.IdHabitacion= NEW.IdHabitacion;
+UPDATE cuentatotal SET cuentatotal.costo_h = ( SELECT SUM(habitaciones.Precio) FROM habitaciones INNER JOIN detallereserva ON detallereserva.IdHabitacion = habitaciones.IdHabitacion WHERE detallereserva.IdCuenta= NEW.IdCuenta ) , cuentatotal.total=(SELECT SUM(cuentatotal.costo_e+ cuentatotal.costo_r+cuentatotal.costo_h))
+WHERE cuentatotal.IdCuenta = NEW.IdCuenta; 
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -228,6 +245,7 @@ INSERT INTO `detallereserva` (`IdDetalle`, `FechaInicio`, `FechaFin`, `HoraInici
 -- Estructura de tabla para la tabla `detallerestaurante`
 --
 
+DROP TABLE IF EXISTS `detallerestaurante`;
 CREATE TABLE `detallerestaurante` (
   `IdDetalle` int(11) NOT NULL,
   `Cantidad` int(11) NOT NULL,
@@ -241,17 +259,20 @@ CREATE TABLE `detallerestaurante` (
 --
 
 INSERT INTO `detallerestaurante` (`IdDetalle`, `Cantidad`, `IdProducto`, `IdCuenta`, `IdMesa`) VALUES
-(1, 2, 2, 2, 1),
-(2, 4, 24, 1, 1),
-(3, 2, 12, 29, 1),
-(4, 1, 26, 29, 1),
-(5, 1, 29, 31, 1),
-(6, 2, 29, 32, 1),
-(7, 2, 20, 32, 1),
-(8, 5, 9, 32, 1),
-(9, 1, 29, 33, 1),
-(10, 2, 21, 34, 1),
-(11, 5, 21, 35, 1);
+(1, 5, 13, 38, 1);
+
+--
+-- Disparadores `detallerestaurante`
+--
+DROP TRIGGER IF EXISTS `update_resturante`;
+DELIMITER $$
+CREATE TRIGGER `update_resturante` AFTER INSERT ON `detallerestaurante` FOR EACH ROW BEGIN
+UPDATE cuentatotal SET cuentatotal.costo_r = ( SELECT SUM(productos.Precio) FROM productos INNER JOIN detallerestaurante ON detallerestaurante.IdProducto = productos.IdProducto WHERE detallerestaurante.IdCuenta= NEW.IdCuenta ) , cuentatotal.total=(SELECT SUM(cuentatotal.costo_e+ cuentatotal.costo_r+cuentatotal.costo_h))
+WHERE cuentatotal.IdCuenta = NEW.IdCuenta; 
+
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -259,6 +280,7 @@ INSERT INTO `detallerestaurante` (`IdDetalle`, `Cantidad`, `IdProducto`, `IdCuen
 -- Estructura de tabla para la tabla `empleados`
 --
 
+DROP TABLE IF EXISTS `empleados`;
 CREATE TABLE `empleados` (
   `IdEmpleado` int(11) NOT NULL,
   `NombreEmpleado` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
@@ -277,7 +299,7 @@ CREATE TABLE `empleados` (
 --
 
 INSERT INTO `empleados` (`IdEmpleado`, `NombreEmpleado`, `ApellidosEmpleado`, `DUIEmpleado`, `TelefonoEmpleado`, `DireccionEmpleado`, `correo_empleado`, `FotoEmpleado`, `IdCargo`, `IdGenero`) VALUES
-(1, 'Daniel Alexander', 'Barrera Marroquin', '059586029', '48990908', 'San salvador', 'daniel.alex.barrera@gmail.com', 'DANICX.JPG', 1, 1),
+(1, 'Daniel Alexander', 'Barrera Marroquin', '99999999-9', '48990908', 'San salvador', 'daniel.alex.barrera@gmail.com', 'DANICX.JPG', 1, 1),
 (2, 'David andres', 'Godines', '059586021', '73237747', '89 Avenida Norte y Calle 11 Poniente\r\n', 'david.godines@gmail.com', '5b0f5acadcf98.jpg', 3, 1),
 (3, 'Erick jose', 'Recinos', '550955632', '13271176', 'Colonia Buenos Aires 3, Diagonal Centroamérica, Avenida Alvarado, contiguo al Ministerio de Hacienda', 'erick.recinos@hotmail.com', '5b48e613722f5.jpg', 2, 1),
 (4, 'Felix gerardo', 'palacios', '252247811', '73237747', ' Colonia San Francisco, Avenida Las Camelias y Calle Los Abetos No. 21', 'felix.cliford@gmail.com', '5b0f5acadcf98.jpg', 3, 1),
@@ -291,6 +313,7 @@ INSERT INTO `empleados` (`IdEmpleado`, `NombreEmpleado`, `ApellidosEmpleado`, `D
 -- Estructura de tabla para la tabla `entes`
 --
 
+DROP TABLE IF EXISTS `entes`;
 CREATE TABLE `entes` (
   `IdEnte` int(11) NOT NULL,
   `Nombres` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
@@ -324,7 +347,15 @@ INSERT INTO `entes` (`IdEnte`, `Nombres`, `Apellidos`, `DocIdentidad`, `Correo`,
 (26, 'Jhon', 'Olmedo', '283431541', 'olmedo@hotmail.com', '85125366', 1, 3),
 (27, 'Jhon', 'Cruz', '049217414', 'jhoncrz@hotmail.com', '90364043', 1, 3),
 (28, 'Michelle', 'Matamoros', '012345678', 'michell.matamoros@gmail.com', '73254899', 2, 2),
-(29, 'Gabriel', 'Chavez', '987654321', 'gabriel.chavez@gmail.com', '78956642', 1, 2);
+(29, 'Gabriel', 'Chavez', '987654321', 'gabriel.chavez@gmail.com', '78956642', 1, 2),
+(30, 'dsadsadasd', 'Alexander', '23324242-3', 'daniel.aadsalex.barrera@gmail.com', '3432-3243', 1, 2),
+(31, 'sadsadasd', 'adasdasd', '23213123-1', 'daniel.alesweqwex.barrera@gmail.com', '2321-3121', 1, 2),
+(32, 'fsdfsdfs', 'dfsdfsdfsd', '32424432-_', 'daniel.alex.barrera@gmail.com32323', '7682-548_', 1, 2),
+(33, 'sdfsdfsdfsd', 'fdsfsdfsdfsd', '2321322_-_', 'dani423432el.alex.barrera@gmail.com3', '2332-4324', 1, 2),
+(34, 'srefdsfsd', 'fsdfsdf', '2343243_-_', 'daniel.alex.barrera@gmail.com', '4334-3242', 1, 2),
+(35, '76825348', 'Alexander', '34234234-2', 'daniel423423arrera@gmail.com', '2342-3424', 1, 2),
+(36, '76825348', 'Alexander', '45353453-4', 'daniel.alex.barrera@gmail.com', '7682-5348', 1, 2),
+(37, 'sdsadas', 'dasd', '21222222-2', 'daniel.aleasdasdarrera@gmail.com', '3232-3221', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -332,6 +363,7 @@ INSERT INTO `entes` (`IdEnte`, `Nombres`, `Apellidos`, `DocIdentidad`, `Correo`,
 -- Estructura de tabla para la tabla `estado`
 --
 
+DROP TABLE IF EXISTS `estado`;
 CREATE TABLE `estado` (
   `IdEstado` int(11) NOT NULL,
   `Estado` varchar(30) COLLATE utf8_spanish_ci NOT NULL
@@ -351,6 +383,7 @@ INSERT INTO `estado` (`IdEstado`, `Estado`) VALUES
 -- Estructura de tabla para la tabla `genero`
 --
 
+DROP TABLE IF EXISTS `genero`;
 CREATE TABLE `genero` (
   `IdGenero` int(11) NOT NULL,
   `NombreGenero` varchar(15) COLLATE utf8_spanish_ci NOT NULL
@@ -370,6 +403,7 @@ INSERT INTO `genero` (`IdGenero`, `NombreGenero`) VALUES
 -- Estructura de tabla para la tabla `habitaciones`
 --
 
+DROP TABLE IF EXISTS `habitaciones`;
 CREATE TABLE `habitaciones` (
   `IdHabitacion` int(11) NOT NULL,
   `NumeroHabitacion` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
@@ -399,6 +433,7 @@ INSERT INTO `habitaciones` (`IdHabitacion`, `NumeroHabitacion`, `Capacidad`, `Pr
 -- Estructura de tabla para la tabla `huespedusuario`
 --
 
+DROP TABLE IF EXISTS `huespedusuario`;
 CREATE TABLE `huespedusuario` (
   `IdUsuario` int(11) NOT NULL,
   `Clave` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
@@ -421,6 +456,7 @@ INSERT INTO `huespedusuario` (`IdUsuario`, `Clave`, `NumeroHab`, `IdHuesped`, `U
 -- Estructura de tabla para la tabla `lavanderia`
 --
 
+DROP TABLE IF EXISTS `lavanderia`;
 CREATE TABLE `lavanderia` (
   `Id` int(11) NOT NULL,
   `Nombre` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
@@ -445,6 +481,7 @@ INSERT INTO `lavanderia` (`Id`, `Nombre`, `Cantidad`, `Color`, `IdEstado`, `IdCa
 -- Estructura de tabla para la tabla `material`
 --
 
+DROP TABLE IF EXISTS `material`;
 CREATE TABLE `material` (
   `IdMaterial` int(11) NOT NULL,
   `Material` varchar(30) COLLATE utf8_spanish_ci NOT NULL
@@ -464,6 +501,7 @@ INSERT INTO `material` (`IdMaterial`, `Material`) VALUES
 -- Estructura de tabla para la tabla `mesarestaurante`
 --
 
+DROP TABLE IF EXISTS `mesarestaurante`;
 CREATE TABLE `mesarestaurante` (
   `IdMesaRes` int(11) NOT NULL,
   `NumeroMesa` int(11) NOT NULL,
@@ -490,6 +528,7 @@ INSERT INTO `mesarestaurante` (`IdMesaRes`, `NumeroMesa`, `Capacidad`, `IdEstado
 -- Estructura de tabla para la tabla `mesas`
 --
 
+DROP TABLE IF EXISTS `mesas`;
 CREATE TABLE `mesas` (
   `IdMesa` int(11) NOT NULL,
   `Cantidad` int(11) NOT NULL,
@@ -511,6 +550,7 @@ INSERT INTO `mesas` (`IdMesa`, `Cantidad`, `Nombre`) VALUES
 -- Estructura de tabla para la tabla `pedidohabitacion`
 --
 
+DROP TABLE IF EXISTS `pedidohabitacion`;
 CREATE TABLE `pedidohabitacion` (
   `IdPedido` int(11) NOT NULL,
   `IdProducto` int(11) NOT NULL,
@@ -534,6 +574,7 @@ INSERT INTO `pedidohabitacion` (`IdPedido`, `IdProducto`, `Cantidad`, `Estado`, 
 -- Estructura de tabla para la tabla `productos`
 --
 
+DROP TABLE IF EXISTS `productos`;
 CREATE TABLE `productos` (
   `IdProducto` int(11) NOT NULL,
   `NombreProducto` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
@@ -584,6 +625,7 @@ INSERT INTO `productos` (`IdProducto`, `NombreProducto`, `Descripcion`, `Precio`
 -- Estructura de tabla para la tabla `salas`
 --
 
+DROP TABLE IF EXISTS `salas`;
 CREATE TABLE `salas` (
   `IdSala` int(11) NOT NULL,
   `NombreSala` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
@@ -598,9 +640,9 @@ CREATE TABLE `salas` (
 --
 
 INSERT INTO `salas` (`IdSala`, `NombreSala`, `Descripcion`, `Capacidad`, `Costo`, `IdEstadoSala`) VALUES
-(1, 'Sala1', 'Sala recomendad para eventos pequeños', 50, 30, 2),
+(1, 'Sala1', 'Sala recomendad para eventos pequeños', 50, 30, 1),
 (2, 'Sala 2', 'sala recomendad para eventos de larga duracion', 12, 12, 1),
-(3, 'Sala 3', 'sala recomendad para eventos de en dias calurosos', 400, 50, 1);
+(3, 'Sala 3', 'sala recomendad para eventos de en dias calurosos', 400, 50, 2);
 
 -- --------------------------------------------------------
 
@@ -608,6 +650,7 @@ INSERT INTO `salas` (`IdSala`, `NombreSala`, `Descripcion`, `Capacidad`, `Costo`
 -- Estructura de tabla para la tabla `sillas`
 --
 
+DROP TABLE IF EXISTS `sillas`;
 CREATE TABLE `sillas` (
   `IdSilla` int(11) NOT NULL,
   `Cantidad` int(11) NOT NULL,
@@ -627,6 +670,7 @@ INSERT INTO `sillas` (`IdSilla`, `Cantidad`, `Nombre`) VALUES
 -- Estructura de tabla para la tabla `tipoente`
 --
 
+DROP TABLE IF EXISTS `tipoente`;
 CREATE TABLE `tipoente` (
   `IdTipo` int(11) NOT NULL,
   `TipoEnte` varchar(30) COLLATE utf8_spanish_ci NOT NULL
@@ -646,6 +690,7 @@ INSERT INTO `tipoente` (`IdTipo`, `TipoEnte`) VALUES
 -- Estructura de tabla para la tabla `tipohabitacion`
 --
 
+DROP TABLE IF EXISTS `tipohabitacion`;
 CREATE TABLE `tipohabitacion` (
   `IdTipoHabitacion` int(11) NOT NULL,
   `TipoHabitacion` varchar(30) COLLATE utf8_spanish_ci NOT NULL
@@ -669,6 +714,7 @@ INSERT INTO `tipohabitacion` (`IdTipoHabitacion`, `TipoHabitacion`) VALUES
 -- Estructura de tabla para la tabla `tipomesa`
 --
 
+DROP TABLE IF EXISTS `tipomesa`;
 CREATE TABLE `tipomesa` (
   `IdTipoMesa` int(11) NOT NULL,
   `TipoMesa` varchar(30) COLLATE utf8_spanish_ci NOT NULL
@@ -680,6 +726,7 @@ CREATE TABLE `tipomesa` (
 -- Estructura de tabla para la tabla `tipoproducto`
 --
 
+DROP TABLE IF EXISTS `tipoproducto`;
 CREATE TABLE `tipoproducto` (
   `IdTipo` int(11) NOT NULL,
   `TipoProducto` varchar(30) COLLATE utf8_spanish_ci NOT NULL
@@ -705,6 +752,7 @@ INSERT INTO `tipoproducto` (`IdTipo`, `TipoProducto`) VALUES
 -- Estructura de tabla para la tabla `tiposilla`
 --
 
+DROP TABLE IF EXISTS `tiposilla`;
 CREATE TABLE `tiposilla` (
   `IdTipoSilla` int(11) NOT NULL,
   `TipoSilla` varchar(30) COLLATE utf8_spanish_ci NOT NULL
@@ -716,6 +764,7 @@ CREATE TABLE `tiposilla` (
 -- Estructura de tabla para la tabla `usuarios`
 --
 
+DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `IdUsuario` int(11) NOT NULL,
   `NombreUsuario` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
@@ -733,7 +782,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`IdUsuario`, `NombreUsuario`, `ClaveUsuario`, `IdEmpleado`, `tiempo_clave`, `numb_ingresos`, `tiempo_intentos`, `estado_sesion`, `Codigo`) VALUES
-(12, 'Danicx', '$2y$10$KIY341NPzpUyjkJHJ7sKmeRDBo7dsfBahhMoYStjbSuJHNzd8xbVe', 1, '2018-09-06 00:00:00', 0, '2018-09-21 00:00:00', 1, '12345'),
+(12, 'Danicx', '$2y$10$KIY341NPzpUyjkJHJ7sKmeRDBo7dsfBahhMoYStjbSuJHNzd8xbVe', 1, '2018-09-06 00:00:00', 0, '2018-09-21 00:00:00', 0, '12345'),
 (13, 'Alfa1234', '$2y$10$wBmdorn7rJ9udaQIBny0d.jntrbtSCdLabw.lN7.lYj5mU7sL8MuC', 4, '2018-09-06 00:00:00', 0, '2018-09-07 00:00:00', 0, 'GH620');
 
 --
@@ -961,7 +1010,7 @@ ALTER TABLE `acciones`
 -- AUTO_INCREMENT de la tabla `cargos`
 --
 ALTER TABLE `cargos`
-  MODIFY `IdCargo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `IdCargo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `categorialavanderia`
@@ -979,25 +1028,25 @@ ALTER TABLE `categoriaproducto`
 -- AUTO_INCREMENT de la tabla `cuentatotal`
 --
 ALTER TABLE `cuentatotal`
-  MODIFY `IdCuenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `IdCuenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de la tabla `detalleconferencia`
 --
 ALTER TABLE `detalleconferencia`
-  MODIFY `IdReserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `IdReserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `detallereserva`
 --
 ALTER TABLE `detallereserva`
-  MODIFY `IdDetalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `IdDetalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `detallerestaurante`
 --
 ALTER TABLE `detallerestaurante`
-  MODIFY `IdDetalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `IdDetalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `empleados`
@@ -1009,7 +1058,7 @@ ALTER TABLE `empleados`
 -- AUTO_INCREMENT de la tabla `entes`
 --
 ALTER TABLE `entes`
-  MODIFY `IdEnte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `IdEnte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `estado`
