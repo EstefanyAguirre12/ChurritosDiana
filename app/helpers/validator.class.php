@@ -164,5 +164,23 @@ class Validator{
 			return false;
 		}
 	}
+	public function validateTel($value){
+		if(strlen($value) < 8){
+			return false;
+		}
+		if(strlen($value) > 8){
+			return false;
+		}
+		return true; 
+	}
+	public function validateDui($value){
+		if(strlen($value) < 9){
+			return false;
+		}
+		if(strlen($value) > 9){
+			return false;
+		}
+		return true; 
+	}
 }
 ?>

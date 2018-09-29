@@ -20,28 +20,32 @@ try{
     }else{
         throw new Exception("Error ningun cliente selecionado", null);
     }
+    $fecha= date('Y/m/d');
+
     if(isset($_POST['enviar'])){
 		$_POST = $nueva_orden->validateForm($_POST);
 		if($nueva_orden->setIdhabitacion($_GET['habitacion'])){
             if($nueva_orden->setFechaInicio($_POST['fechai'])){
                 if($nueva_orden->setFechaFin($_POST['fechaf'])){
-                    if($nueva_orden->setHorainicio($_POST['hinicio'])){
-                        if($nueva_orden->setHorafin($_POST['hfin'])){
-                            if($nueva_orden->readCuenta($_GET['cuenta'])){
-                                if($nueva_orden->createDetalleres()){
-                                    Page::showMessage(1, "Se ha insertado correctamente", null);
+
+                            if($nueva_orden->setHorainicio($_POST['hinicio'])){
+                                if($nueva_orden->setHorafin($_POST['hfin'])){
+                                    if($nueva_orden->readCuenta($_GET['cuenta'])){
+                                        if($nueva_orden->createDetalleres()){
+                                            Page::showMessage(1, "Se ha insertado correctamente", null);
+                                        }else{
+                                            throw new Exception(Database::getException());
+                                        }
+                                    }else{
+                                        throw new Exception("Cuneta cliente incorrecta", null);
+                                    }
                                 }else{
-                                    throw new Exception(Database::getException());
+                                    throw new Exception("Hora final incorrecta", null);
                                 }
                             }else{
-                                throw new Exception("Cuneta cliente incorrecta", null);
+                                throw new Exception("Hora inicio incorrecta", null);
                             }
-                        }else{
-                            throw new Exception("Hora final incorrecta", null);
-                        }
-                    }else{
-                        throw new Exception("Hora inicio incorrecta", null);
-                    }
+                       
                 }else{
                     throw new Exception("Fecha incorrecta", null);
                 }

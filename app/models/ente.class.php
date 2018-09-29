@@ -60,7 +60,7 @@ class Ente extends Validator{
 		}
 		
 		public function setDocIdentidad($value){
-			if($this->validateEnteros($value)){
+			if($this->validateDui($value)){
 				$this->docidentidad = $value;
 				return true;
 			}else{
@@ -96,7 +96,7 @@ class Ente extends Validator{
                     }
 
                     public function setTelefono($value){
-                        if($this->validateEnteros($value)){
+                        if($this->validateTel($value)){
                             $this->telefono = $value;
                             return true;
                         }else{
