@@ -17,8 +17,7 @@ try{
 											$dato->setDocIdentidad($_POST['dui']);
 											$dato->LastCliente();
 											$id_cliente = $dato->getId();
-											Page::showMessage(1, "Se ha insertado correctamente se continuara con selecion de productos" , "p3nueva_orden.php?cliente=$id_cliente");
-									}else{
+											Page::showMessage(1, "Se ha insertado correctamente se continuara con selecion de productos" , "p3reservacion_nueva.php?cliente=$id_cliente");									}else{
 										throw new Exception(Database::getException());
 									}
 								}else{
