@@ -51,8 +51,8 @@
                         </li>
                       </ul>
                     <div class="stepContainer"><div id="step-11" class="content" >
-                        <h2 class="StepTitle">Lista de productos selecinados</h2>  
-                        <div class="x_content">
+                           <h2 class="StepTitle">Lista de productos selecinados</h2>  
+                            <div class="x_content">
                               <div class="table-responsive">
                                 <table class="table table-striped jambo_table bulk_action">
                                   <thead>
@@ -64,10 +64,8 @@
                                       <th class="column-title">Fecha </th>
                                     </tr>
                                   </thead>
-
                                   <tbody>
                                     <tr class="even pointer">
-
                                         <?php
                                           // Verifica si la URL de la pagina contirne datos
                                             foreach($data as $row){
@@ -87,8 +85,6 @@
                                   </tbody>
                                 </table>
                               </div>
-                        
-                      
                             </div>
                     </div>
                     <!-- End SmartWizard Content -->

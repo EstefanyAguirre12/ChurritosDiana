@@ -252,7 +252,7 @@ class Detallerestaurante extends Validator{
 		}
 		
 		public function readCuentasClientes(){
-			$sql = "SELECT `IdCuenta`, entes.Nombres, `numb_cuenta`, `Fecha`,`estado_cuenta`,   `total` FROM `cuentatotal` INNER JOIN entes on entes.IdEnte= cuentatotal.IdEnte WHERE entes.IdEnte=? AND estado_cuenta = 0";
+			$sql = "SELECT `IdCuenta`, entes.Nombres, `numb_cuenta`, `Fecha`,`estado_cuenta`, `total`, cuentatotal.costo_h,cuentatotal.costo_r,cuentatotal.costo_e FROM `cuentatotal` INNER JOIN entes on entes.IdEnte= cuentatotal.IdEnte WHERE entes.IdEnte= ? AND estado_cuenta =0";
 			$params = array($this->idcliente);
 			return Database::getRows($sql, $params);
 		}

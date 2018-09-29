@@ -187,8 +187,13 @@ class Detalleconferencia extends Validator{
         $params = array( $this->idsala, $this->idmesa, $this->cantidadm, $this->idsilla,$this->cantidads,  $this->horain, $this->horafi, $this->fecha,$this->idcuenta );
 		return Database::executeRow($sql, $params);
     }
+    public function PagarCuenta($value1,$value2){
+		$sql = "UPDATE `cuentatotal` SET `estado_cuenta`= 2,`pago`=? WHERE cuentatotal.numb_cuenta=?";
+        $params = array($value1,$value2);
+		return Database::executeRow($sql, $params);
+    }
     public function readCuentaEventos(){
-		$sql = "SELECT salas.NombreSala, mesas.Nombre, `CantidadMesas`, sillas.Nombre, `CantidadSillas`, `HoraInicio`, `HoraFin`, `Fecha` 
+		$sql = "SELECT salas.NombreSala, mesas.Nombre, `CantidadMesas`, sillas.Nombre, `CantidadSillas`, `HoraInicio`, `HoraFin`, `Fecha` ,salas.Costo
         FROM `detalleconferencia` INNER JOIN salas on salas.IdSala =detalleconferencia.IdSala INNER JOIN mesas ON mesas.IdMesa = detalleconferencia.IdMesa INNER JOIN sillas on sillas.IdSilla = detalleconferencia.IdSilla 
             WHERE detalleconferencia.IdCuenta =? ";
 		$params = array($this->idcuenta);

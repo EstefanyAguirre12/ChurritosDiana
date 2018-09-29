@@ -44,7 +44,7 @@ try{
 		//Se muestran los 
         require_once("../../../app/views/dashboard/eventos/reservas/p4o1p1reservacion_nueva_view.php");
 	}else{
-		Page::showMessage(3, "No hay registros disponibles", "nueva_orden.php");
+		Page::showMessage(3, "No hay registros disponibles", "reservacion_nueva.php");
 	}
 
 }catch(Exception $error){

@@ -17,9 +17,9 @@ try{
     }
 	if($data){
 		//Se muestran los 
-        require_once("../../../app/views/dashboard/hotel/reservas/p3o2reserva_nueva_view.php");
+        require_once("../../../app/views/dashboard/eventos/reservas/p3o3reservacion_nueva_view.php");
 	}else{
-		Page::showMessage(3, "No hay registros disponibles", "reserva_nueva.php");
+		Page::showMessage(3, "No hay registros disponibles", "reservacion_nueva.php");
 	}
 
 }catch(Exception $error){

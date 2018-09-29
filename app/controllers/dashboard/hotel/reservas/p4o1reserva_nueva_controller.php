@@ -32,7 +32,9 @@ try{
                                 if($nueva_orden->setHorafin($_POST['hfin'])){
                                     if($nueva_orden->readCuenta($_GET['cuenta'])){
                                         if($nueva_orden->createDetalleres()){
-                                            Page::showMessage(1, "Se ha insertado correctamente", null);
+                                            $id_cliente = $_GET['cliente'];
+                                                $cuenta = $_GET['cuenta'];
+                                                Page::showMessage(1, "Se ha insertado correctamente", "p4reserva_nueva.php?cliente=$id_cliente&cuenta=$cuenta ");
                                         }else{
                                             throw new Exception(Database::getException());
                                         }
