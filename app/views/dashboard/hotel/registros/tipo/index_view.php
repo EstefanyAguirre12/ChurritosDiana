@@ -26,7 +26,7 @@
                     <form autocomplete= 'off' method='post'>
                       <div class="col-sm-12">
                         <div id="datatable-checkbox_filter" class="dataTables_filter">
-                          Busquedad
+                          Busquedad:
                           <label>
                             <input type="search" name="busqueda" class="form-control input-sm validate" placeholder="Tipo" aria-controls="datatable-checkbox" /required>
                           </label>
