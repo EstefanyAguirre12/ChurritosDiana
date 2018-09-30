@@ -21,14 +21,14 @@ try{
 							<p >
 							Para recuperar su contraseña en ingrese a la sigiente direccion
 							</p>
-							<p> 'http://localhost:8080/hotelbarolo/dashboard/otros/page/recuperar.php?token=$token&id=$id' </p>
+							<p> 'http://localhost/barolo/dashboard/otros/page/recuperar.php?token=$token&id=$id' </p>
 							</div>";
 							if ($email->enviar('Recuperacion de contraseña',$contenido_html)){
 									Page::showMessage(1, "Se envio un correo para restaurar su contraseña", "");
-															
+
 							}else{
 									Page::showMessage(3, "Ocurrio un error al enviar el correo de restauracion de contraseña", "");
-							}     
+							}
 					}else{
 							throw new Exception("Este DUI no pertenece a ninguna cuenta");
 					}

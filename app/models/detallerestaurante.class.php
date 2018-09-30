@@ -267,7 +267,11 @@ class Detallerestaurante extends Validator{
 			$params = array($this->idcliente);
 			return Database::getRows($sql, $params);
 		}
-
+		public function readCuentastotales($value){
+			$sql = "SELECT `IdCuenta`, entes.Nombres, `numb_cuenta`, `Fecha`,`estado_cuenta`, `total`, cuentatotal.costo_h,cuentatotal.costo_r,cuentatotal.costo_e FROM `cuentatotal` INNER JOIN entes on entes.IdEnte= cuentatotal.IdEnte WHERE cuentatotal.numb_cuenta= ? AND estado_cuenta =0";
+			$params = array($value);
+			return Database::getRows($sql, $params);
+		}
     //Modificar categoria
     public function updateDetallerestaurante(){
 		$sql = "UPDATE detallerestaurante SET IdMesa = ?, IdProducto = ?, IdCuenta = ?, Cantidad = ? WHERE IdDetalle = ?";

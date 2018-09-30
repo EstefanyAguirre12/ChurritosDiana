@@ -9,7 +9,7 @@
           <div class="clearfix"></div>
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="x_panel"> 
+              <div class="x_panel">
                   <div class="x_content">
                     <div class="x_title">
                     <h2>Proceso de pago<small>paso 4</small></h2>
@@ -47,7 +47,7 @@
                         </li>
                       </ul>
                     <div class="stepContainer"><div id="step-11" class="content" >
-                          <h2 class="StepTitle">Lista de salas</h2>  
+                          <h2 class="StepTitle">Lista de salas</h2>
                             <div class="x_content">
                               <div class="table-responsive">
                                 <table class="table table-striped jambo_table bulk_action">
@@ -84,7 +84,7 @@
                                 </table>
                               </div>
                             </div>
-                            <h2 class="StepTitle">Lista de habitaciones</h2>  
+                            <h2 class="StepTitle">Lista de habitaciones</h2>
                           <div class="x_content">
                                 <div class="table-responsive">
                                   <table class="table table-striped jambo_table bulk_action">
@@ -119,7 +119,7 @@
                                   </table>
                                 </div>
                               </div>
-                              <h2 class="StepTitle">Lista de productos</h2>  
+                              <h2 class="StepTitle">Lista de productos</h2>
                         <div class="x_content">
                               <div class="table-responsive">
                                 <table class="table table-striped jambo_table bulk_action">
@@ -142,7 +142,7 @@
                                                 <tr role='row' class='odd'>
                                                   <td>$row[0]</td>
                                                   <td>$row[2]</td>
-                                                  <td>$$row[1]</td>   
+                                                  <td>$$row[1]</td>
                                               </tr>
                                               ");
                                             }
@@ -152,8 +152,8 @@
                                 </table>
                               </div>
                             </div>
-                       </div>     
-                       <h2 class="StepTitle">Detalle</h2> 
+                       </div>
+                       <h2 class="StepTitle">Detalle</h2>
                               <div class="x_content">
                                 <div class="table-responsive">
                                   <table class="table table-striped jambo_table bulk_action">
@@ -184,19 +184,19 @@
                                                 <td>$row[3]</td>
                                                 <td>
                                                        <button  class='btn btn-success btn-xs'>Activa</button>
-                                                </td>   
+                                                </td>
                                                 <td>
                                                 $$row[6]
-                                                </td>   
+                                                </td>
                                                 <td>
                                                $$row[7]
-                                                </td>   
+                                                </td>
                                                 <td>
                                                $$row[8]
-                                                </td>       
+                                                </td>
                                                  <td>
                                                  $$row[5]
-                                                 </td>                         
+                                                 </td>
                                             </tr>
                                             ");
                                           }
@@ -217,9 +217,8 @@
                             <div class="ln_solid"></div>
                             <div class="form-group">
                               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                              <a  class="btn btn-primary">Imprimir</a>
                               <button type="submit" name="guardar" class="btn btn-success">Guardar</button>
-                             
+
                               </div>
                             </div>
                           </form>

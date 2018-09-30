@@ -32,7 +32,7 @@ try{
             $data1 = $nueva_orden1->readCuentaEventos($_GET['cuenta']);
             $data2 = $nueva_orden2->readCuentaHabitaciones();
             $data3 = $nueva_orden3->readCuentaProducto($_GET['cuenta']);
-            $data4 = $nueva_orden3->readCuentasClientes();
+            $data4 = $nueva_orden3->readCuentastotales($_GET['cuenta']);
         }else{
             throw new Exception("Error ningun cliente selecionado", null);
         }
